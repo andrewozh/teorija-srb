@@ -1,0 +1,79 @@
+export interface Option {
+	letter: string;
+	text: string;
+}
+
+export interface Question {
+	id: number;
+	text: string;
+	options: Option[];
+	points: number;
+	correct_answers_count: number;
+	has_image: boolean;
+	image?: string;
+	section: string;
+	correct_answers?: string[];
+	is_removed?: boolean;
+	is_new?: boolean;
+	is_changed?: boolean;
+	categories?: string[];
+}
+
+export interface SectionMeta {
+	id: string;
+	name: string;
+	questions: number;
+}
+
+export interface QuestionsData {
+	metadata: {
+		source: string;
+		sections: SectionMeta[];
+		total_questions: number;
+		removed_questions: number;
+	};
+	questions: Question[];
+}
+
+export interface QuestionProgress {
+	correct: number;
+	wrong: number;
+	last: string;
+}
+
+export interface SectionProgress {
+	[questionId: string]: QuestionProgress;
+}
+
+export interface Progress {
+	[sectionId: string]: SectionProgress;
+}
+
+export interface ExamResult {
+	date: string;
+	score: number;
+	total: number;
+	passed: boolean;
+	wrong_ids: string[];
+	answers: Record<string, string[]>;
+}
+
+export interface Settings {
+	theme: 'light' | 'dark' | 'system';
+	fontSize: 'small' | 'medium' | 'large';
+}
+
+export interface AppState {
+	version: number;
+	progress: Progress;
+	bookmarks: string[];
+	exams: ExamResult[];
+	settings: Settings;
+}
+
+export interface Chunk {
+	index: number;
+	start: number;
+	end: number;
+	questions: Question[];
+}

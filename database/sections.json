@@ -1,0 +1,50 @@
+[
+  {
+    "id": "uvodno_objasnjenje",
+    "name": "Уводно објашњење",
+    "pdf": "Objasnjenje ispitnih zadataka PDF.pdf",
+    "answers_header": null
+  },
+  {
+    "id": "pravila_saobracaja",
+    "name": "Правила саобраћаја",
+    "pdf": "Pravila saobracaja PDF.pdf",
+    "answers_header": "ПРАВИЛА САОБРАЋАЈА"
+  },
+  {
+    "id": "saobracajna_signalizacija",
+    "name": "Саобраћајна сигнализација",
+    "pdf": "Saobracajna signalizacija PDF.pdf",
+    "answers_header": "САОБРАЋАЈНА СИГНАЛИЗАЦИЈА"
+  },
+  {
+    "id": "vozaci",
+    "name": "Возачи",
+    "pdf": "Vozaci PDF.pdf",
+    "answers_header": "ВОЗАЧИ"
+  },
+  {
+    "id": "vozila",
+    "name": "Возила",
+    "pdf": "Vozila PDF.pdf",
+    "answers_header": "ВОЗИЛА"
+  },
+  {
+    "id": "osnove_bezbednosti",
+    "name": "Основе безбедности саобраћаја и појмови",
+    "pdf": "Osnove bezbednosti saobracaja i pojmovi i izrazi PDF.pdf",
+    "answers_header": "ОСНОВЕ БЕЗБЕДНОСТИ САОБРАЋАЈА И ПОЈМОВИ"
+  },
+  {
+    "id": "posebne_mere",
+    "name": "Посебне мере и овлашћења",
+    "pdf": "Posebne mere i ovlascenja PDF.pdf",
+    "answers_header": "ПОСЕБНЕ МЕРЕ И ОВЛАШЋЕЊА"
+  },
+  {
+    "id": "posledice",
+    "name": "Последице непоштовања прописа",
+    "pdf": "Posledice nepostovanja propisa PDF.pdf",
+    "answers_header": "ПОСЛЕДИЦЕ НЕПОШТОВАЊА ПРОПИСА"
+  }
+]

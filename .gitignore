@@ -1,3 +1,19 @@
 __pycache__/
 .DS_Store
 *.pyc
+
+# App build output
+app/build/
+app/.svelte-kit/
+app/node_modules/
+
+# Source PDFs (downloaded via `make download`)
+database/source_17042026/*.pdf
+
+# Generated data (rebuilt via `make parse && make answers`)
+database/questions.json
+database/images/
+
+# App copies of data (synced via `make sync-data`)
+app/static/questions.json
+app/static/images/
