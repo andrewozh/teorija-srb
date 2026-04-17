@@ -325,6 +325,79 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Question status flags (removed / changed / new)
+# ---------------------------------------------------------------------------
+
+def extract_question_flags(doc: fitz.Document, x_mid: float) -> dict[int, dict]:
+    """Detect question status from colored background highlights in the PDF.
+
+    The official MUP PDF uses colored backgrounds:
+    - RED:    removed from exam database  → is_removed
+    - YELLOW: modified question            → is_changed
+    - GREEN:  new question                 → is_new
+    """
+    flags = {}
+
+    for pn in range(doc.page_count):
+        page = doc[pn]
+
+        # Collect colored rectangular fills (skip answer-marker circles)
+        colored_rects = []
+        for p in page.get_drawings():
+            fill = p.get("fill")
+            if not fill or fill == (0, 0, 0):
+                continue
+            if any(item[0] in ("c", "qu") for item in p["items"]):
+                continue
+            r = p["rect"]
+            if r.width > 20 and r.height > 5:
+                colored_rects.append((r, fill))
+
+        if not colored_rects:
+            continue
+
+        # Find question number positions on this page
+        blocks = page.get_text("dict")["blocks"]
+        q_positions = []  # (qnum, y_top, y_bottom, x)
+        for block in blocks:
+            if "lines" not in block:
+                continue
+            for line in block["lines"]:
+                line_text = "".join(s["text"] for s in line["spans"]).strip()
+                m = re.match(r"^(\d{1,3})\.\s*$", line_text)
+                if not m:
+                    m = re.match(r"^(\d{1,3})\.\s+\S", line_text)
+                if m:
+                    qnum = int(m.group(1))
+                    bbox = line["bbox"]
+                    q_positions.append((qnum, bbox[1], bbox[3], bbox[0]))
+
+        # Match questions to colored rects (same column + vertical overlap)
+        for i, (qnum, qy_top, qy_bot, qx) in enumerate(q_positions):
+            qy_extent = (
+                q_positions[i + 1][1]
+                if i + 1 < len(q_positions)
+                else page.rect.height
+            )
+            q_is_right = qx > x_mid
+
+            for rect, fill in colored_rects:
+                if (rect.x0 > x_mid) != q_is_right:
+                    continue
+                if rect.y0 < qy_extent and rect.y1 > qy_top:
+                    r, g, b = fill
+                    if r > 0.8 and g < 0.3 and b < 0.3:
+                        flags.setdefault(qnum, {})["is_removed"] = True
+                    elif g > 0.5 and r < 0.3:
+                        flags.setdefault(qnum, {})["is_new"] = True
+                    elif r > 0.8 and g > 0.8 and b < 0.3:
+                        flags.setdefault(qnum, {})["is_changed"] = True
+                    break
+
+    return flags
+
+
+# ---------------------------------------------------------------------------
 # Image ↔ Question linking
 # ---------------------------------------------------------------------------
 
@@ -418,6 +491,21 @@ def main():
 
     # Link images
     link_images_to_questions(questions, all_images)
+
+    # Extract question status flags (removed/changed/new)
+    doc = fitz.open(str(PDF_PATH))
+    q_flags = extract_question_flags(doc, x_mid)
+    doc.close()
+
+    removed = sum(1 for f in q_flags.values() if f.get("is_removed"))
+    changed = sum(1 for f in q_flags.values() if f.get("is_changed"))
+    new = sum(1 for f in q_flags.values() if f.get("is_new"))
+    print(f"  Flags: {removed} removed, {changed} changed, {new} new")
+
+    for q in questions:
+        if q["id"] in q_flags:
+            for flag, value in q_flags[q["id"]].items():
+                q[flag] = value
 
     # Clean internal position tags
     for q in questions:

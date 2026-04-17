@@ -1,13 +1,21 @@
-.PHONY: help install parse stats validate clean clean-images clean-all
+.PHONY: help install download parse answers stats validate clean clean-images clean-all
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 install: ## Install Python dependencies
-	pip3 install --break-system-packages pymupdf
+	pip3 install pymupdf pikepdf
 
-parse: ## Parse PDF into questions.json + images/
+download: ## Download source PDFs from official sources
+	mkdir -p pdf
+	wget -nc -P pdf "http://prezentacije.mup.gov.rs/usp/Vozacki%20ispit/2.Pravila%20saobracaja/Pravila%20saobracaja%20PDF.pdf"
+	wget -nc -P pdf "https://autoskolasljivic.com/wp-content/uploads/2020/09/SVA-PITANJA-sa-resenjima.pdf"
+
+parse: ## Parse questions PDF into questions.json + images/
 	python3 parse_v3.py
+
+answers: ## Extract correct answers from answers PDF and merge into questions.json
+	python3 extract_answers.py
 
 stats: ## Show stats for parsed questions
 	@python3 -c " \
