@@ -14,9 +14,11 @@ import json
 import fitz  # PyMuPDF
 from pathlib import Path
 
-PDF_PATH = Path(__file__).parent / "pdf" / "Pravila saobracaja PDF.pdf"
-OUTPUT_FILE = Path(__file__).parent / "questions.json"
-IMAGES_DIR = Path(__file__).parent / "images"
+BASE_DIR = Path(__file__).parent
+SOURCE_DIR = BASE_DIR / "source_17042026"
+OUTPUT_FILE = BASE_DIR / "questions.json"
+IMAGES_DIR = BASE_DIR / "images"
+SECTIONS_FILE = BASE_DIR / "sections.json"
 
 MULTI_ANSWER_RE = re.compile(
     r"\(Заокружити\s+(два|три|четири)\s+тачна?\s+одговора?\)", re.IGNORECASE
@@ -36,13 +38,18 @@ NOISE_PATTERNS = [
     "РЕПУБЛИКА СРБИЈА",
     "МИНИСТАРСТВО УНУТРАШЊИХ",
     "УПРАВА САОБРАЋАЈНЕ ПОЛИЦИЈЕ",
-    "ПРАВИЛА САОБРАЋАЈА",
 ]
+
+# Section headers to strip (loaded dynamically per section)
+_section_headers: set[str] = set()
 
 
 def is_noise(text: str) -> bool:
     for p in NOISE_PATTERNS:
         if p in text:
+            return True
+    for h in _section_headers:
+        if h in text:
             return True
     return text.strip().startswith("©")
 
@@ -446,14 +453,20 @@ def link_images_to_questions(questions: list[dict], all_images: list[dict]) -> N
 # Main
 # ---------------------------------------------------------------------------
 
-def main():
-    print(f"Opening {PDF_PATH}...")
-    doc = fitz.open(str(PDF_PATH))
-    print(f"  {doc.page_count} pages")
+def parse_section(pdf_path: Path, section_id: str, section_name: str, image_prefix: str) -> list[dict]:
+    """Parse a single section PDF into a list of question dicts."""
+    global _section_headers
+    _section_headers = {section_name}
+
+    print(f"\n{'='*60}")
+    print(f"  Section: {section_name}")
+    print(f"  PDF: {pdf_path.name}")
+
+    doc = fitz.open(str(pdf_path))
+    print(f"  Pages: {doc.page_count}")
 
     page_width = doc[0].rect.width
     x_mid = page_width / 2
-    print(f"  Page width: {page_width:.0f}pt, column split at {x_mid:.0f}pt")
 
     IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -462,7 +475,7 @@ def main():
 
     for page_num in range(doc.page_count):
         page = doc[page_num]
-        pn = page_num + 1  # 1-based
+        pn = page_num + 1
 
         left_blocks = extract_column_blocks(page, 0, x_mid - 5)
         right_blocks = extract_column_blocks(page, x_mid - 5, page_width)
@@ -475,11 +488,6 @@ def main():
 
         all_images.extend(extract_page_images(page, pn, x_mid))
 
-    doc.close()
-
-    print(f"\n  Raw questions: {len(all_questions)}")
-    print(f"  Images extracted: {len(all_images)}")
-
     # Deduplicate
     seen = {}
     for q in all_questions:
@@ -487,81 +495,77 @@ def main():
         if qid not in seen or (len(q["options"]) * 10 + len(q["text"])) > (len(seen[qid]["options"]) * 10 + len(seen[qid]["text"])):
             seen[qid] = q
     questions = sorted(seen.values(), key=lambda q: q["id"])
-    print(f"  After dedup: {len(questions)}")
 
     # Link images
     link_images_to_questions(questions, all_images)
 
-    # Extract question status flags (removed/changed/new)
-    doc = fitz.open(str(PDF_PATH))
+    # Extract question status flags
     q_flags = extract_question_flags(doc, x_mid)
     doc.close()
 
-    removed = sum(1 for f in q_flags.values() if f.get("is_removed"))
-    changed = sum(1 for f in q_flags.values() if f.get("is_changed"))
-    new = sum(1 for f in q_flags.values() if f.get("is_new"))
-    print(f"  Flags: {removed} removed, {changed} changed, {new} new")
-
+    # Apply section id, flags, and clean internal tags
     for q in questions:
+        q["section"] = section_id
         if q["id"] in q_flags:
             for flag, value in q_flags[q["id"]].items():
                 q[flag] = value
-
-    # Clean internal position tags
-    for q in questions:
         q.pop("_page", None)
         q.pop("_column", None)
 
     # Stats
     good = sum(1 for q in questions if len(q["options"]) >= 2 and len(q["text"]) > 10)
-    no_opts = sum(1 for q in questions if len(q["options"]) == 0)
     with_images = sum(1 for q in questions if q["has_image"])
-    linked_images = sum(1 for q in questions if "image" in q)
-    multi = sum(1 for q in questions if q["correct_answers_count"] > 1)
-    cats = sum(1 for q in questions if "categories" in q)
-    pts = {}
-    for q in questions:
-        pts[q["points"]] = pts.get(q["points"], 0) + 1
+    linked = sum(1 for q in questions if "image" in q)
+    removed = sum(1 for q in questions if q.get("is_removed"))
+    changed = sum(1 for q in questions if q.get("is_changed"))
+    new = sum(1 for q in questions if q.get("is_new"))
 
-    ids = [q["id"] for q in questions]
-    missing = sorted(set(range(1, max(ids) + 1)) - set(ids)) if ids else []
+    print(f"  Questions: {len(questions)} (good: {good})")
+    print(f"  Images: {with_images} (linked: {linked})")
+    print(f"  Flags: {removed} removed, {changed} changed, {new} new")
 
-    print(f"\nResults:")
-    print(f"  ✅ Good (>=2 opts, text>10):  {good}")
-    print(f"  ❌ No options:                {no_opts}")
-    print(f"  📷 With images:               {with_images}")
-    print(f"  🔗 Images linked:             {linked_images}")
-    print(f"  ✏️  Multi-answer:              {multi}")
-    print(f"  🏷️  With categories:           {cats}")
-    print(f"  Points: {pts}")
-    print(f"  Missing IDs: {len(missing)}")
+    return questions
+
+
+def main():
+    sections = json.loads(SECTIONS_FILE.read_text(encoding="utf-8"))
+
+    all_questions = []
+    parsed_sections = []
+
+    for sec in sections:
+        pdf_path = SOURCE_DIR / sec["pdf"]
+        if not pdf_path.exists():
+            print(f"\n  ⚠️  Skipping {sec['name']}: {pdf_path.name} not found")
+            continue
+        if sec["id"] == "uvodno_objasnjenje":
+            print(f"\n  ⏭️  Skipping {sec['name']} (introductory, no questions)")
+            continue
+
+        questions = parse_section(pdf_path, sec["id"], sec["name"], sec["id"])
+        all_questions.extend(questions)
+        parsed_sections.append({
+            "id": sec["id"],
+            "name": sec["name"],
+            "questions": len(questions),
+        })
 
     # Save
     output = {
         "metadata": {
             "source": "МУП Србије — Управа саобраћајне полиције",
-            "section": "Правила саобраћаја",
-            "total_questions": len(questions),
-            "questions_with_images": with_images,
-            "images_linked": linked_images,
-            "note": "Correct answers NOT included.",
+            "sections": parsed_sections,
+            "total_questions": len(all_questions),
+            "note": "Correct answers NOT included. Run extract_answers.py to add them.",
         },
-        "questions": questions,
+        "questions": all_questions,
     }
 
     OUTPUT_FILE.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\nSaved to {OUTPUT_FILE}")
 
-    # Samples
-    print("\n=== QUESTION WITH IMAGE ===")
-    qi = next((q for q in questions if "image" in q), None)
-    if qi:
-        print(json.dumps(qi, ensure_ascii=False, indent=2))
-
-    print("\n=== QUESTION WITHOUT IMAGE ===")
-    qn = next((q for q in questions if not q["has_image"] and len(q["options"]) >= 3), None)
-    if qn:
-        print(json.dumps(qn, ensure_ascii=False, indent=2))
+    print(f"\n{'='*60}")
+    print(f"TOTAL: {len(all_questions)} questions across {len(parsed_sections)} sections")
+    print(f"Saved to {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":

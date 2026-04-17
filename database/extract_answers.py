@@ -5,8 +5,8 @@ Extract correct answers from "SVA-PITANJA-sa-resenjima.pdf".
 The PDF marks correct answers with red circles (vector ellipses) drawn
 around the option letter (а, б, в, г, д). This script:
 
-1. Finds the "ПРАВИЛА САОБРАЋАЈА" section in the PDF
-2. Detects red circle paths on each page (small curved vector drawings)
+1. For each section defined in sections.json, finds its page range
+2. Detects red circle paths on each page
 3. Matches each circle to the nearest option letter by coordinate proximity
 4. Merges the results into questions.json
 """
@@ -16,50 +16,58 @@ import json
 import fitz  # PyMuPDF
 from pathlib import Path
 
-ANSWERS_PDF = Path(__file__).parent / "pdf" / "SVA-PITANJA-sa-resenjima.pdf"
-QUESTIONS_JSON = Path(__file__).parent / "questions.json"
+BASE_DIR = Path(__file__).parent
+ANSWERS_PDF = BASE_DIR / "source_17042026" / "SVA-PITANJA-sa-resenjima.pdf"
+QUESTIONS_JSON = BASE_DIR / "questions.json"
+SECTIONS_FILE = BASE_DIR / "sections.json"
 
-# Section to extract (change for other exam sections)
-SECTION_HEADER = "ПРАВИЛА САОБРАЋАЈА"
-SECTION_END_MARKERS = ["ПОСЕБНЕ МЕРЕ", "ПОСЛЕДИЦЕ НЕПОШТОВАЊА"]
+MAX_CIRCLE_SIZE = 20
+MAX_MATCH_DISTANCE = 20
 
-MAX_CIRCLE_SIZE = 20  # px — circles around letters are ~12x11
-MAX_MATCH_DISTANCE = 20  # pt — max distance from circle center to option letter
+# All known section headers (used to detect section boundaries)
+ALL_SECTION_HEADERS = [
+    "ОСНОВЕ БЕЗБЕДНОСТИ САОБРАЋАЈА И ПОЈМОВИ",
+    "ПРАВИЛА САОБРАЋАЈА",
+    "САОБРАЋАЈНА СИГНАЛИЗАЦИЈА",
+    "ВОЗАЧИ",
+    "ВОЗИЛА",
+    "ПОСЕБНЕ МЕРЕ И ОВЛАШЋЕЊА",
+    "ПОСЛЕДИЦЕ НЕПОШТОВАЊА ПРОПИСА",
+]
 
 
-def find_section_pages(doc: fitz.Document) -> tuple[int, int]:
-    """Find page range for the target section (0-indexed, exclusive end).
+def find_section_pages(doc: fitz.Document, header: str) -> tuple[int, int] | None:
+    """Find page range for a section (0-indexed, exclusive end).
 
-    Distinguishes the actual question pages from errata/amendment pages
-    that also mention the section header. The real section has "1." as
-    the first question, not "Питање број NNN."
+    Returns None if the section is not found.
     """
     start = None
     for pn in range(doc.page_count):
-        text = doc[pn].get_text()[:500]
-        if SECTION_HEADER not in text:
+        text = doc[pn].get_text()[:800]
+        if header not in text:
             continue
-        # The real section has standalone question numbers ("1.\n", "2.\n")
-        # not inline references like "1. Закона" in errata text
+        # Real section has standalone question numbers, not errata references
         if re.search(r"^1\.\s*$", text, re.MULTILINE):
             start = pn
             break
 
     if start is None:
-        raise ValueError(f"Section '{SECTION_HEADER}' not found in PDF")
+        return None
 
+    # Find end: next section header on a different page
+    other_headers = [h for h in ALL_SECTION_HEADERS if h != header]
     end = doc.page_count
     for pn in range(start + 1, doc.page_count):
-        text = doc[pn].get_text()[:500]
-        if any(marker in text for marker in SECTION_END_MARKERS):
-            end = pn
-            break
+        text = doc[pn].get_text()[:800]
+        if any(h in text for h in other_headers):
+            if re.search(r"^1\.\s*$", text, re.MULTILINE):
+                end = pn
+                break
 
     return start, end
 
 
 def find_circles(page: fitz.Page) -> list[fitz.Rect]:
-    """Find small red circle/ellipse vector paths on a page."""
     circles = []
     for path in page.get_drawings():
         has_curves = any(item[0] in ("c", "qu") for item in path["items"])
@@ -72,7 +80,6 @@ def find_circles(page: fitz.Page) -> list[fitz.Rect]:
 
 
 def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int | None]]:
-    """Find option letter positions (x, y, letter, question_number) on a page."""
     blocks = page.get_text("dict")["blocks"]
     current_qnum = None
     positions = []
@@ -83,7 +90,6 @@ def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int 
         for line in block["lines"]:
             line_text = "".join(s["text"] for s in line["spans"]).strip()
 
-            # Detect question number
             m = re.match(r"^(\d{1,3})\.\s*$", line_text)
             if m:
                 current_qnum = int(m.group(1))
@@ -92,7 +98,6 @@ def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int 
             if m:
                 current_qnum = int(m.group(1))
 
-            # Detect option letters: "а)", "б)", etc.
             for span in line["spans"]:
                 st = span["text"].strip()
                 if re.match(r"^[а-д]\)$", st):
@@ -102,47 +107,8 @@ def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int 
     return positions
 
 
-def match_circles_to_options(
-    circles: list[fitz.Rect],
-    options: list[tuple[float, float, str, int | None]],
-) -> dict[int, list[str]]:
-    """Match each circle to the nearest option letter. Returns {qnum: [letters]}."""
-    answers = {}
-
-    for circle in circles:
-        cx = (circle.x0 + circle.x1) / 2
-        cy = (circle.y0 + circle.y1) / 2
-
-        best_dist = MAX_MATCH_DISTANCE
-        best_match = None
-
-        for ox, oy, letter, qnum in options:
-            dist = ((cx - ox) ** 2 + (cy - oy) ** 2) ** 0.5
-            if dist < best_dist:
-                best_dist = dist
-                best_match = (qnum, letter)
-
-        if best_match and best_match[0]:
-            qnum, letter = best_match
-            answers.setdefault(qnum, []).append(letter)
-
-    # Deduplicate and sort
-    for qnum in answers:
-        answers[qnum] = sorted(set(answers[qnum]))
-
-    return answers
-
-
-def extract_answers() -> dict[int, list[str]]:
-    """Extract correct answers and question status flags from the PDF."""
-    print(f"Opening {ANSWERS_PDF}...")
-    doc = fitz.open(str(ANSWERS_PDF))
-    print(f"  {doc.page_count} pages")
-
-    start, end = find_section_pages(doc)
-    print(f"  Section '{SECTION_HEADER}': pages {start + 1}–{end}")
-
-    # Extract answers from red circles
+def extract_section_answers(doc: fitz.Document, start: int, end: int) -> dict[int, list[str]]:
+    """Extract answers for a page range."""
     all_answers = {}
     total_circles = 0
 
@@ -154,47 +120,88 @@ def extract_answers() -> dict[int, list[str]]:
         total_circles += len(circles)
 
         options = find_option_positions(page)
-        page_answers = match_circles_to_options(circles, options)
-        for qnum, letters in page_answers.items():
-            all_answers.setdefault(qnum, []).extend(letters)
+        for circle in circles:
+            cx = (circle.x0 + circle.x1) / 2
+            cy = (circle.y0 + circle.y1) / 2
 
-    # Deduplicate
+            best_dist = MAX_MATCH_DISTANCE
+            best_match = None
+            for ox, oy, letter, qnum in options:
+                dist = ((cx - ox) ** 2 + (cy - oy) ** 2) ** 0.5
+                if dist < best_dist:
+                    best_dist = dist
+                    best_match = (qnum, letter)
+
+            if best_match and best_match[0]:
+                qnum, letter = best_match
+                all_answers.setdefault(qnum, []).append(letter)
+
     for qnum in all_answers:
         all_answers[qnum] = sorted(set(all_answers[qnum]))
-
-    print(f"  Circles found: {total_circles}")
-    print(f"  Questions with answers: {len(all_answers)}")
-
-    doc.close()
 
     return all_answers
 
 
-def merge_answers(answers: dict[int, list[str]]) -> None:
-    """Merge extracted answers into questions.json."""
-    print(f"\nMerging into {QUESTIONS_JSON}...")
-    data = json.load(QUESTIONS_JSON.open())
+def main():
+    sections = json.loads(SECTIONS_FILE.read_text(encoding="utf-8"))
+    data = json.loads(QUESTIONS_JSON.read_text(encoding="utf-8"))
 
-    new_count = 0
-    updated_count = 0
+    print(f"Opening {ANSWERS_PDF.name}...")
+    doc = fitz.open(str(ANSWERS_PDF))
+    print(f"  {doc.page_count} pages")
 
-    for q in data["questions"]:
-        qid = q["id"]
-        if qid not in answers:
+    # Build section_id -> question indices map
+    q_by_section = {}
+    for i, q in enumerate(data["questions"]):
+        q_by_section.setdefault(q["section"], []).append(i)
+
+    total_new = 0
+    total_updated = 0
+
+    for sec in sections:
+        if not sec.get("answers_header"):
             continue
-        correct = answers[qid]
+        if sec["id"] not in q_by_section:
+            continue
 
-        # Update correct_answers_count for changed questions
-        if q.get("is_changed") and len(correct) != q["correct_answers_count"]:
-            q["correct_answers_count"] = len(correct)
+        pages = find_section_pages(doc, sec["answers_header"])
+        if pages is None:
+            print(f"\n  ⚠️  Section '{sec['name']}' not found in answers PDF")
+            continue
 
-        if "correct_answers" not in q:
-            q["correct_answers"] = correct
-            new_count += 1
-        elif q["correct_answers"] != correct:
-            q["correct_answers"] = correct
-            updated_count += 1
+        start, end = pages
+        print(f"\n  {sec['name']}: pages {start+1}–{end}")
 
+        answers = extract_section_answers(doc, start, end)
+        print(f"    Questions with answers: {len(answers)}")
+
+        # Merge into questions
+        new_count = 0
+        updated_count = 0
+        for idx in q_by_section[sec["id"]]:
+            q = data["questions"][idx]
+            qid = q["id"]
+            if qid not in answers:
+                continue
+            correct = answers[qid]
+
+            if q.get("is_changed") and len(correct) != q["correct_answers_count"]:
+                q["correct_answers_count"] = len(correct)
+
+            if "correct_answers" not in q:
+                q["correct_answers"] = correct
+                new_count += 1
+            elif q["correct_answers"] != correct:
+                q["correct_answers"] = correct
+                updated_count += 1
+
+        print(f"    New: {new_count}, Updated: {updated_count}")
+        total_new += new_count
+        total_updated += updated_count
+
+    doc.close()
+
+    # Update metadata
     with_ans = sum(1 for q in data["questions"] if "correct_answers" in q)
     total = len(data["questions"])
     removed = sum(1 for q in data["questions"] if q.get("is_removed"))
@@ -209,39 +216,24 @@ def merge_answers(answers: dict[int, list[str]]) -> None:
         json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
     )
 
-    # Consistency checks (skip removed questions)
+    # Consistency
     active = [q for q in data["questions"] if not q.get("is_removed")]
     mismatches = sum(
-        1
-        for q in active
+        1 for q in active
         if "correct_answers" in q
         and q["correct_answers_count"] != len(q["correct_answers"])
     )
     invalid = sum(
-        1
-        for q in active
+        1 for q in active
         if "correct_answers" in q
-        and any(
-            c not in {o["letter"] for o in q["options"]}
-            for c in q["correct_answers"]
-        )
+        and any(c not in {o["letter"] for o in q["options"]} for c in q["correct_answers"])
     )
 
-    print(f"  New answers:   {new_count}")
-    print(f"  Updated:       {updated_count}")
-    print(f"  Coverage:      {with_ans}/{total}")
-    print(f"  Count mismatches (active only): {mismatches}")
-    print(f"  Invalid letters: {invalid}")
-
-
-def main():
-    answers = extract_answers()
-    merge_answers(answers)
-
-    # Show sample
-    print("\nVerification:")
-    for qid in [1, 4, 14, 18, 44, 100, 317, 400, 700]:
-        print(f"  Q{qid}: {answers.get(qid, '❌ not found')}")
+    print(f"\n{'='*60}")
+    print(f"TOTAL: {total_new} new, {total_updated} updated")
+    print(f"Coverage: {with_ans}/{total}")
+    print(f"Count mismatches: {mismatches}")
+    print(f"Invalid letters: {invalid}")
 
 
 if __name__ == "__main__":
