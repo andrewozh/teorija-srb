@@ -1,4 +1,4 @@
-import type { Question, QuestionsData, SectionMeta, Chunk } from './types.js';
+import type { Question, QuestionsData, SectionMeta, Chunk, Lang, Option } from './types.js';
 
 let cachedData: QuestionsData | null = null;
 
@@ -61,6 +61,18 @@ export function sectionIcon(sectionId: string): string {
 		posledice: '⚠️'
 	};
 	return icons[sectionId] || '📋';
+}
+
+/** Get localized question text. Falls back to Serbian if translation missing. */
+export function qText(q: Question, lang: Lang): string {
+	if (lang === 'ru' && q.text_ru) return q.text_ru;
+	return q.text;
+}
+
+/** Get localized option text. Falls back to Serbian if translation missing. */
+export function oText(o: Option, lang: Lang): string {
+	if (lang === 'ru' && o.text_ru) return o.text_ru;
+	return o.text;
 }
 
 export function sectionColor(sectionId: string): string {

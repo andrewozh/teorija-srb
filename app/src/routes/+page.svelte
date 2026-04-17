@@ -5,13 +5,17 @@
 		getPassedExamCount,
 		getExams,
 		subscribe,
-		getProgress
+		getProgress,
+		getSettings,
+		updateSettings
 	} from '$lib/store.js';
+	import type { Lang } from '$lib/types.js';
 
 	let completed = $state(getTotalCompletedCount());
 	let mistakeCount = $state(getMistakeQuestionKeys().length);
 	let passedExams = $state(getPassedExamCount());
 	let totalExams = $state(getExams().length);
+	let lang = $state(getSettings().lang);
 
 	$effect(() => {
 		const unsub = subscribe(() => {
@@ -19,9 +23,15 @@
 			mistakeCount = getMistakeQuestionKeys().length;
 			passedExams = getPassedExamCount();
 			totalExams = getExams().length;
+			lang = getSettings().lang;
 		});
 		return unsub;
 	});
+
+	function toggleLang() {
+		const next: Lang = lang === 'sr' ? 'ru' : 'sr';
+		updateSettings({ lang: next });
+	}
 
 	const totalQuestions = 1756; // 1780 - 24 removed
 
@@ -33,13 +43,18 @@
 	<div class="px-3 pt-4 pb-4">
 		<div class="d-flex justify-content-between align-items-center">
 			<h1 class="h5 fw-bold mb-0">🚗 Возачки испит</h1>
-			<a href="/settings" class="btn btn-light btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;" aria-label="Подешавања">
-				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<line x1="3" y1="6" x2="21" y2="6"/>
-					<line x1="3" y1="12" x2="21" y2="12"/>
-					<line x1="3" y1="18" x2="21" y2="18"/>
-				</svg>
-			</a>
+			<div class="d-flex gap-2">
+				<button onclick={toggleLang} class="btn btn-outline-secondary btn-sm fw-bold" style="min-width:42px;">
+					{lang === 'sr' ? 'RU' : 'SR'}
+				</button>
+				<a href="/settings" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;" aria-label="Подешавања">
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="3" y1="6" x2="21" y2="6"/>
+						<line x1="3" y1="12" x2="21" y2="12"/>
+						<line x1="3" y1="18" x2="21" y2="18"/>
+					</svg>
+				</a>
+			</div>
 		</div>
 	</div>
 

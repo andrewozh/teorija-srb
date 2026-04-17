@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { loadQuestions, getRandomExamQuestions, questionKey } from '$lib/data.js';
-	import { recordAnswer, addExamResult } from '$lib/store.js';
-	import type { Question, ExamResult } from '$lib/types.js';
+	import { loadQuestions, getRandomExamQuestions, questionKey, qText, oText } from '$lib/data.js';
+	import { recordAnswer, addExamResult, getSettings, subscribe } from '$lib/store.js';
+	import type { Question, ExamResult, Lang } from '$lib/types.js';
 
 	type ExamPhase = 'intro' | 'active' | 'results';
 
@@ -15,6 +15,12 @@
 	let answers = $state<Record<string, string[]>>({});
 	let wrongIds = $state<string[]>([]);
 	let score = $state(0);
+	let lang = $state<Lang>(getSettings().lang);
+
+	$effect(() => {
+		const unsub = subscribe(() => { lang = getSettings().lang; });
+		return unsub;
+	});
 
 	// Timer
 	let timeRemaining = $state(45 * 60);
@@ -248,7 +254,7 @@
 
 			<div class="card border-0 shadow-sm">
 				<div class="card-body">
-					<p class="mb-0" style="line-height:1.5;">{currentQuestion.text}</p>
+					<p class="mb-0" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
 					{#if hasMultipleAnswers}
 						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
 					{/if}
@@ -264,7 +270,7 @@
 					>
 						<div class="card-body py-2 px-3 d-flex align-items-start gap-2">
 							<span class="fw-bold text-body-secondary flex-shrink-0">{option.letter})</span>
-							<span class="flex-grow-1 small" style="line-height:1.4;">{option.text}</span>
+							<span class="flex-grow-1 small" style="line-height:1.4;">{oText(option, lang)}</span>
 							{#if isAnswered && currentQuestion.correct_answers?.includes(option.letter)}
 								<span class="fw-bold text-success flex-shrink-0">✓</span>
 							{:else if isAnswered && selectedAnswers.has(option.letter) && !currentQuestion.correct_answers?.includes(option.letter)}
@@ -327,7 +333,7 @@
 							{@const q = questions.find((q) => questionKey(q) === wrongKey)}
 							{#if q}
 								<div class="py-2 {i < wrongIds.length - 1 ? 'border-bottom' : ''}">
-									<p class="small mb-1" style="line-height:1.4;">{q.text}</p>
+									<p class="small mb-1" style="line-height:1.4;">{qText(q, lang)}</p>
 									<p class="small text-success fw-semibold mb-0">
 										Тачан одговор: {q.correct_answers?.join(', ')}
 									</p>

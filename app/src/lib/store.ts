@@ -11,7 +11,8 @@ function defaultState(): AppState {
 		exams: [],
 		settings: {
 			theme: 'system',
-			fontSize: 'medium'
+			fontSize: 'medium',
+			lang: 'sr'
 		}
 	};
 }

@@ -29,6 +29,9 @@ parse: ## Parse questions PDF into questions.json + images/
 answers: ## Extract correct answers and merge into questions.json
 	python3 extract_answers.py
 
+translate: ## Translate questions to Russian (resumable, safe to Ctrl+C)
+	python3 translate.py
+
 stats: ## Show stats for parsed questions
 	@python3 -c " \
 	import json; \

@@ -1,11 +1,15 @@
+export type Lang = 'sr' | 'ru';
+
 export interface Option {
 	letter: string;
 	text: string;
+	text_ru?: string;
 }
 
 export interface Question {
 	id: number;
 	text: string;
+	text_ru?: string;
 	options: Option[];
 	points: number;
 	correct_answers_count: number;
@@ -61,6 +65,7 @@ export interface ExamResult {
 export interface Settings {
 	theme: 'light' | 'dark' | 'system';
 	fontSize: 'small' | 'medium' | 'large';
+	lang: Lang;
 }
 
 export interface AppState {

@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { loadQuestions, getQuestionsBySection, getChunks, questionKey } from '$lib/data.js';
+	import { loadQuestions, getQuestionsBySection, getChunks, questionKey, qText, oText } from '$lib/data.js';
 	import {
 		recordAnswer,
 		getQuestionProgress,
 		isBookmarked,
 		toggleBookmark,
-		subscribe
+		subscribe,
+		getSettings
 	} from '$lib/store.js';
-	import type { Question, Chunk } from '$lib/types.js';
+	import type { Question, Chunk, Lang } from '$lib/types.js';
 
 	let sectionId = $derived($page.params.section);
 	let chunkIndex = $derived(parseInt($page.params.chunk, 10));
@@ -21,6 +22,7 @@
 	let isCorrect = $state(false);
 	let bookmarked = $state(false);
 	let storeVersion = $state(0);
+	let lang = $state<Lang>(getSettings().lang);
 
 	let currentQuestion = $derived(questions[currentIndex]);
 	let qKey = $derived(currentQuestion ? questionKey(currentQuestion) : '');
@@ -38,6 +40,7 @@
 
 		const unsub = subscribe(() => {
 			storeVersion++;
+			lang = getSettings().lang;
 			updateBookmarkState();
 		});
 		return unsub;
@@ -226,7 +229,7 @@
 			<!-- Question text -->
 			<div class="card border-0 shadow-sm">
 				<div class="card-body">
-					<p class="mb-0" style="line-height:1.5;">{currentQuestion.text}</p>
+					<p class="mb-0" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
 					{#if hasMultipleAnswers}
 						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
 					{/if}
@@ -246,7 +249,7 @@
 					>
 						<div class="card-body py-2 px-3 d-flex align-items-start gap-2">
 							<span class="fw-bold text-body-secondary flex-shrink-0">{option.letter})</span>
-							<span class="flex-grow-1 small" style="line-height:1.4;">{option.text}</span>
+							<span class="flex-grow-1 small" style="line-height:1.4;">{oText(option, lang)}</span>
 							{#if isAnswered && currentQuestion.correct_answers?.includes(option.letter)}
 								<span class="fw-bold text-success flex-shrink-0">✓</span>
 							{:else if isAnswered && selectedAnswers.has(option.letter) && !currentQuestion.correct_answers?.includes(option.letter)}

@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { loadQuestions, parseQuestionKey, questionKey, sectionIcon } from '$lib/data.js';
+	import { loadQuestions, parseQuestionKey, questionKey, sectionIcon, qText, oText } from '$lib/data.js';
 	import {
 		getMistakeQuestionKeys,
 		recordAnswer,
 		getQuestionProgress,
-		subscribe
+		subscribe,
+		getSettings
 	} from '$lib/store.js';
-	import type { Question, QuestionsData } from '$lib/types.js';
+	import type { Question, QuestionsData, Lang } from '$lib/types.js';
 
 	let data = $state<QuestionsData | null>(null);
 	let mistakeKeys = $state<string[]>([]);
@@ -18,6 +19,7 @@
 	let currentIndex = $state(0);
 	let selectedAnswers = $state<Set<string>>(new Set());
 	let isAnswered = $state(false);
+	let lang = $state<Lang>(getSettings().lang);
 	let isCorrect = $state(false);
 
 	let currentQuestion = $derived(mistakeQuestions[currentIndex]);
@@ -28,6 +30,7 @@
 		refreshMistakes();
 
 		const unsub = subscribe(() => {
+			lang = getSettings().lang;
 			if (!practicing) refreshMistakes();
 		});
 		return unsub;
@@ -166,7 +169,7 @@
 
 			<div class="card border-0 shadow-sm">
 				<div class="card-body">
-					<p class="mb-0" style="line-height:1.5;">{currentQuestion.text}</p>
+					<p class="mb-0" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
 					{#if hasMultipleAnswers}
 						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
 					{/if}
@@ -182,7 +185,7 @@
 					>
 						<div class="card-body py-2 px-3 d-flex align-items-start gap-2">
 							<span class="fw-bold text-body-secondary flex-shrink-0">{option.letter})</span>
-							<span class="flex-grow-1 small" style="line-height:1.4;">{option.text}</span>
+							<span class="flex-grow-1 small" style="line-height:1.4;">{oText(option, lang)}</span>
 							{#if isAnswered && currentQuestion.correct_answers?.includes(option.letter)}
 								<span class="fw-bold text-success flex-shrink-0">✓</span>
 							{:else if isAnswered && selectedAnswers.has(option.letter) && !currentQuestion.correct_answers?.includes(option.letter)}
@@ -233,7 +236,7 @@
 							{@const prog = getQuestionProgress(q.section, q.id)}
 							<div class="card border-start border-danger border-3 shadow-sm mb-2">
 								<div class="card-body py-2 px-3">
-									<p class="small mb-1" style="line-height:1.4;">{q.text}</p>
+									<p class="small mb-1" style="line-height:1.4;">{qText(q, lang)}</p>
 									{#if prog}
 										<div class="d-flex gap-3">
 											<small class="fw-semibold text-success">✓ {prog.correct}</small>
