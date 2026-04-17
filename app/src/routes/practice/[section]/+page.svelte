@@ -46,159 +46,50 @@
 		if (stat.correct > 0 || stat.wrong > 0) return 'in-progress';
 		return 'not-started';
 	}
+
+	function borderClass(status: string): string {
+		if (status === 'complete') return 'border-success';
+		if (status === 'in-progress') return 'border-warning';
+		return '';
+	}
 </script>
 
-<div class="chunks-page">
-	<header class="page-header">
-		<a href="/practice" class="back-btn" aria-label="Назад">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M15 18l-6-6 6-6"/>
-			</svg>
-		</a>
-		<h1 class="header-title">{sectionName}</h1>
-		<div style="width: 40px"></div>
-	</header>
+<div class="pb-4">
+	<!-- Header -->
+	<nav class="navbar sticky-top bg-body border-bottom px-2">
+		<div class="d-flex align-items-center justify-content-between w-100">
+			<a href="/practice" class="btn btn-link text-body p-2" aria-label="Назад">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M15 18l-6-6 6-6"/>
+				</svg>
+			</a>
+			<h1 class="h6 fw-semibold mb-0 text-center flex-grow-1 text-truncate px-2">{sectionName}</h1>
+			<div style="width:40px"></div>
+		</div>
+	</nav>
 
-	<main class="chunk-grid">
+	<!-- Chunk grid -->
+	<div class="row row-cols-2 g-3 px-3 pt-3">
 		{#each chunks as chunk, i}
 			{@const stat = chunkStats[i] || { total: 0, correct: 0, wrong: 0 }}
 			{@const status = chunkStatus(stat)}
-			<a
-				href="/practice/{sectionId}/{chunk.index}"
-				class="chunk-card {status}"
-			>
-				<div class="chunk-number">
-					{chunk.start + 1}–{chunk.end}
-				</div>
-				<div class="chunk-progress">
-					<div class="chunk-bar">
-						<div
-							class="chunk-bar-fill correct"
-							style="width: {(stat.correct / stat.total) * 100}%"
-						></div>
-						<div
-							class="chunk-bar-fill wrong"
-							style="width: {(stat.wrong / stat.total) * 100}%"
-						></div>
+			<div class="col">
+				<a
+					href="/practice/{sectionId}/{chunk.index}"
+					class="card text-decoration-none border-start border-4 shadow-sm h-100 {borderClass(status)}"
+				>
+					<div class="card-body p-3">
+						<div class="fw-bold mb-2">{chunk.start + 1}–{chunk.end}</div>
+						<div class="d-flex align-items-center gap-2">
+							<div class="progress flex-grow-1" style="height:4px;">
+								<div class="progress-bar bg-success" style="width:{(stat.correct / stat.total) * 100}%"></div>
+								<div class="progress-bar bg-danger" style="width:{(stat.wrong / stat.total) * 100}%"></div>
+							</div>
+							<small class="text-body-secondary flex-shrink-0">{stat.correct}/{stat.total}</small>
+						</div>
 					</div>
-					<span class="chunk-count">{stat.correct}/{stat.total}</span>
-				</div>
-			</a>
+				</a>
+			</div>
 		{/each}
-	</main>
+	</div>
 </div>
-
-<style>
-	.chunks-page {
-		padding-bottom: 2rem;
-	}
-
-	.page-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.75rem 1rem;
-		background: var(--card);
-		border-bottom: 1px solid var(--border);
-		position: sticky;
-		top: 0;
-		z-index: 10;
-	}
-
-	.header-title {
-		font-size: 0.95rem;
-		font-weight: 600;
-		text-align: center;
-		flex: 1;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		padding: 0 0.5rem;
-	}
-
-	.back-btn {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-
-	.back-btn:active {
-		background: var(--bg-secondary);
-	}
-
-	.chunk-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 0.75rem;
-		padding: 1rem;
-	}
-
-	.chunk-card {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		padding: 1rem;
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		text-decoration: none;
-		color: var(--text);
-		transition: transform 0.15s;
-		border-left: 4px solid var(--border);
-	}
-
-	.chunk-card:active {
-		transform: scale(0.97);
-	}
-
-	.chunk-card.in-progress {
-		border-left-color: var(--warning);
-	}
-
-	.chunk-card.complete {
-		border-left-color: var(--success);
-	}
-
-	.chunk-number {
-		font-size: 1rem;
-		font-weight: 700;
-	}
-
-	.chunk-progress {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.chunk-bar {
-		flex: 1;
-		height: 4px;
-		background: var(--bg-secondary);
-		border-radius: 2px;
-		overflow: hidden;
-		display: flex;
-	}
-
-	.chunk-bar-fill {
-		height: 100%;
-		transition: width 0.3s ease;
-	}
-
-	.chunk-bar-fill.correct {
-		background: var(--success);
-	}
-
-	.chunk-bar-fill.wrong {
-		background: var(--danger);
-	}
-
-	.chunk-count {
-		font-size: 0.7rem;
-		color: var(--text-secondary);
-		flex-shrink: 0;
-	}
-</style>

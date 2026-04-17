@@ -39,25 +39,29 @@
 	}
 </script>
 
-<div class="practice-page">
-	<header class="page-header">
-		<a href="/" class="back-btn" aria-label="Назад">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M15 18l-6-6 6-6"/>
-			</svg>
-		</a>
-		<h1>Тренировка</h1>
-		<div style="width: 40px"></div>
-	</header>
+<div class="pb-4">
+	<!-- Header -->
+	<nav class="navbar sticky-top bg-body border-bottom px-2">
+		<div class="d-flex align-items-center justify-content-between w-100">
+			<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M15 18l-6-6 6-6"/>
+				</svg>
+			</a>
+			<h1 class="h6 fw-semibold mb-0">Тренировка</h1>
+			<div style="width:40px"></div>
+		</div>
+	</nav>
 
-	<main class="section-list">
+	<!-- Section list -->
+	<div class="list-group list-group-flush px-3 pt-3 d-flex flex-column gap-2">
 		{#each sections as section}
 			{@const pct = progressPercent(section.id)}
 			{@const color = sectionColor(section.id)}
-			<a href="/practice/{section.id}" class="section-card">
-				<div class="section-ring">
+			<a href="/practice/{section.id}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded-3 border shadow-sm px-3 py-3">
+				<div class="flex-shrink-0">
 					<svg width="48" height="48" viewBox="0 0 48 48">
-						<circle cx="24" cy="24" r="18" fill="none" stroke="var(--border)" stroke-width="4"/>
+						<circle cx="24" cy="24" r="18" fill="none" stroke="var(--bs-border-color)" stroke-width="4"/>
 						<circle
 							cx="24" cy="24" r="18"
 							fill="none"
@@ -73,109 +77,16 @@
 						</text>
 					</svg>
 				</div>
-				<div class="section-info">
-					<div class="section-name">
-						<span class="section-emoji">{sectionIcon(section.id)}</span>
-						{section.name}
+				<div class="flex-grow-1 min-w-0">
+					<div class="fw-semibold small">
+						<span class="me-1">{sectionIcon(section.id)}</span>{section.name}
 					</div>
-					<div class="section-meta">
+					<small class="text-body-secondary">
 						{sectionCompleted[section.id] || 0} / {sectionQuestionCounts[section.id] || section.questions} питања
-					</div>
+					</small>
 				</div>
-				<div class="section-arrow">›</div>
+				<span class="text-body-tertiary fs-4">›</span>
 			</a>
 		{/each}
-	</main>
+	</div>
 </div>
-
-<style>
-	.practice-page {
-		padding-bottom: 2rem;
-	}
-
-	.page-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.75rem 1rem;
-		background: var(--card);
-		border-bottom: 1px solid var(--border);
-		position: sticky;
-		top: 0;
-		z-index: 10;
-	}
-
-	.page-header h1 {
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-
-	.back-btn {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		transition: background 0.2s;
-	}
-
-	.back-btn:active {
-		background: var(--bg-secondary);
-	}
-
-	.section-list {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		padding: 1rem;
-	}
-
-	.section-card {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		padding: 0.75rem;
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		transition: transform 0.15s;
-		text-decoration: none;
-		color: var(--text);
-	}
-
-	.section-card:active {
-		transform: scale(0.98);
-	}
-
-	.section-ring {
-		flex-shrink: 0;
-	}
-
-	.section-info {
-		flex: 1;
-		min-width: 0;
-	}
-
-	.section-name {
-		font-size: 0.9rem;
-		font-weight: 600;
-		line-height: 1.3;
-	}
-
-	.section-emoji {
-		margin-right: 0.25rem;
-	}
-
-	.section-meta {
-		font-size: 0.75rem;
-		color: var(--text-secondary);
-		margin-top: 0.15rem;
-	}
-
-	.section-arrow {
-		font-size: 1.5rem;
-		color: var(--text-muted);
-		flex-shrink: 0;
-	}
-</style>

@@ -56,311 +56,108 @@
 	}
 </script>
 
-<div class="stats-page">
-	<header class="page-header">
-		<a href="/" class="back-btn" aria-label="Назад">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M15 18l-6-6 6-6"/>
-			</svg>
-		</a>
-		<h1>Статистика</h1>
-		<div style="width: 40px"></div>
-	</header>
-
-	<main class="stats-content">
-		<!-- Overall progress -->
-		<div class="overall-card">
-			<div class="overall-ring">
-				<svg width="100" height="100" viewBox="0 0 100 100">
-					<circle cx="50" cy="50" r="40" fill="none" stroke="var(--border)" stroke-width="8"/>
-					<circle
-						cx="50" cy="50" r="40"
-						fill="none"
-						stroke="var(--primary)"
-						stroke-width="8"
-						stroke-dasharray="{(overallPercent / 100) * 2 * Math.PI * 40} {2 * Math.PI * 40}"
-						stroke-linecap="round"
-						transform="rotate(-90 50 50)"
-					/>
-					<text x="50" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="var(--text)">
-						{overallPercent}%
-					</text>
-					<text x="50" y="62" text-anchor="middle" font-size="10" fill="var(--text-secondary)">
-						завршено
-					</text>
+<div class="pb-4">
+	<!-- Header -->
+	<nav class="navbar sticky-top bg-body border-bottom px-2">
+		<div class="d-flex align-items-center justify-content-between w-100">
+			<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M15 18l-6-6 6-6"/>
 				</svg>
-			</div>
-			<div class="overall-stats">
-				<div class="stat-item">
-					<span class="stat-value">{totalCompleted}</span>
-					<span class="stat-label">Урађено</span>
+			</a>
+			<h1 class="h6 fw-semibold mb-0">Статистика</h1>
+			<div style="width:40px"></div>
+		</div>
+	</nav>
+
+	<div class="p-3 d-flex flex-column gap-3">
+		<!-- Overall progress -->
+		<div class="card border-0 shadow-sm">
+			<div class="card-body d-flex flex-column align-items-center gap-3 p-4">
+				<div class="overall-ring">
+					<svg width="100" height="100" viewBox="0 0 100 100">
+						<circle cx="50" cy="50" r="40" fill="none" stroke="var(--bs-border-color)" stroke-width="8"/>
+						<circle
+							cx="50" cy="50" r="40"
+							fill="none"
+							stroke="var(--bs-primary)"
+							stroke-width="8"
+							stroke-dasharray="{(overallPercent / 100) * 2 * Math.PI * 40} {2 * Math.PI * 40}"
+							stroke-linecap="round"
+							transform="rotate(-90 50 50)"
+						/>
+						<text x="50" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="var(--bs-body-color)">
+							{overallPercent}%
+						</text>
+						<text x="50" y="62" text-anchor="middle" font-size="10" fill="var(--bs-secondary-color)">
+							завршено
+						</text>
+					</svg>
 				</div>
-				<div class="stat-item">
-					<span class="stat-value">{totalActive - totalCompleted}</span>
-					<span class="stat-label">Преостало</span>
-				</div>
-				<div class="stat-item">
-					<span class="stat-value">{mistakeCount}</span>
-					<span class="stat-label">Грешке</span>
+				<div class="d-flex gap-4">
+					<div class="text-center">
+						<span class="d-block fs-5 fw-bold">{totalCompleted}</span>
+						<small class="text-body-secondary">Урађено</small>
+					</div>
+					<div class="text-center">
+						<span class="d-block fs-5 fw-bold">{totalActive - totalCompleted}</span>
+						<small class="text-body-secondary">Преостало</small>
+					</div>
+					<div class="text-center">
+						<span class="d-block fs-5 fw-bold">{mistakeCount}</span>
+						<small class="text-body-secondary">Грешке</small>
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- Per-section breakdown -->
-		<div class="section-stats">
-			<h2>По областима</h2>
-			{#each sections as section}
-				{@const total = sectionCounts[section.id] || 1}
-				{@const done = sectionCompleted[section.id] || 0}
-				{@const pct = Math.round((done / total) * 100)}
-				<div class="section-row">
-					<div class="section-label">
-						<span>{sectionIcon(section.id)}</span>
-						<span class="section-name">{section.name}</span>
-					</div>
-					<div class="section-bar-row">
-						<div class="section-bar">
-							<div
-								class="section-bar-fill"
-								style="width: {pct}%; background: {sectionColor(section.id)}"
-							></div>
+		<div class="card border-0 shadow-sm">
+			<div class="card-body">
+				<h2 class="h6 fw-semibold mb-3">По областима</h2>
+				{#each sections as section}
+					{@const total = sectionCounts[section.id] || 1}
+					{@const done = sectionCompleted[section.id] || 0}
+					{@const pct = Math.round((done / total) * 100)}
+					<div class="mb-3">
+						<div class="d-flex align-items-center gap-2 mb-1">
+							<span>{sectionIcon(section.id)}</span>
+							<small class="text-body-secondary text-truncate">{section.name}</small>
 						</div>
-						<span class="section-pct">{done}/{total}</span>
+						<div class="d-flex align-items-center gap-2">
+							<div class="progress flex-grow-1" style="height:6px;">
+								<div class="progress-bar" style="width:{pct}%;background:{sectionColor(section.id)}"></div>
+							</div>
+							<small class="text-body-tertiary flex-shrink-0" style="min-width:4rem;text-align:right;">{done}/{total}</small>
+						</div>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
 
 		<!-- Exam history -->
-		<div class="exam-history">
-			<h2>Историја испита</h2>
-			{#if exams.length === 0}
-				<p class="no-exams">Нема покушаја испита.</p>
-			{:else}
-				{#each exams as exam}
-					<div class="exam-row" class:passed={exam.passed} class:failed={!exam.passed}>
-						<div class="exam-info">
-							<span class="exam-badge">{exam.passed ? '✓' : '✗'}</span>
-							<div>
-								<div class="exam-score">{exam.score} / {exam.total}</div>
-								<div class="exam-date">{formatDate(exam.date)}</div>
+		<div class="card border-0 shadow-sm">
+			<div class="card-body">
+				<h2 class="h6 fw-semibold mb-3">Историја испита</h2>
+				{#if exams.length === 0}
+					<p class="text-body-tertiary small text-center py-3">Нема покушаја испита.</p>
+				{:else}
+					{#each exams as exam, i}
+						<div class="d-flex align-items-center justify-content-between py-2 {i < exams.length - 1 ? 'border-bottom' : ''}">
+							<div class="d-flex align-items-center gap-2">
+								<span class="badge rounded-circle d-flex align-items-center justify-content-center {exam.passed ? 'text-bg-success' : 'text-bg-danger'}" style="width:28px;height:28px;font-size:0.8rem;">
+									{exam.passed ? '✓' : '✗'}
+								</span>
+								<div>
+									<div class="small fw-semibold">{exam.score} / {exam.total}</div>
+									<div class="text-body-tertiary" style="font-size:0.7rem;">{formatDate(exam.date)}</div>
+								</div>
 							</div>
+							<small class="text-body-secondary">{exam.total - exam.score} грешака</small>
 						</div>
-						<span class="exam-errors">{exam.total - exam.score} грешака</span>
-					</div>
-				{/each}
-			{/if}
+					{/each}
+				{/if}
+			</div>
 		</div>
-	</main>
+	</div>
 </div>
-
-<style>
-	.stats-page {
-		padding-bottom: 2rem;
-	}
-
-	.page-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.75rem 1rem;
-		background: var(--card);
-		border-bottom: 1px solid var(--border);
-		position: sticky;
-		top: 0;
-		z-index: 10;
-	}
-
-	.page-header h1 {
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-
-	.back-btn {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-
-	.stats-content {
-		padding: 1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	/* Overall */
-	.overall-card {
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-	}
-
-	.overall-stats {
-		display: flex;
-		gap: 2rem;
-	}
-
-	.stat-item {
-		text-align: center;
-	}
-
-	.stat-value {
-		display: block;
-		font-size: 1.3rem;
-		font-weight: 700;
-	}
-
-	.stat-label {
-		font-size: 0.75rem;
-		color: var(--text-secondary);
-	}
-
-	/* Section stats */
-	.section-stats {
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		padding: 1rem;
-	}
-
-	.section-stats h2 {
-		font-size: 0.95rem;
-		margin-bottom: 0.75rem;
-	}
-
-	.section-row {
-		margin-bottom: 0.75rem;
-	}
-
-	.section-row:last-child {
-		margin-bottom: 0;
-	}
-
-	.section-label {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		margin-bottom: 0.25rem;
-	}
-
-	.section-name {
-		font-size: 0.8rem;
-		color: var(--text-secondary);
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-
-	.section-bar-row {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.section-bar {
-		flex: 1;
-		height: 6px;
-		background: var(--bg-secondary);
-		border-radius: 3px;
-		overflow: hidden;
-	}
-
-	.section-bar-fill {
-		height: 100%;
-		border-radius: 3px;
-		transition: width 0.3s ease;
-	}
-
-	.section-pct {
-		font-size: 0.7rem;
-		color: var(--text-muted);
-		flex-shrink: 0;
-		min-width: 4rem;
-		text-align: right;
-	}
-
-	/* Exam history */
-	.exam-history {
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		padding: 1rem;
-	}
-
-	.exam-history h2 {
-		font-size: 0.95rem;
-		margin-bottom: 0.75rem;
-	}
-
-	.no-exams {
-		color: var(--text-muted);
-		font-size: 0.85rem;
-		text-align: center;
-		padding: 1rem;
-	}
-
-	.exam-row {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.6rem 0;
-		border-bottom: 1px solid var(--border);
-	}
-
-	.exam-row:last-child {
-		border-bottom: none;
-	}
-
-	.exam-info {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-	}
-
-	.exam-badge {
-		width: 28px;
-		height: 28px;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: 700;
-		font-size: 0.8rem;
-		flex-shrink: 0;
-	}
-
-	.exam-row.passed .exam-badge {
-		background: var(--success-light);
-		color: var(--success);
-	}
-
-	.exam-row.failed .exam-badge {
-		background: var(--danger-light);
-		color: var(--danger);
-	}
-
-	.exam-score {
-		font-size: 0.9rem;
-		font-weight: 600;
-	}
-
-	.exam-date {
-		font-size: 0.7rem;
-		color: var(--text-muted);
-	}
-
-	.exam-errors {
-		font-size: 0.8rem;
-		color: var(--text-secondary);
-	}
-</style>

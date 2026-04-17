@@ -28,203 +28,74 @@
 	let progressPercent = $derived(Math.round((completed / totalQuestions) * 100));
 </script>
 
-<div class="home">
-	<header class="home-header">
-		<div class="header-content">
-			<h1>🚗 Возачки испит</h1>
-			<a href="/settings" class="settings-btn" aria-label="Подешавања">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<circle cx="12" cy="12" r="3"/>
-					<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+<div class="pb-4">
+	<!-- Header -->
+	<div class="px-3 pt-4 pb-4">
+		<div class="d-flex justify-content-between align-items-center">
+			<h1 class="h5 fw-bold mb-0">🚗 Возачки испит</h1>
+			<a href="/settings" class="btn btn-light btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;" aria-label="Подешавања">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="6" x2="21" y2="6"/>
+					<line x1="3" y1="12" x2="21" y2="12"/>
+					<line x1="3" y1="18" x2="21" y2="18"/>
 				</svg>
 			</a>
 		</div>
-	</header>
+	</div>
 
-	<main class="cards">
-		<a href="/practice" class="card card-practice">
-			<div class="card-icon">📚</div>
-			<div class="card-body">
-				<h2>Тренировка</h2>
-				<p>{completed} / {totalQuestions} питања</p>
-			</div>
-			<div class="card-progress">
-				<div class="progress-bar">
-					<div class="progress-fill" style="width: {progressPercent}%"></div>
+	<!-- Cards -->
+	<div class="d-flex flex-column gap-3 px-3">
+		<!-- Practice card -->
+		<a href="/practice" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+			<div class="card-body d-flex align-items-center gap-3 flex-wrap">
+				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📚</div>
+				<div class="flex-grow-1 min-w-0">
+					<h2 class="h6 fw-semibold mb-0">Тренировка</h2>
+					<small class="opacity-75">{completed} / {totalQuestions} питања</small>
 				</div>
-				<span class="progress-text">{progressPercent}%</span>
+				<div class="w-100 d-flex align-items-center gap-2 mt-1">
+					<div class="progress flex-grow-1" style="height:6px;background:rgba(255,255,255,0.3);">
+						<div class="progress-bar bg-white" style="width:{progressPercent}%"></div>
+					</div>
+					<small class="fw-semibold opacity-75 flex-shrink-0">{progressPercent}%</small>
+				</div>
 			</div>
 		</a>
 
-		<a href="/exam" class="card card-exam">
-			<div class="card-icon">📝</div>
-			<div class="card-body">
-				<h2>Испит</h2>
-				<p>{passedExams} положених од {totalExams} покушаја</p>
+		<!-- Exam card -->
+		<a href="/exam" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #10b981, #059669);">
+			<div class="card-body d-flex align-items-center gap-3">
+				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📝</div>
+				<div class="flex-grow-1">
+					<h2 class="h6 fw-semibold mb-0">Испит</h2>
+					<small class="opacity-75">{passedExams} положених од {totalExams} покушаја</small>
+				</div>
+				<span class="opacity-50 fs-5">→</span>
 			</div>
-			<div class="card-arrow">→</div>
 		</a>
 
-		<a href="/mistakes" class="card card-mistakes">
-			<div class="card-icon">❌</div>
-			<div class="card-body">
-				<h2>Моје грешке</h2>
-				<p>{mistakeCount} питања за понављање</p>
+		<!-- Mistakes card -->
+		<a href="/mistakes" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+			<div class="card-body d-flex align-items-center gap-3">
+				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">❌</div>
+				<div class="flex-grow-1">
+					<h2 class="h6 fw-semibold mb-0">Моје грешке</h2>
+					<small class="opacity-75">{mistakeCount} питања за понављање</small>
+				</div>
+				<span class="opacity-50 fs-5">→</span>
 			</div>
-			<div class="card-arrow">→</div>
 		</a>
 
-		<a href="/statistics" class="card card-stats">
-			<div class="card-icon">📊</div>
-			<div class="card-body">
-				<h2>Статистика</h2>
-				<p>Преглед напретка</p>
+		<!-- Statistics card -->
+		<a href="/statistics" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+			<div class="card-body d-flex align-items-center gap-3">
+				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📊</div>
+				<div class="flex-grow-1">
+					<h2 class="h6 fw-semibold mb-0">Статистика</h2>
+					<small class="opacity-75">Преглед напретка</small>
+				</div>
+				<span class="opacity-50 fs-5">→</span>
 			</div>
-			<div class="card-arrow">→</div>
 		</a>
-	</main>
+	</div>
 </div>
-
-<style>
-	.home {
-		padding-bottom: 2rem;
-	}
-
-	.home-header {
-		background: var(--primary);
-		color: white;
-		padding: 1.5rem 1rem 2rem;
-		border-radius: 0 0 24px 24px;
-	}
-
-	.header-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.header-content h1 {
-		font-size: 1.4rem;
-		font-weight: 700;
-	}
-
-	.settings-btn {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.2);
-		transition: background 0.2s;
-	}
-
-	.settings-btn:active {
-		background: rgba(255, 255, 255, 0.3);
-	}
-
-	.cards {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-		padding: 1rem;
-		margin-top: -1rem;
-	}
-
-	.card {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		padding: 1rem;
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		transition: transform 0.15s, box-shadow 0.15s;
-		text-decoration: none;
-		color: white;
-	}
-
-	.card:active {
-		transform: scale(0.98);
-	}
-
-	.card-practice {
-		background: linear-gradient(135deg, #3b82f6, #2563eb);
-		flex-wrap: wrap;
-	}
-
-	.card-exam {
-		background: linear-gradient(135deg, #10b981, #059669);
-	}
-
-	.card-mistakes {
-		background: linear-gradient(135deg, #ef4444, #dc2626);
-	}
-
-	.card-stats {
-		background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-	}
-
-	.card-icon {
-		font-size: 2rem;
-		width: 48px;
-		height: 48px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: rgba(255, 255, 255, 0.2);
-		border-radius: var(--radius-sm);
-		flex-shrink: 0;
-	}
-
-	.card-body {
-		flex: 1;
-		min-width: 0;
-	}
-
-	.card-body h2 {
-		font-size: 1.1rem;
-		font-weight: 600;
-		margin-bottom: 0.15rem;
-	}
-
-	.card-body p {
-		font-size: 0.8rem;
-		opacity: 0.9;
-	}
-
-	.card-arrow {
-		font-size: 1.2rem;
-		opacity: 0.7;
-		flex-shrink: 0;
-	}
-
-	.card-progress {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		margin-top: 0.25rem;
-	}
-
-	.progress-bar {
-		flex: 1;
-		height: 6px;
-		background: rgba(255, 255, 255, 0.3);
-		border-radius: 3px;
-		overflow: hidden;
-	}
-
-	.progress-fill {
-		height: 100%;
-		background: white;
-		border-radius: 3px;
-		transition: width 0.3s ease;
-	}
-
-	.progress-text {
-		font-size: 0.75rem;
-		font-weight: 600;
-		opacity: 0.9;
-		flex-shrink: 0;
-	}
-</style>

@@ -17,7 +17,7 @@
 	let score = $state(0);
 
 	// Timer
-	let timeRemaining = $state(45 * 60); // 45 minutes in seconds
+	let timeRemaining = $state(45 * 60);
 	let timerInterval: ReturnType<typeof setInterval> | undefined;
 
 	let currentQuestion = $derived(questions[currentIndex]);
@@ -132,6 +132,17 @@
 		return 'dimmed';
 	}
 
+	function optionBorderClass(letter: string): string {
+		const cls = optionClass(letter);
+		switch (cls) {
+			case 'selected': return 'border-primary bg-primary-subtle';
+			case 'correct': return 'border-success bg-success-subtle';
+			case 'wrong': return 'border-danger bg-danger-subtle';
+			case 'dimmed': return 'opacity-50';
+			default: return '';
+		}
+	}
+
 	function pillState(index: number): string {
 		if (index === currentIndex) return 'current';
 		const q = questions[index];
@@ -140,6 +151,15 @@
 		if (wrongIds.includes(key)) return 'wrong';
 		if (answers[key]) return 'correct';
 		return 'unanswered';
+	}
+
+	function pillClass(state: string): string {
+		switch (state) {
+			case 'current': return 'bg-primary text-white';
+			case 'correct': return 'bg-success-subtle text-success border-success';
+			case 'wrong': return 'bg-danger-subtle text-danger border-danger';
+			default: return 'bg-body-secondary text-body-secondary';
+		}
 	}
 
 	onMount(() => {
@@ -160,544 +180,202 @@
 	});
 </script>
 
-<div class="exam-page">
+<div class="d-flex flex-column min-vh-100">
 	{#if phase === 'intro'}
-		<header class="page-header">
-			<a href="/" class="back-btn" aria-label="Назад">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<h1>Испит</h1>
-			<div style="width: 40px"></div>
-		</header>
+		<!-- Intro header -->
+		<nav class="navbar sticky-top bg-body border-bottom px-2">
+			<div class="d-flex align-items-center justify-content-between w-100">
+				<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M15 18l-6-6 6-6"/>
+					</svg>
+				</a>
+				<h1 class="h6 fw-semibold mb-0">Испит</h1>
+				<div style="width:40px"></div>
+			</div>
+		</nav>
 
-		<div class="intro-content">
-			<div class="intro-card">
-				<div class="intro-icon">📝</div>
-				<h2>Пробни испит</h2>
-				<ul class="intro-rules">
-					<li>41 питање из свих области</li>
-					<li>Време: 45 минута</li>
-					<li>Пролаз: највише 5 грешака</li>
-				</ul>
-				<button class="start-btn" onclick={startExam}>
-					Започни испит
-				</button>
+		<div class="flex-grow-1 d-flex align-items-center justify-content-center p-4">
+			<div class="card border-0 shadow text-center w-100">
+				<div class="card-body p-4">
+					<div class="fs-1 mb-3">📝</div>
+					<h2 class="h4 fw-bold mb-3">Пробни испит</h2>
+					<ul class="list-unstyled text-body-secondary mb-4">
+						<li class="py-1">• 41 питање из свих области</li>
+						<li class="py-1">• Време: 45 минута</li>
+						<li class="py-1">• Пролаз: највише 5 грешака</li>
+					</ul>
+					<button class="btn btn-success btn-lg w-100" onclick={startExam}>
+						Започни испит
+					</button>
+				</div>
 			</div>
 		</div>
 
 	{:else if phase === 'active' && currentQuestion}
-		<header class="page-header">
-			<button class="back-btn" onclick={() => { if (confirm('Прекинути испит?')) finishExam(); }} aria-label="Прекини">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</button>
-			<span class="header-title">
-				{currentIndex + 1} / {questions.length}
-			</span>
-			<span class="timer" class:warning={timeWarning}>
-				⏱ {timeDisplay}
-			</span>
-		</header>
+		<!-- Active exam header -->
+		<nav class="navbar sticky-top bg-body border-bottom px-2">
+			<div class="d-flex align-items-center justify-content-between w-100">
+				<button class="btn btn-link text-body p-2" onclick={() => { if (confirm('Прекинути испит?')) finishExam(); }} aria-label="Прекини">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M15 18l-6-6 6-6"/>
+					</svg>
+				</button>
+				<span class="text-body-secondary fw-semibold small">
+					{currentIndex + 1} / {questions.length}
+				</span>
+				<span class="badge rounded-pill {timeWarning ? 'text-bg-danger timer-pulse' : 'bg-body-secondary text-body'} px-3 py-2">
+					⏱ {timeDisplay}
+				</span>
+			</div>
+		</nav>
 
 		<!-- Pills -->
-		<div class="pills-scroll" bind:this={pillsContainer}>
+		<div class="pills-scroll bg-body border-bottom" bind:this={pillsContainer}>
 			{#each questions as _, i}
-				<div class="pill {pillState(i)}">
+				<div class="pill-item rounded-pill border {pillClass(pillState(i))}">
 					{i + 1}
 				</div>
 			{/each}
 		</div>
 
-		<main class="question-content">
+		<main class="flex-grow-1 p-3 d-flex flex-column gap-3">
 			{#if currentQuestion.has_image && currentQuestion.image}
-				<div class="question-image">
-					<img src="/images/{currentQuestion.image}" alt="Слика уз питање" />
+				<div class="card border-0 shadow-sm overflow-hidden">
+					<img src="/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
 				</div>
 			{/if}
 
-			<div class="question-text">
-				<p>{currentQuestion.text}</p>
-				{#if hasMultipleAnswers}
-					<span class="multi-badge">Више одговора ({currentQuestion.correct_answers_count})</span>
-				{/if}
+			<div class="card border-0 shadow-sm">
+				<div class="card-body">
+					<p class="mb-0" style="line-height:1.5;">{currentQuestion.text}</p>
+					{#if hasMultipleAnswers}
+						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
+					{/if}
+				</div>
 			</div>
 
-			<div class="options">
+			<div class="d-flex flex-column gap-2">
 				{#each currentQuestion.options as option}
 					<button
-						class="option-card {optionClass(option.letter)}"
+						class="card border-2 shadow-sm text-start {optionBorderClass(option.letter)}"
 						onclick={() => selectAnswer(option.letter)}
 						disabled={isAnswered}
 					>
-						<span class="option-letter">{option.letter})</span>
-						<span class="option-text">{option.text}</span>
-						{#if isAnswered && currentQuestion.correct_answers?.includes(option.letter)}
-							<span class="option-icon">✓</span>
-						{:else if isAnswered && selectedAnswers.has(option.letter) && !currentQuestion.correct_answers?.includes(option.letter)}
-							<span class="option-icon">✗</span>
-						{/if}
+						<div class="card-body py-2 px-3 d-flex align-items-start gap-2">
+							<span class="fw-bold text-body-secondary flex-shrink-0">{option.letter})</span>
+							<span class="flex-grow-1 small" style="line-height:1.4;">{option.text}</span>
+							{#if isAnswered && currentQuestion.correct_answers?.includes(option.letter)}
+								<span class="fw-bold text-success flex-shrink-0">✓</span>
+							{:else if isAnswered && selectedAnswers.has(option.letter) && !currentQuestion.correct_answers?.includes(option.letter)}
+								<span class="fw-bold text-danger flex-shrink-0">✗</span>
+							{/if}
+						</div>
 					</button>
 				{/each}
 			</div>
 
 			{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
-				<button class="confirm-btn" onclick={confirmMultiAnswer}>
+				<button class="btn btn-primary btn-lg w-100" onclick={confirmMultiAnswer}>
 					Потврди одговор ({selectedAnswers.size} изабрано)
 				</button>
 			{/if}
 
 			{#if isAnswered}
-				<button class="next-btn" onclick={nextQuestion}>
+				<button class="btn btn-primary btn-lg w-100" onclick={nextQuestion}>
 					{currentIndex < questions.length - 1 ? 'Следеће питање →' : 'Заврши испит'}
 				</button>
 			{/if}
 		</main>
 
 	{:else if phase === 'results'}
-		<header class="page-header">
-			<a href="/" class="back-btn" aria-label="Почетна">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<h1>Резултат</h1>
-			<div style="width: 40px"></div>
-		</header>
+		<!-- Results header -->
+		<nav class="navbar sticky-top bg-body border-bottom px-2">
+			<div class="d-flex align-items-center justify-content-between w-100">
+				<a href="/" class="btn btn-link text-body p-2" aria-label="Почетна">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M15 18l-6-6 6-6"/>
+					</svg>
+				</a>
+				<h1 class="h6 fw-semibold mb-0">Резултат</h1>
+				<div style="width:40px"></div>
+			</div>
+		</nav>
 
-		<div class="results-content">
-			<div class="result-card" class:passed class:failed={!passed}>
-				<div class="result-icon">{passed ? '🎉' : '😔'}</div>
-				<h2>{passed ? 'Положио/ла!' : 'Није положено'}</h2>
-				<div class="result-score">
-					<span class="score-number">{score}</span>
-					<span class="score-total">/ {questions.length}</span>
+		<div class="p-3 d-flex flex-column gap-3">
+			<!-- Result card -->
+			<div class="card border-0 shadow text-center border-top border-4 {passed ? 'border-success' : 'border-danger'}">
+				<div class="card-body p-4">
+					<div class="fs-1 mb-2">{passed ? '🎉' : '😔'}</div>
+					<h2 class="h4 fw-bold {passed ? 'text-success' : 'text-danger'} mb-3">
+						{passed ? 'Положио/ла!' : 'Није положено'}
+					</h2>
+					<div class="mb-2">
+						<span class="display-4 fw-bold">{score}</span>
+						<span class="fs-5 text-body-secondary">/ {questions.length}</span>
+					</div>
+					<p class="text-body-secondary">{wrongIds.length} грешака (дозвољено: 5)</p>
 				</div>
-				<p class="result-errors">{wrongIds.length} грешака (дозвољено: 5)</p>
 			</div>
 
+			<!-- Wrong answers -->
 			{#if wrongIds.length > 0}
-				<div class="wrong-list">
-					<h3>Грешке:</h3>
-					{#each wrongIds as wrongKey}
-						{@const q = questions.find((q) => questionKey(q) === wrongKey)}
-						{#if q}
-							<div class="wrong-item">
-								<p class="wrong-question">{q.text}</p>
-								<p class="wrong-answer">
-									Тачан одговор: {q.correct_answers?.join(', ')}
-								</p>
-							</div>
-						{/if}
-					{/each}
+				<div class="card border-0 shadow-sm">
+					<div class="card-body">
+						<h3 class="h6 text-danger mb-3">Грешке:</h3>
+						{#each wrongIds as wrongKey, i}
+							{@const q = questions.find((q) => questionKey(q) === wrongKey)}
+							{#if q}
+								<div class="py-2 {i < wrongIds.length - 1 ? 'border-bottom' : ''}">
+									<p class="small mb-1" style="line-height:1.4;">{q.text}</p>
+									<p class="small text-success fw-semibold mb-0">
+										Тачан одговор: {q.correct_answers?.join(', ')}
+									</p>
+								</div>
+							{/if}
+						{/each}
+					</div>
 				</div>
 			{/if}
 
-			<div class="result-actions">
-				<button class="start-btn" onclick={startExam}>Нови испит</button>
-				<a href="/" class="home-link">← Почетна</a>
+			<!-- Actions -->
+			<div class="d-flex flex-column gap-2 align-items-center">
+				<button class="btn btn-success btn-lg w-100" onclick={startExam}>Нови испит</button>
+				<a href="/" class="text-primary fw-medium">← Почетна</a>
 			</div>
 		</div>
 	{/if}
 </div>
 
 <style>
-	.exam-page {
-		display: flex;
-		flex-direction: column;
-		min-height: 100dvh;
-	}
-
-	.page-header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 0.5rem 0.75rem;
-		background: var(--card);
-		border-bottom: 1px solid var(--border);
-		position: sticky;
-		top: 0;
-		z-index: 10;
-	}
-
-	.page-header h1 {
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
-
-	.header-title {
-		font-size: 0.9rem;
-		font-weight: 600;
-		color: var(--text-secondary);
-	}
-
-	.back-btn {
-		width: 40px;
-		height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 50%;
-		flex-shrink: 0;
-	}
-
-	.timer {
-		font-size: 0.85rem;
-		font-weight: 700;
-		color: var(--text);
-		padding: 0.3rem 0.6rem;
-		background: var(--bg-secondary);
-		border-radius: var(--radius-pill);
-	}
-
-	.timer.warning {
-		color: var(--danger);
-		background: var(--danger-light);
-		animation: pulse 1s infinite;
-	}
-
-	@keyframes pulse {
-		50% { opacity: 0.7; }
-	}
-
-	/* Pills */
 	.pills-scroll {
 		display: flex;
 		gap: 0.35rem;
 		padding: 0.5rem 0.75rem;
 		overflow-x: auto;
 		scrollbar-width: none;
-		background: var(--card);
-		border-bottom: 1px solid var(--border);
 	}
 
 	.pills-scroll::-webkit-scrollbar {
 		display: none;
 	}
 
-	.pill {
+	.pill-item {
 		min-width: 28px;
 		height: 28px;
-		border-radius: var(--radius-pill);
 		font-size: 0.7rem;
 		font-weight: 600;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-shrink: 0;
-		border: 2px solid transparent;
-		background: var(--bg-secondary);
-		color: var(--text-secondary);
 	}
 
-	.pill.current {
-		background: var(--primary);
-		color: white;
+	.timer-pulse {
+		animation: pulse 1s infinite;
 	}
 
-	.pill.correct {
-		background: var(--success-light);
-		color: var(--success);
-		border-color: var(--success);
-	}
-
-	.pill.wrong {
-		background: var(--danger-light);
-		color: var(--danger);
-		border-color: var(--danger);
-	}
-
-	/* Intro */
-	.intro-content {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem 1rem;
-	}
-
-	.intro-card {
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow-lg);
-		padding: 2rem;
-		text-align: center;
-		width: 100%;
-	}
-
-	.intro-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-
-	.intro-card h2 {
-		font-size: 1.3rem;
-		margin-bottom: 1rem;
-	}
-
-	.intro-rules {
-		list-style: none;
-		margin-bottom: 1.5rem;
-	}
-
-	.intro-rules li {
-		padding: 0.4rem 0;
-		color: var(--text-secondary);
-		font-size: 0.9rem;
-	}
-
-	.intro-rules li::before {
-		content: '• ';
-		color: var(--primary);
-	}
-
-	.start-btn {
-		width: 100%;
-		padding: 0.85rem;
-		background: var(--success);
-		color: white;
-		border-radius: var(--radius);
-		font-weight: 600;
-		font-size: 1rem;
-		transition: opacity 0.2s;
-	}
-
-	.start-btn:active {
-		opacity: 0.8;
-	}
-
-	/* Question content */
-	.question-content {
-		flex: 1;
-		padding: 0.75rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
-
-	.question-image {
-		border-radius: var(--radius);
-		overflow: hidden;
-		background: var(--card);
-		box-shadow: var(--shadow);
-	}
-
-	.question-text {
-		background: var(--card);
-		padding: 1rem;
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-	}
-
-	.question-text p {
-		font-size: 0.95rem;
-		line-height: 1.5;
-	}
-
-	.multi-badge {
-		display: inline-block;
-		margin-top: 0.5rem;
-		padding: 0.2rem 0.6rem;
-		background: var(--primary-light);
-		color: var(--primary);
-		border-radius: var(--radius-pill);
-		font-size: 0.7rem;
-		font-weight: 600;
-	}
-
-	.options {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.option-card {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.6rem;
-		padding: 0.85rem 1rem;
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow);
-		text-align: left;
-		transition: all 0.2s;
-		border: 2px solid transparent;
-	}
-
-	.option-card.selected {
-		border-color: var(--primary);
-		background: var(--primary-light);
-	}
-
-	.option-card.correct {
-		border-color: var(--success);
-		background: var(--success-light);
-	}
-
-	.option-card.wrong {
-		border-color: var(--danger);
-		background: var(--danger-light);
-	}
-
-	.option-card.dimmed {
-		opacity: 0.5;
-	}
-
-	.option-card:disabled {
-		cursor: default;
-	}
-
-	.option-letter {
-		font-weight: 700;
-		color: var(--text-secondary);
-		flex-shrink: 0;
-	}
-
-	.option-text {
-		flex: 1;
-		font-size: 0.9rem;
-		line-height: 1.4;
-	}
-
-	.option-icon {
-		flex-shrink: 0;
-		font-weight: 700;
-	}
-
-	.option-card.correct .option-icon {
-		color: var(--success);
-	}
-
-	.option-card.wrong .option-icon {
-		color: var(--danger);
-	}
-
-	.confirm-btn {
-		padding: 0.85rem;
-		background: var(--primary);
-		color: white;
-		border-radius: var(--radius);
-		font-weight: 600;
-		font-size: 0.95rem;
-	}
-
-	.next-btn {
-		padding: 0.85rem;
-		background: var(--primary);
-		color: white;
-		border-radius: var(--radius);
-		font-weight: 600;
-		font-size: 0.95rem;
-		text-align: center;
-	}
-
-	/* Results */
-	.results-content {
-		padding: 1rem;
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.result-card {
-		background: var(--card);
-		border-radius: var(--radius);
-		box-shadow: var(--shadow-lg);
-		padding: 2rem;
-		text-align: center;
-	}
-
-	.result-card.passed {
-		border-top: 4px solid var(--success);
-	}
-
-	.result-card.failed {
-		border-top: 4px solid var(--danger);
-	}
-
-	.result-icon {
-		font-size: 3rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.result-card h2 {
-		font-size: 1.3rem;
-		margin-bottom: 0.75rem;
-	}
-
-	.result-card.passed h2 {
-		color: var(--success);
-	}
-
-	.result-card.failed h2 {
-		color: var(--danger);
-	}
-
-	.result-score {
-		margin-bottom: 0.5rem;
-	}
-
-	.score-number {
-		font-size: 2.5rem;
-		font-weight: 800;
-	}
-
-	.score-total {
-		font-size: 1.2rem;
-		color: var(--text-secondary);
-	}
-
-	.result-errors {
-		color: var(--text-secondary);
-		font-size: 0.9rem;
-	}
-
-	.wrong-list {
-		background: var(--card);
-		border-radius: var(--radius);
-		padding: 1rem;
-		box-shadow: var(--shadow);
-	}
-
-	.wrong-list h3 {
-		font-size: 0.95rem;
-		margin-bottom: 0.75rem;
-		color: var(--danger);
-	}
-
-	.wrong-item {
-		padding: 0.75rem 0;
-		border-bottom: 1px solid var(--border);
-	}
-
-	.wrong-item:last-child {
-		border-bottom: none;
-	}
-
-	.wrong-question {
-		font-size: 0.85rem;
-		line-height: 1.4;
-		margin-bottom: 0.3rem;
-	}
-
-	.wrong-answer {
-		font-size: 0.8rem;
-		color: var(--success);
-		font-weight: 600;
-	}
-
-	.result-actions {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-		align-items: center;
-	}
-
-	.home-link {
-		color: var(--primary);
-		font-size: 0.9rem;
-		font-weight: 500;
+	@keyframes pulse {
+		50% { opacity: 0.7; }
 	}
 </style>
