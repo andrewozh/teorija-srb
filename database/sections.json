@@ -6,16 +6,10 @@
     "answers_header": null
   },
   {
-    "id": "pravila_saobracaja",
-    "name": "Правила саобраћаја",
-    "pdf": "Pravila saobracaja PDF.pdf",
-    "answers_header": "ПРАВИЛА САОБРАЋАЈА"
-  },
-  {
-    "id": "saobracajna_signalizacija",
-    "name": "Саобраћајна сигнализација",
-    "pdf": "Saobracajna signalizacija PDF.pdf",
-    "answers_header": "САОБРАЋАЈНА СИГНАЛИЗАЦИЈА"
+    "id": "osnove_bezbednosti",
+    "name": "Основе безбедности саобраћаја и појмови",
+    "pdf": "Osnove bezbednosti saobracaja i pojmovi i izrazi PDF.pdf",
+    "answers_header": "ОСНОВЕ БЕЗБЕДНОСТИ САОБРАЋАЈА И ПОЈМОВИ"
   },
   {
     "id": "vozaci",
@@ -30,10 +24,16 @@
     "answers_header": "ВОЗИЛА"
   },
   {
-    "id": "osnove_bezbednosti",
-    "name": "Основе безбедности саобраћаја и појмови",
-    "pdf": "Osnove bezbednosti saobracaja i pojmovi i izrazi PDF.pdf",
-    "answers_header": "ОСНОВЕ БЕЗБЕДНОСТИ САОБРАЋАЈА И ПОЈМОВИ"
+    "id": "saobracajna_signalizacija",
+    "name": "Саобраћајна сигнализација",
+    "pdf": "Saobracajna signalizacija PDF.pdf",
+    "answers_header": "САОБРАЋАЈНА СИГНАЛИЗАЦИЈА"
+  },
+  {
+    "id": "pravila_saobracaja",
+    "name": "Правила саобраћаја",
+    "pdf": "Pravila saobracaja PDF.pdf",
+    "answers_header": "ПРАВИЛА САОБРАЋАЈА"
   },
   {
     "id": "posebne_mere",
