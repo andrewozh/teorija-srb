@@ -23,57 +23,108 @@
 
 # Design
 
-Context: this is PWA application for learning and practicing questions for Serbian driving license exam.
+## What is this
 
-Features:
-* minimalistic app icon
-* Russian language support
-* quick switch between serbian and Russian
+A mobile PWA for studying questions for the Serbian driving license theory exam.
+~1780 questions grouped into 9 topic sections. Some questions have images.
+Two languages: Serbian Cyrillic (primary) and Russian (secondary).
+Works fully offline. All progress stored locally.
 
-Header (page element: available on all pages):
-* back button (if needed)
-* page name
-* settings button
+## General
 
-Settings page:
-* Language (App language, questions language)
-* Theme (light/dark/system)
-* Import/export data
+- Mobile-first, phone-sized layout
+- Minimalistic app icon (car/road/driving theme)
+- Light / Dark / System theme
+- Clean, minimal aesthetic
+- Serbian Cyrillic + Russian language support
+- Quick language switch always accessible (one tap, not buried in settings)
 
-Homepage:
-* Welcome message (if app data is empty)
-  Quick import button
-* Link to page: Training
-* Link to page: Exam
-* Link to page: Mistakes (leads to questions block page)
-* Link to page: Statistics
-* Link to page: About (at the bottom of page)
+## Header (global, all pages)
 
-Training page:
-* Shows the sections with progress bars: leads to section page
+- Back button (only shown when not on home)
+- Page name
+- Settings button
 
-Trainig/Section page:
-* Contains blocks of questions (20 questions per block) with progress bars: leads to questions block page
+## Pages
 
-Exam page:
-* Exam rules
-* Exam stats
-* Start buttom: leads to questions block page
+### Homepage
 
-Questions block page:
-* Questions row: a line of numbered links to questions in block (color according to answer)
-* Question header: icons for new/changed/removed, section > topic > question number, failed prev question mark
-* Question main block: image (if any), question text, answers (the answers must always be at bottom half of screen to be easily reachable with thumb)
-* Question footer (minimalistic buttons): language switcher, bookmark button, report button, hint button (if any)
-* navigation gestures: gracefully swipe questions left and right
+First visit (no data):
+- Welcome message
+- Quick import button (restore progress from file)
 
-Statistics page:
-* todo
+Normal state — navigation cards:
+- Training
+- Exam
+- Mistakes
+- Statistics
+- About (at the bottom, less prominent)
 
-About:
-* Database updated at
-* Question source
-* Answers source
-* Links
-* By me a coffe
+### Settings
+
+- Language: separate app language and questions language
+- Theme: light / dark / system
+- Import / export progress data
+
+### Assisted learning
+
+- Progress stats summary
+- Quick setting: how many questions per session
+- Start button → opens questions block page
+- Algorithm explanation
+
+### Training
+
+List of 9 topic sections with progress indicators. Each section links to its section page.
+
+### Training / Section
+
+Blocks of ~20 questions with progress indicators. Each block links to the questions block page.
+
+### Exam
+
+- Exam rules explanation
+- Past exam stats summary
+- Start button → opens questions block page in exam mode
+
+### Questions Block (core screen)
+
+This is the most used screen. Needs the most design attention.
+
+**Questions row:** horizontal scrollable line of numbered pills, colored by answer status (unanswered / correct / wrong). Tap to jump to any question.
+
+**Question header:**
+- Breadcrumb: section > topic > question number
+- Status icons: new question, changed question, removed question
+- Warning mark if previously failed
+
+**Question body:**
+- Image (if any)
+- Question text
+- Answer options
+- ⚠️ **Answers must always be in the bottom half of the screen** so they're easy to reach with one thumb
+
+**Question footer (minimalistic icon buttons):**
+- Language switcher (swap question text between SR and RU)
+- Bookmark button
+- Report button
+- Hint button (only if hint data exists for this question)
+
+**Navigation gestures:** swipe left/right to move between questions. Should feel smooth and natural.
+
+### Statistics
+
+Three sections:
+
+- **Overall progress** — large circular progress ring with percentage, plus three counters: completed, remaining, mistakes
+- **Per-section breakdown** — each of the 9 sections with a progress bar and completed/total count
+- **Exam history** — list of past exam attempts (newest first), each showing: pass/fail mark, score (e.g. 37/41), date, error count. Empty state message when no exams taken yet.
+
+### About
+
+- Database last updated date
+- Question source
+- Answer source
+- Relevant links
+- Buy me a coffee
 
