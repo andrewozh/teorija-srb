@@ -1,15 +1,19 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import {
 		getTotalCompletedCount,
 		getMistakeQuestionKeys,
 		getPassedExamCount,
 		getExams,
 		subscribe,
-		getSettings
+		getSettings,
+		importState
 	} from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Lang } from '$lib/types.js';
+	import Header from '$lib/components/Header.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	let completed = $state(getTotalCompletedCount());
 	let mistakeCount = $state(getMistakeQuestionKeys().length);
@@ -28,65 +32,303 @@
 		return unsub;
 	});
 
-	const totalQuestions = 1756; // 1780 - 24 removed
-
+	const totalQuestions = 1756;
 	let progressPercent = $derived(Math.round((completed / totalQuestions) * 100));
+	let hasProgress = $derived(completed > 0 || totalExams > 0);
+
+	function handleImport() {
+		const input = document.createElement('input');
+		input.type = 'file';
+		input.accept = '.json';
+		input.onchange = async () => {
+			const file = input.files?.[0];
+			if (!file) return;
+			try {
+				const text = await file.text();
+				importState(text);
+			} catch { /* ignore */ }
+		};
+		input.click();
+	}
 </script>
 
-<div class="pb-4">
-	<!-- Cards -->
-	<div class="d-flex flex-column gap-3 px-3 pt-3">
-		<!-- Practice card -->
-		<a href="{base}/practice" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
-			<div class="card-body d-flex align-items-center gap-3 flex-wrap">
-				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📚</div>
-				<div class="flex-grow-1 min-w-0">
-					<h2 class="h6 fw-semibold mb-0">{t('home.practice', lang)}</h2>
-					<small class="opacity-75">{completed} / {totalQuestions} {t('home.practice.sub', lang)}</small>
+<div class="page">
+	<Header
+		title="Teorija"
+		back={false}
+		onsettings={() => goto(`${base}/settings`)}
+	/>
+
+	{#if hasProgress}
+		<!-- HOME WITH PROGRESS -->
+		<div class="scroll-area">
+			<!-- Greeting -->
+			<div class="greeting">
+				<div class="greeting-label">
+					{lang === 'sr' ? 'Добро дошли назад' : 'Добро пожаловать'}
 				</div>
-				<div class="w-100 d-flex align-items-center gap-2 mt-1">
-					<div class="progress flex-grow-1" style="height:6px;background:rgba(255,255,255,0.3);">
-						<div class="progress-bar bg-white" style="width:{progressPercent}%"></div>
+				<div class="greeting-title">
+					{lang === 'sr' ? 'Спремни сте' : 'Вы готовы'}<br/>
+					{lang === 'sr' ? 'за' : 'к'} <span class="accent-text">{progressPercent}%</span> {lang === 'sr' ? 'испита.' : 'экзамена.'}
+				</div>
+			</div>
+
+			<!-- Hero card — assisted learning -->
+			<a href="{base}/practice" class="hero-card">
+				<div class="hero-top">
+					<div>
+						<div class="hero-label">{lang === 'sr' ? 'Данашња сесија' : 'Сегодняшняя сессия'}</div>
+						<div class="hero-title">{lang === 'sr' ? 'Препоручени тест' : 'Рекомендованный тест'}</div>
+						<div class="hero-sub">{lang === 'sr' ? '20 нових + 5 понављања' : '20 новых + 5 повторений'}</div>
 					</div>
-					<small class="fw-semibold opacity-75 flex-shrink-0">{progressPercent}%</small>
+					<div class="hero-icon-wrap">
+						<Icon name="bolt" size={20} color="var(--accent-ink)" stroke={2} />
+					</div>
 				</div>
-			</div>
-		</a>
+				<div class="hero-bottom">
+					<div class="hero-time">~6 {lang === 'sr' ? 'минута' : 'минут'}</div>
+					<div class="hero-cta">
+						{lang === 'sr' ? 'Почни' : 'Начать'} <Icon name="chev-right" size={14} color="var(--accent-ink)" />
+					</div>
+				</div>
+			</a>
 
-		<!-- Exam card -->
-		<a href="{base}/exam" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #10b981, #059669);">
-			<div class="card-body d-flex align-items-center gap-3">
-				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📝</div>
-				<div class="flex-grow-1">
-					<h2 class="h6 fw-semibold mb-0">{t('home.exam', lang)}</h2>
-					<small class="opacity-75">{passedExams} {t('home.exam.passed', lang)} {t('home.exam.of', lang)} {totalExams} {t('home.exam.attempts', lang)}</small>
+			<!-- Secondary cards -->
+			<a href="{base}/practice" class="sec-card">
+				<div class="sec-icon"><Icon name="book" size={18} stroke={1.6} /></div>
+				<div class="sec-body">
+					<div class="sec-title">{t('home.practice', lang)}</div>
+					<div class="sec-sub">{lang === 'sr' ? '9 области · 1780 питања' : '9 разделов · 1780 вопросов'}</div>
 				</div>
-				<span class="opacity-50 fs-5">→</span>
-			</div>
-		</a>
+				<div class="sec-count">{progressPercent}%</div>
+			</a>
 
-		<!-- Mistakes card -->
-		<a href="{base}/mistakes" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-			<div class="card-body d-flex align-items-center gap-3">
-				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">❌</div>
-				<div class="flex-grow-1">
-					<h2 class="h6 fw-semibold mb-0">{t('home.mistakes', lang)}</h2>
-					<small class="opacity-75">{mistakeCount} {t('home.mistakes.sub', lang)}</small>
+			<a href="{base}/exam" class="sec-card">
+				<div class="sec-icon"><Icon name="target" size={18} stroke={1.6} /></div>
+				<div class="sec-body">
+					<div class="sec-title">{t('home.exam', lang)}</div>
+					<div class="sec-sub">{lang === 'sr' ? 'Симулација стварног теста' : 'Симуляция реального теста'}</div>
 				</div>
-				<span class="opacity-50 fs-5">→</span>
-			</div>
-		</a>
+				<div class="sec-count">{lang === 'sr' ? '41 питање' : '41 вопрос'}</div>
+			</a>
 
-		<!-- Statistics card -->
-		<a href="{base}/statistics" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-			<div class="card-body d-flex align-items-center gap-3">
-				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📊</div>
-				<div class="flex-grow-1">
-					<h2 class="h6 fw-semibold mb-0">{t('home.stats', lang)}</h2>
-					<small class="opacity-75">{t('home.stats.sub', lang)}</small>
-				</div>
-				<span class="opacity-50 fs-5">→</span>
+			<!-- Mini row -->
+			<div class="mini-row">
+				<a href="{base}/mistakes" class="mini-card">
+					<div class="mini-top">
+						<Icon name="warn" size={18} color="var(--ink2)" stroke={1.6} />
+						<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+					</div>
+					<div class="mini-bottom">
+						{#if mistakeCount > 0}
+							<div class="mini-count">{mistakeCount}</div>
+						{/if}
+						<div class="mini-label" class:mini-label-push={mistakeCount === 0}>{t('home.mistakes', lang)}</div>
+					</div>
+				</a>
+				<a href="{base}/statistics" class="mini-card">
+					<div class="mini-top">
+						<Icon name="chart" size={18} color="var(--ink2)" stroke={1.6} />
+						<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+					</div>
+					<div class="mini-bottom">
+						<div class="mini-label mini-label-push">{t('home.stats', lang)}</div>
+					</div>
+				</a>
 			</div>
-		</a>
-	</div>
+
+			<!-- Footer -->
+			<div class="home-footer">
+				<a href="{base}/about">v2.4.1 · {lang === 'sr' ? 'О апликацији' : 'О приложении'}</a>
+			</div>
+		</div>
+	{:else}
+		<!-- FIRST LAUNCH -->
+		<div class="empty-state">
+			<div class="empty-icon">
+				<Icon name="car" size={36} color="var(--accent-ink)" stroke={1.6} />
+			</div>
+			<div class="empty-title">
+				{lang === 'sr' ? 'Добро дошли' : 'Добро пожаловать'}<br/>{lang === 'sr' ? 'у' : 'в'} Teorija.
+			</div>
+			<div class="empty-desc">
+				{lang === 'sr'
+					? '1780 питања из 9 области за полагање возачког испита. Ради офлајн. Сав напредак остаје на уређају.'
+					: '1780 вопросов из 9 разделов для сдачи экзамена по вождению. Работает офлайн. Весь прогресс хранится на устройстве.'}
+			</div>
+			<div class="empty-actions">
+				<a href="{base}/practice" class="btn-primary-full">
+					{lang === 'sr' ? 'Започни учење' : 'Начать обучение'}
+				</a>
+				<button class="btn-outline-full" onclick={handleImport}>
+					<Icon name="upload" size={16} stroke={1.6} />
+					{lang === 'sr' ? 'Увези постојећи напредак' : 'Импортировать прогресс'}
+				</button>
+			</div>
+		</div>
+	{/if}
 </div>
+
+<style>
+	.page { height: 100%; display: flex; flex-direction: column; }
+	.scroll-area { flex: 1; overflow: auto; padding: 20px 16px 24px; }
+
+	/* Greeting */
+	.greeting { padding: 4px 4px 20px; }
+	.greeting-label {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		color: var(--ink3);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+	.greeting-title {
+		font-family: var(--font-ui);
+		font-size: 28px;
+		font-weight: 500;
+		letter-spacing: -0.6px;
+		line-height: 1.1;
+		color: var(--ink);
+	}
+	.accent-text { color: var(--accent); }
+
+	/* Hero card */
+	.hero-card {
+		display: block;
+		background: var(--accent);
+		color: var(--accent-ink);
+		border-radius: 22px;
+		padding: 18px 18px 16px;
+		margin-bottom: 10px;
+		position: relative;
+		overflow: hidden;
+	}
+	.hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+	.hero-label {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		opacity: 0.65;
+		margin-bottom: 6px;
+	}
+	.hero-title { font-size: 22px; font-weight: 500; letter-spacing: -0.4px; margin-bottom: 2px; }
+	.hero-sub { font-size: 13px; opacity: 0.72; line-height: 1.4; }
+	.hero-icon-wrap {
+		width: 40px; height: 40px; border-radius: 12px;
+		background: rgba(0,0,0,0.10);
+		display: flex; align-items: center; justify-content: center;
+		flex-shrink: 0;
+	}
+	.hero-bottom {
+		display: flex; align-items: center; gap: 10px;
+		margin-top: 18px; padding-top: 14px;
+		border-top: 1px solid rgba(0,0,0,0.12);
+	}
+	.hero-time {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0.5px;
+		opacity: 0.7;
+		flex: 1;
+	}
+	.hero-cta {
+		font-size: 13px; font-weight: 600;
+		display: flex; align-items: center; gap: 4px;
+	}
+
+	/* Secondary cards */
+	.sec-card {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		background: var(--surface);
+		border-radius: 18px;
+		padding: 14px 16px;
+		margin-bottom: 8px;
+		border: 0.5px solid var(--hairline);
+	}
+	.sec-icon {
+		width: 36px; height: 36px; border-radius: 11px;
+		background: var(--surface2); color: var(--ink);
+		display: flex; align-items: center; justify-content: center;
+		flex-shrink: 0;
+	}
+	.sec-body { flex: 1; min-width: 0; }
+	.sec-title { font-size: 15px; font-weight: 500; letter-spacing: -0.1px; }
+	.sec-sub { font-size: 12px; color: var(--ink3); margin-top: 2px; }
+	.sec-count { font-family: var(--font-mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.3px; flex-shrink: 0; }
+
+	/* Mini row */
+	.mini-row { display: flex; gap: 8px; margin-top: 14px; }
+	.mini-card {
+		flex: 1;
+		background: var(--surface);
+		border-radius: 18px;
+		padding: 14px;
+		border: 0.5px solid var(--hairline);
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	.mini-top { display: flex; justify-content: space-between; align-items: center; }
+	.mini-bottom {}
+	.mini-count { font-family: var(--font-mono); font-size: 22px; letter-spacing: -0.5px; color: var(--ink); }
+	.mini-label { font-size: 12px; color: var(--ink3); }
+	.mini-label-push { margin-top: 18px; }
+
+	/* Footer */
+	.home-footer {
+		margin-top: 20px;
+		padding: 14px 4px;
+		text-align: center;
+		font-family: var(--font-mono);
+		font-size: 11px;
+		color: var(--ink3);
+		letter-spacing: 0.3px;
+	}
+
+	/* Empty state */
+	.empty-state {
+		flex: 1;
+		padding: 40px 24px;
+		display: flex;
+		flex-direction: column;
+	}
+	.empty-icon {
+		width: 72px; height: 72px; border-radius: 22px;
+		background: var(--accent); color: var(--accent-ink);
+		display: flex; align-items: center; justify-content: center;
+		margin: 28px auto 26px;
+	}
+	.empty-title {
+		font-size: 26px; font-weight: 500; letter-spacing: -0.4px;
+		text-align: center; line-height: 1.15; margin-bottom: 10px;
+	}
+	.empty-desc {
+		font-size: 14px; color: var(--ink2); text-align: center;
+		line-height: 1.5; margin-bottom: 36px; padding: 0 12px;
+	}
+	.empty-actions {
+		margin-top: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.btn-primary-full {
+		display: flex; align-items: center; justify-content: center;
+		background: var(--accent); color: var(--accent-ink); border: none;
+		height: 52px; border-radius: 16px;
+		font-family: var(--font-ui); font-size: 15px; font-weight: 600;
+		letter-spacing: -0.1px; cursor: pointer;
+	}
+	.btn-outline-full {
+		display: flex; align-items: center; justify-content: center; gap: 8px;
+		background: transparent; color: var(--ink);
+		border: 1px solid var(--hairline);
+		height: 52px; border-radius: 16px;
+		font-family: var(--font-ui); font-size: 14px; font-weight: 500;
+		letter-spacing: -0.1px; cursor: pointer;
+	}
+</style>

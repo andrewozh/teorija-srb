@@ -10,9 +10,11 @@ function defaultState(): AppState {
 		bookmarks: [],
 		exams: [],
 		settings: {
-			theme: 'system',
+			theme: 'dark',
 			fontSize: 'medium',
-			lang: 'sr'
+			lang: 'sr',
+			accent: 'gold',
+			category: 'B'
 		}
 	};
 }

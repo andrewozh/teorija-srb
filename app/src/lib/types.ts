@@ -62,10 +62,15 @@ export interface ExamResult {
 	answers: Record<string, string[]>;
 }
 
+export type Accent = 'gold' | 'clay' | 'sage' | 'azure' | 'plum';
+export type Category = 'A' | 'B' | 'C' | 'D' | 'F';
+
 export interface Settings {
 	theme: 'light' | 'dark' | 'system';
 	fontSize: 'small' | 'medium' | 'large';
 	lang: Lang;
+	accent: Accent;
+	category: Category;
 }
 
 export interface AppState {

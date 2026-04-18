@@ -1,17 +1,16 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { getSettings, updateSettings, exportState, importState, resetState, subscribe } from '$lib/store.js';
-	import { setPageTitle } from '$lib/nav.js';
 	import { t } from '$lib/i18n.js';
-	import type { Settings, Lang } from '$lib/types.js';
+	import type { Settings, Lang, Accent, Category } from '$lib/types.js';
+	import Header from '$lib/components/Header.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	let settings = $state<Settings>(getSettings());
 	let showResetConfirm = $state(false);
 	let importMessage = $state('');
 	let lang = $state<Lang>(getSettings().lang);
-
-	$effect(() => {
-		setPageTitle(t('settings.title', lang));
-	});
 
 	$effect(() => {
 		const unsub = subscribe(() => {
@@ -21,12 +20,14 @@
 		return unsub;
 	});
 
-	function setTheme(theme: Settings['theme']) {
-		updateSettings({ theme });
+	const categories: Category[] = ['A', 'B', 'C', 'D', 'F'];
+
+	function setCategory(cat: Category) {
+		updateSettings({ category: cat });
 	}
 
-	function setFontSize(fontSize: Settings['fontSize']) {
-		updateSettings({ fontSize });
+	function setTheme(theme: Settings['theme']) {
+		updateSettings({ theme });
 	}
 
 	function handleExport() {
@@ -64,116 +65,226 @@
 		resetState();
 		showResetConfirm = false;
 	}
+
+	function toggleLang() {
+		const next: Lang = lang === 'sr' ? 'ru' : 'sr';
+		updateSettings({ lang: next });
+	}
+
+	function resolvedThemeLabel(): string {
+		if (settings.theme === 'dark') return lang === 'sr' ? 'Тамна' : 'Тёмная';
+		if (settings.theme === 'light') return lang === 'sr' ? 'Светла' : 'Светлая';
+		return lang === 'sr' ? 'Систем' : 'Система';
+	}
+
+	function cycleTheme() {
+		const order: Settings['theme'][] = ['dark', 'light', 'system'];
+		const idx = order.indexOf(settings.theme);
+		setTheme(order[(idx + 1) % order.length]);
+	}
 </script>
 
-<div class="pb-4">
-	<div class="p-3 d-flex flex-column gap-3">
-		<!-- Theme -->
-		<div class="card border-0 shadow-sm">
-			<div class="card-body">
-				<h2 class="small fw-semibold text-body-secondary text-uppercase mb-3" style="letter-spacing:0.05em;">{t('settings.theme', lang)}</h2>
-				<div class="btn-group w-100" role="group">
+{#snippet trailing()}
+	<button class="done-btn" onclick={() => goto(`${base}/`)}>
+		{lang === 'sr' ? 'Готово' : 'Готово'}
+	</button>
+{/snippet}
+
+<div class="page">
+	<Header
+		title={t('settings.title', lang)}
+		settings={false}
+		onback={() => history.back()}
+		{trailing}
+	/>
+
+	<div class="scroll-area">
+		<!-- Category -->
+		<div class="section-header">{lang === 'sr' ? 'Категорија возила' : 'Категория ТС'}</div>
+		<div class="section-card">
+			<div class="cat-row">
+				{#each categories as cat}
 					<button
-						class="btn {settings.theme === 'light' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setTheme('light')}
+						class="cat-btn"
+						class:cat-active={settings.category === cat}
+						onclick={() => setCategory(cat)}
 					>
-						☀️ {t('settings.theme.light', lang)}
+						{cat}
 					</button>
-					<button
-						class="btn {settings.theme === 'dark' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setTheme('dark')}
-					>
-						🌙 {t('settings.theme.dark', lang)}
-					</button>
-					<button
-						class="btn {settings.theme === 'system' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setTheme('system')}
-					>
-						⚙️ {t('settings.theme.system', lang)}
-					</button>
+				{/each}
+			</div>
+			<div class="cat-desc">
+				{settings.category} · {lang === 'sr' ? '1780 питања' : '1780 вопросов'}
+			</div>
+		</div>
+
+		<!-- Language -->
+		<div class="section-header">{lang === 'sr' ? 'Језик' : 'Язык'}</div>
+		<div class="section-card">
+			<button class="row-item" onclick={toggleLang}>
+				<span class="row-label">{lang === 'sr' ? 'Језик апликације' : 'Язык приложения'}</span>
+				<span class="row-value">{lang === 'sr' ? 'Српски' : 'Русский'}</span>
+				<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+				<div class="row-divider"></div>
+			</button>
+			<button class="row-item" onclick={toggleLang}>
+				<span class="row-label">{lang === 'sr' ? 'Језик питања' : 'Язык вопросов'}</span>
+				<span class="row-value">{lang === 'sr' ? 'Српски' : 'Русский'}</span>
+				<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+			</button>
+		</div>
+
+		<!-- Appearance -->
+		<div class="section-header">{lang === 'sr' ? 'Изглед' : 'Внешний вид'}</div>
+		<div class="section-card">
+			<button class="row-item" onclick={cycleTheme}>
+				<span class="row-label">{t('settings.theme', lang)}</span>
+				<span class="row-value">{resolvedThemeLabel()}</span>
+				<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+			</button>
+		</div>
+
+		<!-- Progress -->
+		<div class="section-header">{lang === 'sr' ? 'Напредак' : 'Прогресс'}</div>
+		<div class="section-card">
+			<button class="row-item" onclick={handleImport}>
+				<span class="row-label">{lang === 'sr' ? 'Увези из датотеке' : 'Импорт из файла'}</span>
+				<Icon name="upload" size={17} color="var(--ink2)" stroke={1.6} />
+				<div class="row-divider"></div>
+			</button>
+			<button class="row-item" onclick={handleExport}>
+				<span class="row-label">{lang === 'sr' ? 'Извези као датотеку' : 'Экспорт в файл'}</span>
+				<Icon name="download" size={17} color="var(--ink2)" stroke={1.6} />
+				<div class="row-divider"></div>
+			</button>
+			<button class="row-item" onclick={() => { showResetConfirm = true; }}>
+				<span class="row-label">{lang === 'sr' ? 'Поништи сав напредак' : 'Сбросить прогресс'}</span>
+				<span class="row-danger">{lang === 'sr' ? 'Обриши' : 'Удалить'}</span>
+			</button>
+		</div>
+
+		{#if showResetConfirm}
+			<div class="reset-confirm">
+				<p>{t('settings.reset.confirm', lang)}</p>
+				<div class="reset-btns">
+					<button class="reset-cancel" onclick={() => { showResetConfirm = false; }}>{t('common.back', lang)}</button>
+					<button class="reset-delete" onclick={handleReset}>{t('settings.reset.yes', lang)}</button>
 				</div>
 			</div>
-		</div>
+		{/if}
 
-		<!-- Font size -->
-		<div class="card border-0 shadow-sm">
-			<div class="card-body">
-				<h2 class="small fw-semibold text-body-secondary text-uppercase mb-3" style="letter-spacing:0.05em;">{t('settings.font', lang)}</h2>
-				<div class="btn-group w-100" role="group">
-					<button
-						class="btn {settings.fontSize === 'small' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setFontSize('small')}
-					>
-						<span style="font-size:0.8rem">Аа</span>
-					</button>
-					<button
-						class="btn {settings.fontSize === 'medium' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setFontSize('medium')}
-					>
-						<span style="font-size:1rem">Аа</span>
-					</button>
-					<button
-						class="btn {settings.fontSize === 'large' ? 'btn-primary' : 'btn-outline-secondary'}"
-						onclick={() => setFontSize('large')}
-					>
-						<span style="font-size:1.2rem">Аа</span>
-					</button>
-				</div>
-			</div>
-		</div>
+		{#if importMessage}
+			<div class="import-msg" class:import-ok={importMessage === '✓'}>{importMessage}</div>
+		{/if}
 
-		<!-- Data management -->
-		<div class="card border-0 shadow-sm">
-			<div class="card-body">
-				<button class="btn btn-light d-flex align-items-center gap-3 w-100 text-start mb-2 p-3" onclick={handleExport}>
-					<span class="fs-5">📤</span>
-					<div>
-						<div class="fw-medium">{t('settings.export', lang)}</div>
-					</div>
-				</button>
-
-				<button class="btn btn-light d-flex align-items-center gap-3 w-100 text-start mb-2 p-3" onclick={handleImport}>
-					<span class="fs-5">📥</span>
-					<div>
-						<div class="fw-medium">{t('settings.import', lang)}</div>
-					</div>
-				</button>
-
-				{#if importMessage}
-					<div class="alert {importMessage.startsWith('✓') ? 'alert-success' : 'alert-danger'} py-2 small mb-2">
-						{importMessage}
-					</div>
-				{/if}
-
-				<button class="btn btn-light d-flex align-items-center gap-3 w-100 text-start p-3" onclick={() => { showResetConfirm = true; }}>
-					<span class="fs-5">🗑️</span>
-					<div>
-						<div class="fw-medium text-danger">{t('settings.reset', lang)}</div>
-					</div>
-				</button>
-
-				{#if showResetConfirm}
-					<div class="alert alert-danger mt-3">
-						<p class="small mb-2">{t('settings.reset.confirm', lang)}</p>
-						<div class="d-flex gap-2">
-							<button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick={() => { showResetConfirm = false; }}>
-								{t('common.back', lang)}
-							</button>
-							<button class="btn btn-danger btn-sm flex-grow-1" onclick={handleReset}>
-								{t('settings.reset.yes', lang)}
-							</button>
-						</div>
-					</div>
-				{/if}
-			</div>
-		</div>
-
-		<!-- About -->
-		<div class="card border-0 shadow-sm">
-			<div class="card-body text-center text-body-tertiary small">
-				<p class="mb-0">{t('settings.about', lang)}</p>
-				<small>1780 • MUP</small>
-			</div>
+		<div class="settings-footer">
+			Teorija 2.4.1 · Build 2026.04.12
 		</div>
 	</div>
 </div>
+
+<style>
+	.page { height: 100%; display: flex; flex-direction: column; }
+	.scroll-area { flex: 1; overflow: auto; padding-bottom: 24px; }
+
+	.done-btn {
+		width: 36px; height: 36px;
+		background: transparent; border: none;
+		color: var(--accent);
+		font-family: var(--font-ui);
+		font-size: 14px; font-weight: 500;
+		cursor: pointer;
+		display: flex; align-items: center; justify-content: center;
+	}
+
+	.section-header {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		color: var(--ink3);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		padding: 22px 20px 8px;
+	}
+	.section-card {
+		background: var(--surface);
+		border-radius: 18px;
+		margin: 0 14px;
+		overflow: hidden;
+		border: 0.5px solid var(--hairline);
+	}
+
+	/* Category */
+	.cat-row {
+		display: flex; gap: 6px;
+		padding: 12px 16px;
+	}
+	.cat-btn {
+		flex: 1; height: 44px; border-radius: 12px;
+		display: flex; align-items: center; justify-content: center;
+		background: var(--surface2); color: var(--ink2);
+		font-family: var(--font-mono); font-size: 15px; font-weight: 500;
+		letter-spacing: 0.5px; border: none; cursor: pointer;
+	}
+	.cat-active {
+		background: var(--accent); color: var(--accent-ink);
+	}
+	.cat-desc {
+		font-size: 12px; color: var(--ink3);
+		padding: 2px 20px 14px;
+	}
+
+	/* Rows */
+	.row-item {
+		display: flex; align-items: center;
+		min-height: 52px; padding: 0 16px;
+		position: relative; gap: 12px;
+		background: transparent; border: none;
+		width: 100%; text-align: left;
+		cursor: pointer;
+	}
+	.row-label { flex: 1; font-size: 15px; color: var(--ink); }
+	.row-value { font-size: 13px; color: var(--ink3); font-family: var(--font-mono); }
+	.row-danger { color: var(--wrong); font-size: 13px; font-family: var(--font-mono); }
+	.row-divider {
+		position: absolute; bottom: 0; left: 16px; right: 0;
+		height: 0.5px; background: var(--hairline);
+	}
+
+	/* Reset confirm */
+	.reset-confirm {
+		margin: 12px 14px;
+		padding: 16px;
+		background: var(--wrong-wash);
+		border-radius: 16px;
+		border: 1px solid var(--wrong);
+	}
+	.reset-confirm p { font-size: 13px; margin-bottom: 12px; }
+	.reset-btns { display: flex; gap: 8px; }
+	.reset-cancel, .reset-delete {
+		flex: 1; height: 40px; border-radius: 12px;
+		font-family: var(--font-ui); font-size: 13px; font-weight: 500;
+		cursor: pointer; border: none;
+	}
+	.reset-cancel { background: var(--surface2); color: var(--ink); }
+	.reset-delete { background: var(--wrong); color: #fff; }
+
+	.import-msg {
+		margin: 12px 14px;
+		padding: 10px 16px;
+		border-radius: 12px;
+		font-size: 13px;
+		background: var(--wrong-wash);
+		color: var(--wrong);
+		text-align: center;
+	}
+	.import-ok { background: var(--correct-wash); color: var(--correct); }
+
+	.settings-footer {
+		padding: 22px 24px;
+		font-family: var(--font-mono);
+		font-size: 11px;
+		color: var(--ink3);
+		text-align: center;
+		letter-spacing: 0.3px;
+	}
+</style>
