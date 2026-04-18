@@ -61,7 +61,7 @@
 <div class="page">
 	<Header
 		title={sectionName(sectionId, lang)}
-		onback={() => history.back()}
+		onback={() => goto(`${base}/practice`)}
 		onsettings={() => goto(`${base}/settings`)}
 	/>
 

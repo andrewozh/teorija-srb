@@ -225,7 +225,7 @@
 		<!-- Footer -->
 		<div class="q-footer">
 			<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
-				<Icon name="swap" size={19} stroke={1.6} />
+				<Icon name="language" size={19} stroke={1.6} />
 			</button>
 			<button
 				class="q-footer-icon"
@@ -321,8 +321,8 @@
 
 	/* Answers */
 	.q-answers {
-		padding: 8px 10px 8px;
-		padding-bottom: calc(8px + env(safe-area-inset-bottom));
+		padding: 12px 14px 14px;
+		padding-bottom: calc(14px + env(safe-area-inset-bottom));
 		display: flex; flex-direction: column; gap: 8px;
 		background: var(--answer-zone-bg);
 		flex-shrink: 0;

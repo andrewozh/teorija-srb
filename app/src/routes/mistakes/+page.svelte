@@ -190,7 +190,7 @@
 		<!-- List mode -->
 		<Header
 			title={t('mistakes.title', lang)}
-			onback={() => history.back()}
+			home onback={() => goto(`${base}/`)}
 			onsettings={() => goto(`${base}/settings`)}
 		/>
 

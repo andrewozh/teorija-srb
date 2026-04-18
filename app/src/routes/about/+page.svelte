@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	import { getSettings, subscribe } from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Lang } from '$lib/types.js';
@@ -15,7 +16,7 @@
 </script>
 
 <div class="page">
-	<Header title={t('settings.about', lang)} settings={false} onback={() => history.back()} />
+	<Header title={t('settings.about', lang)} settings={false} onback={() => goto(`${base}/settings`)} />
 
 	<div class="scroll-area">
 		<div class="about-hero">

@@ -2,10 +2,12 @@
 	import Icon from './Icon.svelte';
 	import type { Snippet } from 'svelte';
 
-	let { title, back = true, settings = true, trailing, onback, onsettings }: {
+	let { title, back = true, home = false, settings = true, leading, trailing, onback, onsettings }: {
 		title: string;
 		back?: boolean;
+		home?: boolean;
 		settings?: boolean;
+		leading?: Snippet;
 		trailing?: Snippet;
 		onback?: () => void;
 		onsettings?: () => void;
@@ -13,13 +15,17 @@
 </script>
 
 <div class="header">
-	<button
-		class="header-btn"
-		style:visibility={back ? 'visible' : 'hidden'}
-		onclick={onback}
-	>
-		<Icon name="back" size={20} />
-	</button>
+	{#if leading}
+		{@render leading()}
+	{:else}
+		<button
+			class="header-btn"
+			style:visibility={back ? 'visible' : 'hidden'}
+			onclick={onback}
+		>
+			<Icon name={home ? 'home' : 'back'} size={20} />
+		</button>
+	{/if}
 	<div class="header-title">{title}</div>
 	{#if trailing}
 		{@render trailing()}

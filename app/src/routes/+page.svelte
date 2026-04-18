@@ -8,7 +8,8 @@
 		getExams,
 		subscribe,
 		getSettings,
-		importState
+		importState,
+		updateSettings
 	} from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Lang } from '$lib/types.js';
@@ -57,7 +58,13 @@
 		title="Teorija"
 		back={false}
 		onsettings={() => goto(`${base}/settings`)}
-	/>
+	>
+		{#snippet leading()}
+			<button class="lang-btn" onclick={() => updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' })}>
+				<Icon name="language" size={20} />
+			</button>
+		{/snippet}
+	</Header>
 
 	{#if hasProgress}
 		<!-- HOME WITH PROGRESS -->
@@ -175,6 +182,12 @@
 </div>
 
 <style>
+	.lang-btn {
+		width: 36px; height: 36px; border-radius: 12px;
+		border: none; background: transparent; color: var(--ink);
+		display: flex; align-items: center; justify-content: center;
+		cursor: pointer;
+	}
 	.page { height: 100%; display: flex; flex-direction: column; }
 	.scroll-area { flex: 1; overflow: auto; padding: 20px 16px 24px; }
 

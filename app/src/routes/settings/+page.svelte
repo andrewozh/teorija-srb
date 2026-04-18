@@ -94,7 +94,7 @@
 	<Header
 		title={t('settings.title', lang)}
 		settings={false}
-		onback={() => history.back()}
+		home onback={() => goto(`${base}/`)}
 		{trailing}
 	/>
 
@@ -177,8 +177,15 @@
 			<div class="import-msg" class:import-ok={importMessage === '✓'}>{importMessage}</div>
 		{/if}
 
+		<div class="section-card">
+			<a href="{base}/about" class="settings-row about-row">
+				<span class="row-label">{lang === 'sr' ? 'О апликацији' : 'О приложении'}</span>
+				<span class="row-val">v0.1.1-alpha →</span>
+			</a>
+		</div>
+
 		<div class="settings-footer">
-			Teorija 2.4.1 · Build 2026.04.12
+			Teorija v0.1.1-alpha
 		</div>
 	</div>
 </div>
@@ -279,6 +286,14 @@
 	}
 	.import-ok { background: var(--correct-wash); color: var(--correct); }
 
+	.about-row {
+		display: flex; align-items: center;
+		min-height: 52px; padding: 0 16px;
+		text-decoration: none; color: var(--ink);
+	}
+	.about-row .row-val {
+		font-size: 13px; color: var(--ink3); font-family: var(--font-mono);
+	}
 	.settings-footer {
 		padding: 22px 24px;
 		font-family: var(--font-mono);

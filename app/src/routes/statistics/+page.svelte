@@ -71,7 +71,7 @@
 <div class="page">
 	<Header
 		title={t('stats.title', lang)}
-		onback={() => history.back()}
+		home onback={() => goto(`${base}/`)}
 		onsettings={() => goto(`${base}/settings`)}
 	/>
 

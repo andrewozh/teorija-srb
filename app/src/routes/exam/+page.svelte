@@ -150,7 +150,7 @@
 	{#if phase === 'intro'}
 		<Header
 			title={t('exam.title', lang)}
-			onback={() => history.back()}
+			home onback={() => goto(`${base}/`)}
 			onsettings={() => goto(`${base}/settings`)}
 		/>
 		<div class="scroll-area">
