@@ -10,6 +10,8 @@
 		subscribe,
 		getSettings
 	} from '$lib/store.js';
+	import { setPageTitle } from '$lib/nav.js';
+	import { t, sectionName } from '$lib/i18n.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
 
 	let sectionId = $derived($page.params.section);
@@ -27,6 +29,10 @@
 	let currentQuestion = $derived(questions[currentIndex]);
 	let qKey = $derived(currentQuestion ? questionKey(currentQuestion) : '');
 	let hasMultipleAnswers = $derived(currentQuestion ? currentQuestion.correct_answers_count > 1 : false);
+
+	$effect(() => {
+		setPageTitle(sectionName(sectionId, lang));
+	});
 
 	onMount(async () => {
 		const data = await loadQuestions();
@@ -183,28 +189,7 @@
 	});
 </script>
 
-<div class="d-flex flex-column min-vh-100">
-	<!-- Header -->
-	<nav class="navbar sticky-top bg-body border-bottom px-2">
-		<div class="d-flex align-items-center justify-content-between w-100">
-			<a href="/practice/{sectionId}" class="btn btn-link text-body p-2" aria-label="Назад">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<span class="text-body-secondary fw-semibold small">
-				{currentIndex + 1} / {questions.length}
-			</span>
-			<button
-				class="btn btn-link text-body p-2 fs-5"
-				onclick={handleToggleBookmark}
-				aria-label="Обележи"
-			>
-				{bookmarked ? '⭐' : '☆'}
-			</button>
-		</div>
-	</nav>
-
+<div class="d-flex flex-column">
 	<!-- Question number pills -->
 	<div class="pills-scroll bg-body border-bottom" bind:this={pillsContainer}>
 		{#each questions as _, i}
@@ -226,15 +211,24 @@
 				</div>
 			{/if}
 
-			<!-- Question text -->
+			<!-- Question text with bookmark -->
 			<div class="card border-0 shadow-sm">
 				<div class="card-body">
-					<p class="mb-0" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
+					<div class="d-flex align-items-start gap-2">
+						<p class="mb-0 flex-grow-1" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
+						<button
+							class="btn btn-link text-body p-0 fs-5 flex-shrink-0"
+							onclick={handleToggleBookmark}
+							aria-label="Обележи"
+						>
+							{bookmarked ? '⭐' : '☆'}
+						</button>
+					</div>
 					{#if hasMultipleAnswers}
-						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
+						<span class="badge text-bg-primary mt-2">{t('question.multi', lang)} ({currentQuestion.correct_answers_count})</span>
 					{/if}
 					{#if !currentQuestion.correct_answers || currentQuestion.correct_answers.length === 0}
-						<span class="badge text-bg-warning mt-2">⚠ Одговор није доступан</span>
+						<span class="badge text-bg-warning mt-2">⚠ {t('question.no_answer', lang)}</span>
 					{/if}
 				</div>
 			</div>
@@ -263,7 +257,7 @@
 			<!-- Multi-answer confirm button -->
 			{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
 				<button class="btn btn-primary btn-lg w-100" onclick={confirmMultiAnswer}>
-					Потврди одговор ({selectedAnswers.size} изабрано)
+					{t('question.confirm', lang)} ({selectedAnswers.size})
 				</button>
 			{/if}
 
@@ -272,11 +266,11 @@
 				<div>
 					{#if currentIndex < questions.length - 1}
 						<button class="btn btn-primary btn-lg w-100" onclick={nextQuestion}>
-							Следеће питање →
+							{t('question.next', lang)} →
 						</button>
 					{:else}
 						<a href="/practice/{sectionId}" class="btn btn-success btn-lg w-100">
-							✓ Завршено
+							✓ {t('question.correct', lang)}
 						</a>
 					{/if}
 				</div>

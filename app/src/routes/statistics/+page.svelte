@@ -6,9 +6,12 @@
 		getSectionCompletedCount,
 		getExams,
 		getMistakeQuestionKeys,
-		subscribe
+		subscribe,
+		getSettings
 	} from '$lib/store.js';
-	import type { SectionMeta, ExamResult } from '$lib/types.js';
+	import { setPageTitle } from '$lib/nav.js';
+	import { t, sectionName } from '$lib/i18n.js';
+	import type { SectionMeta, ExamResult, Lang } from '$lib/types.js';
 
 	let sections = $state<SectionMeta[]>([]);
 	let sectionCounts = $state<Record<string, number>>({});
@@ -17,6 +20,11 @@
 	let totalActive = $state(0);
 	let exams = $state<ExamResult[]>([]);
 	let mistakeCount = $state(0);
+	let lang = $state<Lang>(getSettings().lang);
+
+	$effect(() => {
+		setPageTitle(t('stats.title', lang));
+	});
 
 	onMount(async () => {
 		const data = await loadQuestions();
@@ -29,7 +37,10 @@
 
 		refreshStats();
 
-		const unsub = subscribe(() => refreshStats());
+		const unsub = subscribe(() => {
+			lang = getSettings().lang;
+			refreshStats();
+		});
 		return unsub;
 	});
 
@@ -57,23 +68,11 @@
 </script>
 
 <div class="pb-4">
-	<!-- Header -->
-	<nav class="navbar sticky-top bg-body border-bottom px-2">
-		<div class="d-flex align-items-center justify-content-between w-100">
-			<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<h1 class="h6 fw-semibold mb-0">Статистика</h1>
-			<div style="width:40px"></div>
-		</div>
-	</nav>
-
 	<div class="p-3 d-flex flex-column gap-3">
 		<!-- Overall progress -->
 		<div class="card border-0 shadow-sm">
 			<div class="card-body d-flex flex-column align-items-center gap-3 p-4">
+				<h2 class="h6 fw-semibold mb-0">{t('stats.overall', lang)}</h2>
 				<div class="overall-ring">
 					<svg width="100" height="100" viewBox="0 0 100 100">
 						<circle cx="50" cy="50" r="40" fill="none" stroke="var(--bs-border-color)" stroke-width="8"/>
@@ -89,23 +88,20 @@
 						<text x="50" y="46" text-anchor="middle" font-size="20" font-weight="700" fill="var(--bs-body-color)">
 							{overallPercent}%
 						</text>
-						<text x="50" y="62" text-anchor="middle" font-size="10" fill="var(--bs-secondary-color)">
-							завршено
-						</text>
 					</svg>
 				</div>
 				<div class="d-flex gap-4">
 					<div class="text-center">
 						<span class="d-block fs-5 fw-bold">{totalCompleted}</span>
-						<small class="text-body-secondary">Урађено</small>
+						<small class="text-body-secondary">✓</small>
 					</div>
 					<div class="text-center">
 						<span class="d-block fs-5 fw-bold">{totalActive - totalCompleted}</span>
-						<small class="text-body-secondary">Преостало</small>
+						<small class="text-body-secondary">…</small>
 					</div>
 					<div class="text-center">
 						<span class="d-block fs-5 fw-bold">{mistakeCount}</span>
-						<small class="text-body-secondary">Грешке</small>
+						<small class="text-body-secondary">✗</small>
 					</div>
 				</div>
 			</div>
@@ -114,7 +110,7 @@
 		<!-- Per-section breakdown -->
 		<div class="card border-0 shadow-sm">
 			<div class="card-body">
-				<h2 class="h6 fw-semibold mb-3">По областима</h2>
+				<h2 class="h6 fw-semibold mb-3">{t('stats.sections', lang)}</h2>
 				{#each sections as section}
 					{@const total = sectionCounts[section.id] || 1}
 					{@const done = sectionCompleted[section.id] || 0}
@@ -122,7 +118,7 @@
 					<div class="mb-3">
 						<div class="d-flex align-items-center gap-2 mb-1">
 							<span>{sectionIcon(section.id)}</span>
-							<small class="text-body-secondary text-truncate">{section.name}</small>
+							<small class="text-body-secondary text-truncate">{sectionName(section.id, lang)}</small>
 						</div>
 						<div class="d-flex align-items-center gap-2">
 							<div class="progress flex-grow-1" style="height:6px;">
@@ -138,9 +134,9 @@
 		<!-- Exam history -->
 		<div class="card border-0 shadow-sm">
 			<div class="card-body">
-				<h2 class="h6 fw-semibold mb-3">Историја испита</h2>
+				<h2 class="h6 fw-semibold mb-3">{t('stats.exams', lang)}</h2>
 				{#if exams.length === 0}
-					<p class="text-body-tertiary small text-center py-3">Нема покушаја испита.</p>
+					<p class="text-body-tertiary small text-center py-3">{t('stats.no_exams', lang)}</p>
 				{:else}
 					{#each exams as exam, i}
 						<div class="d-flex align-items-center justify-content-between py-2 {i < exams.length - 1 ? 'border-bottom' : ''}">
@@ -153,7 +149,7 @@
 									<div class="text-body-tertiary" style="font-size:0.7rem;">{formatDate(exam.date)}</div>
 								</div>
 							</div>
-							<small class="text-body-secondary">{exam.total - exam.score} грешака</small>
+							<small class="text-body-secondary">{exam.total - exam.score} {t('exam.errors', lang)}</small>
 						</div>
 					{/each}
 				{/if}

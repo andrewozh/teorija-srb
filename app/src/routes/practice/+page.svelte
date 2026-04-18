@@ -1,12 +1,20 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { loadQuestions, getSections, getQuestionsBySection, getChunks, sectionIcon, sectionColor } from '$lib/data.js';
-	import { getSectionCompletedCount, subscribe } from '$lib/store.js';
-	import type { SectionMeta, Chunk } from '$lib/types.js';
+	import { loadQuestions, getSections, getQuestionsBySection, sectionIcon, sectionColor } from '$lib/data.js';
+	import { getSectionCompletedCount, subscribe, getSettings } from '$lib/store.js';
+	import { setPageTitle } from '$lib/nav.js';
+	import { t, sectionName } from '$lib/i18n.js';
+	import type { SectionMeta } from '$lib/types.js';
+	import type { Lang } from '$lib/types.js';
 
 	let sections = $state<SectionMeta[]>([]);
 	let sectionQuestionCounts = $state<Record<string, number>>({});
 	let sectionCompleted = $state<Record<string, number>>({});
+	let lang = $state<Lang>(getSettings().lang);
+
+	$effect(() => {
+		setPageTitle(t('practice.title', lang));
+	});
 
 	onMount(async () => {
 		const data = await loadQuestions();
@@ -18,6 +26,7 @@
 		}
 
 		const unsub = subscribe(() => {
+			lang = getSettings().lang;
 			for (const s of sections) {
 				sectionCompleted[s.id] = getSectionCompletedCount(s.id);
 			}
@@ -40,19 +49,6 @@
 </script>
 
 <div class="pb-4">
-	<!-- Header -->
-	<nav class="navbar sticky-top bg-body border-bottom px-2">
-		<div class="d-flex align-items-center justify-content-between w-100">
-			<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<h1 class="h6 fw-semibold mb-0">Тренировка</h1>
-			<div style="width:40px"></div>
-		</div>
-	</nav>
-
 	<!-- Section list -->
 	<div class="list-group list-group-flush px-3 pt-3 d-flex flex-column gap-2">
 		{#each sections as section}
@@ -79,10 +75,10 @@
 				</div>
 				<div class="flex-grow-1 min-w-0">
 					<div class="fw-semibold small">
-						<span class="me-1">{sectionIcon(section.id)}</span>{section.name}
+						<span class="me-1">{sectionIcon(section.id)}</span>{sectionName(section.id, lang)}
 					</div>
 					<small class="text-body-secondary">
-						{sectionCompleted[section.id] || 0} / {sectionQuestionCounts[section.id] || section.questions} питања
+						{sectionCompleted[section.id] || 0} / {sectionQuestionCounts[section.id] || section.questions} {t('practice.questions', lang)}
 					</small>
 				</div>
 				<span class="text-body-tertiary fs-4">›</span>

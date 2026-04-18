@@ -8,6 +8,8 @@
 		subscribe,
 		getSettings
 	} from '$lib/store.js';
+	import { setPageTitle } from '$lib/nav.js';
+	import { t, sectionName } from '$lib/i18n.js';
 	import type { Question, QuestionsData, Lang } from '$lib/types.js';
 
 	let data = $state<QuestionsData | null>(null);
@@ -24,6 +26,10 @@
 
 	let currentQuestion = $derived(mistakeQuestions[currentIndex]);
 	let hasMultipleAnswers = $derived(currentQuestion ? currentQuestion.correct_answers_count > 1 : false);
+
+	$effect(() => {
+		setPageTitle(t('mistakes.title', lang));
+	});
 
 	onMount(async () => {
 		data = await loadQuestions();
@@ -127,39 +133,21 @@
 		}
 		return groups;
 	});
-
-	function sectionName(sectionId: string): string {
-		if (!data) return sectionId;
-		const meta = data.metadata.sections.find((s) => s.id === sectionId);
-		return meta?.name || sectionId;
-	}
 </script>
 
 <div class="d-flex flex-column min-vh-100">
-	<!-- Header -->
-	<nav class="navbar sticky-top bg-body border-bottom px-2">
-		<div class="d-flex align-items-center justify-content-between w-100">
-			{#if practicing}
-				<button class="btn btn-link text-body p-2" onclick={() => { practicing = false; refreshMistakes(); }} aria-label="Назад">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M15 18l-6-6 6-6"/>
-					</svg>
-				</button>
-				<span class="text-body-secondary fw-semibold small">{currentIndex + 1} / {mistakeQuestions.length}</span>
-				<div style="width:40px"></div>
-			{:else}
-				<a href="/" class="btn btn-link text-body p-2" aria-label="Назад">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M15 18l-6-6 6-6"/>
-					</svg>
-				</a>
-				<h1 class="h6 fw-semibold mb-0">Моје грешке</h1>
-				<div style="width:40px"></div>
-			{/if}
-		</div>
-	</nav>
-
 	{#if practicing && currentQuestion}
+		<!-- Practice header with counter -->
+		<div class="d-flex align-items-center justify-content-between px-3 py-2 border-bottom bg-body">
+			<button class="btn btn-link text-body p-2" onclick={() => { practicing = false; refreshMistakes(); }} aria-label={t('common.back', lang)}>
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M15 18l-6-6 6-6"/>
+				</svg>
+			</button>
+			<span class="text-body-secondary fw-semibold small">{currentIndex + 1} / {mistakeQuestions.length}</span>
+			<div style="width:40px"></div>
+		</div>
+
 		<main class="flex-grow-1 p-3 d-flex flex-column gap-3">
 			{#if currentQuestion.has_image && currentQuestion.image}
 				<div class="card border-0 shadow-sm overflow-hidden">
@@ -171,7 +159,7 @@
 				<div class="card-body">
 					<p class="mb-0" style="line-height:1.5;">{qText(currentQuestion, lang)}</p>
 					{#if hasMultipleAnswers}
-						<span class="badge text-bg-primary mt-2">Више одговора ({currentQuestion.correct_answers_count})</span>
+						<span class="badge text-bg-primary mt-2">{t('question.multi', lang)} ({currentQuestion.correct_answers_count})</span>
 					{/if}
 				</div>
 			</div>
@@ -198,13 +186,13 @@
 
 			{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
 				<button class="btn btn-primary btn-lg w-100" onclick={confirmMultiAnswer}>
-					Потврди одговор ({selectedAnswers.size} изабрано)
+					{t('question.confirm', lang)} ({selectedAnswers.size})
 				</button>
 			{/if}
 
 			{#if isAnswered}
 				<button class="btn btn-primary btn-lg w-100" onclick={nextQuestion}>
-					{currentIndex < mistakeQuestions.length - 1 ? 'Следеће питање →' : '✓ Завршено'}
+					{currentIndex < mistakeQuestions.length - 1 ? t('question.next', lang) + ' →' : '✓'}
 				</button>
 			{/if}
 		</main>
@@ -214,22 +202,21 @@
 			{#if mistakeQuestions.length === 0}
 				<div class="text-center py-5">
 					<div class="fs-1 mb-3">🎉</div>
-					<h2 class="h5 fw-bold">Нема грешака!</h2>
-					<p class="text-body-secondary mb-3">Одлично, немате питања за понављање.</p>
-					<a href="/" class="text-primary fw-medium">← Почетна</a>
+					<h2 class="h5 fw-bold">{t('mistakes.empty', lang)}</h2>
+					<a href="/" class="text-primary fw-medium mt-3 d-inline-block">← {t('exam.back', lang)}</a>
 				</div>
 			{:else}
 				<div class="d-flex align-items-center justify-content-between mb-3">
-					<small class="text-body-secondary">{mistakeQuestions.length} питања за понављање</small>
+					<small class="text-body-secondary">{mistakeQuestions.length} {t('home.mistakes.sub', lang)}</small>
 					<button class="btn btn-danger btn-sm rounded-pill fw-semibold" onclick={startPractice}>
-						Вежбај грешке
+						{t('mistakes.practice', lang)}
 					</button>
 				</div>
 
-				{#each Object.entries(groupedMistakes) as [sectionId, questions]}
+				{#each Object.entries(groupedMistakes) as [sId, questions]}
 					<div class="mb-3">
 						<h3 class="small fw-semibold text-body-secondary mb-2">
-							{sectionIcon(sectionId)} {sectionName(sectionId)}
+							{sectionIcon(sId)} {sectionName(sId, lang)}
 							<span class="fw-normal">({questions.length})</span>
 						</h3>
 						{#each questions as q}

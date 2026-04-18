@@ -2,13 +2,19 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks, getSections, sectionColor } from '$lib/data.js';
-	import { getQuestionProgress, subscribe } from '$lib/store.js';
-	import type { Question, Chunk, SectionMeta } from '$lib/types.js';
+	import { getQuestionProgress, subscribe, getSettings } from '$lib/store.js';
+	import { setPageTitle } from '$lib/nav.js';
+	import { sectionName } from '$lib/i18n.js';
+	import type { Question, Chunk, SectionMeta, Lang } from '$lib/types.js';
 
 	let sectionId = $derived($page.params.section);
-	let sectionName = $state('');
 	let chunks = $state<Chunk[]>([]);
 	let chunkStats = $state<Array<{ total: number; correct: number; wrong: number }>>([]);
+	let lang = $state<Lang>(getSettings().lang);
+
+	$effect(() => {
+		setPageTitle(sectionName(sectionId, lang));
+	});
 
 	function computeChunkStats(chunks: Chunk[]): Array<{ total: number; correct: number; wrong: number }> {
 		return chunks.map((chunk) => {
@@ -27,15 +33,12 @@
 
 	onMount(async () => {
 		const data = await loadQuestions();
-		const sections = getSections(data);
-		const meta = sections.find((s) => s.id === sectionId);
-		sectionName = meta?.name || sectionId;
-
 		const questions = getQuestionsBySection(data, sectionId);
 		chunks = getChunks(questions);
 		chunkStats = computeChunkStats(chunks);
 
 		const unsub = subscribe(() => {
+			lang = getSettings().lang;
 			chunkStats = computeChunkStats(chunks);
 		});
 		return unsub;
@@ -55,19 +58,6 @@
 </script>
 
 <div class="pb-4">
-	<!-- Header -->
-	<nav class="navbar sticky-top bg-body border-bottom px-2">
-		<div class="d-flex align-items-center justify-content-between w-100">
-			<a href="/practice" class="btn btn-link text-body p-2" aria-label="Назад">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-					<path d="M15 18l-6-6 6-6"/>
-				</svg>
-			</a>
-			<h1 class="h6 fw-semibold mb-0 text-center flex-grow-1 text-truncate px-2">{sectionName}</h1>
-			<div style="width:40px"></div>
-		</div>
-	</nav>
-
 	<!-- Chunk grid -->
 	<div class="row row-cols-2 g-3 px-3 pt-3">
 		{#each chunks as chunk, i}
