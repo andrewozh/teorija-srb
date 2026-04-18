@@ -104,9 +104,68 @@
 		}
 	}
 
+	function prevQuestion() {
+		if (currentIndex > 0) {
+			currentIndex--;
+			resetState();
+		}
+	}
+
 	function goToQuestion(index: number) {
 		currentIndex = index;
 		resetState();
+	}
+
+	// Swipe handling with smooth animation
+	let touchStartX = 0;
+	let touchStartY = 0;
+	let swipeOffset = $state(0);
+	let swiping = $state(false);
+	let slideClass = $state('');
+
+	function handleTouchStart(e: TouchEvent) {
+		touchStartX = e.touches[0].clientX;
+		touchStartY = e.touches[0].clientY;
+		swiping = true;
+		slideClass = '';
+	}
+
+	function handleTouchMove(e: TouchEvent) {
+		if (!swiping) return;
+		const dx = e.touches[0].clientX - touchStartX;
+		const dy = e.touches[0].clientY - touchStartY;
+		// Lock to horizontal after first move
+		if (Math.abs(dy) > Math.abs(dx) && Math.abs(dx) < 10) {
+			swiping = false;
+			swipeOffset = 0;
+			return;
+		}
+		// Dampen at edges
+		if ((dx > 0 && currentIndex === 0) || (dx < 0 && currentIndex >= questions.length - 1)) {
+			swipeOffset = dx * 0.2;
+		} else {
+			swipeOffset = dx;
+		}
+	}
+
+	function handleTouchEnd(e: TouchEvent) {
+		if (!swiping) { swipeOffset = 0; return; }
+		swiping = false;
+		const dx = swipeOffset;
+		if (Math.abs(dx) > 60) {
+			// Animate out
+			slideClass = dx < 0 ? 'slide-out-left' : 'slide-out-right';
+			setTimeout(() => {
+				if (dx < 0) nextQuestion();
+				else prevQuestion();
+				// Animate in
+				slideClass = dx < 0 ? 'slide-in-right' : 'slide-in-left';
+				swipeOffset = 0;
+				setTimeout(() => { slideClass = ''; }, 250);
+			}, 150);
+		} else {
+			swipeOffset = 0;
+		}
 	}
 
 	function resetState() {
@@ -164,6 +223,14 @@
 	<QuestionPills current={currentIndex} states={pillStates} onclick={goToQuestion} />
 
 	<!-- Question body -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<div
+		class="q-content {slideClass}"
+		style={swiping && swipeOffset !== 0 ? `transform: translateX(${swipeOffset}px); opacity: ${1 - Math.abs(swipeOffset) / 500}` : ''}
+		ontouchstart={handleTouchStart}
+		ontouchmove={handleTouchMove}
+		ontouchend={handleTouchEnd}
+	>
 	<div class="q-body">
 		<!-- Tags -->
 		<!-- Image + overlaid tags -->
@@ -248,6 +315,7 @@
 			{/if}
 		</div>
 	</div>
+	</div>
 </div>
 {/if}
 
@@ -287,6 +355,36 @@
 	.q-header-total { color: var(--ink4); }
 
 	/* Body */
+	.q-content {
+		flex: 1; display: flex; flex-direction: column; overflow: hidden;
+		will-change: transform, opacity;
+	}
+	.slide-out-left {
+		animation: slideOutLeft 150ms ease-in forwards;
+	}
+	.slide-out-right {
+		animation: slideOutRight 150ms ease-in forwards;
+	}
+	.slide-in-right {
+		animation: slideInRight 250ms ease-out forwards;
+	}
+	.slide-in-left {
+		animation: slideInLeft 250ms ease-out forwards;
+	}
+	@keyframes slideOutLeft {
+		to { transform: translateX(-100%); opacity: 0; }
+	}
+	@keyframes slideOutRight {
+		to { transform: translateX(100%); opacity: 0; }
+	}
+	@keyframes slideInRight {
+		from { transform: translateX(60px); opacity: 0; }
+		to { transform: translateX(0); opacity: 1; }
+	}
+	@keyframes slideInLeft {
+		from { transform: translateX(-60px); opacity: 0; }
+		to { transform: translateX(0); opacity: 1; }
+	}
 	.q-body { flex: 1; overflow: auto; padding: 16px 16px 8px; }
 	.q-media { position: relative; margin-bottom: 10px; }
 	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
