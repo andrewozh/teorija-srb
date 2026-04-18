@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getSections, getQuestionsBySection } from '$lib/data.js';
-	import { getSectionCompletedCount, getTotalCompletedCount, subscribe, getSettings } from '$lib/store.js';
+	import { getSectionCompletedCount, getTotalCompletedCount, subscribe, getSettings, getBookmarks } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import type { SectionMeta, Lang } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
@@ -16,6 +16,7 @@
 	let totalCompleted = $state(0);
 	let totalQuestions = $state(0);
 	let lang = $state<Lang>(getSettings().lang);
+	let bookmarkCount = $state(getBookmarks().length);
 
 	onMount(async () => {
 		const data = await loadQuestions();
@@ -31,6 +32,7 @@
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
 			totalCompleted = getTotalCompletedCount();
+			bookmarkCount = getBookmarks().length;
 			for (const s of sections) {
 				sectionCompleted[s.id] = getSectionCompletedCount(s.id);
 			}
@@ -52,6 +54,20 @@
 			<span class="mono-ink">{totalCompleted}/{totalQuestions}</span>
 			{lang === 'sr' ? 'завршено' : 'завершено'}
 		</div>
+
+		{#if bookmarkCount > 0}
+			<a href="{base}/practice/bookmarks" class="section-card bookmark-card">
+				<div class="section-top">
+					<div class="section-num bookmark-icon">
+						<Icon name="bookmark-fill" size={14} color="var(--accent)" />
+					</div>
+					<div class="section-body">
+						<div class="section-title">{lang === 'sr' ? 'Обележено' : 'Избранное'}</div>
+					</div>
+					<div class="section-count">{bookmarkCount}</div>
+				</div>
+			</a>
+		{/if}
 
 		{#each sections as section, i}
 			{@const total = sectionQuestionCounts[section.id] || section.questions}
@@ -110,6 +126,14 @@
 	.section-title {
 		font-size: 14px; font-weight: 500;
 		letter-spacing: -0.1px; line-height: 1.3;
+	}
+	.bookmark-card {
+		border-color: var(--accent-wash);
+		margin-bottom: 16px;
+	}
+	.bookmark-card .section-top { margin-bottom: 0; }
+	.bookmark-icon {
+		background: var(--accent-wash) !important;
 	}
 	.section-count {
 		font-family: var(--font-mono);

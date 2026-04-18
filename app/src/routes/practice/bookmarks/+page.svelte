@@ -1,40 +1,36 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { loadQuestions, getQuestionsBySection, getChunks, questionKey, qText, oText } from '$lib/data.js';
+	import { loadQuestions, parseQuestionKey, questionKey, qText, oText } from '$lib/data.js';
 	import {
+		getBookmarks,
 		recordAnswer,
-		getQuestionProgress,
 		isBookmarked,
 		toggleBookmark,
 		subscribe,
 		getSettings,
-		updateSettings
+		updateSettings,
+		getQuestionProgress
 	} from '$lib/store.js';
-	import { t, sectionName } from '$lib/i18n.js';
-	import type { Question, Lang } from '$lib/types.js';
+	import { t } from '$lib/i18n.js';
+	import type { Question, QuestionsData, Lang } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import Tag from '$lib/components/Tag.svelte';
 	import QuestionPills from '$lib/components/QuestionPills.svelte';
 	import AnswerOption from '$lib/components/AnswerOption.svelte';
 
-	let sectionId = $derived($page.params.section);
-	let chunkIndex = $derived(parseInt($page.params.chunk, 10));
-
+	let data = $state<QuestionsData | null>(null);
 	let questions = $state<Question[]>([]);
 	let currentIndex = $state(0);
 	let selectedAnswers = $state<Set<string>>(new Set());
 	let isAnswered = $state(false);
 	let isCorrect = $state(false);
-	let bookmarked = $state(false);
+	let bookmarked = $state(true);
 	let lang = $state<Lang>(getSettings().lang);
 
 	let currentQuestion = $derived(questions[currentIndex]);
 	let hasMultipleAnswers = $derived(currentQuestion ? currentQuestion.correct_answers_count > 1 : false);
-	let currentQProg = $derived(currentQuestion ? getQuestionProgress(currentQuestion.section, currentQuestion.id) : null);
 
 	let pillStates = $derived(questions.map((q, i) => {
 		if (i === currentIndex) return 'current';
@@ -45,23 +41,27 @@
 	}));
 
 	onMount(async () => {
-		const data = await loadQuestions();
-		const sectionQuestions = getQuestionsBySection(data, sectionId);
-		const chunks = getChunks(sectionQuestions);
-		const chunk = chunks[chunkIndex];
-		if (chunk) {
-			questions = chunk.questions;
-		}
-		updateBookmarkState();
+		data = await loadQuestions();
+		refreshQuestions();
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
-			updateBookmarkState();
 		});
 		return unsub;
 	});
 
-	function updateBookmarkState() {
+	function refreshQuestions() {
+		if (!data) return;
+		const keys = getBookmarks();
+		questions = keys.map(key => {
+			const { section, id } = parseQuestionKey(key);
+			return data!.questions.find(q => q.section === section && q.id === id);
+		}).filter(Boolean) as Question[];
+		if (currentIndex >= questions.length) currentIndex = Math.max(0, questions.length - 1);
+		updateBookmark();
+	}
+
+	function updateBookmark() {
 		if (currentQuestion) {
 			bookmarked = isBookmarked(questionKey(currentQuestion));
 		}
@@ -70,10 +70,9 @@
 	function selectAnswer(letter: string) {
 		if (isAnswered) return;
 		if (hasMultipleAnswers) {
-			const newSet = new Set(selectedAnswers);
-			if (newSet.has(letter)) newSet.delete(letter);
-			else newSet.add(letter);
-			selectedAnswers = newSet;
+			const next = new Set(selectedAnswers);
+			if (next.has(letter)) next.delete(letter); else next.add(letter);
+			selectedAnswers = next;
 		} else {
 			selectedAnswers = new Set([letter]);
 			checkAnswer();
@@ -81,39 +80,24 @@
 	}
 
 	function checkAnswer() {
-		if (!currentQuestion || !currentQuestion.correct_answers) return;
+		if (!currentQuestion?.correct_answers) return;
+		const correct = new Set(currentQuestion.correct_answers);
+		isCorrect = correct.size === selectedAnswers.size && [...selectedAnswers].every(a => correct.has(a));
 		isAnswered = true;
-		const correctSet = new Set(currentQuestion.correct_answers);
-		isCorrect =
-			selectedAnswers.size === correctSet.size &&
-			[...selectedAnswers].every((a) => correctSet.has(a));
 		recordAnswer(currentQuestion.section, currentQuestion.id, isCorrect);
-	}
-
-	function confirmMultiAnswer() {
-		if (selectedAnswers.size === 0) return;
-		checkAnswer();
 	}
 
 	function nextQuestion() {
 		if (currentIndex < questions.length - 1) {
 			currentIndex++;
-			resetState();
 		} else {
-			goto(`${base}/practice/${sectionId}`);
+			goto(`${base}/practice`);
+			return;
 		}
-	}
-
-	function goToQuestion(index: number) {
-		currentIndex = index;
-		resetState();
-	}
-
-	function resetState() {
 		selectedAnswers = new Set();
 		isAnswered = false;
 		isCorrect = false;
-		updateBookmarkState();
+		updateBookmark();
 	}
 
 	function handleToggleBookmark() {
@@ -127,30 +111,34 @@
 		if (!isAnswered) {
 			return selectedAnswers.has(letter) ? 'selected' : 'idle';
 		}
-		const isCorrectAnswer = currentQuestion?.correct_answers?.includes(letter);
-		const wasSelected = selectedAnswers.has(letter);
-		if (isCorrectAnswer) return 'correct';
-		if (wasSelected && !isCorrectAnswer) return 'wrong';
+		const correct = new Set(currentQuestion?.correct_answers || []);
+		if (correct.has(letter)) return 'correct';
+		if (selectedAnswers.has(letter)) return 'wrong';
 		return 'muted';
 	}
-
-	$effect(() => {
-		if (currentQuestion) {
-			bookmarked = isBookmarked(questionKey(currentQuestion));
-		}
-	});
 </script>
 
-{#if currentQuestion}
+{#if questions.length === 0}
 <div class="qpage">
-	<!-- Custom header -->
+	<Header
+		title={lang === 'sr' ? 'Обележено' : 'Избранное'}
+		onback={() => goto(`${base}/practice`)}
+		onsettings={() => goto(`${base}/settings`)}
+	/>
+	<div class="empty">
+		<Icon name="bookmark" size={32} color="var(--ink3)" />
+		<p>{lang === 'sr' ? 'Нема обележених питања' : 'Нет избранных вопросов'}</p>
+	</div>
+</div>
+{:else if currentQuestion}
+<div class="qpage">
 	<div class="q-header">
-		<button class="q-header-btn" onclick={() => goto(`${base}/practice/${sectionId}`)}>
+		<button class="q-header-btn" onclick={() => goto(`${base}/practice`)}>
 			<Icon name="back" size={20} />
 		</button>
 		<div class="q-header-center">
 			<div class="q-header-context">
-				{sectionName(sectionId, lang)} · {lang === 'sr' ? 'блок' : 'блок'} {String(chunkIndex + 1).padStart(2, '0')}
+				{lang === 'sr' ? 'ОБЕЛЕЖЕНО' : 'ИЗБРАННОЕ'}
 			</div>
 			<div class="q-header-counter">
 				{String(currentIndex + 1).padStart(2, '0')}<span class="q-header-total"> / {questions.length}</span>
@@ -161,39 +149,19 @@
 		</button>
 	</div>
 
-	<QuestionPills current={currentIndex} states={pillStates} onclick={goToQuestion} />
+	<QuestionPills
+		current={currentIndex}
+		states={pillStates}
+		onclick={(i) => { currentIndex = i; selectedAnswers = new Set(); isAnswered = false; updateBookmark(); }}
+	/>
 
-	<!-- Question body -->
 	<div class="q-body">
-		<!-- Tags -->
-		<!-- Image + overlaid tags -->
-		<div class="q-media" class:q-media-has-image={currentQuestion.has_image && currentQuestion.image}>
-			<div class="q-tags">
-				{#if currentQuestion.is_changed}
-					<Tag tone="accent">
-						<span class="tag-dot accent-dot"></span>
-						{lang === 'sr' ? 'Измењено' : 'Изменено'}
-					</Tag>
-				{/if}
-				{#if currentQuestion.is_new}
-					<Tag tone="accent">
-						<span class="tag-dot accent-dot"></span>
-						{lang === 'sr' ? 'Ново' : 'Новый'}
-					</Tag>
-				{/if}
-				{#if currentQProg && currentQProg.wrong > 0}
-					<Tag tone="wrong">
-						<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
-						{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
-					</Tag>
-				{/if}
-			</div>
-			{#if currentQuestion.has_image && currentQuestion.image}
+		{#if currentQuestion.has_image && currentQuestion.image}
+			<div class="q-media">
 				<img src="{base}/images/{currentQuestion.image}" alt="" class="q-image" />
-			{/if}
-		</div>
+			</div>
+		{/if}
 
-		<!-- Question text -->
 		<div class="q-text">{qText(currentQuestion, lang)}</div>
 		<div class="q-meta">
 			{hasMultipleAnswers
@@ -203,7 +171,6 @@
 		</div>
 	</div>
 
-	<!-- Answers zone -->
 	<div class="q-answers">
 		{#each currentQuestion.options as option}
 			<AnswerOption
@@ -215,14 +182,12 @@
 			/>
 		{/each}
 
-		<!-- Multi-answer confirm -->
 		{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
-			<button class="q-confirm-btn" onclick={confirmMultiAnswer}>
+			<button class="q-confirm-btn" onclick={checkAnswer}>
 				{t('question.confirm', lang)} ({selectedAnswers.size})
 			</button>
 		{/if}
 
-		<!-- Footer -->
 		<div class="q-footer">
 			<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
 				<Icon name="language" size={19} stroke={1.6} />
@@ -234,16 +199,12 @@
 			>
 				<Icon name={bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
 			</button>
-			<button class="q-footer-icon" onclick={() => {}}>
-				<Icon name="flag" size={19} stroke={1.6} />
-			</button>
 			<div class="q-footer-spacer"></div>
 			{#if isAnswered}
 				<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
 					{currentIndex < questions.length - 1
 						? (lang === 'sr' ? 'Следеће' : 'Далее')
 						: '✓'}
-					<Icon name="chev-right" size={14} color="var(--accent-ink)" />
 				</button>
 			{/if}
 		</div>
@@ -253,20 +214,20 @@
 
 <style>
 	.qpage {
-		position: fixed;
-		inset: 0;
-		display: flex;
-		flex-direction: column;
+		position: fixed; inset: 0;
+		display: flex; flex-direction: column;
 		background: var(--bg);
 		padding-top: env(safe-area-inset-top);
 		z-index: 10;
 	}
-
-	/* Header */
+	.empty {
+		flex: 1; display: flex; flex-direction: column;
+		align-items: center; justify-content: center; gap: 12px;
+		color: var(--ink3); font-size: 14px;
+	}
 	.q-header {
 		display: flex; align-items: center; gap: 8px;
-		padding: 6px 16px 4px; height: 48px;
-		flex-shrink: 0;
+		padding: 6px 16px 4px; height: 48px; flex-shrink: 0;
 	}
 	.q-header-btn {
 		width: 36px; height: 36px; border-radius: 12px;
@@ -284,87 +245,46 @@
 		font-family: var(--font-mono); font-size: 13px;
 		color: var(--ink); letter-spacing: 0.3px;
 	}
-	.q-header-total { color: var(--ink4); }
-
-	/* Body */
+	.q-header-total { color: var(--ink3); }
 	.q-body { flex: 1; overflow: auto; padding: 16px 16px 8px; }
 	.q-media { position: relative; margin-bottom: 10px; }
-	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
-	.q-tags {
-		display: flex; gap: 6px; flex-wrap: wrap;
-	}
-	.tag-dot {
-		width: 5px; height: 5px; border-radius: 3px;
-		display: inline-block;
-	}
-	.accent-dot { background: var(--accent); }
-
-	.q-image-wrap {
-		width: 100%;
-		border-radius: 16px;
-		overflow: hidden;
-		border: 0.5px solid var(--hairline);
-		margin-bottom: 14px;
-	}
-	.q-image { width: 100%; display: block; }
-
+	.q-image { width: 100%; display: block; border-radius: 16px; }
 	.q-text {
 		font-size: 16px; font-weight: 500;
-		line-height: 1.4; letter-spacing: -0.2px;
-		color: var(--ink);
+		letter-spacing: -0.2px; line-height: 1.45;
 	}
 	.q-meta {
-		font-family: var(--font-mono); font-size: 11px;
 		color: var(--ink3); margin-top: 6px;
-		letter-spacing: 0.3px;
+		font-size: 12px; font-family: var(--font-mono);
+		letter-spacing: 0.2px;
 	}
-
-	/* Answers */
 	.q-answers {
 		padding: 12px 14px 14px;
 		padding-bottom: calc(14px + env(safe-area-inset-bottom));
 		display: flex; flex-direction: column; gap: 8px;
-		background: var(--answer-zone-bg);
-		flex-shrink: 0;
+		background: var(--answer-zone-bg); flex-shrink: 0;
 		border-top: 0.5px solid var(--hairline);
-		flex-shrink: 0;
 	}
-
 	.q-confirm-btn {
-		width: 100%; height: 48px; border-radius: 16px;
-		background: var(--accent); color: var(--accent-ink);
-		border: none; font-family: var(--font-ui);
+		height: 44px; border-radius: 14px;
+		background: var(--ink); color: var(--bg);
 		font-size: 15px; font-weight: 600;
-		letter-spacing: -0.1px; cursor: pointer;
+		border: none; cursor: pointer;
 	}
-
-	/* Footer */
 	.q-footer {
-		display: flex; align-items: center; gap: 4px;
-		margin-top: 6px;
+		display: flex; align-items: center; gap: 4px; margin-top: 6px;
 	}
 	.q-footer-icon {
 		width: 44px; height: 44px; border-radius: 12px;
 		background: transparent; border: none;
-		color: var(--ink2);
-		display: flex; align-items: center; justify-content: center;
-		cursor: pointer;
+		color: var(--ink2); display: flex;
+		align-items: center; justify-content: center; cursor: pointer;
 	}
-	.q-footer-active {
-		background: var(--accent-wash);
-		color: var(--accent);
-	}
+	.q-footer-active { background: var(--accent-wash); color: var(--accent); }
 	.q-footer-spacer { flex: 1; }
-
 	.q-next-btn {
 		height: 44px; padding: 0 22px; border-radius: 14px;
-		border: none; font-family: var(--font-ui);
-		font-size: 14px; font-weight: 600;
-		letter-spacing: -0.1px; cursor: pointer;
-		display: flex; align-items: center; gap: 6px;
+		font-size: 15px; font-weight: 600; border: none; cursor: pointer;
 	}
-	.q-next-accent {
-		background: var(--accent);
-		color: var(--accent-ink);
-	}
+	.q-next-accent { background: var(--accent); color: var(--accent-ink); }
 </style>
