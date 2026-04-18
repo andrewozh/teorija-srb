@@ -65,6 +65,12 @@ Normal state — navigation cards:
 - Language: separate app language and questions language
 - Theme: light / dark / system
 - Import / export progress data
+- Categorie:
+  A	Мотоциклы
+  B	Легковые автомобили
+  C	Грузовики
+  D	Автобусы
+  F	Тракторы
 
 ### Assisted learning
 
