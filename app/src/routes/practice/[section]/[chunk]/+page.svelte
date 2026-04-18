@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks, questionKey, qText, oText } from '$lib/data.js';
@@ -207,7 +208,7 @@
 			<!-- Image -->
 			{#if currentQuestion.has_image && currentQuestion.image}
 				<div class="card border-0 shadow-sm overflow-hidden">
-					<img src="/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
+					<img src="{base}/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
 				</div>
 			{/if}
 
@@ -269,7 +270,7 @@
 							{t('question.next', lang)} →
 						</button>
 					{:else}
-						<a href="/practice/{sectionId}" class="btn btn-success btn-lg w-100">
+						<a href="{base}/practice/{sectionId}" class="btn btn-success btn-lg w-100">
 							✓ {t('question.correct', lang)}
 						</a>
 					{/if}

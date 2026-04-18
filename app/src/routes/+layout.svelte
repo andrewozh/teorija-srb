@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import 'bootstrap/dist/css/bootstrap.min.css';
 	import { getSettings, subscribe, updateSettings } from '$lib/store.js';
 	import { getPageTitle, onTitleChange } from '$lib/nav.js';
@@ -74,7 +75,7 @@
 		</span>
 
 		<div style="min-width:80px;" class="d-flex justify-content-end">
-			<a href="/settings" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center" style="width:36px;height:36px;" aria-label={t('settings.title', lang)}>
+			<a href="{base}/settings" class="btn btn-outline-secondary btn-sm d-flex align-items-center justify-content-center" style="width:36px;height:36px;" aria-label={t('settings.title', lang)}>
 				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<line x1="3" y1="6" x2="21" y2="6"/>
 					<line x1="3" y1="12" x2="21" y2="12"/>

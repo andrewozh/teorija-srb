@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { loadQuestions, parseQuestionKey, questionKey, sectionIcon, qText, oText } from '$lib/data.js';
 	import {
@@ -151,7 +152,7 @@
 		<main class="flex-grow-1 p-3 d-flex flex-column gap-3">
 			{#if currentQuestion.has_image && currentQuestion.image}
 				<div class="card border-0 shadow-sm overflow-hidden">
-					<img src="/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
+					<img src="{base}/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
 				</div>
 			{/if}
 
@@ -203,7 +204,7 @@
 				<div class="text-center py-5">
 					<div class="fs-1 mb-3">🎉</div>
 					<h2 class="h5 fw-bold">{t('mistakes.empty', lang)}</h2>
-					<a href="/" class="text-primary fw-medium mt-3 d-inline-block">← {t('exam.back', lang)}</a>
+					<a href="{base}/" class="text-primary fw-medium mt-3 d-inline-block">← {t('exam.back', lang)}</a>
 				</div>
 			{:else}
 				<div class="d-flex align-items-center justify-content-between mb-3">

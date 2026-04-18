@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import {
 		getTotalCompletedCount,
 		getMistakeQuestionKeys,
@@ -36,7 +37,7 @@
 	<!-- Cards -->
 	<div class="d-flex flex-column gap-3 px-3 pt-3">
 		<!-- Practice card -->
-		<a href="/practice" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+		<a href="{base}/practice" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
 			<div class="card-body d-flex align-items-center gap-3 flex-wrap">
 				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📚</div>
 				<div class="flex-grow-1 min-w-0">
@@ -53,7 +54,7 @@
 		</a>
 
 		<!-- Exam card -->
-		<a href="/exam" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #10b981, #059669);">
+		<a href="{base}/exam" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #10b981, #059669);">
 			<div class="card-body d-flex align-items-center gap-3">
 				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📝</div>
 				<div class="flex-grow-1">
@@ -65,7 +66,7 @@
 		</a>
 
 		<!-- Mistakes card -->
-		<a href="/mistakes" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+		<a href="{base}/mistakes" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
 			<div class="card-body d-flex align-items-center gap-3">
 				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">❌</div>
 				<div class="flex-grow-1">
@@ -77,7 +78,7 @@
 		</a>
 
 		<!-- Statistics card -->
-		<a href="/statistics" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+		<a href="{base}/statistics" class="card text-white text-decoration-none border-0 shadow-sm" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
 			<div class="card-body d-flex align-items-center gap-3">
 				<div class="d-flex align-items-center justify-content-center rounded-3 flex-shrink-0" style="width:48px;height:48px;background:rgba(255,255,255,0.2);font-size:2rem;">📊</div>
 				<div class="flex-grow-1">

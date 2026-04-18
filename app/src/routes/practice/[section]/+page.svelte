@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks, getSections, sectionColor } from '$lib/data.js';
@@ -65,7 +66,7 @@
 			{@const status = chunkStatus(stat)}
 			<div class="col">
 				<a
-					href="/practice/{sectionId}/{chunk.index}"
+					href="{base}/practice/{sectionId}/{chunk.index}"
 					class="card text-decoration-none border-start border-4 shadow-sm h-100 {borderClass(status)}"
 				>
 					<div class="card-body p-3">

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getSections, getQuestionsBySection, sectionIcon, sectionColor } from '$lib/data.js';
 	import { getSectionCompletedCount, subscribe, getSettings } from '$lib/store.js';
@@ -54,7 +55,7 @@
 		{#each sections as section}
 			{@const pct = progressPercent(section.id)}
 			{@const color = sectionColor(section.id)}
-			<a href="/practice/{section.id}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded-3 border shadow-sm px-3 py-3">
+			<a href="{base}/practice/{section.id}" class="list-group-item list-group-item-action d-flex align-items-center gap-3 rounded-3 border shadow-sm px-3 py-3">
 				<div class="flex-shrink-0">
 					<svg width="48" height="48" viewBox="0 0 48 48">
 						<circle cx="24" cy="24" r="18" fill="none" stroke="var(--bs-border-color)" stroke-width="4"/>

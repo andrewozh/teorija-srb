@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getRandomExamQuestions, questionKey, qText, oText } from '$lib/data.js';
 	import { recordAnswer, addExamResult, getSettings, subscribe } from '$lib/store.js';
@@ -238,7 +239,7 @@
 		<main class="flex-grow-1 p-3 d-flex flex-column gap-3">
 			{#if currentQuestion.has_image && currentQuestion.image}
 				<div class="card border-0 shadow-sm overflow-hidden">
-					<img src="/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
+					<img src="{base}/images/{currentQuestion.image}" alt="Слика уз питање" class="card-img-top" />
 				</div>
 			{/if}
 
@@ -324,7 +325,7 @@
 			<!-- Actions -->
 			<div class="d-flex flex-column gap-2 align-items-center">
 				<button class="btn btn-success btn-lg w-100" onclick={startExam}>{t('exam.start', lang)}</button>
-				<a href="/" class="text-primary fw-medium">← {t('exam.back', lang)}</a>
+				<a href="{base}/" class="text-primary fw-medium">← {t('exam.back', lang)}</a>
 			</div>
 		</div>
 	{/if}

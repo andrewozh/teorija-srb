@@ -1,10 +1,11 @@
+import { base } from '$app/paths';
 import type { Question, QuestionsData, SectionMeta, Chunk, Lang, Option } from './types.js';
 
 let cachedData: QuestionsData | null = null;
 
 export async function loadQuestions(): Promise<QuestionsData> {
 	if (cachedData) return cachedData;
-	const res = await fetch('/questions.json');
+	const res = await fetch(`${base}/questions.json`);
 	cachedData = (await res.json()) as QuestionsData;
 	return cachedData;
 }
