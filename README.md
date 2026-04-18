@@ -1,9 +1,9 @@
 # TODO
 
 - [+] fix paths on gh pages hosting (conflict with main webpage)
-- [~] fix translation quality
+- [+] fix translation quality
   send question+answers to google translate and compare with current translations
-  probably need something even  
+  probably need something even better -- Claude
 
 **Known Issuess:**
 
@@ -16,7 +16,7 @@
 **Improvements:**
 
 - separate app language & questions langiange (if questions language )
-- group questions by category A B C D ?
+- group questions by category A B C D ? -- already parsed
 - group questions by subcategory in topic
 - answers files also contains hints! parse those comments for special questions
 - learning assistant (same algorithm for constant repeating questions as ru app)
