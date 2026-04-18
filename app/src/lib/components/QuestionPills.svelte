@@ -39,7 +39,7 @@
 	.pills-row {
 		display: flex;
 		gap: 6px;
-		padding: 12px 16px 14px;
+		padding: 6px 16px 7px;
 		overflow-x: auto;
 		scrollbar-width: none;
 		border-bottom: 0.5px solid var(--hairline);

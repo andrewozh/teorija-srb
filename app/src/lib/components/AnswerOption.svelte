@@ -28,7 +28,7 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 12px;
-		padding: 14px;
+		padding: 10px 12px;
 		border-radius: 16px;
 		background: var(--surface);
 		border: 1px solid var(--hairline);

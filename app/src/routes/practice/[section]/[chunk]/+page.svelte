@@ -10,7 +10,8 @@
 		isBookmarked,
 		toggleBookmark,
 		subscribe,
-		getSettings
+		getSettings,
+		updateSettings
 	} from '$lib/store.js';
 	import { t, sectionName } from '$lib/i18n.js';
 	import type { Question, Lang } from '$lib/types.js';
@@ -165,33 +166,32 @@
 	<!-- Question body -->
 	<div class="q-body">
 		<!-- Tags -->
-		<div class="q-tags">
-			{#if currentQuestion.is_changed}
-				<Tag tone="accent">
-					<span class="tag-dot accent-dot"></span>
-					{lang === 'sr' ? 'Измењено' : 'Изменено'}
-				</Tag>
-			{/if}
-			{#if currentQuestion.is_new}
-				<Tag tone="accent">
-					<span class="tag-dot accent-dot"></span>
-					{lang === 'sr' ? 'Ново' : 'Новый'}
-				</Tag>
-			{/if}
-			{#if currentQProg && currentQProg.wrong > 0}
-				<Tag tone="wrong">
-					<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
-					{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
-				</Tag>
+		<!-- Image + overlaid tags -->
+		<div class="q-media" class:q-media-has-image={currentQuestion.has_image && currentQuestion.image}>
+			<div class="q-tags">
+				{#if currentQuestion.is_changed}
+					<Tag tone="accent">
+						<span class="tag-dot accent-dot"></span>
+						{lang === 'sr' ? 'Измењено' : 'Изменено'}
+					</Tag>
+				{/if}
+				{#if currentQuestion.is_new}
+					<Tag tone="accent">
+						<span class="tag-dot accent-dot"></span>
+						{lang === 'sr' ? 'Ново' : 'Новый'}
+					</Tag>
+				{/if}
+				{#if currentQProg && currentQProg.wrong > 0}
+					<Tag tone="wrong">
+						<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
+						{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
+					</Tag>
+				{/if}
+			</div>
+			{#if currentQuestion.has_image && currentQuestion.image}
+				<img src="{base}/images/{currentQuestion.image}" alt="" class="q-image" />
 			{/if}
 		</div>
-
-		<!-- Image -->
-		{#if currentQuestion.has_image && currentQuestion.image}
-			<div class="q-image-wrap">
-				<img src="{base}/images/{currentQuestion.image}" alt="" class="q-image" />
-			</div>
-		{/if}
 
 		<!-- Question text -->
 		<div class="q-text">{qText(currentQuestion, lang)}</div>
@@ -224,7 +224,7 @@
 
 		<!-- Footer -->
 		<div class="q-footer">
-			<button class="q-footer-icon" onclick={() => {}}>
+			<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
 				<Icon name="swap" size={19} stroke={1.6} />
 			</button>
 			<button
@@ -253,10 +253,13 @@
 
 <style>
 	.qpage {
-		height: 100%;
+		position: fixed;
+		inset: 0;
 		display: flex;
 		flex-direction: column;
 		background: var(--bg);
+		padding-top: env(safe-area-inset-top);
+		z-index: 10;
 	}
 
 	/* Header */
@@ -285,7 +288,11 @@
 
 	/* Body */
 	.q-body { flex: 1; overflow: auto; padding: 16px 16px 8px; }
-	.q-tags { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+	.q-media { position: relative; margin-bottom: 10px; }
+	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
+	.q-tags {
+		display: flex; gap: 6px; flex-wrap: wrap;
+	}
 	.tag-dot {
 		width: 5px; height: 5px; border-radius: 3px;
 		display: inline-block;
@@ -314,9 +321,11 @@
 
 	/* Answers */
 	.q-answers {
-		padding: 12px 14px 14px;
+		padding: 8px 10px 8px;
+		padding-bottom: calc(8px + env(safe-area-inset-bottom));
 		display: flex; flex-direction: column; gap: 8px;
 		background: var(--answer-zone-bg);
+		flex-shrink: 0;
 		border-top: 0.5px solid var(--hairline);
 		flex-shrink: 0;
 	}

@@ -139,14 +139,14 @@
 
 			<!-- Footer -->
 			<div class="home-footer">
-				<a href="{base}/about">v2.4.1 · {lang === 'sr' ? 'О апликацији' : 'О приложении'}</a>
+				<a href="{base}/about">v0.1.1-alpha · {lang === 'sr' ? 'О апликацији' : 'О приложении'}</a>
 			</div>
 		</div>
 	{:else}
 		<!-- FIRST LAUNCH -->
 		<div class="empty-state">
 			<div class="empty-icon">
-				<Icon name="car" size={36} color="var(--accent-ink)" stroke={1.6} />
+				<img src="{base}/icon-192.png" alt="Teorija" width="72" height="72" style="border-radius: 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 0.5px var(--hairline);" />
 			</div>
 			<div class="empty-title">
 				{lang === 'sr' ? 'Добро дошли' : 'Добро пожаловать'}<br/>{lang === 'sr' ? 'у' : 'в'} Teorija.
@@ -155,6 +155,11 @@
 				{lang === 'sr'
 					? '1780 питања из 9 области за полагање возачког испита. Ради офлајн. Сав напредак остаје на уређају.'
 					: '1780 вопросов из 9 разделов для сдачи экзамена по вождению. Работает офлайн. Весь прогресс хранится на устройстве.'}
+			</div>
+			<div class="alpha-warning">
+				⚠️ {lang === 'sr'
+					? 'Алфа верзија — апликација је у развоју и није у потпуности тестирана.'
+					: 'Альфа-версия — приложение в разработке и не полностью протестировано.'}
 			</div>
 			<div class="empty-actions">
 				<a href="{base}/practice" class="btn-primary-full">
@@ -297,8 +302,6 @@
 		flex-direction: column;
 	}
 	.empty-icon {
-		width: 72px; height: 72px; border-radius: 22px;
-		background: var(--accent); color: var(--accent-ink);
 		display: flex; align-items: center; justify-content: center;
 		margin: 28px auto 26px;
 	}
@@ -309,6 +312,11 @@
 	.empty-desc {
 		font-size: 14px; color: var(--ink2); text-align: center;
 		line-height: 1.5; margin-bottom: 36px; padding: 0 12px;
+	}
+	.alpha-warning {
+		font-size: 12px; color: var(--wrong); text-align: center;
+		line-height: 1.5; padding: 10px 16px; margin: 0 12px 20px;
+		border-radius: 12px; background: var(--wrong-wash);
 	}
 	.empty-actions {
 		margin-top: auto;

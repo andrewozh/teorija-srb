@@ -23,7 +23,13 @@
 				<img src="{base}/icon-192.png" alt="Teorija" width="96" height="96" style="border-radius: 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 0.5px var(--hairline);" />
 			</div>
 			<div class="about-name">Teorija</div>
-			<div class="about-version">2.4.1</div>
+			<div class="about-version">0.1.1-alpha</div>
+		</div>
+
+		<div class="alpha-warning">
+			⚠️ {lang === 'sr'
+				? 'Алфа верзија — апликација је у развоју и није у потпуности тестирана. Могу постојати грешке у преводу и одговорима.'
+				: 'Альфа-версия — приложение в разработке и не полностью протестировано. Возможны ошибки в переводе и ответах.'}
 		</div>
 
 		<div class="about-card">
@@ -76,6 +82,11 @@
 	.about-name { font-size: 20px; font-weight: 500; letter-spacing: -0.3px; }
 	.about-version { font-size: 12px; color: var(--ink3); font-family: var(--font-mono); margin-top: 4px; }
 
+	.alpha-warning {
+		font-size: 12px; color: var(--wrong); text-align: center;
+		line-height: 1.5; padding: 10px 16px; margin-bottom: 16px;
+		border-radius: 12px; background: var(--wrong-wash);
+	}
 	.about-card {
 		background: var(--surface);
 		border-radius: 18px;
