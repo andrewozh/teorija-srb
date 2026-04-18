@@ -79,6 +79,7 @@ export interface AppState {
 	bookmarks: string[];
 	exams: ExamResult[];
 	settings: Settings;
+	onboarded: boolean;
 }
 
 export interface Chunk {

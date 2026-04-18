@@ -9,7 +9,9 @@
 		subscribe,
 		getSettings,
 		importState,
-		updateSettings
+		updateSettings,
+		isOnboarded,
+		setOnboarded
 	} from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Lang } from '$lib/types.js';
@@ -29,13 +31,15 @@
 			passedExams = getPassedExamCount();
 			totalExams = getExams().length;
 			lang = getSettings().lang;
+			onboarded = isOnboarded();
 		});
 		return unsub;
 	});
 
 	const totalQuestions = 1756;
 	let progressPercent = $derived(Math.round((completed / totalQuestions) * 100));
-	let hasProgress = $derived(completed > 0 || totalExams > 0);
+	let onboarded = $state(isOnboarded());
+	let showHome = $derived(onboarded);
 
 	function handleImport() {
 		const input = document.createElement('input');
@@ -66,7 +70,7 @@
 		{/snippet}
 	</Header>
 
-	{#if hasProgress}
+	{#if showHome}
 		<!-- HOME WITH PROGRESS -->
 		<div class="scroll-area">
 			<!-- Greeting -->
@@ -169,9 +173,9 @@
 					: 'Альфа-версия — приложение в разработке и не полностью протестировано.'}
 			</div>
 			<div class="empty-actions">
-				<a href="{base}/practice" class="btn-primary-full">
+				<button class="btn-primary-full" onclick={() => setOnboarded()}>
 					{lang === 'sr' ? 'Започни учење' : 'Начать обучение'}
-				</a>
+				</button>
 				<button class="btn-outline-full" onclick={handleImport}>
 					<Icon name="upload" size={16} stroke={1.6} />
 					{lang === 'sr' ? 'Увези постојећи напредак' : 'Импортировать прогресс'}

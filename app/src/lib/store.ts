@@ -9,6 +9,7 @@ function defaultState(): AppState {
 		progress: {},
 		bookmarks: [],
 		exams: [],
+		onboarded: false,
 		settings: {
 			theme: 'dark',
 			fontSize: 'medium',
@@ -174,6 +175,15 @@ export function importState(json: string): boolean {
 	} catch {
 		return false;
 	}
+}
+
+export function isOnboarded(): boolean {
+	return state.onboarded;
+}
+
+export function setOnboarded(): void {
+	state.onboarded = true;
+	notify();
 }
 
 export function resetState(): void {
