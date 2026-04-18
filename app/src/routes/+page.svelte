@@ -222,7 +222,7 @@
 		color: var(--accent-ink);
 		border-radius: 22px;
 		padding: 18px 18px 16px;
-		margin-bottom: 10px;
+		margin-bottom: 18px;
 		position: relative;
 		overflow: hidden;
 	}

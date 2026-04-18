@@ -177,7 +177,7 @@
 			<div class="import-msg" class:import-ok={importMessage === '✓'}>{importMessage}</div>
 		{/if}
 
-		<div class="section-card">
+		<div class="section-card" style="margin-top: 16px;">
 			<a href="{base}/about" class="settings-row about-row">
 				<span class="row-label">{lang === 'sr' ? 'О апликацији' : 'О приложении'}</span>
 				<span class="row-val">v0.1.1-alpha →</span>
