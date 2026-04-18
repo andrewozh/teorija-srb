@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks, questionKey, qText, oText } from '$lib/data.js';
 	import {
 		recordAnswer,
@@ -26,23 +26,39 @@
 
 	let questions = $state<Question[]>([]);
 	let currentIndex = $state(0);
-	let selectedAnswers = $state<Set<string>>(new Set());
-	let isAnswered = $state(false);
-	let isCorrect = $state(false);
-	let bookmarked = $state(false);
 	let lang = $state<Lang>(getSettings().lang);
 
+	// Per-question answer state
+	let questionStates = $state<Record<number, {
+		selected: Set<string>;
+		answered: boolean;
+		correct: boolean;
+	}>>({});
+
+	function getQState(index: number) {
+		return questionStates[index] ?? { selected: new Set<string>(), answered: false, correct: false };
+	}
+
 	let currentQuestion = $derived(questions[currentIndex]);
+	let currentQState = $derived(getQState(currentIndex));
 	let hasMultipleAnswers = $derived(currentQuestion ? currentQuestion.correct_answers_count > 1 : false);
 	let currentQProg = $derived(currentQuestion ? getQuestionProgress(currentQuestion.section, currentQuestion.id) : null);
+	let bookmarked = $state(false);
 
 	let pillStates = $derived(questions.map((q, i) => {
 		if (i === currentIndex) return 'current';
+		const qs = getQState(i);
+		if (qs.answered && qs.correct) return 'correct';
+		if (qs.answered && !qs.correct) return 'wrong';
 		const prog = getQuestionProgress(q.section, q.id);
 		if (prog && prog.correct > 0) return 'correct';
 		if (prog && prog.wrong > 0) return 'wrong';
 		return 'unanswered';
 	}));
+
+	// Carousel ref
+	let carouselEl = $state<HTMLDivElement | undefined>(undefined);
+	let programmaticScroll = false;
 
 	onMount(async () => {
 		const data = await loadQuestions();
@@ -67,112 +83,87 @@
 		}
 	}
 
-	function selectAnswer(letter: string) {
-		if (isAnswered) return;
-		if (hasMultipleAnswers) {
-			const newSet = new Set(selectedAnswers);
-			if (newSet.has(letter)) newSet.delete(letter);
-			else newSet.add(letter);
-			selectedAnswers = newSet;
+	function selectAnswer(qIndex: number, letter: string) {
+		const qs = getQState(qIndex);
+		if (qs.answered) return;
+
+		const q = questions[qIndex];
+		const isMulti = q.correct_answers_count > 1;
+
+		const newSelected = new Set(qs.selected);
+		if (isMulti) {
+			if (newSelected.has(letter)) newSelected.delete(letter);
+			else newSelected.add(letter);
+			questionStates[qIndex] = { ...qs, selected: newSelected };
 		} else {
-			selectedAnswers = new Set([letter]);
-			checkAnswer();
+			questionStates[qIndex] = { ...qs, selected: new Set([letter]) };
+			// Auto-check for single answer
+			checkAnswerForQuestion(qIndex, new Set([letter]));
 		}
 	}
 
-	function checkAnswer() {
-		if (!currentQuestion || !currentQuestion.correct_answers) return;
-		isAnswered = true;
-		const correctSet = new Set(currentQuestion.correct_answers);
-		isCorrect =
-			selectedAnswers.size === correctSet.size &&
-			[...selectedAnswers].every((a) => correctSet.has(a));
-		recordAnswer(currentQuestion.section, currentQuestion.id, isCorrect);
+	function checkAnswerForQuestion(qIndex: number, selected?: Set<string>) {
+		const q = questions[qIndex];
+		if (!q || !q.correct_answers) return;
+		const qs = getQState(qIndex);
+		const sel = selected ?? qs.selected;
+		const correctSet = new Set(q.correct_answers);
+		const isCorrect =
+			sel.size === correctSet.size &&
+			[...sel].every((a) => correctSet.has(a));
+		questionStates[qIndex] = { selected: sel, answered: true, correct: isCorrect };
+		recordAnswer(q.section, q.id, isCorrect);
 	}
 
-	function confirmMultiAnswer() {
-		if (selectedAnswers.size === 0) return;
-		checkAnswer();
+	function confirmMultiAnswer(qIndex: number) {
+		const qs = getQState(qIndex);
+		if (qs.selected.size === 0) return;
+		checkAnswerForQuestion(qIndex);
+	}
+
+	function scrollToSlide(index: number) {
+		if (!carouselEl) return;
+		programmaticScroll = true;
+		const slideWidth = carouselEl.clientWidth;
+		carouselEl.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+		// Reset programmatic flag after scroll settles
+		setTimeout(() => { programmaticScroll = false; }, 400);
 	}
 
 	function nextQuestion() {
 		if (currentIndex < questions.length - 1) {
-			currentIndex++;
-			resetState();
+			scrollToSlide(currentIndex + 1);
 		} else {
 			goto(`${base}/practice/${sectionId}`);
 		}
 	}
 
-	function prevQuestion() {
-		if (currentIndex > 0) {
-			currentIndex--;
-			resetState();
-		}
-	}
-
 	function goToQuestion(index: number) {
-		currentIndex = index;
-		resetState();
+		scrollToSlide(index);
 	}
 
-	// Swipe handling with smooth animation
-	let touchStartX = 0;
-	let touchStartY = 0;
-	let swipeOffset = $state(0);
-	let swiping = $state(false);
-	let slideClass = $state('');
-
-	function handleTouchStart(e: TouchEvent) {
-		touchStartX = e.touches[0].clientX;
-		touchStartY = e.touches[0].clientY;
-		swiping = true;
-		slideClass = '';
-	}
-
-	function handleTouchMove(e: TouchEvent) {
-		if (!swiping) return;
-		const dx = e.touches[0].clientX - touchStartX;
-		const dy = e.touches[0].clientY - touchStartY;
-		// Lock to horizontal after first move
-		if (Math.abs(dy) > Math.abs(dx) && Math.abs(dx) < 10) {
-			swiping = false;
-			swipeOffset = 0;
-			return;
-		}
-		// Dampen at edges
-		if ((dx > 0 && currentIndex === 0) || (dx < 0 && currentIndex >= questions.length - 1)) {
-			swipeOffset = dx * 0.2;
-		} else {
-			swipeOffset = dx;
+	function handleCarouselScroll() {
+		if (!carouselEl || programmaticScroll) return;
+		const slideWidth = carouselEl.clientWidth;
+		if (slideWidth === 0) return;
+		const newIndex = Math.round(carouselEl.scrollLeft / slideWidth);
+		if (newIndex !== currentIndex && newIndex >= 0 && newIndex < questions.length) {
+			currentIndex = newIndex;
+			updateBookmarkState();
 		}
 	}
 
-	function handleTouchEnd(e: TouchEvent) {
-		if (!swiping) { swipeOffset = 0; return; }
-		swiping = false;
-		const dx = swipeOffset;
-		if (Math.abs(dx) > 60) {
-			// Animate out
-			slideClass = dx < 0 ? 'slide-out-left' : 'slide-out-right';
-			setTimeout(() => {
-				if (dx < 0) nextQuestion();
-				else prevQuestion();
-				// Animate in
-				slideClass = dx < 0 ? 'slide-in-right' : 'slide-in-left';
-				swipeOffset = 0;
-				setTimeout(() => { slideClass = ''; }, 250);
-			}, 150);
-		} else {
-			swipeOffset = 0;
+	// Also update currentIndex when programmatic scroll ends (scrollend or fallback)
+	function handleScrollEnd() {
+		if (!carouselEl) return;
+		const slideWidth = carouselEl.clientWidth;
+		if (slideWidth === 0) return;
+		const newIndex = Math.round(carouselEl.scrollLeft / slideWidth);
+		if (newIndex >= 0 && newIndex < questions.length) {
+			currentIndex = newIndex;
+			programmaticScroll = false;
+			updateBookmarkState();
 		}
-	}
-
-	function resetState() {
-		selectedAnswers = new Set();
-		isAnswered = false;
-		isCorrect = false;
-		updateBookmarkState();
 	}
 
 	function handleToggleBookmark() {
@@ -182,12 +173,14 @@
 		}
 	}
 
-	function optionState(letter: string): 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' {
-		if (!isAnswered) {
-			return selectedAnswers.has(letter) ? 'selected' : 'idle';
+	function optionStateForQuestion(qIndex: number, letter: string): 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' {
+		const qs = getQState(qIndex);
+		const q = questions[qIndex];
+		if (!qs.answered) {
+			return qs.selected.has(letter) ? 'selected' : 'idle';
 		}
-		const isCorrectAnswer = currentQuestion?.correct_answers?.includes(letter);
-		const wasSelected = selectedAnswers.has(letter);
+		const isCorrectAnswer = q?.correct_answers?.includes(letter);
+		const wasSelected = qs.selected.has(letter);
 		if (isCorrectAnswer) return 'correct';
 		if (wasSelected && !isCorrectAnswer) return 'wrong';
 		return 'muted';
@@ -200,7 +193,7 @@
 	});
 </script>
 
-{#if currentQuestion}
+{#if questions.length > 0}
 <div class="qpage">
 	<!-- Custom header -->
 	<div class="q-header">
@@ -222,99 +215,104 @@
 
 	<QuestionPills current={currentIndex} states={pillStates} onclick={goToQuestion} />
 
-	<!-- Question body -->
+	<!-- Carousel -->
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
-		class="q-content {slideClass}"
-		style={swiping && swipeOffset !== 0 ? `transform: translateX(${swipeOffset}px); opacity: ${1 - Math.abs(swipeOffset) / 500}` : ''}
-		ontouchstart={handleTouchStart}
-		ontouchmove={handleTouchMove}
-		ontouchend={handleTouchEnd}
+		class="carousel"
+		bind:this={carouselEl}
+		onscroll={handleCarouselScroll}
+		onscrollend={handleScrollEnd}
 	>
-	<div class="q-body">
-		<!-- Tags -->
-		<!-- Image + overlaid tags -->
-		<div class="q-media" class:q-media-has-image={currentQuestion.has_image && currentQuestion.image}>
-			<div class="q-tags">
-				{#if currentQuestion.is_changed}
-					<Tag tone="accent">
-						<span class="tag-dot accent-dot"></span>
-						{lang === 'sr' ? 'Измењено' : 'Изменено'}
-					</Tag>
-				{/if}
-				{#if currentQuestion.is_new}
-					<Tag tone="accent">
-						<span class="tag-dot accent-dot"></span>
-						{lang === 'sr' ? 'Ново' : 'Новый'}
-					</Tag>
-				{/if}
-				{#if currentQProg && currentQProg.wrong > 0}
-					<Tag tone="wrong">
-						<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
-						{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
-					</Tag>
-				{/if}
+		{#each questions as q, i}
+			{@const qs = getQState(i)}
+			{@const isMulti = q.correct_answers_count > 1}
+			{@const qProg = getQuestionProgress(q.section, q.id)}
+			<div class="slide">
+				<div class="slide-body">
+					<!-- Tags + Image -->
+					<div class="q-media" class:q-media-has-image={q.has_image && q.image}>
+						<div class="q-tags">
+							{#if q.is_changed}
+								<Tag tone="accent">
+									<span class="tag-dot accent-dot"></span>
+									{lang === 'sr' ? 'Измењено' : 'Изменено'}
+								</Tag>
+							{/if}
+							{#if q.is_new}
+								<Tag tone="accent">
+									<span class="tag-dot accent-dot"></span>
+									{lang === 'sr' ? 'Ново' : 'Новый'}
+								</Tag>
+							{/if}
+							{#if qProg && qProg.wrong > 0}
+								<Tag tone="wrong">
+									<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
+									{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
+								</Tag>
+							{/if}
+						</div>
+						{#if q.has_image && q.image}
+							<img src="{base}/images/{q.image}" alt="" class="q-image" loading="lazy" />
+						{/if}
+					</div>
+
+					<!-- Question text -->
+					<div class="q-text">{qText(q, lang)}</div>
+					<div class="q-meta">
+						{isMulti
+							? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
+							: (lang === 'sr' ? 'Изабери један одговор' : 'Выберите один ответ')}
+						· {q.points} {lang === 'sr' ? 'поен' : 'балл'}
+					</div>
+				</div>
+
+				<!-- Answers zone -->
+				<div class="slide-answers">
+					{#each q.options as option}
+						<AnswerOption
+							letter={option.letter}
+							text={oText(option, lang)}
+							state={optionStateForQuestion(i, option.letter)}
+							multi={isMulti}
+							onclick={() => selectAnswer(i, option.letter)}
+						/>
+					{/each}
+
+					<!-- Multi-answer confirm -->
+					{#if isMulti && !qs.answered && qs.selected.size > 0}
+						<button class="q-confirm-btn" onclick={() => confirmMultiAnswer(i)}>
+							{t('question.confirm', lang)} ({qs.selected.size})
+						</button>
+					{/if}
+
+					<!-- Footer -->
+					<div class="q-footer">
+						<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
+							<Icon name="language" size={19} stroke={1.6} />
+						</button>
+						<button
+							class="q-footer-icon"
+							class:q-footer-active={i === currentIndex && bookmarked}
+							onclick={handleToggleBookmark}
+						>
+							<Icon name={i === currentIndex && bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
+						</button>
+						<button class="q-footer-icon" onclick={() => {}}>
+							<Icon name="flag" size={19} stroke={1.6} />
+						</button>
+						<div class="q-footer-spacer"></div>
+						{#if qs.answered}
+							<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
+								{i < questions.length - 1
+									? (lang === 'sr' ? 'Следеће' : 'Далее')
+									: '✓'}
+								<Icon name="chev-right" size={14} color="var(--accent-ink)" />
+							</button>
+						{/if}
+					</div>
+				</div>
 			</div>
-			{#if currentQuestion.has_image && currentQuestion.image}
-				<img src="{base}/images/{currentQuestion.image}" alt="" class="q-image" />
-			{/if}
-		</div>
-
-		<!-- Question text -->
-		<div class="q-text">{qText(currentQuestion, lang)}</div>
-		<div class="q-meta">
-			{hasMultipleAnswers
-				? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
-				: (lang === 'sr' ? 'Изабери један одговор' : 'Выберите один ответ')}
-			· {currentQuestion.points} {lang === 'sr' ? 'поен' : 'балл'}
-		</div>
-	</div>
-
-	<!-- Answers zone -->
-	<div class="q-answers">
-		{#each currentQuestion.options as option}
-			<AnswerOption
-				letter={option.letter}
-				text={oText(option, lang)}
-				state={optionState(option.letter)}
-				multi={hasMultipleAnswers}
-				onclick={() => selectAnswer(option.letter)}
-			/>
 		{/each}
-
-		<!-- Multi-answer confirm -->
-		{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
-			<button class="q-confirm-btn" onclick={confirmMultiAnswer}>
-				{t('question.confirm', lang)} ({selectedAnswers.size})
-			</button>
-		{/if}
-
-		<!-- Footer -->
-		<div class="q-footer">
-			<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
-				<Icon name="language" size={19} stroke={1.6} />
-			</button>
-			<button
-				class="q-footer-icon"
-				class:q-footer-active={bookmarked}
-				onclick={handleToggleBookmark}
-			>
-				<Icon name={bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
-			</button>
-			<button class="q-footer-icon" onclick={() => {}}>
-				<Icon name="flag" size={19} stroke={1.6} />
-			</button>
-			<div class="q-footer-spacer"></div>
-			{#if isAnswered}
-				<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
-					{currentIndex < questions.length - 1
-						? (lang === 'sr' ? 'Следеће' : 'Далее')
-						: '✓'}
-					<Icon name="chev-right" size={14} color="var(--accent-ink)" />
-				</button>
-			{/if}
-		</div>
-	</div>
 	</div>
 </div>
 {/if}
@@ -354,38 +352,46 @@
 	}
 	.q-header-total { color: var(--ink4); }
 
-	/* Body */
-	.q-content {
-		flex: 1; display: flex; flex-direction: column; overflow: hidden;
-		will-change: transform, opacity;
+	/* Carousel */
+	.carousel {
+		flex: 1;
+		display: flex;
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
+		scrollbar-width: none;
+		-webkit-overflow-scrolling: touch;
 	}
-	.slide-out-left {
-		animation: slideOutLeft 150ms ease-in forwards;
+	.carousel::-webkit-scrollbar { display: none; }
+
+	/* Slide */
+	.slide {
+		min-width: 100%;
+		width: 100%;
+		flex-shrink: 0;
+		scroll-snap-align: start;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
 	}
-	.slide-out-right {
-		animation: slideOutRight 150ms ease-in forwards;
+
+	.slide-body {
+		flex: 1;
+		overflow-y: auto;
+		padding: 16px 16px 8px;
+		-webkit-overflow-scrolling: touch;
 	}
-	.slide-in-right {
-		animation: slideInRight 250ms ease-out forwards;
+
+	.slide-answers {
+		padding: 12px 14px 14px;
+		padding-bottom: calc(14px + env(safe-area-inset-bottom));
+		display: flex; flex-direction: column; gap: 8px;
+		background: var(--answer-zone-bg);
+		flex-shrink: 0;
+		border-top: 0.5px solid var(--hairline);
 	}
-	.slide-in-left {
-		animation: slideInLeft 250ms ease-out forwards;
-	}
-	@keyframes slideOutLeft {
-		to { transform: translateX(-100%); opacity: 0; }
-	}
-	@keyframes slideOutRight {
-		to { transform: translateX(100%); opacity: 0; }
-	}
-	@keyframes slideInRight {
-		from { transform: translateX(60px); opacity: 0; }
-		to { transform: translateX(0); opacity: 1; }
-	}
-	@keyframes slideInLeft {
-		from { transform: translateX(-60px); opacity: 0; }
-		to { transform: translateX(0); opacity: 1; }
-	}
-	.q-body { flex: 1; overflow: auto; padding: 16px 16px 8px; }
+
+	/* Media / Tags */
 	.q-media { position: relative; margin-bottom: 10px; }
 	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
 	.q-tags {
@@ -397,13 +403,6 @@
 	}
 	.accent-dot { background: var(--accent); }
 
-	.q-image-wrap {
-		width: 100%;
-		border-radius: 16px;
-		overflow: hidden;
-		border: 0.5px solid var(--hairline);
-		margin-bottom: 14px;
-	}
 	.q-image { width: 100%; display: block; }
 
 	.q-text {
@@ -417,17 +416,7 @@
 		letter-spacing: 0.3px;
 	}
 
-	/* Answers */
-	.q-answers {
-		padding: 12px 14px 14px;
-		padding-bottom: calc(14px + env(safe-area-inset-bottom));
-		display: flex; flex-direction: column; gap: 8px;
-		background: var(--answer-zone-bg);
-		flex-shrink: 0;
-		border-top: 0.5px solid var(--hairline);
-		flex-shrink: 0;
-	}
-
+	/* Confirm button */
 	.q-confirm-btn {
 		width: 100%; height: 48px; border-radius: 16px;
 		background: var(--accent); color: var(--accent-ink);
