@@ -11,8 +11,7 @@
 		if (scrollEl && current >= 0) {
 			const active = scrollEl.querySelector('[data-active="true"]') as HTMLElement;
 			if (active) {
-				const l = active.offsetLeft - scrollEl.offsetWidth / 2 + active.offsetWidth / 2;
-				scrollEl.scrollTo({ left: l, behavior: 'instant' });
+				active.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
 			}
 		}
 	});
