@@ -16,7 +16,7 @@ preview: build ## Preview production build locally
 	npm run preview -- --open
 
 deploy: build ## Deploy to GitHub Pages
-	npx gh-pages -d build --nojekyll
+	npx gh-pages -d build --nojekyll --repo https://github.com/andrewozh/driving-theory-srb.git
 
 clean: ## Remove build output
 	rm -rf build .svelte-kit

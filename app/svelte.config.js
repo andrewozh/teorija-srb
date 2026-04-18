@@ -12,8 +12,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			// Set this to your GitHub Pages repo name if not using custom domain
-			// base: '/driving-exam-parser'
+			base: '/driving-theory-srb'
 		}
 	}
 };
