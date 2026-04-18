@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { getSettings, subscribe } from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Lang } from '$lib/types.js';
@@ -19,7 +20,7 @@
 	<div class="scroll-area">
 		<div class="about-hero">
 			<div class="about-icon">
-				<Icon name="car" size={28} color="var(--accent-ink)" stroke={1.6} />
+				<img src="{base}/icon-192.png" alt="Teorija" width="96" height="96" style="border-radius: 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 0.5px var(--hairline);" />
 			</div>
 			<div class="about-name">Teorija</div>
 			<div class="about-version">2.4.1</div>
@@ -68,10 +69,9 @@
 
 	.about-hero { text-align: center; padding: 16px 0 28px; }
 	.about-icon {
-		width: 60px; height: 60px; border-radius: 18px;
 		margin: 0 auto 14px;
-		background: var(--accent); color: var(--accent-ink);
-		display: flex; align-items: center; justify-content: center;
+		display: flex;
+		justify-content: center;
 	}
 	.about-name { font-size: 20px; font-weight: 500; letter-spacing: -0.3px; }
 	.about-version { font-size: 12px; color: var(--ink3); font-family: var(--font-mono); margin-top: 4px; }
