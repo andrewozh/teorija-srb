@@ -304,7 +304,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
             option_entries.append((i, m.group(1).lower(), m.group(2).strip()))
 
     first_opt_idx = option_entries[0][0] if option_entries else len(cleaned_lines)
-    q_text_parts = [s.strip() for s in cleaned_lines[:first_opt_idx] if s.strip() and s.strip() not in ("2", "3")]
+    q_text_parts = [s.strip() for s in cleaned_lines[:first_opt_idx] if s.strip() and s.strip() not in ("1", "2", "3")]
     q_text = " ".join(q_text_parts)
 
     multi_match = MULTI_ANSWER_RE.search(block_text)
@@ -318,7 +318,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
         parts = [opt_text]
         for ci in range(opt_idx + 1, next_opt_idx):
             cl = cleaned_lines[ci].strip()
-            if cl in ("2", "3", "") or cl in CATEGORY_LABELS or OPTION_RE.match(cl):
+            if cl in ("1", "2", "3", "") or cl in CATEGORY_LABELS or OPTION_RE.match(cl):
                 break
             parts.append(cl)
         full_text = re.sub(r"\s+[23]$", "", " ".join(parts))
@@ -328,7 +328,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
     points = 2
     for line in reversed(cleaned_lines):
         s = line.strip()
-        if s in ("2", "3"):
+        if s in ("1", "2", "3"):
             points = int(s)
             break
         m = re.search(r"\s([23])$", s)
