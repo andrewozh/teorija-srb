@@ -56,10 +56,10 @@
         },
         {
           "letter": "в",
-          "text": "инспектори за друмски саобраћај. 1"
+          "text": "инспектори за друмски саобраћај"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti",
@@ -83,10 +83,10 @@
         },
         {
           "letter": "г",
-          "text": "полицијски службеници у грађанском оделу. 1"
+          "text": "полицијски службеници у грађанском оделу"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti",
@@ -115,10 +115,10 @@
         },
         {
           "letter": "д",
-          "text": "ученици. 1"
+          "text": "ученици"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -141,10 +141,10 @@
         },
         {
           "letter": "г",
-          "text": "службеници надлежног органа за саобраћај. 1"
+          "text": "службеници надлежног органа за саобраћај"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -167,10 +167,10 @@
         },
         {
           "letter": "г",
-          "text": "тако да предузме све потребне мере ради избегавања или отклањања опасних ситуација насталих понашањем других учесника у саобраћају, ако себе или другог тиме не доводи у опасност. 1"
+          "text": "тако да предузме све потребне мере ради избегавања или отклањања опасних ситуација насталих понашањем других учесника у саобраћају, ако себе или другог тиме не доводи у опасност"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -189,10 +189,10 @@
         },
         {
           "letter": "в",
-          "text": "свако физичко лице, правно лице или предузетник који поседују средства и простор за обављање тих послова. 1 РЕПУБЛИ"
+          "text": "свако физичко лице, правно лице или предузетник који поседују средства и простор за обављање тих послова"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -211,10 +211,10 @@
         },
         {
           "letter": "в",
-          "text": "дужан је да обезбеди да његова возила у саобраћају на путевима буду технички исправна, само када лично управља возилом. 1"
+          "text": "дужан је да обезбеди да његова возила у саобраћају на путевима буду технички исправна, само када лично управља возилом"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -233,10 +233,10 @@
         },
         {
           "letter": "в",
-          "text": "формирање школских саобраћајних патрола и саобраћајних патрола грађана. 1"
+          "text": "формирање школских саобраћајних патрола и саобраћајних патрола грађана"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -255,10 +255,10 @@
         },
         {
           "letter": "в",
-          "text": "формирање школских саобраћајних патрола и саобраћајних патрола грађана. 1"
+          "text": "формирање школских саобраћајних патрола и саобраћајних патрола грађана"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -289,10 +289,10 @@
         },
         {
           "letter": "е",
-          "text": "Кретање запрежног возила земљаним путем. 1"
+          "text": "Кретање запрежног возила земљаним путем"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -323,10 +323,10 @@
         },
         {
           "letter": "е",
-          "text": "Гурање бицикла пешачком стазом. 1 ИКА СРБИЈА"
+          "text": "Гурање бицикла пешачком стазом"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -345,10 +345,10 @@
         },
         {
           "letter": "в",
-          "text": "лице које по путу сопственом снагом гура или вуче возило. 1"
+          "text": "лице које по путу сопственом снагом гура или вуче возило"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -379,10 +379,10 @@
         },
         {
           "letter": "е",
-          "text": "управља запрежним возилом по путу. 1"
+          "text": "управља запрежним возилом по путу"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -405,17 +405,17 @@
         },
         {
           "letter": "г",
-          "text": "гура бицикл по путу. 1"
+          "text": "гура бицикл по путу"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 15,
-      "text": "Пешак је приказан на сликама број: 1 4",
+      "text": "Пешак је приказан на сликама број: 4",
       "options": [
         {
           "letter": "а",
@@ -431,10 +431,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": true,
       "image": "p002_y0393.png",
@@ -466,10 +466,10 @@
         },
         {
           "letter": "е",
-          "text": "у возилу нема ниједног лица. 1 РЕПУБЛИ"
+          "text": "у возилу нема ниједног лица"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -488,10 +488,10 @@
         },
         {
           "letter": "в",
-          "text": "заустављање. 1"
+          "text": "заустављање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -510,10 +510,10 @@
         },
         {
           "letter": "в",
-          "text": "паркирање. 1"
+          "text": "паркирање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -528,10 +528,10 @@
         },
         {
           "letter": "б",
-          "text": "заустављено. 1"
+          "text": "заустављено"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p002_y0215.png",
@@ -556,10 +556,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -582,10 +582,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p002_y0493.png",
@@ -609,10 +609,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1 ИКА СРБИЈА"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -635,10 +635,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p003_y0098.png",
@@ -662,10 +662,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -688,10 +688,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p003_y0340.png",
@@ -715,10 +715,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p003_y0494.png",
@@ -738,10 +738,10 @@
         },
         {
           "letter": "в",
-          "text": "дужина прегледности. 1 РЕПУБЛИ"
+          "text": "дужина прегледности"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -760,10 +760,10 @@
         },
         {
           "letter": "в",
-          "text": "претицање. 1"
+          "text": "претицање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p003_y0087.png",
@@ -784,10 +784,10 @@
         },
         {
           "letter": "в",
-          "text": "претицање. 1"
+          "text": "претицање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p003_y0348.png",
@@ -812,10 +812,10 @@
         },
         {
           "letter": "г",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -838,10 +838,10 @@
         },
         {
           "letter": "г",
-          "text": "250 m. 1 ИКА СРБИЈА"
+          "text": "250 m"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -860,10 +860,10 @@
         },
         {
           "letter": "в",
-          "text": "пропуштање. 1"
+          "text": "пропуштање"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p004_y0098.png",
@@ -888,10 +888,10 @@
         },
         {
           "letter": "г",
-          "text": "возила су паркирана у истој саобраћајној траци. 1"
+          "text": "возила су паркирана у истој саобраћајној траци"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -922,10 +922,10 @@
         },
         {
           "letter": "е",
-          "text": "возила се крећу на растојању које омогућава улазак другог возила без ометања осталих возила. 1"
+          "text": "возила се крећу на растојању које омогућава улазак другог возила без ометања осталих возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -948,10 +948,10 @@
         },
         {
           "letter": "г",
-          "text": "је саобраћајна незгода уколико је трактор регистрован. 1 РЕПУБЛИ"
+          "text": "је саобраћајна незгода уколико је трактор регистрован"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -966,10 +966,10 @@
         },
         {
           "letter": "б",
-          "text": "нису колона возила. 1"
+          "text": "нису колона возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p004_y0075.png",
@@ -986,10 +986,10 @@
         },
         {
           "letter": "б",
-          "text": "нису колона возила. 1"
+          "text": "нису колона возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p004_y0220.png",
@@ -1014,10 +1014,10 @@
         },
         {
           "letter": "г",
-          "text": "250 m. 1"
+          "text": "250 m"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1036,10 +1036,10 @@
         },
         {
           "letter": "в",
-          "text": "дужина видљивости. 1"
+          "text": "дужина видљивости"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1058,10 +1058,10 @@
         },
         {
           "letter": "в",
-          "text": "место за седење. 1"
+          "text": "место за седење"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1084,10 +1084,10 @@
         },
         {
           "letter": "г",
-          "text": "није саобраћајна незгода јер је материјална штета начињена ван пута. 1 ИКА СРБИЈА"
+          "text": "није саобраћајна незгода јер је материјална штета начињена ван пута"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1110,10 +1110,10 @@
         },
         {
           "letter": "г",
-          "text": "није саобраћајна незгода јер у незгоди учествовало само једно возило. 1"
+          "text": "није саобраћајна незгода јер у незгоди учествовало само једно возило"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1132,10 +1132,10 @@
         },
         {
           "letter": "в",
-          "text": "предњи, односно задњи препуст возила. 1"
+          "text": "предњи, односно задњи препуст возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p005_y0236.png",
@@ -1159,10 +1159,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p005_y0387.png",
@@ -1186,10 +1186,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена укупна маса возила. 1"
+          "text": "највећа дозвољена укупна маса возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1208,10 +1208,10 @@
         },
         {
           "letter": "в",
-          "text": "најмања дозвољена бочна удаљеност између возила. 1 РЕПУБЛИ"
+          "text": "најмања дозвољена бочна удаљеност између возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p005_y0612.png",
@@ -1235,10 +1235,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p005_y0088.png",
@@ -1262,10 +1262,10 @@
         },
         {
           "letter": "г",
-          "text": "је регистровано. 1"
+          "text": "је регистровано"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1284,10 +1284,10 @@
         },
         {
           "letter": "в",
-          "text": "место за седење. 1"
+          "text": "место за седење"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1310,10 +1310,10 @@
         },
         {
           "letter": "г",
-          "text": "200 km/h. 1"
+          "text": "200 km/h"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1336,10 +1336,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена укупна маса возила. 1"
+          "text": "највећа дозвољена укупна маса возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1362,10 +1362,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена маса возила. 1"
+          "text": "највећа дозвољена маса возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1388,10 +1388,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена маса возила. 1"
+          "text": "највећа дозвољена маса возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1414,10 +1414,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена маса скупа возила. 1 ИКА СРБИЈА"
+          "text": "највећа дозвољена маса скупа возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1440,10 +1440,10 @@
         },
         {
           "letter": "г",
-          "text": "укупна маса скупа возила. 1"
+          "text": "укупна маса скупа возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1466,10 +1466,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена маса скупа возила. 1"
+          "text": "највећа дозвољена маса скупа возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1492,10 +1492,10 @@
         },
         {
           "letter": "г",
-          "text": "највећа дозвољена маса возила. 1"
+          "text": "највећа дозвољена маса возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1522,10 +1522,10 @@
         },
         {
           "letter": "д",
-          "text": "учествује у саобраћају на путу. 1"
+          "text": "учествује у саобраћају на путу"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1544,10 +1544,10 @@
         },
         {
           "letter": "в",
-          "text": "возачка дозвола. 1"
+          "text": "возачка дозвола"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1566,10 +1566,10 @@
         },
         {
           "letter": "в",
-          "text": "саобраћајна дозвола. 1"
+          "text": "саобраћајна дозвола"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1588,10 +1588,10 @@
         },
         {
           "letter": "в",
-          "text": "саобраћајна дозвола. 1 1"
+          "text": "саобраћајна дозвола"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1610,10 +1610,10 @@
         },
         {
           "letter": "в",
-          "text": "возачка дозвола. 1 РЕПУБЛИ"
+          "text": "возачка дозвола"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1632,10 +1632,10 @@
         },
         {
           "letter": "в",
-          "text": "технички преглед возила. 1"
+          "text": "технички преглед возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1654,17 +1654,17 @@
         },
         {
           "letter": "в",
-          "text": "одржавање возила. 1"
+          "text": "одржавање возила"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 65,
-      "text": "Возило је приказано на сликама означеним бројевима: 1 4 5 6",
+      "text": "Возило је приказано на сликама означеним бројевима: 4 5 6",
       "options": [
         {
           "letter": "а",
@@ -1680,10 +1680,10 @@
         },
         {
           "letter": "г",
-          "text": "2, 3, 5 и 6. 1"
+          "text": "2, 3, 5 и 6"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p006_y0546.png",
@@ -1711,17 +1711,17 @@
         },
         {
           "letter": "д",
-          "text": "покреће се снагом возача, односно путника, која се помоћу педала или ручица преноси на точак, односно точкове. 1"
+          "text": "покреће се снагом возача, односно путника, која се помоћу педала или ручица преноси на точак, односно точкове"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 67,
-      "text": "Бицикл је приказан на сликама означеним бројевима: 1 4",
+      "text": "Бицикл је приказан на сликама означеним бројевима: 4",
       "options": [
         {
           "letter": "а",
@@ -1737,10 +1737,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1 ИКА СРБИЈА"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": true,
       "image": "p006_y0557.png",
@@ -1748,7 +1748,7 @@
     },
     {
       "id": 68,
-      "text": "Моторно возилоје приказано на сликама означеним бројевима: 1 4 5 6",
+      "text": "Моторно возилоје приказано на сликама означеним бројевима: 4 5 6",
       "options": [
         {
           "letter": "а",
@@ -1764,10 +1764,10 @@
         },
         {
           "letter": "г",
-          "text": "3, 5 и 6. 1"
+          "text": "3, 5 и 6"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p007_y0087.png",
@@ -1799,10 +1799,10 @@
         },
         {
           "letter": "е",
-          "text": "радна запремина његовог мотора не прелази 125cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 125cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1833,10 +1833,10 @@
         },
         {
           "letter": "е",
-          "text": "његова највећа трајна номинална снага прелази 4 kW. 1 РЕПУБЛИ"
+          "text": "његова највећа трајна номинална снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1867,10 +1867,10 @@
         },
         {
           "letter": "е",
-          "text": "радна запремина његовог мотора не прелази 125 cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 125 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1893,10 +1893,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1919,10 +1919,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1945,10 +1945,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -1979,10 +1979,10 @@
         },
         {
           "letter": "е",
-          "text": "радна запремина његовог мотора не прелази 125 cm3. 1 ИКА СРБИЈА"
+          "text": "радна запремина његовог мотора не прелази 125 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2013,10 +2013,10 @@
         },
         {
           "letter": "е",
-          "text": "радна запремина његовог мотора не прелази 125 cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 125 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2047,10 +2047,10 @@
         },
         {
           "letter": "е",
-          "text": "његова највећа трајна номинална снага прелази 4 kW. 1"
+          "text": "његова највећа трајна номинална снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2073,10 +2073,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2099,10 +2099,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2125,10 +2125,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1 РЕПУБЛИ"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2155,10 +2155,10 @@
         },
         {
           "letter": "д",
-          "text": "радна запремина његовог мотора не прелази 50 cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 50 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2185,10 +2185,10 @@
         },
         {
           "letter": "д",
-          "text": "радна запремина његовог мотора не прелази 50 cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 50 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2219,10 +2219,10 @@
         },
         {
           "letter": "е",
-          "text": "његова највећа трајна номинална снага прелази 4 kW. 1"
+          "text": "његова највећа трајна номинална снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2245,10 +2245,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1 ИКА СРБИЈА"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2271,10 +2271,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2297,10 +2297,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2327,10 +2327,10 @@
         },
         {
           "letter": "д",
-          "text": "његова највећа ефективна снага прелази 4 kW. 1"
+          "text": "његова највећа ефективна снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2361,10 +2361,10 @@
         },
         {
           "letter": "е",
-          "text": "радна запремина његовог мотора не прелази 125 cm3. 1"
+          "text": "радна запремина његовог мотора не прелази 125 cm3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2387,10 +2387,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1 РЕПУБЛИ"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2421,10 +2421,10 @@
         },
         {
           "letter": "е",
-          "text": "његова највећа трајна номинална снага не прелази 4 kW. 1"
+          "text": "његова највећа трајна номинална снага не прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2447,10 +2447,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2473,10 +2473,10 @@
         },
         {
           "letter": "г",
-          "text": "лаки трицикл. 1"
+          "text": "лаки трицикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2503,10 +2503,10 @@
         },
         {
           "letter": "д",
-          "text": "његова највећа ефективна снага прелази 4 kW. 1"
+          "text": "његова највећа ефективна снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2529,10 +2529,10 @@
         },
         {
           "letter": "г",
-          "text": "теретно возило. 1 ИКА СРБИЈА"
+          "text": "теретно возило"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2559,10 +2559,10 @@
         },
         {
           "letter": "д",
-          "text": "његова највећа ефективна снага прелази 4 kW. 1"
+          "text": "његова највећа ефективна снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2589,10 +2589,10 @@
         },
         {
           "letter": "д",
-          "text": "његова највећа трајна номинална снага прелази 4 kW. 1"
+          "text": "његова највећа трајна номинална снага прелази 4 kW"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2615,10 +2615,10 @@
         },
         {
           "letter": "г",
-          "text": "тешки четвороцикл. 1"
+          "text": "тешки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2641,10 +2641,10 @@
         },
         {
           "letter": "г",
-          "text": "тешки четвороцикл. 1"
+          "text": "тешки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2667,10 +2667,10 @@
         },
         {
           "letter": "г",
-          "text": "тешки четвороцикл. 1 РЕПУБЛИ"
+          "text": "тешки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2693,10 +2693,10 @@
         },
         {
           "letter": "г",
-          "text": "мопед. 1"
+          "text": "мопед"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2719,10 +2719,10 @@
         },
         {
           "letter": "г",
-          "text": "теретно возило. 1"
+          "text": "теретно возило"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2741,10 +2741,10 @@
         },
         {
           "letter": "в",
-          "text": "лаки четвороцикл. 1"
+          "text": "лаки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2763,10 +2763,10 @@
         },
         {
           "letter": "в",
-          "text": "лаки четвороцикл. 1"
+          "text": "лаки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2785,10 +2785,10 @@
         },
         {
           "letter": "в",
-          "text": "лаки четвороцикл. 1"
+          "text": "лаки четвороцикл"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2807,10 +2807,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2829,10 +2829,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1 ИКА СРБИЈА"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2851,10 +2851,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2873,10 +2873,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2895,10 +2895,10 @@
         },
         {
           "letter": "в",
-          "text": "3. 1"
+          "text": "3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p011_y0291.png",
@@ -2918,10 +2918,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2940,10 +2940,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2962,10 +2962,10 @@
         },
         {
           "letter": "в",
-          "text": "аутобус. 1 РЕПУБЛИ"
+          "text": "аутобус"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -2984,10 +2984,10 @@
         },
         {
           "letter": "в",
-          "text": "3. 1"
+          "text": "3"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p011_y0075.png",
@@ -2995,7 +2995,7 @@
     },
     {
       "id": 114,
-      "text": "Тролејбус је приказан на слици број: 1",
+      "text": "Тролејбус је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3007,10 +3007,10 @@
         },
         {
           "letter": "в",
-          "text": "3. 1"
+          "text": "3"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p011_y0255.png",
@@ -3030,10 +3030,10 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -3052,10 +3052,10 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -3074,10 +3074,10 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -3096,17 +3096,17 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1 ИКА СРБИЈА"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 119,
-      "text": "Теретно возило је приказано на слици број: 1 4",
+      "text": "Теретно возило је приказано на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3122,10 +3122,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p012_y0077.png",
@@ -3133,7 +3133,7 @@
     },
     {
       "id": 120,
-      "text": "Скуп возила је приказан на слици број: 1 4",
+      "text": "Скуп возила је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3149,10 +3149,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p012_y0079.png",
@@ -3160,7 +3160,7 @@
     },
     {
       "id": 121,
-      "text": "Туристички воз је приказан на слици број: 1 4",
+      "text": "Туристички воз је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3176,10 +3176,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p012_y0146.png",
@@ -3199,10 +3199,10 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -3221,17 +3221,17 @@
         },
         {
           "letter": "в",
-          "text": "радна машина. 1 РЕПУБЛИ"
+          "text": "радна машина"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 124,
-      "text": "Радна машина је приказана на слици број: (V≤ 45 km/h) 1 4",
+      "text": "Радна машина је приказана на слици број: (V≤ 45 km/h) 4",
       "options": [
         {
           "letter": "а",
@@ -3247,10 +3247,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p012_y0077.png",
@@ -3258,7 +3258,7 @@
     },
     {
       "id": 125,
-      "text": "Трактор је приказан на слици број: 1 4",
+      "text": "Трактор је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3274,10 +3274,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p012_y0156.png",
@@ -3309,10 +3309,10 @@
         },
         {
           "letter": "е",
-          "text": "његова највећа конструктивна брзина није већа од 45 km/h. 1"
+          "text": "његова највећа конструктивна брзина није већа од 45 km/h"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 3,
       "has_image": false,
       "section": "osnove_bezbednosti"
@@ -3335,17 +3335,17 @@
         },
         {
           "letter": "г",
-          "text": "намењено је за обављање пољопривредних, шумских или других радова, и у сврху извођења тих радова, поставља се на моторно возило. 1 ИКА СРБИЈА"
+          "text": "намењено је за обављање пољопривредних, шумских или других радова, и у сврху извођења тих радова, поставља се на моторно возило"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 128,
-      "text": "Мотокултиватор је приказан на слици број: 1 4",
+      "text": "Мотокултиватор је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3361,10 +3361,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p013_y0077.png",
@@ -3384,17 +3384,17 @@
         },
         {
           "letter": "в",
-          "text": "прикључак за извођење радова. 1"
+          "text": "прикључак за извођење радова"
         }
       ],
-      "points": 2,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "osnove_bezbednosti"
     },
     {
       "id": 130,
-      "text": "Прикључно возило је приказано на слици број: 1 4",
+      "text": "Прикључно возило је приказано на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3410,7 +3410,7 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
       "points": 3,
@@ -3421,7 +3421,7 @@
     },
     {
       "id": 131,
-      "text": "Прикључно возило за трактор је приказано на слици број: 1 4",
+      "text": "Прикључно возило за трактор је приказано на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3437,10 +3437,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1 РЕПУБЛИ"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p013_y0152.png",
@@ -3448,7 +3448,7 @@
     },
     {
       "id": 132,
-      "text": "Прикључак за извођење радова је приказан на слици број: 1 4",
+      "text": "Прикључак за извођење радова је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3464,10 +3464,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p013_y0088.png",
@@ -3475,7 +3475,7 @@
     },
     {
       "id": 133,
-      "text": "Запрежно возило је приказано на слици број: 1 4",
+      "text": "Запрежно возило је приказано на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3491,10 +3491,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p013_y0092.png",
@@ -3502,7 +3502,7 @@
     },
     {
       "id": 134,
-      "text": "Трамвај је приказан на слици број: 1 4",
+      "text": "Трамвај је приказан на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3518,10 +3518,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p013_y0171.png",
@@ -3551,7 +3551,7 @@
     },
     {
       "id": 136,
-      "text": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за време вожње, на паковању има ознаку приказану на слици број: 1 4",
+      "text": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за време вожње, на паковању има ознаку приказану на слици број: 4",
       "options": [
         {
           "letter": "а",
@@ -3567,10 +3567,10 @@
         },
         {
           "letter": "г",
-          "text": "4. 1"
+          "text": "4"
         }
       ],
-      "points": 3,
+      "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
       "section": "osnove_bezbednosti"
@@ -18172,11 +18172,11 @@
     },
     {
       "id": 326,
-      "text": "Табла за оз прикључном задњој стран значавање т м возилу пр терета који елази најист означена број на теретном туренију тач м или чку на ни возила је о јем: 1",
+      "text": "Табла за оз прикључном задњој стран значавање т м возилу пр терета који елази најист означена број на теретном туренију тач м или чку на ни возила је о јем:",
       "options": [
         {
           "letter": "а",
-          "text": "1, 1"
+          "text": "1"
         },
         {
           "letter": "б",
@@ -30065,7 +30065,7 @@
     },
     {
       "id": 471,
-      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови и семафори означени бројем: : 1 4 5",
+      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови и семафори означени бројем: : 4 5",
       "options": [
         {
           "letter": "а",
@@ -30187,7 +30187,7 @@
     },
     {
       "id": 476,
-      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови означени бројем: 1 4 5 6",
+      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови означени бројем: 4 5 6",
       "options": [
         {
           "letter": "а",
@@ -32344,7 +32344,7 @@
     },
     {
       "id": 44,
-      "text": "Знак за обележавање возила којим се врши организован превоз деце је означен бројем: 1 4",
+      "text": "Знак за обележавање возила којим се врши организован превоз деце је означен бројем: 4",
       "options": [
         {
           "letter": "а",
@@ -46420,7 +46420,7 @@
     },
     {
       "id": 631,
-      "text": "Прописно управља возилом возач на слици: 1 4 А",
+      "text": "Прописно управља возилом возач на слици: 4 А",
       "options": [
         {
           "letter": "а",
