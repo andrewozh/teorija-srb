@@ -62,8 +62,7 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti",
-      "is_changed": true
+      "section": "osnove_bezbednosti"
     },
     {
       "id": 2,
@@ -89,9 +88,7 @@
       "points": 1,
       "correct_answers_count": 2,
       "has_image": false,
-      "section": "osnove_bezbednosti",
-      "is_changed": true,
-      "is_removed": true
+      "section": "osnove_bezbednosti"
     },
     {
       "id": 3,
@@ -516,7 +513,8 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "is_changed": true
     },
     {
       "id": 19,
@@ -3837,7 +3835,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p015_y0219.png",
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "is_changed": true
     },
     {
       "id": 146,
@@ -4566,9 +4565,7 @@
       "categories": [
         "B"
       ],
-      "section": "vozaci",
-      "is_removed": true,
-      "is_changed": true
+      "section": "vozaci"
     },
     {
       "id": 3,
@@ -4593,8 +4590,7 @@
       "categories": [
         "B"
       ],
-      "section": "vozaci",
-      "is_new": true
+      "section": "vozaci"
     },
     {
       "id": 4,
@@ -4623,9 +4619,7 @@
       "categories": [
         "B"
       ],
-      "section": "vozaci",
-      "is_changed": true,
-      "is_new": true
+      "section": "vozaci"
     },
     {
       "id": 5,
@@ -4800,7 +4794,8 @@
       "categories": [
         "B"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_removed": true
     },
     {
       "id": 12,
@@ -5215,7 +5210,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_changed": true
+      "is_removed": true
     },
     {
       "id": 31,
@@ -5260,8 +5255,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozaci",
-      "is_removed": true
+      "section": "vozaci"
     },
     {
       "id": 33,
@@ -5361,7 +5355,8 @@
       "points": 2,
       "correct_answers_count": 3,
       "has_image": false,
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_removed": true
     },
     {
       "id": 37,
@@ -5857,7 +5852,8 @@
       "categories": [
         "A"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_changed": true
     },
     {
       "id": 57,
@@ -5912,7 +5908,8 @@
       "categories": [
         "A"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_changed": true
     },
     {
       "id": 59,
@@ -6993,8 +6990,7 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozaci",
-      "is_changed": true
+      "section": "vozaci"
     },
     {
       "id": 101,
@@ -7826,7 +7822,8 @@
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_changed": true
     },
     {
       "id": 135,
@@ -8260,8 +8257,7 @@
         "C",
         "D"
       ],
-      "section": "vozaci",
-      "is_changed": true
+      "section": "vozaci"
     },
     {
       "id": 151,
@@ -9979,7 +9975,8 @@
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_new": true
     },
     {
       "id": 216,
@@ -10051,8 +10048,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozila",
-      "is_removed": true,
-      "is_changed": true
+      "is_removed": true
     },
     {
       "id": 3,
@@ -10097,8 +10093,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila",
-      "is_changed": true
+      "section": "vozila"
     },
     {
       "id": 5,
@@ -12477,7 +12472,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 102,
@@ -14013,7 +14009,8 @@
       "categories": [
         "B"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 163,
@@ -14469,7 +14466,8 @@
       "points": 2,
       "correct_answers_count": 2,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 180,
@@ -14705,7 +14703,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 189,
@@ -14760,7 +14759,8 @@
         "C",
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 191,
@@ -15311,7 +15311,8 @@
         "D",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_removed": true
     },
     {
       "id": 212,
@@ -16166,7 +16167,8 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_changed": true
     },
     {
       "id": 249,
@@ -19292,9 +19294,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "saobracajna_signalizacija",
-      "is_removed": true,
-      "is_changed": true
+      "section": "saobracajna_signalizacija"
     },
     {
       "id": 3,
@@ -19320,8 +19320,7 @@
       "points": 2,
       "correct_answers_count": 2,
       "has_image": false,
-      "section": "saobracajna_signalizacija",
-      "is_changed": true
+      "section": "saobracajna_signalizacija"
     },
     {
       "id": 4,
@@ -19557,7 +19556,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "is_removed": true
     },
     {
       "id": 14,
@@ -25301,8 +25301,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p042_y0482.png",
-      "section": "saobracajna_signalizacija",
-      "is_changed": true
+      "section": "saobracajna_signalizacija"
     },
     {
       "id": 264,
@@ -26637,7 +26636,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p050_y0077.png",
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "is_changed": true
     },
     {
       "id": 322,
@@ -26935,7 +26935,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p052_y0064.png",
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "is_changed": true
     },
     {
       "id": 334,
@@ -27994,7 +27995,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p059_y0412.png",
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "is_changed": true
     },
     {
       "id": 380,
@@ -28016,8 +28018,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "saobracajna_signalizacija",
-      "is_changed": true
+      "section": "saobracajna_signalizacija"
     },
     {
       "id": 381,
@@ -29993,8 +29994,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "section": "saobracajna_signalizacija",
-      "is_new": true
+      "section": "saobracajna_signalizacija"
     },
     {
       "id": 468,
@@ -31398,10 +31398,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p001_y0197.png",
-      "section": "pravila_saobracaja",
-      "is_changed": true,
-      "is_removed": true,
-      "is_new": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 3,
@@ -31424,10 +31421,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p001_y0403.png",
-      "section": "pravila_saobracaja",
-      "is_removed": true,
-      "is_changed": true,
-      "is_new": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 4,
@@ -33434,7 +33428,8 @@
         "B",
         "C"
       ],
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 87,
@@ -35277,7 +35272,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p021_y0319.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 167,
@@ -35296,8 +35292,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p021_y0574.png",
-      "section": "pravila_saobracaja",
-      "is_changed": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 168,
@@ -36918,7 +36913,8 @@
       "points": 3,
       "correct_answers_count": 2,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 237,
@@ -37230,7 +37226,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p032_y0199.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 251,
@@ -38260,7 +38257,8 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 298,
@@ -38583,7 +38581,8 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 311,
@@ -38609,8 +38608,7 @@
         "C"
       ],
       "image": "p039_y0588.png",
-      "section": "pravila_saobracaja",
-      "is_changed": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 312,
@@ -39728,7 +39726,8 @@
         "D"
       ],
       "image": "p043_y0064.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 354,
@@ -41008,7 +41007,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p048_y0053.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 406,
@@ -41058,7 +41058,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 408,
@@ -43974,7 +43975,8 @@
         "D",
         "F"
       ],
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 538,
@@ -44078,7 +44080,8 @@
         "D",
         "F"
       ],
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 542,
@@ -44534,7 +44537,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_removed": true
     },
     {
       "id": 560,
@@ -46609,7 +46613,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 639,
@@ -46725,7 +46730,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 644,
@@ -47600,7 +47606,8 @@
         "D"
       ],
       "image": "p076_y0392.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 681,
@@ -47628,8 +47635,7 @@
         "D"
       ],
       "image": "p076_y0609.png",
-      "section": "pravila_saobracaja",
-      "is_changed": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 682,
@@ -47787,7 +47793,8 @@
         "C",
         "D"
       ],
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 688,
@@ -48725,7 +48732,8 @@
       "points": 2,
       "correct_answers_count": 3,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 726,
@@ -49052,7 +49060,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p082_y0386.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 741,
@@ -49071,8 +49080,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p082_y0574.png",
-      "section": "pravila_saobracaja",
-      "is_changed": true
+      "section": "pravila_saobracaja"
     },
     {
       "id": 742,
@@ -49144,7 +49152,8 @@
       "points": 2,
       "correct_answers_count": 2,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 745,
@@ -49305,7 +49314,8 @@
       "points": 2,
       "correct_answers_count": 3,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 752,
@@ -49344,7 +49354,8 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p083_y0425.png",
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_changed": true
     },
     {
       "id": 754,
@@ -51917,10 +51928,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "posledice",
-      "is_removed": true,
-      "is_changed": true,
-      "is_new": true
+      "section": "posledice"
     },
     {
       "id": 3,
@@ -52252,7 +52260,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "posledice"
+      "section": "posledice",
+      "is_removed": true
     },
     {
       "id": 17,
@@ -53076,7 +53085,8 @@
         "C",
         "D"
       ],
-      "section": "posledice"
+      "section": "posledice",
+      "is_changed": true
     },
     {
       "id": 51,
@@ -53098,8 +53108,7 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "posledice",
-      "is_changed": true
+      "section": "posledice"
     },
     {
       "id": 52,
@@ -53500,7 +53509,8 @@
         "D"
       ],
       "image": "p007_y0449.png",
-      "section": "posledice"
+      "section": "posledice",
+      "is_changed": true
     },
     {
       "id": 68,
@@ -54879,7 +54889,8 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "posledice"
+      "section": "posledice",
+      "is_changed": true
     },
     {
       "id": 126,
@@ -55541,8 +55552,7 @@
         "D",
         "F"
       ],
-      "section": "posledice",
-      "is_changed": true
+      "section": "posledice"
     },
     {
       "id": 152,
@@ -56157,7 +56167,8 @@
         "C",
         "D"
       ],
-      "section": "posledice"
+      "section": "posledice",
+      "is_new": true
     },
     {
       "id": 182,
