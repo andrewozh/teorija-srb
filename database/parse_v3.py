@@ -304,7 +304,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
             option_entries.append((i, m.group(1).lower(), m.group(2).strip()))
 
     first_opt_idx = option_entries[0][0] if option_entries else len(cleaned_lines)
-    q_text_parts = [s.strip() for s in cleaned_lines[:first_opt_idx] if s.strip() and s.strip() not in ("1", "2", "3")]
+    q_text_parts = [s.strip() for s in cleaned_lines[:first_opt_idx] if s.strip() and s.strip() not in ("1", "2", "3", "4")]
     q_text = " ".join(q_text_parts)
 
     multi_match = MULTI_ANSWER_RE.search(block_text)
@@ -318,7 +318,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
         parts = [opt_text]
         for ci in range(opt_idx + 1, next_opt_idx):
             cl = cleaned_lines[ci].strip()
-            if cl in ("1", "2", "3", "") or cl in CATEGORY_LABELS or OPTION_RE.match(cl):
+            if cl in ("1", "2", "3", "4", "") or cl in CATEGORY_LABELS or OPTION_RE.match(cl):
                 break
             parts.append(cl)
         full_text = re.sub(r"\s+[23]$", "", " ".join(parts))
@@ -328,7 +328,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
     points = 2
     for line in reversed(cleaned_lines):
         s = line.strip()
-        if s in ("1", "2", "3"):
+        if s in ("1", "2", "3", "4"):
             points = int(s)
             break
         m = re.search(r"\s([23])$", s)
@@ -384,21 +384,39 @@ def extract_question_flags(doc: fitz.Document, x_mid: float) -> dict[int, dict]:
         if not colored_rects:
             continue
 
-        # Find question number positions on this page
+        # Find question number positions on this page using same logic as parser.
+        # Process each column separately with sequential validation.
         blocks = page.get_text("dict")["blocks"]
-        q_positions = []  # (qnum, y_top, y_bottom, x)
+
+        # Collect all candidate lines with potential question numbers
+        candidates = []  # (qnum, y_top, y_bottom, x)
         for block in blocks:
             if "lines" not in block:
                 continue
             for line in block["lines"]:
                 line_text = "".join(s["text"] for s in line["spans"]).strip()
-                m = re.match(r"^(\d{1,3})\.?\s*$", line_text)
-                if not m:
-                    m = re.match(r"^(\d{1,3})\.?\s+\S", line_text)
-                if m:
-                    qnum = int(m.group(1))
+                parsed = qnum_rest(line_text)
+                if parsed:
+                    qnum = parsed[0]
                     bbox = line["bbox"]
-                    q_positions.append((qnum, bbox[1], bbox[3], bbox[0]))
+                    candidates.append((qnum, bbox[1], bbox[3], bbox[0]))
+                else:
+                    qn = is_qnum(line_text)
+                    if qn:
+                        bbox = line["bbox"]
+                        candidates.append((qn, bbox[1], bbox[3], bbox[0]))
+
+        # Split by column and filter sequential within each column
+        left_cands = sorted([c for c in candidates if c[3] < x_mid], key=lambda c: c[1])
+        right_cands = sorted([c for c in candidates if c[3] >= x_mid], key=lambda c: c[1])
+
+        q_positions = []
+        for col_cands in [left_cands, right_cands]:
+            prev = None
+            for qnum, y_top, y_bot, x in col_cands:
+                if prev is None or qnum == prev + 1:
+                    q_positions.append((qnum, y_top, y_bot, x))
+                    prev = qnum
 
         # Match questions to colored rects (same column + vertical overlap)
         for i, (qnum, qy_top, qy_bot, qx) in enumerate(q_positions):

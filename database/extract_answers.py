@@ -90,11 +90,11 @@ def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int 
         for line in block["lines"]:
             line_text = "".join(s["text"] for s in line["spans"]).strip()
 
-            m = re.match(r"^(\d{1,3})\.\s*$", line_text)
+            m = re.match(r"^(\d{1,3})\.?\s*$", line_text)
             if m:
                 current_qnum = int(m.group(1))
                 continue
-            m = re.match(r"^(\d{1,3})\.\s+\S", line_text)
+            m = re.match(r"^(\d{1,3})\.?\s+\S", line_text)
             if m:
                 current_qnum = int(m.group(1))
 
@@ -184,9 +184,6 @@ def main():
             if qid not in answers:
                 continue
             correct = answers[qid]
-
-            if q.get("is_changed") and len(correct) != q["correct_answers_count"]:
-                q["correct_answers_count"] = len(correct)
 
             if "correct_answers" not in q:
                 q["correct_answers"] = correct
