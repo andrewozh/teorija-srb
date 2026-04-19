@@ -27,9 +27,29 @@ MULTI_COUNT = {"два": 2, "три": 3, "четири": 4}
 
 HAS_IMAGE_RE = re.compile(r"(приказан|на\s+слиц)")
 CATEGORY_LABELS = {"A", "AM", "B", "BE", "C", "CE", "D", "DE", "F"}
-OPTION_RE = re.compile(r"^([а-дА-Д])\)\s*(.*)")
-QNUM_RE = re.compile(r"^(\d{1,4})\.\s*(.*)", re.DOTALL)
-QNUM_STANDALONE_RE = re.compile(r"^(\d{1,4})\.\s*$")
+OPTION_RE = re.compile(r"^([а-еА-Е])\)\s*(.*)")
+# Question numbers: 1-9 require dot (to avoid matching point values "1", "2", "3")
+# 10+ can be with or without dot (some PDFs omit dot for 100+)
+def is_qnum(text: str) -> int | None:
+    """Parse standalone question number from text. Returns number or None."""
+    m = re.match(r"^(\d{1,4})\.\s*$", text)  # with dot: "42."
+    if m:
+        return int(m.group(1))
+    m = re.match(r"^(\d{2,4})\s*$", text)  # without dot, 2+ digits: "100"
+    if m and int(m.group(1)) >= 10:
+        return int(m.group(1))
+    return None
+
+
+def qnum_rest(text: str) -> tuple[int, str] | None:
+    """Parse question number + rest of text. Returns (number, rest) or None."""
+    m = re.match(r"^(\d{1,4})\.\s+(.*)", text, re.DOTALL)
+    if m:
+        return int(m.group(1)), m.group(2).strip()
+    m = re.match(r"^(\d{2,4})\s+(.*)", text, re.DOTALL)
+    if m and int(m.group(1)) >= 10:
+        return int(m.group(1)), m.group(2).strip()
+    return None
 
 NOISE_PATTERNS = [
     "Забрањено је коришћење",
@@ -69,9 +89,9 @@ def merge_qnum_blocks(blocks: list) -> list:
 
     for i, b in enumerate(blocks):
         text = b[4].strip()
-        m = QNUM_STANDALONE_RE.match(text)
-        if m and 1 <= int(m.group(1)) <= 900:
-            qnum_blocks.append((i, int(m.group(1)), b))
+        qn = is_qnum(text)
+        if qn and 1 <= qn <= 900:
+            qnum_blocks.append((i, qn, b))
         else:
             text_blocks.append((i, b))
 
@@ -196,7 +216,7 @@ def expand_inline_options(lines: list[str]) -> list[str]:
                 stripped = stripped[len(cat):].strip()
                 break
 
-        option_starts = list(re.finditer(r"[а-д]\)\s", stripped))
+        option_starts = list(re.finditer(r"[а-е]\)\s", stripped))
 
         if len(option_starts) > 1:
             if cat_prefix:
@@ -230,20 +250,21 @@ def parse_column_text(text: str, page: int, column: str) -> list[dict]:
                 current_lines.append("")
             continue
 
-        m = re.match(r"^(\d{1,4})\.\s+(.*)", stripped)
-        if m and 1 <= int(m.group(1)) <= 900:
-            if current_qnum is not None:
-                segments.append((current_qnum, "\n".join(current_lines)))
-            current_qnum = int(m.group(1))
-            rest = m.group(2).strip()
-            current_lines = [rest] if rest else []
-            continue
+        parsed = qnum_rest(stripped)
+        if parsed:
+            candidate, rest = parsed
+            if 1 <= candidate <= 900 and (current_qnum is None or candidate == current_qnum + 1):
+                if current_qnum is not None:
+                    segments.append((current_qnum, "\n".join(current_lines)))
+                current_qnum = candidate
+                current_lines = [rest] if rest else []
+                continue
 
-        m2 = QNUM_STANDALONE_RE.match(stripped)
-        if m2 and 1 <= int(m2.group(1)) <= 900:
+        qn = is_qnum(stripped)
+        if qn and 1 <= qn <= 900 and (current_qnum is None or qn == current_qnum + 1):
             if current_qnum is not None:
                 segments.append((current_qnum, "\n".join(current_lines)))
-            current_qnum = int(m2.group(1))
+            current_qnum = qn
             current_lines = []
             continue
 
@@ -371,9 +392,9 @@ def extract_question_flags(doc: fitz.Document, x_mid: float) -> dict[int, dict]:
                 continue
             for line in block["lines"]:
                 line_text = "".join(s["text"] for s in line["spans"]).strip()
-                m = re.match(r"^(\d{1,3})\.\s*$", line_text)
+                m = re.match(r"^(\d{1,3})\.?\s*$", line_text)
                 if not m:
-                    m = re.match(r"^(\d{1,3})\.\s+\S", line_text)
+                    m = re.match(r"^(\d{1,3})\.?\s+\S", line_text)
                 if m:
                     qnum = int(m.group(1))
                     bbox = line["bbox"]

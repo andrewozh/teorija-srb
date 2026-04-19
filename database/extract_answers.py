@@ -100,7 +100,7 @@ def find_option_positions(page: fitz.Page) -> list[tuple[float, float, str, int 
 
             for span in line["spans"]:
                 st = span["text"].strip()
-                if re.match(r"^[а-д]\)$", st):
+                if re.match(r"^[а-е]\)$", st):
                     x, y = span["origin"]
                     positions.append((x, y, st[0], current_qnum))
 
