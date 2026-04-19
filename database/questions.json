@@ -15,7 +15,7 @@
       {
         "id": "vozila",
         "name": "Возила",
-        "questions": 359
+        "questions": 365
       },
       {
         "id": "saobracajna_signalizacija",
@@ -15355,92 +15355,17 @@
         {
           "letter": "в",
           "text": "5 mm"
-        },
-        {
-          "letter": "а",
-          "text": "од 1. децембра до 1. марта, ако се на коловозу налази снег, лед или поледица"
-        },
-        {
-          "letter": "б",
-          "text": "од 1. новембра до 1. априла, ако се на коловозу налази снег, лед или поледица"
-        },
-        {
-          "letter": "в",
-          "text": "од 15. новембра до 15. марта"
-        },
-        {
-          "letter": "а",
-          "text": "пнеуматике за зимску употребу на свим точковима"
-        },
-        {
-          "letter": "б",
-          "text": "пнеуматике за зимску употребу само на погонским точковима"
-        },
-        {
-          "letter": "в",
-          "text": "ланце односно друге уређаје за повећање тракције за најмање два погонска точка"
-        },
-        {
-          "letter": "г",
-          "text": "лопату"
-        },
-        {
-          "letter": "а",
-          "text": "12,00 m"
-        },
-        {
-          "letter": "б",
-          "text": "13,50 m"
-        },
-        {
-          "letter": "в",
-          "text": "15,00 m"
-        },
-        {
-          "letter": "а",
-          "text": "12,00 m"
-        },
-        {
-          "letter": "б",
-          "text": "13,50 m"
-        },
-        {
-          "letter": "в",
-          "text": "15,00 m"
-        },
-        {
-          "letter": "а",
-          "text": "16,50 m"
-        },
-        {
-          "letter": "б",
-          "text": "18,75 m"
-        },
-        {
-          "letter": "в",
-          "text": "21,00 m"
-        },
-        {
-          "letter": "а",
-          "text": "15,00 m"
-        },
-        {
-          "letter": "б",
-          "text": "18,75 m"
-        },
-        {
-          "letter": "в",
-          "text": "25,00 m"
         }
       ],
-      "points": 3,
-      "correct_answers_count": 2,
+      "points": 2,
+      "correct_answers_count": 1,
       "has_image": false,
       "categories": [
         "B",
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": []
     },
     {
       "id": 220,
@@ -56188,6 +56113,147 @@
       "has_image": false,
       "section": "posledice",
       "is_new": true
+    },
+    {
+      "id": 214,
+      "section": "vozila",
+      "text": "Возила морају бити опремљена зимском опремом у периоду:",
+      "options": [
+        {
+          "letter": "a",
+          "text": "од 1. децембра до 1. марта, ако се на коловозу налази снег, лед или поледица"
+        },
+        {
+          "letter": "б",
+          "text": "од 1. новембра до 1. априла, ако се на коловозу налази снег, лед или поледица"
+        },
+        {
+          "letter": "в",
+          "text": "од 15. новембра до 15. марта"
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 1,
+      "has_image": false
+    },
+    {
+      "id": 215,
+      "section": "vozila",
+      "text": "Зимска опрема путничких возила обухвата:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "пнеуматике за зимску употребу на свим точковима"
+        },
+        {
+          "letter": "б",
+          "text": "пнеуматике за зимску употребу само на погонским точковима"
+        },
+        {
+          "letter": "в",
+          "text": "ланце односно друге уређаје за повећање тракције за најмање два погонска точка"
+        },
+        {
+          "letter": "г",
+          "text": "лопату"
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 2,
+      "has_image": false,
+      "correct_answers": [
+        "а",
+        "в"
+      ]
+    },
+    {
+      "id": 216,
+      "section": "vozila",
+      "text": "Највећа дозвољена дужина аутобуса са две осовине износи:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "12,00 m"
+        },
+        {
+          "letter": "б",
+          "text": "13,50 m"
+        },
+        {
+          "letter": "в",
+          "text": "15,00 m"
+        }
+      ],
+      "points": 3,
+      "correct_answers_count": 1,
+      "has_image": false,
+      "correct_answers": []
+    },
+    {
+      "id": 217,
+      "section": "vozila",
+      "text": "Највећа дозвољена дужина аутобуса са најмање три осовине износи:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "12,00 m"
+        },
+        {
+          "letter": "б",
+          "text": "13,50 m"
+        },
+        {
+          "letter": "в",
+          "text": "15,00 m"
+        }
+      ],
+      "points": 3,
+      "correct_answers_count": 1,
+      "has_image": false
+    },
+    {
+      "id": 218,
+      "section": "vozila",
+      "text": "Највећа дозвољена дужина зглобног аутобуса, износи:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "16,50 m"
+        },
+        {
+          "letter": "б",
+          "text": "18,75 m"
+        },
+        {
+          "letter": "в",
+          "text": "21,00 m"
+        }
+      ],
+      "points": 3,
+      "correct_answers_count": 1,
+      "has_image": false
+    },
+    {
+      "id": 219,
+      "section": "vozila",
+      "text": "Највећа дозвољена дужина зглобног аутобуса са две или више окретница износи:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "15,00 m"
+        },
+        {
+          "letter": "б",
+          "text": "18,75 m"
+        },
+        {
+          "letter": "в",
+          "text": "25,00 m"
+        }
+      ],
+      "points": 3,
+      "correct_answers_count": 1,
+      "has_image": false
     }
   ]
 }
