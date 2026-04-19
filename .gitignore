@@ -10,6 +10,8 @@ app/node_modules/
 # Source PDFs (downloaded via `make download`)
 database/source_17042026/*.pdf
 database/images/*.png
+database/images.backup
+database/questions.backup.json
 
 # App copies of data (synced via `make sync-data`)
 app/static/questions.json
