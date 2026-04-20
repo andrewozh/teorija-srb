@@ -176,6 +176,7 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .id-btn { width: 30px; height: 24px; border-radius: 4px; border: 1px solid #ddd; background: #fff; color: #888; font-size: 10px; font-family: monospace; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 .id-btn:hover { background: #eee; }
 .id-btn.exists { color: #2d6a2d; border-color: #5c7a48; }
+.id-btn.verified { background: #c8e6c8; color: #1a5c1a; border-color: #5c7a48; }
 .id-btn.current { background: #d4a54a; color: #fff; border-color: #d4a54a; font-weight: 700; }
 .id-btn.missing { color: #aa3333; border-color: #cc4444; }
 
@@ -301,6 +302,7 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 </form>
 
 <div class="confirm-toast" id="confirmToast">💾 Press Enter again to save</div>
+<div class="confirm-toast" id="verifyToast">✅ Press Enter to verify &amp; next →</div>
 <script>
 function go(id) {
     const section = document.querySelector('select[name=section]').value;
@@ -582,22 +584,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // === GLOBAL HOTKEYS ===
     let confirmSave = false;
+    let confirmVerify = false;
     const confirmToast = document.getElementById('confirmToast');
+    const verifyToast = document.getElementById('verifyToast');
 
-    function hideConfirm() {
+    function hideAllToasts() {
         confirmSave = false;
+        confirmVerify = false;
         confirmToast.classList.remove('visible');
+        verifyToast.classList.remove('visible');
+    }
+
+    function doVerifyNext() {
+        const fd = new FormData();
+        fd.append('section', document.querySelector('input[name=section]').value);
+        fd.append('id', document.querySelector('input[name=original_id]').value);
+        fd.append('next_id', '{next_id}');
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('filter')) fd.append('filter', params.get('filter'));
+        fetch('/verify-next', { method: 'POST', body: fd }).then(function(resp) {
+            window.location = resp.url || '/?section=' + fd.get('section') + '&id=' + fd.get('next_id');
+        });
     }
 
     window.addEventListener('keydown', function(e) {
-        const tag = (document.activeElement || {}).tagName;
+        const tag = (document.activeElement || document.body).tagName;
         const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
 
-        // Escape: cancel crop / blur / dismiss confirm
+        // Escape: cancel everything
         if (e.key === 'Escape') {
             if (hasSelection) { e.preventDefault(); clearSelection(); }
             if (isInput) document.activeElement.blur();
-            if (confirmSave) hideConfirm();
+            hideAllToasts();
+            return;
+        }
+
+        // Space outside inputs: verify & next flow
+        if (e.key === ' ' && !isInput) {
+            e.preventDefault();
+            if (confirmVerify) return;
+            hideAllToasts();
+            confirmVerify = true;
+            verifyToast.classList.add('visible');
+            setTimeout(function() { if (confirmVerify) hideAllToasts(); }, 3000);
             return;
         }
 
@@ -608,16 +637,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Enter outside inputs: save confirm flow
+        // Enter: handle pending verify or save
         if (e.key === 'Enter' && !isInput) {
             e.preventDefault();
-            if (confirmSave) {
-                hideConfirm();
+            if (confirmVerify) {
+                hideAllToasts();
+                doVerifyNext();
+            } else if (confirmSave) {
+                hideAllToasts();
                 document.getElementById('editform').submit();
             } else {
                 confirmSave = true;
                 confirmToast.classList.add('visible');
-                setTimeout(function() { if (confirmSave) hideConfirm(); }, 3000);
+                setTimeout(function() { if (confirmSave) hideAllToasts(); }, 3000);
             }
             return;
         }
@@ -710,8 +742,11 @@ def render_question_form(q, section, qid):
     chk_removed = "checked" if q.get("is_removed") else ""
     chk_changed = "checked" if q.get("is_changed") else ""
     chk_new = "checked" if q.get("is_new") else ""
+    chk_verified = "checked" if q.get("is_verified") else ""
+    verified_banner = '<div style="background:#e8f5e8;color:#2d6a2d;padding:8px 16px;border-radius:8px;font-size:20px;font-weight:700;text-align:center;margin-bottom:6px;">✅ Verified</div>' if q.get("is_verified") else ""
 
     return f"""
+    {verified_banner}
     <!-- Row 1: Number + Text (mirrors screenshot top row) -->
     <div class="card" style="display:flex;gap:10px;align-items:flex-start;">
         <div style="flex-shrink:0;">
@@ -759,6 +794,10 @@ def render_question_form(q, section, qid):
 
     <!-- Metadata row: flags, correct count, image upload -->
     <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 12px;">
+        <label style="font-size:14px;font-weight:700;display:flex;align-items:center;gap:4px;cursor:pointer;">
+            <input type="checkbox" name="flag_verified" {chk_verified} data-original="{str(bool(chk_verified)).lower()}" style="width:20px;height:20px;"> <span style="color:#2d6a2d;">✅ Verified</span>
+        </label>
+        <span style="color:#aaa;">|</span>
         <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
             <input type="checkbox" name="flag_removed" {chk_removed} data-original="{str(bool(chk_removed)).lower()}"> <span class="flag flag-removed">removed</span>
         </label>
@@ -878,6 +917,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
         elif filter_type == "no_answer":
             filtered_ids = sorted(qid for qid, q in section_questions.items()
                 if "correct_answers" not in q and not q.get("is_removed"))
+        elif filter_type == "verified":
+            filtered_ids = sorted(qid for qid, q in section_questions.items() if q.get("is_verified"))
+        elif filter_type == "not_verified":
+            filtered_ids = sorted(qid for qid, q in section_questions.items() if not q.get("is_verified"))
         else:
             filtered_ids = None
 
@@ -890,6 +933,8 @@ class VerifyHandler(SimpleHTTPRequestHandler):
         n_missing = len(all_ids - set(section_ids))
         n_no_answer = sum(1 for q in section_questions.values()
             if "correct_answers" not in q and not q.get("is_removed"))
+        n_verified = sum(1 for q in section_questions.values() if q.get("is_verified"))
+        n_not_verified = len(section_questions) - n_verified
 
         _, q = find_question(data, section, qid)
 
@@ -936,7 +981,9 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             fbtn("problems", "Problems", n_problems, "f-problems") +
             fbtn("garbled", "Garbled", n_garbled, "f-problems") +
             fbtn("missing", "Missing IDs", n_missing, "f-removed") +
-            fbtn("no_answer", "No answer", n_no_answer, "f-problems")
+            fbtn("no_answer", "No answer", n_no_answer, "f-problems") +
+            fbtn("verified", "✅ Verified", n_verified, "f-new") +
+            fbtn("not_verified", "Not verified", n_not_verified, "f-problems")
         )
 
         # ID grid — show filtered IDs or 50 around current
@@ -947,11 +994,12 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             grid_end = min(max_id + 1, grid_start + 50)
             grid_ids = list(range(grid_start, grid_end + 1))
 
+        verified_ids = {q2["id"] for q2 in data["questions"] if q2["section"] == section and q2.get("is_verified")}
         id_grid = ""
         filter_param = f"&filter={filter_type}" if filter_type else ""
         for i in grid_ids:
             if i in section_ids:
-                cls = "id-btn exists"
+                cls = "id-btn verified" if i in verified_ids else "id-btn exists"
             else:
                 cls = "id-btn missing"
             if i == qid:
@@ -1060,6 +1108,26 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urlparse(self.path)
+
+        # Verify & Next endpoint
+        if parsed.path == "/verify-next":
+            fields, files = self.parse_multipart()
+            section = fields.get("section", "")
+            qid = int(fields.get("id", "0"))
+            next_id = int(fields.get("next_id", str(qid + 1)))
+            data = load_data()
+            idx, q = find_question(data, section, qid)
+            if q:
+                if not q.get("is_verified"):
+                    q["is_verified"] = True
+                    log_changes({"section": section, "question_id": qid, "changes": [{"action": "verified"}]})
+                    save_data(data)
+            # Preserve filter
+            filter_param = f"&filter={fields.get('filter', '')}" if fields.get('filter') else ""
+            self.send_response(303)
+            self.send_header("Location", f"/?section={section}&id={next_id}{filter_param}&msg=saved")
+            self.end_headers()
+            return
 
         # AI Parse endpoint
         if parsed.path == "/ai-parse":
@@ -1205,7 +1273,7 @@ class VerifyHandler(SimpleHTTPRequestHandler):
                 q["has_image"] = True
 
             # Flags
-            for flag_name, field_name in [("is_removed", "flag_removed"), ("is_changed", "flag_changed"), ("is_new", "flag_new")]:
+            for flag_name, field_name in [("is_removed", "flag_removed"), ("is_changed", "flag_changed"), ("is_new", "flag_new"), ("is_verified", "flag_verified")]:
                 was_set = q.get(flag_name, False)
                 now_set = field_name in fields
                 if was_set != now_set:
