@@ -223,7 +223,8 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 
 /* === CROP TOOL === */
 .crop-container { position: relative; }
-.crop-container img { width: 100%; display: block; border-radius: 6px; border: 1px solid #ddd; }
+.crop-img-wrap { position: relative; display: inline-block; width: 100%; }
+.crop-img-wrap img { width: 100%; display: block; border-radius: 6px; border: 1px solid #ddd; }
 #cropCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: crosshair; border-radius: 6px; }
 .crop-hint { font-size: 11px; color: #888; font-family: monospace; text-align: center; margin-top: 4px; min-height: 16px; }
 
@@ -596,15 +597,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function doVerifyNext() {
-        const fd = new FormData();
-        fd.append('section', document.querySelector('input[name=section]').value);
-        fd.append('id', document.querySelector('input[name=original_id]').value);
-        fd.append('next_id', '{next_id}');
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('filter')) fd.append('filter', params.get('filter'));
-        fetch('/verify-next', { method: 'POST', body: fd }).then(function(resp) {
-            window.location = resp.url || '/?section=' + fd.get('section') + '&id=' + fd.get('next_id');
-        });
+        // Check the verified checkbox
+        var vcb = document.querySelector('input[name=flag_verified]');
+        if (vcb) vcb.checked = true;
+        // Add hidden field to tell POST handler to redirect to next question
+        var hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'goto_next';
+        hidden.value = '{next_id}';
+        document.getElementById('editform').appendChild(hidden);
+        // Submit the full form (saves all changes + verified flag)
+        document.getElementById('editform').submit();
     }
 
     window.addEventListener('keydown', function(e) {
@@ -650,6 +653,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 confirmSave = true;
                 confirmToast.classList.add('visible');
                 setTimeout(function() { if (confirmSave) hideAllToasts(); }, 3000);
+            }
+            return;
+        }
+
+        // Digit keys: toggle correct answer (1=first option, 2=second, etc.)
+        if (!isInput && e.key >= '1' && e.key <= '9') {
+            var idx = parseInt(e.key) - 1;
+            var cb = document.querySelector('input[name=opt_' + idx + '_correct]');
+            if (cb) {
+                e.preventDefault();
+                cb.checked = !cb.checked;
+                // Update visual style
+                var row = cb.closest('.option-row');
+                if (row) {
+                    row.classList.toggle('correct', cb.checked);
+                }
+                checkChanges();
             }
             return;
         }
@@ -1027,8 +1047,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
         if screenshot_exists:
             screenshot_html = f'''<div class="crop-container" id="cropContainer">
-                <img src="{screenshot_url}" alt="Screenshot Q{qid}" id="screenshotImg" crossorigin="anonymous">
-                <canvas id="cropCanvas"></canvas>
+                <div class="crop-img-wrap">
+                    <img src="{screenshot_url}" alt="Screenshot Q{qid}" id="screenshotImg" crossorigin="anonymous">
+                    <canvas id="cropCanvas"></canvas>
+                </div>
                 <div class="crop-hint" id="cropHint">Drag to select area</div>
             </div>'''
         else:
@@ -1343,8 +1365,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
         save_data(data)
 
+        goto_next = fields.get("goto_next", "")
+        redirect_id = goto_next if goto_next else str(original_id)
         self.send_response(303)
-        self.send_header("Location", f"/?section={section}&id={original_id}&msg=saved")
+        self.send_header("Location", f"/?section={section}&id={redirect_id}&msg=saved")
         self.end_headers()
 
     def log_message(self, format, *args):
