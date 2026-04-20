@@ -557,14 +557,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     const cb = document.querySelector('input[name=cat_' + cat + ']');
                     if (cb) cb.checked = (data.categories || []).includes(cat);
                 });
-                // Fill options
+                // Fill options — create new rows if AI returned more than exist
                 var opts = data.options || [];
+                var correctAnswers = data.correct_answers || [];
+                var optionsContainer = document.querySelector('input[name=options_count]');
+                var optionsParent = optionsContainer ? optionsContainer.parentElement : null;
                 for (var i = 0; i < opts.length; i++) {
                     var ta = document.querySelector('textarea[name=opt_' + i + '_text]');
-                    if (ta) { ta.value = opts[i].text || ''; autoResize(ta); }
+                    if (ta) {
+                        ta.value = opts[i].text || '';
+                        autoResize(ta);
+                    } else if (optionsParent) {
+                        // Create new option row
+                        var isCorr = correctAnswers.includes(opts[i].letter);
+                        var row = document.createElement('div');
+                        row.className = 'option-row' + (isCorr ? ' correct' : '');
+                        row.innerHTML = '<span class="option-letter">' + opts[i].letter + ')</span>'
+                            + '<div class="option-text"><textarea name="opt_' + i + '_text" rows="1">' + (opts[i].text || '').replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</textarea><div class="diff-display"></div></div>'
+                            + '<div class="option-correct" title="Correct answer"><input type="checkbox" name="opt_' + i + '_correct"' + (isCorr ? ' checked' : '') + '></div>'
+                            + '<label style="font-size:10px;color:#aa3333;cursor:pointer;display:flex;align-items:center;gap:2px;" title="Delete"><input type="checkbox" name="opt_' + i + '_delete"> ✕</label>'
+                            + '<input type="hidden" name="opt_' + i + '_letter" value="' + opts[i].letter + '">';
+                        // Insert before the "ADD OPTION" div
+                        var addDiv = optionsParent.querySelector('div[style*="border-top"]');
+                        if (addDiv) optionsParent.insertBefore(row, addDiv);
+                        else optionsParent.appendChild(row);
+                        // Auto-resize the new textarea
+                        var newTa = row.querySelector('textarea');
+                        if (newTa) { autoResize(newTa); newTa.addEventListener('input', function() { autoResize(this); checkChanges(); }); }
+                    }
                     var cb = document.querySelector('input[name=opt_' + i + '_correct]');
-                    if (cb) cb.checked = (data.correct_answers || []).includes(opts[i].letter);
+                    if (cb) cb.checked = correctAnswers.includes(opts[i].letter);
                 }
+                // Update options_count
+                if (optionsContainer) optionsContainer.value = Math.max(parseInt(optionsContainer.value) || 0, opts.length);
                 // Fill flags
                 var status = data.status;
                 var fr = document.querySelector('input[name=flag_removed]');
@@ -753,7 +778,7 @@ def render_question_form(q, section, qid):
 
     cats = q.get("categories", [])
     cats_html = ""
-    for cat in ["A", "B", "C", "D", "F"]:
+    for cat in ["A", "B", "C", "D", "F", "M"]:
         chk = "checked" if cat in cats else ""
         orig = "true" if cat in cats else "false"
         cats_html += f'<label style="font-size:18px;font-weight:700;display:flex;align-items:center;gap:2px;cursor:pointer;"><input type="checkbox" name="cat_{cat}" {chk} data-original="{orig}" style="width:18px;height:18px;"> {cat}</label>'
@@ -1306,7 +1331,7 @@ class VerifyHandler(SimpleHTTPRequestHandler):
                     q.pop(flag_name, None)
 
             # Categories
-            new_cats = sorted([cat for cat in ["A", "B", "C", "D", "F"] if f"cat_{cat}" in fields])
+            new_cats = sorted([cat for cat in ["A", "B", "C", "D", "F", "M"] if f"cat_{cat}" in fields])
             old_cats = sorted(q.get("categories", []))
             if new_cats != old_cats:
                 changes.append({"action": "categories_changed", "from": old_cats, "to": new_cats})
