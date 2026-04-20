@@ -321,7 +321,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
             if cl in ("1", "2", "3", "4", "") or cl in CATEGORY_LABELS or OPTION_RE.match(cl):
                 break
             parts.append(cl)
-        full_text = re.sub(r"\s+[23]$", "", " ".join(parts))
+        full_text = re.sub(r"\s+[1234]$", "", " ".join(parts))
         full_text = re.sub(r"\s+", " ", full_text).strip().rstrip(",").rstrip(".")
         options.append({"letter": letter, "text": full_text})
 
@@ -331,7 +331,7 @@ def parse_single_question(qnum: int, block_text: str) -> dict:
         if s in ("1", "2", "3", "4"):
             points = int(s)
             break
-        m = re.search(r"\s([23])$", s)
+        m = re.search(r"\s([1234])$", s)
         if m:
             points = int(m.group(1))
             break
@@ -569,6 +569,17 @@ def parse_section(pdf_path: Path, section_id: str, section_name: str, image_pref
 def main():
     sections = json.loads(SECTIONS_FILE.read_text(encoding="utf-8"))
 
+    # Load existing verified questions to preserve them
+    verified_questions = {}
+    if OUTPUT_FILE.exists():
+        existing = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+        for q in existing.get("questions", []):
+            if q.get("is_verified"):
+                key = (q["section"], q["id"])
+                verified_questions[key] = q
+        if verified_questions:
+            print(f"  Preserving {len(verified_questions)} verified questions")
+
     all_questions = []
     parsed_sections = []
 
@@ -582,6 +593,15 @@ def main():
             continue
 
         questions = parse_section(pdf_path, sec["id"], sec["name"], sec["id"])
+        # Replace parsed questions with verified versions where they exist
+        preserved = 0
+        for i, q in enumerate(questions):
+            key = (sec["id"], q["id"])
+            if key in verified_questions:
+                questions[i] = verified_questions[key]
+                preserved += 1
+        if preserved:
+            print(f"  Preserved {preserved} verified questions in {sec['name']}")
         all_questions.extend(questions)
         parsed_sections.append({
             "id": sec["id"],
