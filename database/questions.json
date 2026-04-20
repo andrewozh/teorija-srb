@@ -5285,7 +5285,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 2,
@@ -5313,7 +5314,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 3,
@@ -5341,7 +5343,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 4,
@@ -5373,9 +5376,9 @@
       "section": "vozaci",
       "correct_answers": [
         "а",
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 5,
@@ -5402,10 +5405,9 @@
       ],
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 6,
@@ -5433,7 +5435,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 7,
@@ -5460,10 +5463,9 @@
       ],
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 8,
@@ -5488,7 +5490,11 @@
       "categories": [
         "B"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 9,
@@ -5515,9 +5521,9 @@
       ],
       "section": "vozaci",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 10,
@@ -5545,7 +5551,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 11,
@@ -5574,7 +5581,8 @@
       "is_removed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 12,
@@ -5597,7 +5605,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 13,
@@ -5626,7 +5636,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 14,
@@ -5655,7 +5666,8 @@
       "section": "vozaci",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 15,
@@ -5680,7 +5692,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 16,
@@ -5705,7 +5718,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 17,
@@ -5730,7 +5744,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 18,
@@ -5754,9 +5769,9 @@
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 19,
@@ -5781,7 +5796,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 20,
@@ -5801,9 +5817,9 @@
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 21,
@@ -5827,10 +5843,9 @@
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 22,
@@ -5855,7 +5870,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 23,
@@ -5885,20 +5901,34 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 24,
-      "text": "",
-      "options": [],
-      "points": 2,
+      "text": "Возачи који управљају моторним возилом, односно скупом возила којима се обавља јавни превоз, морају се подвргавати здравственом прегледу ради утврђивања психофизичке способности за возача:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "у року који не може бити дужи од три године,"
+        },
+        {
+          "letter": "б",
+          "text": "у року који не може бити дужи од пет година,"
+        },
+        {
+          "letter": "в",
+          "text": "сваке године."
+        }
+      ],
+      "points": 3,
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "б"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 25,
@@ -5923,7 +5953,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 26,
@@ -5948,7 +5979,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 27,
@@ -5973,7 +6005,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 28,
@@ -5998,7 +6031,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 29,
@@ -6006,15 +6040,15 @@
       "options": [
         {
           "letter": "а",
-          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има смрт лица"
+          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има смрт лица,"
         },
         {
           "letter": "б",
-          "text": "најмање"
+          "text": "најмање 2 пута у року од 5 година правноснажно осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има смрт лица,"
         },
         {
           "letter": "в",
-          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има тешке телесне повреде другог лица"
+          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има тешке телесне повреде другог лица."
         }
       ],
       "points": 2,
@@ -6023,7 +6057,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 30,
@@ -6049,9 +6084,9 @@
       "is_removed": true,
       "correct_answers": [
         "а",
-        "б",
-        "г"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 31,
@@ -6074,7 +6109,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 32,
@@ -6096,7 +6133,9 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 33,
@@ -6104,21 +6143,25 @@
       "options": [
         {
           "letter": "а",
-          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има телесне повреде другог лица или имовинску штету"
+          "text": "правноснажном пресудом осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има телесне повреде другог лица или имовинску штету,"
         },
         {
           "letter": "б",
-          "text": "више од једном у року од 5 година правноснажно осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има телесне повреде другог лица или имовинску штету"
+          "text": "више од једном у року од 5 година правноснажно осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има телесне повреде другог лица или имовинску штету,"
         },
         {
           "letter": "в",
-          "text": "више од једном у року од"
+          "text": "више одједном у року од 3 године правноснажно осуђен за кривично дело против безбедности јавног саобраћаја, које за последицу има телесне повреде другог лица или имовинску штету."
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozaci"
+      "section": "vozaci",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 34,
@@ -6143,7 +6186,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 35,
@@ -6167,9 +6211,9 @@
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 36,
@@ -6209,7 +6253,8 @@
         "а",
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 37,
@@ -6232,7 +6277,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 38,
@@ -6255,7 +6302,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 39,
@@ -6278,7 +6327,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 40,
@@ -6301,7 +6352,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 41,
@@ -6324,7 +6377,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 42,
@@ -6347,7 +6402,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 43,
@@ -6370,7 +6427,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 44,
@@ -6393,7 +6452,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 45,
@@ -6416,7 +6477,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 46,
@@ -6439,7 +6502,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 47,
@@ -6467,7 +6532,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 48,
@@ -6494,9 +6560,9 @@
       ],
       "section": "vozaci",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 49,
@@ -6524,7 +6590,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 50,
@@ -6552,7 +6619,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 51,
@@ -6580,7 +6648,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 52,
@@ -6608,7 +6677,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 53,
@@ -6636,7 +6706,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 54,
@@ -6664,7 +6735,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 55,
@@ -6697,7 +6769,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 56,
@@ -6738,10 +6811,10 @@
       "is_changed": true,
       "correct_answers": [
         "а",
-        "б",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 57,
@@ -6767,7 +6840,11 @@
         "A"
       ],
       "section": "vozaci",
-      "is_changed": true
+      "is_changed": true,
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 58,
@@ -6799,8 +6876,10 @@
       "section": "vozaci",
       "is_changed": true,
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 59,
@@ -6829,7 +6908,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 60,
@@ -6857,7 +6937,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 61,
@@ -6890,7 +6971,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 62,
@@ -6932,7 +7014,8 @@
         "а",
         "г",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 63,
@@ -6969,7 +7052,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 64,
@@ -7002,7 +7086,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 65,
@@ -7035,7 +7120,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 66,
@@ -7068,7 +7154,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 67,
@@ -7096,7 +7183,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 68,
@@ -7129,7 +7217,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 69,
@@ -7162,7 +7251,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 70,
@@ -7190,7 +7280,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 71,
@@ -7218,7 +7309,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 72,
@@ -7246,7 +7338,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 73,
@@ -7274,7 +7367,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 74,
@@ -7302,7 +7396,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 75,
@@ -7330,7 +7425,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 76,
@@ -7358,7 +7454,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 77,
@@ -7395,7 +7492,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 78,
@@ -7423,7 +7521,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 79,
@@ -7451,7 +7550,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 80,
@@ -7484,7 +7584,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 81,
@@ -7512,7 +7613,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 82,
@@ -7540,7 +7642,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 83,
@@ -7573,11 +7676,12 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 84,
-      "text": "Возач коме је издата возачка дозвола за управљање моторним возилима категорије М сме да управља у саобраћају на путу: M",
+      "text": "Возач коме је издата возачка дозвола за управљање моторним возилима категорије М сме да управља у саобраћају на путу:",
       "options": [
         {
           "letter": "а",
@@ -7598,6 +7702,10 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
+      ],
+      "is_verified": true,
+      "categories": [
+        "M"
       ]
     },
     {
@@ -7623,7 +7731,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 86,
@@ -7652,7 +7761,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 87,
@@ -7677,7 +7787,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 88,
@@ -7705,7 +7816,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 89,
@@ -7730,7 +7842,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 90,
@@ -7755,7 +7868,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 91,
@@ -7785,7 +7899,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 92,
@@ -7813,7 +7928,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 93,
@@ -7841,7 +7957,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 94,
@@ -7869,7 +7986,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 95,
@@ -7894,7 +8012,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 96,
@@ -7919,7 +8038,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 97,
@@ -7944,7 +8064,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 98,
@@ -7969,7 +8090,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 99,
@@ -7995,7 +8117,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 100,
@@ -8019,9 +8142,9 @@
       "has_image": false,
       "section": "vozaci",
       "correct_answers": [
-        "а",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 101,
@@ -8046,7 +8169,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 102,
@@ -8071,7 +8195,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 103,
@@ -8096,7 +8221,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 104,
@@ -8121,7 +8247,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 105,
@@ -8146,7 +8273,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 106,
@@ -8176,7 +8304,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 107,
@@ -8201,7 +8330,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 108,
@@ -8226,7 +8356,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 109,
@@ -8251,7 +8382,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 110,
@@ -8276,7 +8408,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 111,
@@ -8301,7 +8434,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 112,
@@ -8331,7 +8465,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 113,
@@ -8356,7 +8491,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 114,
@@ -8381,7 +8517,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 115,
@@ -8415,7 +8552,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 116,
@@ -8440,7 +8578,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 117,
@@ -8474,11 +8613,12 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 118,
-      "text": "Возач који је учествовао у саобраћајној незгоди у којој је настала само мања материјална штета: :",
+      "text": "Возач који је учествовао у саобраћајној незгоди у којој је настала само мања материјална штета:",
       "options": [
         {
           "letter": "а",
@@ -8508,7 +8648,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 119,
@@ -8533,7 +8674,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 120,
@@ -8558,7 +8700,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 121,
@@ -8583,7 +8726,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 122,
@@ -8608,7 +8752,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 123,
@@ -8633,7 +8778,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 124,
@@ -8662,7 +8808,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 125,
@@ -8692,7 +8839,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 126,
@@ -8722,7 +8870,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 127,
@@ -8752,7 +8901,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 128,
@@ -8779,7 +8929,9 @@
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 129,
@@ -8798,13 +8950,17 @@
           "text": "9 сати. 4"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 130,
@@ -8831,7 +8987,11 @@
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 131,
@@ -8861,7 +9021,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 132,
@@ -8888,7 +9049,11 @@
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 133,
@@ -8918,7 +9083,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 134,
@@ -8946,7 +9112,11 @@
         "D"
       ],
       "section": "vozaci",
-      "is_changed": true
+      "is_changed": true,
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 135,
@@ -8982,7 +9152,12 @@
         "D"
       ],
       "section": "vozaci",
-      "is_changed": true
+      "is_changed": true,
+      "is_verified": true,
+      "correct_answers": [
+        "б",
+        "г"
+      ]
     },
     {
       "id": 136,
@@ -8998,17 +9173,21 @@
         },
         {
           "letter": "в",
-          "text": "аутобуса, само када има више од 17 седишта укључујући и седиште за возача. 4"
+          "text": "аутобуса, само када има више од 17 седишта укључујући и седиште за возача"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
         "D"
       ],
       "section": "vozaci",
-      "is_changed": true
+      "is_changed": true,
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 137,
@@ -9038,7 +9217,8 @@
       "section": "vozaci",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 138,
@@ -9054,10 +9234,10 @@
         },
         {
           "letter": "в",
-          "text": "укупно трајање пауза износи најмање 45 минута. 4"
+          "text": "укупно трајање пауза износи најмање 45 минута"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
@@ -9067,7 +9247,8 @@
       "section": "vozaci",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 139,
@@ -9083,10 +9264,10 @@
         },
         {
           "letter": "в",
-          "text": "15 минута. 4"
+          "text": "15 минута"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
@@ -9095,7 +9276,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 140,
@@ -9125,7 +9307,8 @@
       "section": "vozaci",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 141,
@@ -9141,17 +9324,21 @@
         },
         {
           "letter": "в",
-          "text": "48 сати. 4 РЕПУБЛИ"
+          "text": "48 сати"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 142,
@@ -9167,17 +9354,21 @@
         },
         {
           "letter": "в",
-          "text": "9 сати. 4"
+          "text": "9 сати"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
         "C",
         "D"
       ],
-      "section": "vozaci"
+      "section": "vozaci",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 143,
@@ -9197,10 +9388,10 @@
         },
         {
           "letter": "г",
-          "text": "може да користи у возилу само када се оно креће у полупречнику до 100 km од базе возила. 4"
+          "text": "може да користи у возилу само када се оно креће у полупречнику до 100 km од базе возила."
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 2,
       "has_image": false,
       "categories": [
@@ -9211,7 +9402,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 144,
@@ -9227,10 +9419,10 @@
         },
         {
           "letter": "в",
-          "text": "мора да користи ван возила или у возилу када се оно не креће. 4"
+          "text": "мора да користи ван возила или у возилу када се оно не креће"
         }
       ],
-      "points": 2,
+      "points": 4,
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
@@ -9241,7 +9433,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 145,
@@ -9269,7 +9462,11 @@
         "D"
       ],
       "section": "vozaci",
-      "is_changed": true
+      "is_changed": true,
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 146,
