@@ -170,6 +170,10 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .diff-ins { background: #dfd; color: #2a2; padding: 0 1px; border-radius: 2px; }
 .changed-border { border-color: #4a4 !important; box-shadow: 0 0 0 2px rgba(68,170,68,0.25); }
 
+/* === CONFIRM TOAST === */
+.confirm-toast { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2d6a2d; color: #fff; padding: 16px 32px; border-radius: 12px; font-size: 18px; font-weight: 600; z-index: 9999; box-shadow: 0 8px 32px rgba(0,0,0,0.3); display: none; text-align: center; }
+.confirm-toast.visible { display: block; }
+
 /* === SAVE BAR === */
 .save-bar { position: sticky; bottom: 0; background: #f5f5f0; padding: 8px 12px; border-top: 1px solid #ddd; display: flex; gap: 8px; justify-content: flex-end; z-index: 50; }
 .save-bar button { padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
@@ -229,6 +233,7 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 </div>
 </form>
 
+<div class="confirm-toast" id="confirmToast">💾 Press Enter again to save</div>
 <script>
 function go(id) {
     const section = document.querySelector('select[name=section]').value;
@@ -352,12 +357,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // === CROP TOOL ===
+    var hasSelection = false;
+    var clearSelection = function(){};
+    var doCrop = function(){};
     const imgEl = document.getElementById('screenshotImg');
     const canvas = document.getElementById('cropCanvas');
     const cropHint = document.getElementById('cropHint');
     if (imgEl && canvas) {
         const ctx = canvas.getContext('2d');
-        let drawing = false, startX = 0, startY = 0, rect = null, hasSelection = false;
+        let drawing = false, startX = 0, startY = 0, rect = null;
+        hasSelection = false;
 
         function syncCanvasSize() {
             canvas.width = imgEl.clientWidth;
@@ -411,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        function doCrop() {
+        doCrop = function() {
             if (!rect || !hasSelection) return;
             const scaleX = imgEl.naturalWidth / imgEl.clientWidth;
             const scaleY = imgEl.naturalHeight / imgEl.clientHeight;
@@ -435,33 +444,73 @@ document.addEventListener('DOMContentLoaded', function() {
             cropHint.textContent = 'Cropped — click Save to apply';
         }
 
-        function clearSelection() {
+        clearSelection = function() {
             rect = null;
             hasSelection = false;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             cropHint.textContent = 'Drag to select area';
         }
 
-        window.addEventListener('keydown', function(e) {
-            if (!hasSelection) return;
-            const tag = (document.activeElement || {}).tagName;
-            const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
-            if (e.key === 'Enter' && !isInput) {
-                e.preventDefault();
-                doCrop();
-            }
-            if (e.key === 'Escape') {
-                e.preventDefault();
-                clearSelection();
-                if (isInput) document.activeElement.blur();
-            }
-        });
-
         // Focus away from inputs after finishing selection
         canvas.addEventListener('mouseup', function() {
             if (hasSelection) document.activeElement.blur();
         });
     }
+
+    // === GLOBAL HOTKEYS ===
+    let confirmSave = false;
+    const confirmToast = document.getElementById('confirmToast');
+
+    function hideConfirm() {
+        confirmSave = false;
+        confirmToast.classList.remove('visible');
+    }
+
+    window.addEventListener('keydown', function(e) {
+        const tag = (document.activeElement || {}).tagName;
+        const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+
+        // Escape: cancel crop / blur / dismiss confirm
+        if (e.key === 'Escape') {
+            if (hasSelection) { e.preventDefault(); clearSelection(); }
+            if (isInput) document.activeElement.blur();
+            if (confirmSave) hideConfirm();
+            return;
+        }
+
+        // Enter in crop mode: do crop
+        if (e.key === 'Enter' && hasSelection && !isInput) {
+            e.preventDefault();
+            doCrop();
+            return;
+        }
+
+        // Enter outside inputs: save confirm flow
+        if (e.key === 'Enter' && !isInput) {
+            e.preventDefault();
+            if (confirmSave) {
+                hideConfirm();
+                document.getElementById('editform').submit();
+            } else {
+                confirmSave = true;
+                confirmToast.classList.add('visible');
+                setTimeout(function() { if (confirmSave) hideConfirm(); }, 3000);
+            }
+            return;
+        }
+
+        // Arrow keys: prev/next question (only when not in input)
+        if (!isInput && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+            e.preventDefault();
+            if (e.key === 'ArrowLeft') go({prev_id});
+            if (e.key === 'ArrowRight') go({next_id});
+            return;
+        }
+    });
+
+    document.addEventListener('click', function() {
+        if (confirmSave) hideConfirm();
+    });
 });
 </script>
 </body>
@@ -840,10 +889,13 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             "{screenshot_html}", screenshot_html
         )
 
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(html.encode("utf-8"))
+        try:
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(html.encode("utf-8"))
+        except BrokenPipeError:
+            pass
 
     def parse_multipart(self):
         """Parse multipart/form-data without cgi module."""
