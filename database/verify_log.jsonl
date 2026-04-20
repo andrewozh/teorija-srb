@@ -439,3 +439,75 @@
 {"section": "vozaci", "question_id": 144, "changes": [{"action": "points_changed", "from": 2, "to": 4}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "мора да користи ван возила или у возилу када се оно не креће", "to": "мора да користи ван возила или у возилу када се оно не креће"}], "timestamp": "2026-04-20T21:41:56.315047"}
 {"section": "vozaci", "question_id": 144, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:42:00.243003"}
 {"section": "vozaci", "question_id": 145, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:43:03.961913"}
+{"section": "vozaci", "question_id": 146, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:09.737986"}
+{"section": "vozaci", "question_id": 147, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:17.670446"}
+{"section": "vozaci", "question_id": 148, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:22.691700"}
+{"section": "vozaci", "question_id": 149, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:51:27.916138"}
+{"section": "vozaci", "question_id": 150, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:33.846686"}
+{"section": "vozaci", "question_id": 151, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:51:38.715126"}
+{"section": "vozaci", "question_id": 152, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:51:43.242097"}
+{"section": "vozaci", "question_id": 153, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:50.770320"}
+{"section": "vozaci", "question_id": 154, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:51:55.705147"}
+{"section": "vozaci", "question_id": 155, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:00.501918"}
+{"section": "vozaci", "question_id": 156, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:06.872416"}
+{"section": "vozaci", "question_id": 157, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:11.768885"}
+{"section": "vozaci", "question_id": 158, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T21:52:19.874843"}
+{"section": "vozaci", "question_id": 159, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:23.324666"}
+{"section": "vozaci", "question_id": 160, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:26.487656"}
+{"section": "vozaci", "question_id": 161, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:52:31.086759"}
+{"section": "vozaci", "question_id": 162, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:35.569343"}
+{"section": "vozaci", "question_id": 163, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:40.402421"}
+{"section": "vozaci", "question_id": 164, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:44.614482"}
+{"section": "vozaci", "question_id": 165, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:52:51.448062"}
+{"section": "vozaci", "question_id": 166, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:52:56.243590"}
+{"section": "vozaci", "question_id": 167, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:53:01.684389"}
+{"section": "vozaci", "question_id": 168, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:53:21.510654"}
+{"section": "vozaci", "question_id": 169, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:53:25.371524"}
+{"section": "vozaci", "question_id": 170, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:53:29.452409"}
+{"section": "vozaci", "question_id": 171, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:53:38.490104"}
+{"section": "vozaci", "question_id": 172, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:53:44.515930"}
+{"section": "vozaci", "question_id": 173, "changes": [{"action": "option_text_changed", "position": 2, "letter": "в", "from": "виђен, ако на е података. а", "to": "и дуже од периода за који је предвиђен, ако на листићу има м"}], "timestamp": "2026-04-20T21:54:28.156872"}
+{"section": "vozaci", "question_id": 173, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:31.755093"}
+{"section": "vozaci", "question_id": 174, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:37.960991"}
+{"section": "vozaci", "question_id": 175, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:46.114385"}
+{"section": "vozaci", "question_id": 176, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:48.564099"}
+{"section": "vozaci", "question_id": 177, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:52.299698"}
+{"section": "vozaci", "question_id": 178, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:54:56.540791"}
+{"section": "vozaci", "question_id": 179, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:55:05.398767"}
+{"section": "vozaci", "question_id": 180, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:55:10.823581"}
+{"section": "vozaci", "question_id": 181, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:55:17.652183"}
+{"section": "vozaci", "question_id": 182, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:55:23.307023"}
+{"section": "vozaci", "question_id": 183, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T21:55:29.064697"}
+{"section": "vozaci", "question_id": 184, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:55:35.184614"}
+{"section": "vozaci", "question_id": 185, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": ["б", "в"], "to": ["б"]}], "timestamp": "2026-04-20T21:55:45.604348"}
+{"section": "vozaci", "question_id": 186, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:55:53.079161"}
+{"section": "vozaci", "question_id": 187, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:04.525795"}
+{"section": "vozaci", "question_id": 188, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:14.477551"}
+{"section": "vozaci", "question_id": 189, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:18.061051"}
+{"section": "vozaci", "question_id": 190, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:22.563342"}
+{"section": "vozaci", "question_id": 191, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:28.409739"}
+{"section": "vozaci", "question_id": 192, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:37.560766"}
+{"section": "vozaci", "question_id": 193, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:44.630969"}
+{"section": "vozaci", "question_id": 194, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:56:51.234914"}
+{"section": "vozaci", "question_id": 195, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T21:56:57.516575"}
+{"section": "vozaci", "question_id": 196, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:03.734624"}
+{"section": "vozaci", "question_id": 197, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:21.602131"}
+{"section": "vozaci", "question_id": 198, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:30.069268"}
+{"section": "vozaci", "question_id": 199, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:40.508664"}
+{"section": "vozaci", "question_id": 200, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:45.672570"}
+{"section": "vozaci", "question_id": 201, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:50.946155"}
+{"section": "vozaci", "question_id": 202, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:57:59.826354"}
+{"section": "vozaci", "question_id": 203, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:04.690590"}
+{"section": "vozaci", "question_id": 204, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:13.053796"}
+{"section": "vozaci", "question_id": 205, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:23.886005"}
+{"section": "vozaci", "question_id": 206, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:28.683442"}
+{"section": "vozaci", "question_id": 207, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:33.771851"}
+{"section": "vozaci", "question_id": 208, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:39.834265"}
+{"section": "vozaci", "question_id": 209, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:44.444962"}
+{"section": "vozaci", "question_id": 210, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:58:55.756033"}
+{"section": "vozaci", "question_id": 211, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:59:02.206561"}
+{"section": "vozaci", "question_id": 212, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:59:10.564767"}
+{"section": "vozaci", "question_id": 213, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:59:21.236990"}
+{"section": "vozaci", "question_id": 214, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:59:36.078561"}
+{"section": "vozaci", "question_id": 215, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:59:42.392873"}
+{"section": "vozaci", "question_id": 216, "changes": [{"action": "text_changed", "from": "Када учествује у саобраћају на путу, не сме да има алкохола у организму: А", "to": "Када учествује у саобраћају на путу, не сме да има алкохола у организму:"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "categories_changed", "from": [], "to": ["A"]}], "timestamp": "2026-04-20T22:00:16.919509"}
