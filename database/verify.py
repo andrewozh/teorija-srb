@@ -141,7 +141,7 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .option-row.correct { border-color: #5c7a48; background: #f0f7ec; }
 .option-letter { font-weight: 700; font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
 .option-text { flex: 1; min-width: 0; }
-.option-text textarea { width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 18px; line-height: 1.5; resize: none; overflow: hidden; min-height: 32px; font-family: inherit; }
+.option-text textarea { width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 20px; line-height: 1.0; resize: none; overflow: hidden; min-height: 32px; font-family: inherit; }
 .option-correct { cursor: pointer; flex-shrink: 0; }
 .option-correct input { cursor: pointer; width: 16px; height: 16px; }
 
@@ -156,6 +156,13 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .upload-row { display: flex; gap: 8px; align-items: center; }
 .upload-row label { font-size: 11px; color: #888; font-family: monospace; text-transform: uppercase; white-space: nowrap; }
 .img-preview { max-width: 100%; max-height: 120px; border-radius: 6px; margin: 4px 0; }
+
+/* === DIFF HIGHLIGHTS === */
+.diff-display { font-size: 16px; line-height: 1.5; padding: 4px 8px; margin-top: 2px; border-radius: 4px; background: #fafaf0; border: 1px solid #e8e0c0; display: none; }
+.diff-display:not(:empty) { display: block; }
+.diff-del { background: #fdd; color: #a33; text-decoration: line-through; padding: 0 1px; border-radius: 2px; }
+.diff-ins { background: #dfd; color: #2a2; padding: 0 1px; border-radius: 2px; }
+.changed-border { border-color: #4a4 !important; box-shadow: 0 0 0 2px rgba(68,170,68,0.25); }
 
 /* === SAVE BAR === */
 .save-bar { position: sticky; bottom: 0; background: #f5f5f0; padding: 8px 12px; border-top: 1px solid #ddd; display: flex; gap: 8px; justify-content: flex-end; z-index: 50; }
@@ -231,10 +238,111 @@ function autoResize(el) {
     el.style.height = 'auto';
     el.style.height = el.scrollHeight + 'px';
 }
+
+// Word-level diff
+function wordDiff(oldText, newText) {
+    if (oldText === newText) return '';
+    const oldWords = oldText.split(/(\\s+)/);
+    const newWords = newText.split(/(\\s+)/);
+    // Simple LCS-based diff
+    const m = oldWords.length, n = newWords.length;
+    const dp = Array.from({length: m+1}, () => new Array(n+1).fill(0));
+    for (let i = 1; i <= m; i++)
+        for (let j = 1; j <= n; j++)
+            dp[i][j] = oldWords[i-1] === newWords[j-1] ? dp[i-1][j-1]+1 : Math.max(dp[i-1][j], dp[i][j-1]);
+    // Backtrack
+    let result = [];
+    let i = m, j = n;
+    while (i > 0 || j > 0) {
+        if (i > 0 && j > 0 && oldWords[i-1] === newWords[j-1]) {
+            result.unshift({type:'same', text:oldWords[i-1]});
+            i--; j--;
+        } else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j])) {
+            result.unshift({type:'ins', text:newWords[j-1]});
+            j--;
+        } else {
+            result.unshift({type:'del', text:oldWords[i-1]});
+            i--;
+        }
+    }
+    return result.map(r => {
+        if (r.type === 'del') return '<span class="diff-del">' + r.text.replace(/</g,'&lt;') + '</span>';
+        if (r.type === 'ins') return '<span class="diff-ins">' + r.text.replace(/</g,'&lt;') + '</span>';
+        return r.text.replace(/</g,'&lt;');
+    }).join('');
+}
+
+function checkChanges() {
+    // Textareas with diff
+    document.querySelectorAll('textarea[data-original]').forEach(function(ta) {
+        const orig = ta.getAttribute('data-original');
+        const cur = ta.value;
+        const diffDiv = ta.nextElementSibling;
+        if (diffDiv && diffDiv.classList.contains('diff-display')) {
+            if (cur !== orig) {
+                diffDiv.innerHTML = wordDiff(orig, cur);
+                ta.classList.add('changed-border');
+            } else {
+                diffDiv.innerHTML = '';
+                ta.classList.remove('changed-border');
+            }
+        }
+    });
+    // Number inputs
+    document.querySelectorAll('input[type=number][data-original]').forEach(function(inp) {
+        if (inp.value !== inp.getAttribute('data-original')) {
+            inp.classList.add('changed-border');
+        } else {
+            inp.classList.remove('changed-border');
+        }
+    });
+    // Checkboxes (flags)
+    document.querySelectorAll('input[type=checkbox][data-original]').forEach(function(cb) {
+        const orig = cb.getAttribute('data-original') === 'true';
+        if (cb.checked !== orig) {
+            cb.parentElement.classList.add('changed-border');
+            cb.parentElement.style.borderRadius = '6px';
+            cb.parentElement.style.border = '2px solid #4a4';
+        } else {
+            cb.parentElement.classList.remove('changed-border');
+            cb.parentElement.style.border = '';
+        }
+    });
+    // File input
+    document.querySelectorAll('input[type=file]').forEach(function(fi) {
+        const card = fi.closest('.card');
+        if (fi.files && fi.files.length > 0) {
+            if (card) card.classList.add('changed-border');
+        } else {
+            if (card) card.classList.remove('changed-border');
+        }
+    });
+    // New option fields
+    const newLetter = document.querySelector('input[name=new_opt_letter]');
+    const newText = document.querySelector('input[name=new_opt_text]');
+    if (newLetter && newText) {
+        const row = newLetter.closest('div');
+        if (newLetter.value.trim() || newText.value.trim()) {
+            if (row) { row.style.border = '2px solid #4a4'; row.style.borderRadius = '6px'; row.style.padding = '4px'; }
+        } else {
+            if (row) { row.style.border = ''; row.style.padding = ''; }
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Auto-resize textareas
     document.querySelectorAll('textarea').forEach(function(ta) {
         autoResize(ta);
-        ta.addEventListener('input', function() { autoResize(this); });
+        ta.addEventListener('input', function() { autoResize(this); checkChanges(); });
+    });
+    // Track changes on all inputs
+    document.querySelectorAll('input[data-original], select').forEach(function(el) {
+        el.addEventListener('input', checkChanges);
+        el.addEventListener('change', checkChanges);
+    });
+    document.querySelectorAll('input[type=file]').forEach(function(el) {
+        el.addEventListener('change', checkChanges);
     });
 });
 </script>
@@ -289,7 +397,8 @@ def render_question_form(q, section, qid):
         <div class="option-row {cls}">
             <span class="option-letter">{o['letter']})</span>
             <div class="option-text">
-                <textarea name="opt_{i}_text" rows="1">{escaped_text}</textarea>
+                <textarea name="opt_{i}_text" rows="1" data-original="{escaped_text}">{escaped_text}</textarea>
+                <div class="diff-display"></div>
             </div>
             <div class="option-correct" title="Correct answer">
                 <input type="checkbox" name="opt_{i}_correct" {checked}>
@@ -300,7 +409,12 @@ def render_question_form(q, section, qid):
             <input type="hidden" name="opt_{i}_letter" value="{o['letter']}">
         </div>"""
 
-    cats = ", ".join(q.get("categories", [])) or "все"
+    cats = q.get("categories", [])
+    cats_html = ""
+    for cat in ["A", "B", "C", "D", "F"]:
+        chk = "checked" if cat in cats else ""
+        orig = "true" if cat in cats else "false"
+        cats_html += f'<label style="font-size:18px;font-weight:700;display:flex;align-items:center;gap:2px;cursor:pointer;"><input type="checkbox" name="cat_{cat}" {chk} data-original="{orig}" style="width:18px;height:18px;"> {cat}</label>'
 
     # Flag checkboxes
     chk_removed = "checked" if q.get("is_removed") else ""
@@ -315,7 +429,8 @@ def render_question_form(q, section, qid):
         </div>
         <div style="flex:1;">
             <div class="field" style="margin-bottom:0;">
-                <textarea name="text" style="font-size:18px;line-height:1.5;">{q['text']}</textarea>
+                <textarea name="text" data-original="{q['text']}" style="font-size:23px;line-height:1.0;">{q['text']}</textarea>
+                <div class="diff-display" id="diff-text"></div>
             </div>
         </div>
     </div>
@@ -332,8 +447,8 @@ def render_question_form(q, section, qid):
     <!-- Row 3: Categories + Options + Points (mirrors screenshot bottom row) -->
     <div class="card" style="display:flex;gap:10px;align-items:flex-start;">
         <div style="flex-shrink:0;min-width:40px;">
-            <div style="font-size:20px;font-weight:700;line-height:1.6;">
-                {('<br>'.join(q.get('categories', []))) or '<span style="color:#ccc;font-size:12px;">all</span>'}
+            <div style="display:flex;flex-direction:column;gap:2px;">
+                {cats_html}
             </div>
         </div>
         <div style="flex:1;">
@@ -346,24 +461,24 @@ def render_question_form(q, section, qid):
             </div>
         </div>
         <div style="flex-shrink:0;text-align:center;">
-            <input type="number" name="points" value="{q['points']}" min="1" max="4" style="width:60px;font-size:22px;font-weight:700;text-align:center;padding:6px;border-radius:6px;border:1px solid #ccc;background:#f0f0e8;">
+            <input type="number" name="points" value="{q['points']}" data-original="{q['points']}" min="1" max="4" style="width:60px;font-size:22px;font-weight:700;text-align:center;padding:6px;border-radius:6px;border:1px solid #ccc;background:#f0f0e8;">
         </div>
     </div>
 
     <!-- Metadata row: flags, correct count, image upload -->
     <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 12px;">
         <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-            <input type="checkbox" name="flag_removed" {chk_removed}> <span class="flag flag-removed">removed</span>
+            <input type="checkbox" name="flag_removed" {chk_removed} data-original="{str(bool(chk_removed)).lower()}"> <span class="flag flag-removed">removed</span>
         </label>
         <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-            <input type="checkbox" name="flag_changed" {chk_changed}> <span class="flag flag-changed">changed</span>
+            <input type="checkbox" name="flag_changed" {chk_changed} data-original="{str(bool(chk_changed)).lower()}"> <span class="flag flag-changed">changed</span>
         </label>
         <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-            <input type="checkbox" name="flag_new" {chk_new}> <span class="flag flag-new">new</span>
+            <input type="checkbox" name="flag_new" {chk_new} data-original="{str(bool(chk_new)).lower()}"> <span class="flag flag-new">new</span>
         </label>
         <span style="color:#aaa;">|</span>
         <label style="font-size:12px;display:flex;align-items:center;gap:4px;font-family:monospace;color:#888;">
-            correct_count: <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" min="1" max="6" style="width:44px;font-size:13px;padding:2px 4px;border-radius:4px;border:1px solid #ccc;">
+            correct_count: <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" data-original="{q['correct_answers_count']}" min="1" max="6" style="width:44px;font-size:13px;padding:2px 4px;border-radius:4px;border:1px solid #ccc;">
         </label>
         <label style="font-size:12px;display:flex;align-items:center;gap:4px;font-family:monospace;color:#888;">
             img: {q['has_image']}
@@ -730,6 +845,13 @@ class VerifyHandler(SimpleHTTPRequestHandler):
                     q[flag_name] = True
                 else:
                     q.pop(flag_name, None)
+
+            # Categories
+            new_cats = sorted([cat for cat in ["A", "B", "C", "D", "F"] if f"cat_{cat}" in fields])
+            old_cats = sorted(q.get("categories", []))
+            if new_cats != old_cats:
+                changes.append({"action": "categories_changed", "from": old_cats, "to": new_cats})
+                q["categories"] = new_cats if new_cats else []
 
             # Options — rebuild, track deletions and changes
             opt_count = int(fields.get("options_count", "0"))
