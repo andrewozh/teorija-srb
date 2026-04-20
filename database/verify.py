@@ -128,8 +128,8 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .card h3 { font-size: 11px; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; font-family: monospace; }
 .field { margin-bottom: 8px; }
 .field label { display: block; font-size: 11px; color: #888; margin-bottom: 2px; font-family: monospace; text-transform: uppercase; }
-.field textarea, .field input[type=text], .field input[type=number], .field select { width: 100%; padding: 5px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fafafa; color: #222; font-size: 13px; font-family: inherit; }
-.field textarea { min-height: 40px; resize: none; overflow: hidden; }
+.field textarea, .field input[type=text], .field input[type=number], .field select { width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fafafa; color: #222; font-size: 16px; font-family: inherit; line-height: 1.4; }
+.field textarea { min-height: 40px; resize: none; overflow: hidden; font-size: 16px; line-height: 1.4; }
 
 /* === COMPACT NUMERIC ROW === */
 .num-row { display: flex; gap: 12px; }
@@ -139,9 +139,9 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 /* === OPTIONS === */
 .option-row { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; padding: 5px 8px; border-radius: 6px; background: #fafafa; border: 1px solid #ddd; }
 .option-row.correct { border-color: #5c7a48; background: #f0f7ec; }
-.option-letter { font-weight: 700; font-size: 14px; width: 20px; text-align: center; flex-shrink: 0; }
+.option-letter { font-weight: 700; font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
 .option-text { flex: 1; min-width: 0; }
-.option-text input { width: 100%; padding: 4px 6px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 13px; }
+.option-text textarea { width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 18px; line-height: 1.5; resize: none; overflow: hidden; min-height: 32px; font-family: inherit; }
 .option-correct { cursor: pointer; flex-shrink: 0; }
 .option-correct input { cursor: pointer; width: 16px; height: 16px; }
 
@@ -284,11 +284,12 @@ def render_question_form(q, section, qid):
         is_correct = o["letter"] in correct_answers
         cls = "correct" if is_correct else ""
         checked = "checked" if is_correct else ""
+        escaped_text = o['text'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
         options_html += f"""
         <div class="option-row {cls}">
             <span class="option-letter">{o['letter']})</span>
             <div class="option-text">
-                <input type="text" name="opt_{i}_text" value="{o['text']}">
+                <textarea name="opt_{i}_text" rows="1">{escaped_text}</textarea>
             </div>
             <div class="option-correct" title="Correct answer">
                 <input type="checkbox" name="opt_{i}_correct" {checked}>
@@ -307,67 +308,66 @@ def render_question_form(q, section, qid):
     chk_new = "checked" if q.get("is_new") else ""
 
     return f"""
-    <div class="card">
-        <h3>Q{q['id']} — {section}</h3>
-        <div class="meta-row" style="margin-bottom:6px;">
-            <span class="meta-item">pts: {q['points']}</span>
-            <span class="meta-item">correct: {q['correct_answers_count']}</span>
-            <span class="meta-item">cats: {cats}</span>
-            <span class="meta-item">img: {q['has_image']}</span>
+    <!-- Row 1: Number + Text (mirrors screenshot top row) -->
+    <div class="card" style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="flex-shrink:0;">
+            <input type="number" name="display_id" value="{q['id']}" disabled style="width:68px;font-size:22px;font-weight:700;text-align:center;padding:6px;border-radius:6px;border:1px solid #ccc;background:#f0f0e8;">
         </div>
-        <div class="flags-row">
-            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-                <input type="checkbox" name="flag_removed" {chk_removed}> <span class="flag flag-removed">removed</span>
-            </label>
-            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-                <input type="checkbox" name="flag_changed" {chk_changed}> <span class="flag flag-changed">changed</span>
-            </label>
-            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
-                <input type="checkbox" name="flag_new" {chk_new}> <span class="flag flag-new">new</span>
-            </label>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Text</h3>
-        <div class="field">
-            <textarea name="text">{q['text']}</textarea>
-        </div>
-        <div class="num-row">
-            <div class="field">
-                <label>Points</label>
-                <input type="number" name="points" value="{q['points']}" min="1" max="4">
-            </div>
-            <div class="field">
-                <label>Correct count</label>
-                <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" min="1" max="6">
+        <div style="flex:1;">
+            <div class="field" style="margin-bottom:0;">
+                <textarea name="text" style="font-size:18px;line-height:1.5;">{q['text']}</textarea>
             </div>
         </div>
     </div>
 
-    <div class="card">
-        <h3>Image</h3>
+    <!-- Row 2: Image -->
+    <div class="card" style="padding:6px;">
         {img_html}
         <div class="upload-row">
-            <label>Upload</label>
+            <label>Image</label>
             <input type="file" name="image" accept="image/*" style="font-size:12px;">
         </div>
     </div>
 
-    <div class="card">
-        <h3>Options <span style="font-size:10px;color:#888;font-weight:400;">(✓ = correct, ✕ = delete)</span></h3>
-        <input type="hidden" name="options_count" value="{len(q['options'])}">
-        {options_html}
-        <div style="margin-top:8px;padding-top:8px;border-top:1px solid #ddd;">
-            <div style="font-size:10px;color:#888;margin-bottom:4px;font-family:monospace;">ADD OPTION</div>
-            <div style="display:flex;gap:6px;align-items:center;">
-                <input type="text" name="new_opt_letter" placeholder="е" style="width:36px;padding:4px;border-radius:4px;border:1px solid #ccc;text-align:center;font-size:13px;">
-                <input type="text" name="new_opt_text" placeholder="Текст варианта..." style="flex:1;padding:4px 6px;border-radius:4px;border:1px solid #ccc;font-size:13px;">
-                <label style="font-size:11px;display:flex;align-items:center;gap:2px;white-space:nowrap;">
-                    <input type="checkbox" name="new_opt_correct"> ✓
-                </label>
+    <!-- Row 3: Categories + Options + Points (mirrors screenshot bottom row) -->
+    <div class="card" style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="flex-shrink:0;min-width:40px;">
+            <div style="font-size:20px;font-weight:700;line-height:1.6;">
+                {('<br>'.join(q.get('categories', []))) or '<span style="color:#ccc;font-size:12px;">all</span>'}
             </div>
         </div>
+        <div style="flex:1;">
+            <input type="hidden" name="options_count" value="{len(q['options'])}">
+            {options_html}
+            <div style="margin-top:6px;padding-top:6px;border-top:1px solid #eee;display:flex;gap:6px;align-items:center;">
+                <input type="text" name="new_opt_letter" placeholder="е" style="width:32px;padding:4px;border-radius:4px;border:1px solid #ccc;text-align:center;font-size:14px;">
+                <input type="text" name="new_opt_text" placeholder="Добавить вариант..." style="flex:1;padding:4px 6px;border-radius:4px;border:1px solid #ccc;font-size:14px;">
+                <label style="font-size:11px;display:flex;align-items:center;gap:2px;"><input type="checkbox" name="new_opt_correct"> ✓</label>
+            </div>
+        </div>
+        <div style="flex-shrink:0;text-align:center;">
+            <input type="number" name="points" value="{q['points']}" min="1" max="4" style="width:60px;font-size:22px;font-weight:700;text-align:center;padding:6px;border-radius:6px;border:1px solid #ccc;background:#f0f0e8;">
+        </div>
+    </div>
+
+    <!-- Metadata row: flags, correct count, image upload -->
+    <div class="card" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:6px 12px;">
+        <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
+            <input type="checkbox" name="flag_removed" {chk_removed}> <span class="flag flag-removed">removed</span>
+        </label>
+        <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
+            <input type="checkbox" name="flag_changed" {chk_changed}> <span class="flag flag-changed">changed</span>
+        </label>
+        <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
+            <input type="checkbox" name="flag_new" {chk_new}> <span class="flag flag-new">new</span>
+        </label>
+        <span style="color:#aaa;">|</span>
+        <label style="font-size:12px;display:flex;align-items:center;gap:4px;font-family:monospace;color:#888;">
+            correct_count: <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" min="1" max="6" style="width:44px;font-size:13px;padding:2px 4px;border-radius:4px;border:1px solid #ccc;">
+        </label>
+        <label style="font-size:12px;display:flex;align-items:center;gap:4px;font-family:monospace;color:#888;">
+            img: {q['has_image']}
+        </label>
     </div>"""
 
 
