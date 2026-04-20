@@ -11667,9 +11667,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "б"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 2,
@@ -11695,7 +11695,8 @@
       "is_removed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 3,
@@ -11718,7 +11719,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozila",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 4,
@@ -11740,7 +11743,11 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 5,
@@ -11770,7 +11777,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 6,
@@ -11795,7 +11803,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 7,
@@ -11820,7 +11829,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 8,
@@ -11845,7 +11855,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 9,
@@ -11887,7 +11898,8 @@
         "а",
         "б",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 10,
@@ -11913,7 +11925,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 11,
@@ -11941,7 +11954,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 12,
@@ -11966,7 +11980,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 13,
@@ -11991,7 +12006,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 14,
@@ -12016,7 +12032,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 15,
@@ -12046,9 +12063,9 @@
       ],
       "section": "vozila",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 16,
@@ -12072,9 +12089,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 17,
@@ -12099,7 +12116,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 18,
@@ -12124,7 +12142,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 19,
@@ -12149,7 +12168,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 20,
@@ -12174,7 +12194,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 21,
@@ -12198,9 +12219,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 22,
@@ -12221,7 +12242,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 23,
@@ -12246,7 +12268,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 24,
@@ -12271,7 +12294,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 25,
@@ -12295,10 +12319,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 26,
@@ -12323,7 +12346,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 27,
@@ -12353,7 +12377,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 28,
@@ -12378,7 +12403,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 29,
@@ -12408,7 +12434,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 30,
@@ -12432,9 +12459,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 31,
@@ -12459,7 +12486,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 32,
@@ -12483,9 +12511,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "б"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 33,
@@ -12510,7 +12538,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 34,
@@ -12535,7 +12564,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 35,
@@ -12560,7 +12590,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 36,
@@ -12588,7 +12619,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 37,
@@ -12619,7 +12651,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 38,
@@ -12648,9 +12681,9 @@
       ],
       "section": "vozila",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 39,
@@ -12675,7 +12708,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 40,
@@ -12704,9 +12738,9 @@
       "section": "vozila",
       "correct_answers": [
         "б",
-        "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 41,
@@ -12736,7 +12770,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 42,
@@ -12761,7 +12796,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 43,
@@ -12791,7 +12827,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 44,
@@ -12821,7 +12858,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 45,
@@ -12849,11 +12887,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 46,
-      "text": "Прикључно возило које вуче мопед, односно мотоцикл, не сме бити шире од: А",
+      "text": "Прикључно возило које вуче мопед, односно мотоцикл, не сме бити шире од:",
       "options": [
         {
           "letter": "а",
@@ -12874,6 +12913,10 @@
       "section": "vozila",
       "correct_answers": [
         "а"
+      ],
+      "is_verified": true,
+      "categories": [
+        "A"
       ]
     },
     {
@@ -12902,7 +12945,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 48,
@@ -12927,7 +12971,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 49,
@@ -12958,7 +13003,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 50,
@@ -12986,7 +13032,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 51,
@@ -13017,7 +13064,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 52,
@@ -13045,7 +13093,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 53,
@@ -13070,7 +13119,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 54,
@@ -13095,7 +13145,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 55,
@@ -13123,7 +13174,11 @@
         "D",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 56,
@@ -13154,7 +13209,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 57,
@@ -13182,7 +13238,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 58,
@@ -13212,11 +13269,12 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 59,
-      "text": "Кочни систем мопеда, односно мотоцикала, мора да оствари функције: А",
+      "text": "Кочни систем мопеда, односно мотоцикала, мора да оствари функције:",
       "options": [
         {
           "letter": "а",
@@ -13237,7 +13295,11 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 60,
@@ -13267,7 +13329,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 61,
@@ -13297,7 +13360,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 62,
@@ -13328,7 +13392,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 63,
@@ -13356,7 +13421,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 64,
@@ -13384,7 +13450,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 65,
@@ -13412,7 +13479,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 66,
@@ -13440,7 +13508,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 67,
@@ -13468,7 +13537,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 68,
@@ -13498,7 +13568,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 69,
@@ -13528,7 +13599,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 70,
@@ -13558,11 +13630,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 71,
-      "text": "Радно кочење возила за превоз путника, теретних возила, мопеда, мотоцикала, трицикала, четвороцикала и прикључних возила, осим трактора, радних машина и прикључних возила за трактор, мора дејствовати: А",
+      "text": "Радно кочење возила за превоз путника, теретних возила, мопеда, мотоцикала, трицикала, четвороцикала и прикључних возила, осим трактора, радних машина и прикључних возила за трактор, мора дејствовати:",
       "options": [
         {
           "letter": "а",
@@ -13581,6 +13654,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -13588,7 +13662,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 72,
@@ -13613,7 +13688,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 73,
@@ -13641,7 +13717,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 74,
@@ -13666,7 +13743,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 75,
@@ -13691,7 +13769,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 76,
@@ -13716,7 +13795,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 77,
@@ -13741,7 +13821,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 78,
@@ -13780,7 +13861,8 @@
         "б",
         "д",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 79,
@@ -13819,7 +13901,8 @@
         "б",
         "г",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 80,
@@ -13849,9 +13932,9 @@
       ],
       "section": "vozila",
       "correct_answers": [
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 81,
@@ -13879,7 +13962,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 82,
@@ -13907,7 +13991,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 83,
@@ -13932,7 +14017,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 84,
@@ -13957,7 +14043,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 85,
@@ -13982,7 +14069,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 86,
@@ -14012,7 +14100,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 87,
@@ -14042,11 +14131,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 88,
-      "text": "Светлосни сноп кратког светла моторних возила, осим трактора, мора да осветли: А",
+      "text": "Светлосни сноп кратког светла моторних возила, осим трактора, мора да осветли:",
       "options": [
         {
           "letter": "а",
@@ -14065,6 +14155,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -14072,7 +14163,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 89,
@@ -14102,11 +14194,12 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 90,
-      "text": "Светлосни сноп дугог светла моторних возила, осим трактора, мора да осветли: А",
+      "text": "Светлосни сноп дугог светла моторних возила, осим трактора, мора да осветли:",
       "options": [
         {
           "letter": "а",
@@ -14125,15 +14218,16 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
       ],
       "section": "vozila",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 91,
@@ -14161,7 +14255,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 92,
@@ -14190,7 +14285,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 93,
@@ -14221,7 +14317,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 94,
@@ -14249,7 +14346,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 95,
@@ -14274,7 +14372,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 96,
@@ -14299,7 +14398,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 97,
@@ -14330,11 +14430,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 98,
-      "text": "На мотоциклима светла за маглу могу бити уграђенa и изведенa: А",
+      "text": "На мотоциклима светла за маглу могу бити уграђенa и изведенa:",
       "options": [
         {
           "letter": "а",
@@ -14355,7 +14456,11 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 99,
@@ -14380,7 +14485,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 100,
@@ -14405,7 +14511,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 101,
@@ -14431,7 +14538,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 102,
@@ -14463,7 +14571,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 103,
@@ -14494,7 +14603,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 104,
@@ -14525,7 +14635,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 105,
@@ -14556,7 +14667,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 106,
@@ -14584,7 +14696,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 107,
@@ -14615,7 +14728,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 108,
@@ -14646,11 +14760,12 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 109,
-      "text": "На мопеду и мотоциклу: А",
+      "text": "На мопеду и мотоциклу:",
       "options": [
         {
           "letter": "а",
@@ -14671,7 +14786,11 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 110,
@@ -14701,7 +14820,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 111,
@@ -14726,7 +14846,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 112,
@@ -14756,7 +14877,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 113,
@@ -14784,7 +14906,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 114,
@@ -14809,7 +14932,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 115,
@@ -14840,11 +14964,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 116,
-      "text": "На моторном возилу на два точка и моторном возилу на три точка која нису шира од 1,3 m: А",
+      "text": "На моторном возилу на два точка и моторном возилу на три точка која нису шира од 1,3 m:",
       "options": [
         {
           "letter": "а",
@@ -14865,11 +14990,15 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 117,
-      "text": "На мотоциклу са три точка: А",
+      "text": "На мотоциклу са три точка:",
       "options": [
         {
           "letter": "а",
@@ -14890,11 +15019,15 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 118,
-      "text": "На четвороциклу ширем од 1 m: А",
+      "text": "На четвороциклу ширем од 1 m:",
       "options": [
         {
           "letter": "а",
@@ -14913,12 +15046,14 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B"
       ],
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 119,
@@ -14949,7 +15084,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 120,
@@ -14979,7 +15115,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 121,
@@ -15010,7 +15147,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 122,
@@ -15035,11 +15173,12 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 123,
-      "text": "",
+      "text": "Возила која су намењена за извођење радова ван пута када у саобраћају на путу имају инсталирана оруђа за извођење радова, која нису склоп возила већ измењиво средство за рад:",
       "options": [
         {
           "letter": "а",
@@ -15056,6 +15195,12 @@
       "section": "vozila",
       "correct_answers": [
         "а"
+      ],
+      "is_verified": true,
+      "categories": [
+        "B",
+        "C",
+        "F"
       ]
     },
     {
@@ -15082,7 +15227,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 125,
@@ -15104,11 +15250,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p010_y0078.png",
+      "image": "verify_vozila_125.png",
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 126,
@@ -15130,15 +15277,16 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p010_y0136.png",
+      "image": "verify_vozila_126.png",
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 127,
-      "text": "Ознака спорих возила мора бити постављена на: (Заокружити два тачна одговора)",
+      "text": "Ознака спорих возила мора бити постављена на:",
       "options": [
         {
           "letter": "а",
@@ -15158,13 +15306,14 @@
         }
       ],
       "points": 2,
-      "correct_answers_count": 1,
+      "correct_answers_count": 2,
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 128,
@@ -15189,11 +15338,12 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 129,
-      "text": "Запречна табла се поставља на: (Заокружити два тачна одговора)",
+      "text": "Запречна табла се поставља на:",
       "options": [
         {
           "letter": "а",
@@ -15217,13 +15367,18 @@
         }
       ],
       "points": 2,
-      "correct_answers_count": 1,
+      "correct_answers_count": 2,
       "has_image": false,
       "categories": [
         "C",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б",
+        "г"
+      ]
     },
     {
       "id": 130,
@@ -15249,7 +15404,11 @@
         "C",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 131,
@@ -15277,7 +15436,11 @@
         "D",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 132,
@@ -15293,7 +15456,7 @@
         },
         {
           "letter": "в",
-          "text": "морају б даје светлост бити уграђен ва стоп светл ла"
+          "text": "морају бити уграђена најмање два стоп светла, тако да дају светлост црвене боје"
         }
       ],
       "points": 2,
@@ -15302,7 +15465,11 @@
       "section": "vozila",
       "categories": [
         "A"
-      ]
+      ],
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 133,
@@ -15310,7 +15477,7 @@
       "options": [
         {
           "letter": "а",
-          "text": "најмање четири стоп светла"
+          "text": "најмање четири стоп светала"
         },
         {
           "letter": "б",
@@ -15318,7 +15485,7 @@
         },
         {
           "letter": "в",
-          "text": "стоп с полупре на средњу узд светла у о ечник најмањ је"
+          "text": "стоп светла у облику круга, чији је полупречник најмање 0,15 м."
         }
       ],
       "points": 2,
@@ -15327,7 +15494,11 @@
       "categories": [
         "B"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 134,
@@ -15349,7 +15520,11 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 135,
@@ -15371,7 +15546,11 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 136,
@@ -15395,11 +15574,9 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "б",
-        "в",
-        "г"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 137,
@@ -15424,7 +15601,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 138,
@@ -15454,7 +15632,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 139,
@@ -15485,7 +15664,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 140,
@@ -15515,7 +15695,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 141,
@@ -15545,7 +15726,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 142,
@@ -15575,7 +15757,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 143,
@@ -15603,7 +15786,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 144,
@@ -15628,7 +15812,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 145,
@@ -15653,7 +15838,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 146,
@@ -15681,7 +15867,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 147,
@@ -15709,7 +15896,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 148,
@@ -15737,7 +15925,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 149,
@@ -15765,7 +15954,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 150,
@@ -15793,7 +15983,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 151,
@@ -15821,7 +16012,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 152,
@@ -15846,7 +16038,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 153,
@@ -15876,7 +16069,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 154,
@@ -15904,7 +16098,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 155,
@@ -15912,15 +16107,15 @@
       "options": [
         {
           "letter": "а",
-          "text": "не може прелазити 300 према горе нити 150 према доле"
+          "text": "не може прелазити 30^0 према горе нити 15^0 према доле"
         },
         {
           "letter": "б",
-          "text": "не може прелазити 150 према горе нити 300 према доле"
+          "text": "не може прелазити 15^0 према горе нити 30^0 према доле"
         },
         {
           "letter": "в",
-          "text": "не може прелазити 150 према горе нити 200 према доле"
+          "text": "не може прелазити 15^0 према горе нити 20^0 према доле"
         }
       ],
       "points": 2,
@@ -15929,7 +16124,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 156,
@@ -15959,7 +16155,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 157,
@@ -15989,7 +16186,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 158,
@@ -16020,7 +16218,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 159,
@@ -16050,7 +16249,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 160,
@@ -16080,7 +16280,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 161,
@@ -16108,7 +16309,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 162,
@@ -16137,7 +16339,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 163,
@@ -16168,7 +16371,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 164,
@@ -16196,7 +16400,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 165,
@@ -16224,7 +16429,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 166,
@@ -16257,7 +16463,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 167,
@@ -16290,7 +16497,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 168,
@@ -16320,7 +16528,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 169,
@@ -16345,7 +16554,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 170,
@@ -16380,7 +16590,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 171,
@@ -16408,7 +16619,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 172,
@@ -16436,7 +16648,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 173,
@@ -16464,7 +16677,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 174,
@@ -16492,7 +16706,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 175,
@@ -16520,7 +16735,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 176,
@@ -16550,7 +16766,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 177,
@@ -16589,7 +16806,8 @@
         "а",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 178,
@@ -16614,7 +16832,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 179,
@@ -16649,7 +16868,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 180,
@@ -16675,7 +16895,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 181,
@@ -16701,7 +16922,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 182,
@@ -16734,7 +16956,8 @@
       "section": "vozila",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 183,
@@ -16759,7 +16982,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 184,
@@ -16784,7 +17008,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 185,
@@ -16809,7 +17034,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 186,
@@ -16848,7 +17074,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 187,
@@ -16887,7 +17114,8 @@
       "section": "vozila",
       "correct_answers": [
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 188,
@@ -16913,7 +17141,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 189,
@@ -16944,7 +17173,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 190,
@@ -16975,7 +17205,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 191,
@@ -17001,7 +17232,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 192,
@@ -17027,11 +17259,12 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 193,
-      "text": "Најмање дозвољена дубина „шаре“ газећег слоја пнеуматика мопеда, односно мотоцикла, када не постоји ТWI ознака, износи: А",
+      "text": "Најмање дозвољена дубина „шаре“ газећег слоја пнеуматика мопеда, односно мотоцикла, када не постоји ТWI ознака, износи:",
       "options": [
         {
           "letter": "а",
@@ -17052,11 +17285,15 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 194,
-      "text": "Дубина газећег слоја пнеуматика на мопедима, мотоциклима, трициклима, четвороциклима и путничким возилима мора бити: А",
+      "text": "Дубина газећег слоја пнеуматика на мопедима, мотоциклима, трициклима, четвороциклима и путничким возилима мора бити:",
       "options": [
         {
           "letter": "а",
@@ -17075,12 +17312,14 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B"
       ],
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 195,
@@ -17109,7 +17348,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 196,
@@ -17137,7 +17377,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 197,
@@ -17166,7 +17407,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 198,
@@ -17194,7 +17436,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 199,
@@ -17224,7 +17467,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 200,
@@ -17260,7 +17504,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 201,
@@ -17290,7 +17535,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 202,
@@ -17318,7 +17564,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 203,
@@ -17349,7 +17596,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 204,
@@ -17379,7 +17627,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 205,
@@ -17409,7 +17658,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 206,
@@ -17438,7 +17688,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 207,
@@ -17468,7 +17719,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 208,
@@ -17503,7 +17755,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 209,
@@ -17532,7 +17785,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 210,
@@ -17561,7 +17815,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 211,
@@ -17592,7 +17847,8 @@
       "is_removed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 212,
@@ -17618,7 +17874,9 @@
         "B"
       ],
       "section": "vozila",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 213,
@@ -17640,14 +17898,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": false,
-      "categories": [
-        "B",
-        "D"
-      ],
+      "categories": [],
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 220,
@@ -17675,7 +17931,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 221,
@@ -17703,7 +17960,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 222,
@@ -17731,7 +17989,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 223,
@@ -17759,7 +18018,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 224,
@@ -17787,7 +18047,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 225,
@@ -17815,7 +18076,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 226,
@@ -17840,7 +18102,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 227,
@@ -17865,7 +18131,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 228,
@@ -17890,7 +18160,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 229,
@@ -17915,7 +18189,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 230,
@@ -17940,7 +18218,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 231,
@@ -17968,7 +18250,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 232,
@@ -17993,7 +18276,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 233,
@@ -18018,7 +18305,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 234,
@@ -18043,7 +18334,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 235,
@@ -18069,7 +18364,11 @@
         "C",
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 236,
@@ -18094,7 +18393,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 237,
@@ -18120,7 +18423,11 @@
         "C",
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 238,
@@ -18145,7 +18452,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 239,
@@ -18170,7 +18481,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 240,
@@ -18198,7 +18513,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 241,
@@ -18226,7 +18542,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 242,
@@ -18254,7 +18571,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 243,
@@ -18282,7 +18600,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 244,
@@ -18307,7 +18626,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 245,
@@ -18335,7 +18658,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 246,
@@ -18360,7 +18684,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 247,
@@ -18388,7 +18716,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 248,
@@ -18417,7 +18746,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 249,
@@ -18445,7 +18775,9 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 250,
@@ -18473,7 +18805,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 251,
@@ -18501,7 +18834,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 252,
@@ -18529,7 +18863,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 253,
@@ -18557,7 +18892,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 254,
@@ -18585,7 +18921,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 255,
@@ -18610,7 +18947,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 256,
@@ -18635,7 +18976,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 257,
@@ -18660,7 +19005,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 258,
@@ -18685,7 +19034,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 259,
@@ -18714,7 +19067,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 260,
@@ -18743,7 +19097,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 261,
@@ -18772,7 +19127,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 262,
@@ -18800,7 +19156,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 263,
@@ -18828,7 +19185,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 264,
@@ -18856,7 +19214,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 265,
@@ -18885,7 +19244,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 266,
@@ -18914,7 +19274,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 267,
@@ -18942,7 +19303,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 268,
@@ -18970,7 +19332,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 269,
@@ -18998,7 +19361,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 270,
@@ -19026,7 +19390,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 271,
@@ -19054,7 +19419,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 272,
@@ -19082,7 +19448,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 273,
@@ -19110,7 +19477,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 274,
@@ -19138,7 +19506,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 275,
@@ -19166,7 +19535,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 276,
@@ -19194,7 +19564,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 277,
@@ -19222,7 +19593,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 278,
@@ -19247,7 +19619,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 279,
@@ -19272,7 +19648,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 280,
@@ -19297,7 +19677,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 281,
@@ -19322,7 +19706,11 @@
       "categories": [
         "C"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 282,
@@ -19350,7 +19738,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 283,
@@ -19378,7 +19767,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 284,
@@ -19406,7 +19796,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 285,
@@ -19436,7 +19827,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 286,
@@ -19464,7 +19856,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 287,
@@ -19492,7 +19885,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 288,
@@ -19520,7 +19914,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 289,
@@ -19548,7 +19943,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 290,
@@ -19573,7 +19969,11 @@
       "categories": [
         "D"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 291,
@@ -19601,7 +20001,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 292,
@@ -19629,7 +20030,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 293,
@@ -19661,7 +20063,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 294,
@@ -19693,7 +20096,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 295,
@@ -19721,7 +20125,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 296,
@@ -19749,7 +20154,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 297,
@@ -19777,7 +20183,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 298,
@@ -19805,7 +20212,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 299,
@@ -19833,7 +20241,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 300,
@@ -19870,7 +20279,8 @@
       "correct_answers": [
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 301,
@@ -19906,7 +20316,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 302,
@@ -19937,7 +20348,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 303,
@@ -19968,7 +20380,8 @@
       "section": "vozila",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 304,
@@ -20004,7 +20417,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 305,
@@ -20040,7 +20454,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 306,
@@ -20071,7 +20486,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 307,
@@ -20102,7 +20518,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 308,
@@ -20136,7 +20553,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 309,
@@ -20167,7 +20585,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 310,
@@ -20198,7 +20617,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 311,
@@ -20229,7 +20649,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 312,
@@ -20254,7 +20675,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 313,
@@ -20284,7 +20706,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 314,
@@ -20315,23 +20738,24 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 315,
-      "text": "Т Терет на во озилу мора да буде та ако смештен н и об",
+      "text": "Терет на возилу мора да буде тако смештен и обезбеђен да:",
       "options": [
         {
           "letter": "а",
-          "text": "безбеђен да: ) не заклањ ња светла, рег гистарске таб блице и друге е прописане ) не заклањ ) не заклањ е ознаке на во ња само светла ња само регист озилу, а, тарску табли"
+          "text": "не заклања светла, регистарске таблице и друге прописане ознаке на возилу,"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "не заклања само светла,"
         },
         {
           "letter": "в",
-          "text": "ицу"
+          "text": "не заклања само регистарску таблицу"
         }
       ],
       "points": 2,
@@ -20340,19 +20764,20 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 316,
-      "text": "Д Да ли терет на возилу о да загађује може да б животну сре буде смеште едину? ен и об",
+      "text": "Да ли терет на возилу може да буде смештен и обезбеђен тако да загађује животну средину?",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "Да."
         },
         {
           "letter": "б",
-          "text": "безбеђен тако ) Да. ) Не"
+          "text": "Не."
         }
       ],
       "points": 2,
@@ -20361,23 +20786,24 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 317,
-      "text": "Т Терет на воз зилу, у расу утом стању, , мора да б буде пр",
+      "text": "Терет на возилу, у расутом стању, мора да буде прекривен:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "увек када се возило креће по путу"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "само када се возило креће по путу у насељу"
         },
         {
           "letter": "в",
-          "text": "рекривен: ) увек када се возило кр а се возило кр а се возило кр еће по путу, реће по путу у реће по путу в ) само када ) само када у насељу, ван насеља"
+          "text": "само када се возило креће по путу ван насеља"
         }
       ],
       "points": 2,
@@ -20390,23 +20816,24 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 318,
-      "text": "Т Терет у расуто ом стању, не евози: ним возилом возилом, одн брзином мањо мора да буде е прекривен к када се",
+      "text": "Терет у расутом стању, не мора да буде прекривен када се на путу превози:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "прикључним возилом за трактор"
         },
         {
           "letter": "б",
-          "text": "е на путу пре ) прикључн за трактор, носно скупом ) теретним се креће б ) било којим м возила, које е ом од 50 km/h им возилом. h"
+          "text": "теретним возилом, односно скупом возила, које се креће брзином мањом од 50 km/h"
         },
         {
           "letter": "в",
-          "text": "м прикључни"
+          "text": "било којим прикључним возилом"
         }
       ],
       "points": 2,
@@ -20419,23 +20846,24 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 319,
-      "text": "У У ситуацији п приказаној на а слици: ) расути тер",
+      "text": "У ситуацији приказаној на слици:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "расути терет мора бити прекривен"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "расути терет не мора бити прекривен"
         },
         {
           "letter": "в",
-          "text": "рет мора бити рет не мора б и прекривен, бити прекрив ен, н, јер се скуп ) расути тер ) расути тер рет мора бит еће на путу у ти прекривен у насељу. п"
+          "text": "расути терет мора бити прекривен, јер се скуп возила креће на путу у насељу"
         }
       ],
       "points": 2,
@@ -20444,27 +20872,28 @@
       "categories": [
         "F"
       ],
-      "image": "p023_y0348.png",
+      "image": "verify_vozila_319.png",
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 320,
-      "text": "У У ситуацији п приказаној на а слици: ) расути тер",
+      "text": "У ситуацији приказаној на слици:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "расути терет мора бити прекривен"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "расути терет не мора бити прекривен"
         },
         {
           "letter": "в",
-          "text": "рет мора бити рет не мора би и прекривен, ) расути тер ) расути тер ити прекриве а бити прекр ен, ривен, јер се рет не мора еће на путу ва е"
+          "text": "расути терет не мора бити прекривен, јер се возило креће на путу ван насеља"
         }
       ],
       "points": 2,
@@ -20473,27 +20902,28 @@
       "categories": [
         "C"
       ],
-      "image": "p023_y0348.png",
+      "image": "verify_vozila_320.png",
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 321,
-      "text": "Т Терет на мото орном возилу може да пре озила највиш еђе најистурен ше до: нију та ачку на предњ ) 1,5 m, њој страни во",
+      "text": "Терет на моторном возилу може да пређе најистуренију тачку на предњој страни возила највише до:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "1,5 m"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "1 m"
         },
         {
           "letter": "в",
-          "text": ") 1 m, ) 1/6 своје д дужине"
+          "text": "1/6 своје дужине"
         }
       ],
       "points": 2,
@@ -20507,23 +20937,24 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 322,
-      "text": "Терет на мот тачку на пре",
+      "text": "Терет на моторном возилу може да пређе најистуренију тачку на предњој страни возила:",
       "options": [
         {
           "letter": "а",
-          "text": "највише"
+          "text": "највише до 1 m"
         },
         {
           "letter": "б",
-          "text": "више од"
+          "text": "више од 1 m, ако то одобри управљач пута"
         },
         {
           "letter": "в",
-          "text": "највише торном возил едњој страни е до 1 m, д 1 m, ако то о лу може да пр ређе најистур ренију возила: одобри управ вљач пута, е до 1/6 своје дужине"
+          "text": "највише до 1/6 своје дужине"
         }
       ],
       "points": 2,
@@ -20534,23 +20965,27 @@
         "C",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 323,
-      "text": "Терет на воз задњој стран",
+      "text": "Терет на возилу не сме да пређе најистуренију тачку на задњој страни возила за више од:",
       "options": [
         {
           "letter": "а",
-          "text": "1/6 своје зилу не сме д ни возила за в да пређе најис стуренију тач чку на више од: е дужине, а преосталим д највише за 1 делом дужин 1,5 m, с тим да ити терет п ослоњен"
+          "text": "1/6 своје дужине, а највише за 1,5 m, с тим да терет преосталим делом дужине мора бити ослоњен на товарни простор"
         },
         {
           "letter": "б",
-          "text": "1/4 своје не мора би н на товарни простор, највише за 1 делом дужин да ити е дужине, а преосталим д 1,5 m, с тим терет п ослоњен"
+          "text": "1/4 своје дужине, а највише за 1,5 m, с тим да терет преосталим делом дужине мора бити ослоњен на товарни простор"
         },
         {
           "letter": "в",
-          "text": "1 m. не мора би н на товарни простор"
+          "text": "1 m"
         }
       ],
       "points": 2,
@@ -20561,23 +20996,27 @@
         "C",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 324,
-      "text": "Да ли терет на задњој ст тим да тере ослоњен на т",
+      "text": "Да ли терет на возилу сме да пређе најистуренију тачку на задњој страни возила за више од 1/6 своје дужине, с тим да терет преосталим делом дужине мора бити ослоњен на товарни простор?",
       "options": [
         {
           "letter": "а",
-          "text": "Да"
+          "text": "Да."
         },
         {
           "letter": "б",
-          "text": "Не"
+          "text": "Не."
         },
         {
           "letter": "в",
-          "text": "Да, ако т на возилу см трани возила ме да пређе на ајистуренију 1/6 своје дуж тачку жине, с бити за више од 1 им делом ду стор? ет преостали товарни прос ужине мора то одобри упр рављач пута"
+          "text": "Да, ако то одобри управљач пута."
         }
       ],
       "points": 2,
@@ -20588,23 +21027,27 @@
         "C",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 325,
-      "text": "Терет који прелази наји мора бити оз",
+      "text": "Терет који на теретном или прикључном возилу прелази најистуренију тачку на задњој страни возила мора бити означен:",
       "options": [
         {
           "letter": "а",
-          "text": "прописан"
+          "text": "прописаном таблом,"
         },
         {
           "letter": "б",
-          "text": "црвеном"
+          "text": "црвеном тканином,"
         },
         {
           "letter": "в",
-          "text": "сигурнос на теретно истуренију т значен: ном таблом, тканином, сним троугло ом или при тачку на задњ икључном в њој страни в возилу возила ом"
+          "text": "сигурносним троуглом."
         }
       ],
       "points": 2,
@@ -20616,11 +21059,15 @@
         "D",
         "F"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 326,
-      "text": "Табла за оз прикључном задњој стран значавање т м возилу пр терета који елази најист означена број на теретном туренију тач м или чку на ни возила је о јем:",
+      "text": "Табла за означавање терета који на теретном или прикључном возилу прелази најистуренију тачку на задњој страни возила је означена бројем:",
       "options": [
         {
           "letter": "а",
@@ -20644,23 +21091,27 @@
         "F"
       ],
       "section": "vozila",
-      "image": "test_q326_area.png"
+      "image": "verify_vozila_326.png",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 327,
-      "text": "Терет који н тачку на зад",
+      "text": "Терет који на путничком возилу прелази најистуренију тачку на задњој страни возила мора бити означен:",
       "options": [
         {
           "letter": "а",
-          "text": "прописа"
+          "text": "прописаном таблом"
         },
         {
           "letter": "б",
-          "text": "црвеном"
+          "text": "црвеном тканином"
         },
         {
           "letter": "в",
-          "text": "сигурно на путничком м возилу прел лази најистур бити означен: ренију : њој страни в аном таблом, м тканином, сним троугло озила мора б ом"
+          "text": "сигурносним троуглом"
         }
       ],
       "points": 2,
@@ -20669,23 +21120,27 @@
       "categories": [
         "B"
       ],
-      "section": "vozila"
+      "section": "vozila",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 328,
-      "text": "У условим теретном најистурениј означен:",
+      "text": "У условима смањене видљивости терет који на теретном или прикључном возилу прелази најистуренију тачку на задњој страни возила мора бити означен:",
       "options": [
         {
           "letter": "а",
-          "text": "црвеним а смањене или прик ју тачку на за видљивости кључном и терет кој ји на релази возилу пр и возила мора адњој страни а бити м светлом ом црвене бој или с је, светлоодбојно ом материјо"
+          "text": "црвеним светлом или светлоодбојном материјом црвене боје"
         },
         {
           "letter": "б",
-          "text": "црвеном"
+          "text": "црвеном тканином"
         },
         {
           "letter": "в",
-          "text": "прописан тканином, ном таблом"
+          "text": "прописаном таблом"
         }
       ],
       "points": 2,
@@ -20699,9 +21154,9 @@
       ],
       "section": "vozila",
       "correct_answers": [
-        "а",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 329,
@@ -20729,11 +21184,12 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 330,
-      "text": "",
+      "text": "Возила која су намењена за извођење радова ван пута када у саобраћају на путу имају инсталирана оруђа за извођење радова, која нису склоп возила већ измењиво средство за рад:",
       "options": [
         {
           "letter": "а",
@@ -20750,7 +21206,13 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "B",
+        "C",
+        "F"
+      ],
+      "is_verified": true
     },
     {
       "id": 331,
@@ -20780,7 +21242,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 332,
@@ -20811,7 +21274,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 333,
@@ -20842,7 +21306,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 334,
@@ -20873,7 +21338,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 335,
@@ -20904,7 +21370,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 336,
@@ -20935,7 +21402,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 337,
@@ -20966,7 +21434,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 338,
@@ -20997,7 +21466,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 339,
@@ -21028,7 +21498,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 340,
@@ -21053,7 +21524,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 341,
@@ -21081,7 +21553,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 342,
@@ -21110,7 +21583,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 343,
@@ -21138,7 +21612,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 344,
@@ -21171,7 +21646,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 345,
@@ -21199,7 +21675,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 346,
@@ -21232,7 +21709,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 347,
@@ -21265,7 +21743,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 348,
@@ -21290,7 +21769,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 349,
@@ -21315,7 +21795,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 350,
@@ -21340,7 +21821,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 351,
@@ -21368,7 +21850,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 352,
@@ -21398,7 +21881,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 353,
@@ -21428,7 +21912,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 354,
@@ -21456,7 +21941,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 355,
@@ -21485,7 +21971,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 356,
@@ -21513,7 +22000,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 357,
@@ -21542,7 +22030,8 @@
       "section": "vozila",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 358,
@@ -21572,7 +22061,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 359,
@@ -21605,7 +22095,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 360,
@@ -21635,7 +22126,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 361,
@@ -21674,7 +22166,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 362,
@@ -21708,7 +22201,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 363,
@@ -21741,7 +22235,8 @@
       "section": "vozila",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 364,
@@ -21777,7 +22272,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 365,
@@ -21813,7 +22309,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 1,
@@ -63541,7 +64038,13 @@
       "has_image": false,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "B",
+        "C",
+        "D"
+      ],
+      "is_verified": true
     },
     {
       "id": 215,
@@ -63571,7 +64074,11 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "categories": [
+        "B"
+      ],
+      "is_verified": true
     },
     {
       "id": 216,
@@ -63596,7 +64103,11 @@
       "has_image": false,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "D"
+      ],
+      "is_verified": true
     },
     {
       "id": 217,
@@ -63621,6 +64132,10 @@
       "has_image": false,
       "correct_answers": [
         "в"
+      ],
+      "is_verified": true,
+      "categories": [
+        "D"
       ]
     },
     {
@@ -63646,6 +64161,10 @@
       "has_image": false,
       "correct_answers": [
         "б"
+      ],
+      "is_verified": true,
+      "categories": [
+        "D"
       ]
     },
     {
@@ -63671,6 +64190,10 @@
       "has_image": false,
       "correct_answers": [
         "в"
+      ],
+      "is_verified": true,
+      "categories": [
+        "D"
       ]
     }
   ]
