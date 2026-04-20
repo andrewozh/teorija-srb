@@ -67,9 +67,9 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 2,
@@ -99,7 +99,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 3,
@@ -132,9 +133,9 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а",
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 4,
@@ -142,19 +143,19 @@
       "options": [
         {
           "letter": "а",
-          "text": "радници извођача радова, односно управљача пута"
+          "text": "радници извођача радова, односно управљача пута,"
         },
         {
           "letter": "б",
-          "text": "униформисани комунални полицајци"
+          "text": "униформисани комунални полицајци,"
         },
         {
           "letter": "в",
-          "text": "униформисани полицијски службеници"
+          "text": "униформисани полицијски службеници,"
         },
         {
           "letter": "г",
-          "text": "службеници надлежног органа за саобраћај"
+          "text": "службеници надлежног органа за саобраћај."
         }
       ],
       "points": 1,
@@ -163,11 +164,9 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а",
-        "б",
-        "в",
-        "г",
-        "д"
-      ]
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 5,
@@ -196,9 +195,9 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б",
-        "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 6,
@@ -222,9 +221,9 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "б",
-        "в"
-      ]
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 7,
@@ -249,7 +248,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 8,
@@ -275,7 +275,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 9,
@@ -300,7 +301,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 10,
@@ -339,7 +341,8 @@
         "б",
         "д",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 11,
@@ -378,7 +381,8 @@
         "б",
         "в",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 12,
@@ -402,9 +406,9 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а",
-        "б"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 13,
@@ -443,7 +447,8 @@
         "б",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 14,
@@ -473,11 +478,12 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 15,
-      "text": "Пешак је приказан на сликама број: 4",
+      "text": "Пешак је приказан на сликама број:",
       "options": [
         {
           "letter": "а",
@@ -499,8 +505,13 @@
       "points": 1,
       "correct_answers_count": 2,
       "has_image": true,
-      "image": "p002_y0393.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_15.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 16,
@@ -539,7 +550,8 @@
         "а",
         "б",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 17,
@@ -564,7 +576,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 18,
@@ -590,7 +603,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 19,
@@ -613,7 +627,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 20,
@@ -642,7 +657,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 21,
@@ -669,7 +685,11 @@
       "correct_answers_count": 1,
       "has_image": true,
       "image": "p002_y0493.png",
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 22,
@@ -698,7 +718,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 23,
@@ -728,7 +749,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 24,
@@ -757,7 +779,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 25,
@@ -787,7 +810,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 26,
@@ -817,7 +841,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 27,
@@ -842,7 +867,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 28,
@@ -869,7 +895,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 29,
@@ -896,7 +923,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 30,
@@ -925,7 +953,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 31,
@@ -954,7 +983,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 32,
@@ -981,7 +1011,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 33,
@@ -1011,7 +1042,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 34,
@@ -1050,7 +1082,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 35,
@@ -1079,7 +1112,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 36,
@@ -1102,7 +1136,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 37,
@@ -1125,7 +1160,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 38,
@@ -1154,7 +1190,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 39,
@@ -1179,7 +1216,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 40,
@@ -1203,10 +1241,9 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "б",
-        "в",
-        "г"
-      ]
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 41,
@@ -1235,7 +1272,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 42,
@@ -1264,7 +1302,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 43,
@@ -1290,7 +1329,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 44,
@@ -1320,7 +1360,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 45,
@@ -1349,7 +1390,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 46,
@@ -1375,7 +1417,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 47,
@@ -1405,7 +1448,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 48,
@@ -1435,7 +1479,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 49,
@@ -1460,7 +1505,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 50,
@@ -1488,9 +1534,9 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 51,
@@ -1519,7 +1565,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 52,
@@ -1548,7 +1595,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 53,
@@ -1577,7 +1625,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 54,
@@ -1606,7 +1655,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 55,
@@ -1635,7 +1685,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 56,
@@ -1664,7 +1715,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 57,
@@ -1693,7 +1745,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 58,
@@ -1728,7 +1781,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 59,
@@ -1753,7 +1807,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 60,
@@ -1778,7 +1833,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 61,
@@ -1803,7 +1859,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 62,
@@ -1828,7 +1885,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 63,
@@ -1853,7 +1911,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 64,
@@ -1878,11 +1937,12 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 65,
-      "text": "Возило је приказано на сликама означеним бројевима: 4 5 6",
+      "text": "Возило је приказано на сликама означеним бројевима:",
       "options": [
         {
           "letter": "а",
@@ -1904,8 +1964,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p006_y0546.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_65.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 66,
@@ -1939,11 +2003,12 @@
       "correct_answers": [
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 67,
-      "text": "Бицикл је приказан на сликама означеним бројевима: 4",
+      "text": "Бицикл је приказан на сликама означеним бројевима:",
       "options": [
         {
           "letter": "а",
@@ -1965,12 +2030,17 @@
       "points": 1,
       "correct_answers_count": 2,
       "has_image": true,
-      "image": "p006_y0557.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_67.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 68,
-      "text": "Моторно возилоје приказано на сликама означеним бројевима: 4 5 6",
+      "text": "Моторно возилоје приказано на сликама означеним бројевима:",
       "options": [
         {
           "letter": "а",
@@ -1992,8 +2062,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p007_y0087.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_68.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 69,
@@ -2032,7 +2106,8 @@
         "а",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 70,
@@ -2071,7 +2146,8 @@
         "а",
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 71,
@@ -2110,7 +2186,8 @@
         "а",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 72,
@@ -2136,7 +2213,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 73,
@@ -2162,7 +2243,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 74,
@@ -2191,7 +2276,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 75,
@@ -2227,8 +2313,11 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "г",
+        "д"
+      ],
+      "is_verified": true
     },
     {
       "id": 76,
@@ -2265,8 +2354,10 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а",
-        "б"
-      ]
+        "б",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 77,
@@ -2305,7 +2396,8 @@
         "а",
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 78,
@@ -2331,7 +2423,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 79,
@@ -2357,7 +2453,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 80,
@@ -2386,7 +2486,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 81,
@@ -2418,8 +2519,10 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 82,
@@ -2451,8 +2554,10 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 83,
@@ -2490,7 +2595,8 @@
       "correct_answers": [
         "г",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 84,
@@ -2516,7 +2622,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 85,
@@ -2542,7 +2652,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 86,
@@ -2571,7 +2685,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 87,
@@ -2603,8 +2718,10 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 88,
@@ -2643,7 +2760,8 @@
         "а",
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 89,
@@ -2672,7 +2790,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 90,
@@ -2709,8 +2828,10 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а",
-        "б"
-      ]
+        "б",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 91,
@@ -2736,7 +2857,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 92,
@@ -2762,7 +2887,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 93,
@@ -2794,8 +2923,11 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "в",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 94,
@@ -2821,7 +2953,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 95,
@@ -2854,8 +2990,10 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а",
-        "б"
-      ]
+        "б",
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 96,
@@ -2890,7 +3028,8 @@
         "а",
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 97,
@@ -2916,7 +3055,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 98,
@@ -2942,7 +3085,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 99,
@@ -2971,7 +3118,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 100,
@@ -3000,7 +3148,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 101,
@@ -3029,7 +3178,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 102,
@@ -3054,7 +3204,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 103,
@@ -3076,7 +3227,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 104,
@@ -3098,7 +3253,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 105,
@@ -3123,7 +3282,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 106,
@@ -3145,7 +3305,11 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 107,
@@ -3170,7 +3334,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 108,
@@ -3195,7 +3360,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 109,
@@ -3221,7 +3387,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 110,
@@ -3246,7 +3413,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 111,
@@ -3271,7 +3439,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 112,
@@ -3296,7 +3465,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 113,
@@ -3322,7 +3492,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 114,
@@ -3344,8 +3515,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p011_y0255.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_114.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 115,
@@ -3370,7 +3545,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 116,
@@ -3392,7 +3568,8 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "is_verified": true
     },
     {
       "id": 117,
@@ -3417,7 +3594,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 118,
@@ -3442,11 +3620,12 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 119,
-      "text": "Теретно возило је приказано на слици број: 4",
+      "text": "Теретно возило је приказано на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3468,12 +3647,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p012_y0077.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_119.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 120,
-      "text": "Скуп возила је приказан на слици број: 4",
+      "text": "Скуп возила је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3495,15 +3678,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p012_y0079.png",
+      "image": "verify_osnove_bezbednosti_120.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 121,
-      "text": "Туристички воз је приказан на слици број: 4",
+      "text": "Туристички воз је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3525,8 +3709,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p012_y0146.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_121.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 122,
@@ -3548,7 +3736,8 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "is_verified": true
     },
     {
       "id": 123,
@@ -3573,11 +3762,12 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 124,
-      "text": "Радна машина је приказана на слици број: (V≤ 45 km/h) 4",
+      "text": "Радна машина је приказана на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3599,12 +3789,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p012_y0077.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_124.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 125,
-      "text": "Трактор је приказан на слици број: 4",
+      "text": "Трактор је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3626,8 +3820,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p012_y0156.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_125.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 126,
@@ -3666,7 +3864,8 @@
         "а",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 127,
@@ -3696,11 +3895,12 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 128,
-      "text": "Мотокултиватор је приказан на слици број: 4",
+      "text": "Мотокултиватор је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3722,8 +3922,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0077.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_128.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 129,
@@ -3748,11 +3952,12 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 130,
-      "text": "Прикључно возило је приказано на слици број: 4",
+      "text": "Прикључно возило је приказано на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3774,12 +3979,16 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0077.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_130.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 131,
-      "text": "Прикључно возило за трактор је приказано на слици број: 4",
+      "text": "Прикључно возило за трактор је приказано на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3801,12 +4010,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0152.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_131.png",
+      "section": "osnove_bezbednosti",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 132,
-      "text": "Прикључак за извођење радова је приказан на слици број: 4",
+      "text": "Прикључак за извођење радова је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3828,12 +4041,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0088.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_132.png",
+      "section": "osnove_bezbednosti",
+      "is_verified": true,
+      "correct_answers": [
+        "б"
+      ]
     },
     {
       "id": 133,
-      "text": "Запрежно возило је приказано на слици број: 4",
+      "text": "Запрежно возило је приказано на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3855,12 +4072,16 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0092.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_133.png",
+      "section": "osnove_bezbednosti",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 134,
-      "text": "Трамвај је приказан на слици број: 4",
+      "text": "Трамвај је приказан на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3882,8 +4103,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p013_y0171.png",
-      "section": "osnove_bezbednosti"
+      "image": "verify_osnove_bezbednosti_134.png",
+      "section": "osnove_bezbednosti",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 135,
@@ -3908,11 +4133,12 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 136,
-      "text": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за време вожње, на паковању има ознаку приказану на слици број: 4",
+      "text": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за време вожње, на паковању има ознаку приказану на слици број:",
       "options": [
         {
           "letter": "а",
@@ -3934,7 +4160,12 @@
       "points": 1,
       "correct_answers_count": 1,
       "has_image": true,
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "image": "verify_osnove_bezbednosti_136.png",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 137,
@@ -3968,7 +4199,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 138,
@@ -4002,7 +4234,8 @@
       "correct_answers": [
         "а",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 139,
@@ -4041,7 +4274,8 @@
         "б",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 140,
@@ -4066,7 +4300,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 141,
@@ -4105,7 +4340,8 @@
         "а",
         "в",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 142,
@@ -4139,7 +4375,8 @@
       "correct_answers": [
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 143,
@@ -4173,7 +4410,8 @@
       "correct_answers": [
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 144,
@@ -4203,7 +4441,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 145,
@@ -4234,7 +4473,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 146,
@@ -4265,7 +4505,13 @@
       "correct_answers_count": 2,
       "has_image": true,
       "image": "p015_y0375.png",
-      "section": "osnove_bezbednosti"
+      "section": "osnove_bezbednosti",
+      "is_changed": true,
+      "is_verified": true,
+      "correct_answers": [
+        "б",
+        "г"
+      ]
     },
     {
       "id": 147,
@@ -4295,11 +4541,13 @@
       "points": 2,
       "correct_answers_count": 2,
       "has_image": true,
-      "image": "p015_y0588.png",
+      "image": "verify_osnove_bezbednosti_147.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а"
-      ]
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 148,
@@ -4335,7 +4583,9 @@
       "has_image": true,
       "image": "p015_y0087.png",
       "section": "osnove_bezbednosti",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 149,
@@ -4361,7 +4611,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 150,
@@ -4392,7 +4643,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 151,
@@ -4422,7 +4674,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 152,
@@ -4452,12 +4705,13 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p016_y0087.png",
+      "image": "verify_osnove_bezbednosti_152.png",
       "section": "osnove_bezbednosti",
       "is_changed": true,
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 153,
@@ -4483,11 +4737,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p016_y0149.png",
+      "image": "verify_osnove_bezbednosti_153.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 154,
@@ -4513,11 +4768,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p016_y0253.png",
+      "image": "verify_osnove_bezbednosti_154.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 155,
@@ -4547,7 +4803,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 156,
@@ -4573,11 +4830,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p016_y0087.png",
+      "image": "verify_osnove_bezbednosti_156.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 157,
@@ -4602,7 +4860,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 158,
@@ -4632,7 +4891,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 159,
@@ -4667,7 +4927,8 @@
       "correct_answers": [
         "а",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 160,
@@ -4697,7 +4958,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 161,
@@ -4727,7 +4989,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 162,
@@ -4753,7 +5016,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 163,
@@ -4783,7 +5047,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 164,
@@ -4809,11 +5074,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p017_y0075.png",
+      "image": "verify_osnove_bezbednosti_164.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 165,
@@ -4838,7 +5104,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 166,
@@ -4864,11 +5131,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p017_y0338.png",
+      "image": "verify_osnove_bezbednosti_166.png",
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 167,
@@ -4893,11 +5161,13 @@
       ],
       "points": 2,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_osnove_bezbednosti_167.png",
+      "is_verified": true
     },
     {
       "id": 168,
@@ -4927,7 +5197,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 169,
@@ -4957,7 +5228,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 170,
@@ -4987,7 +5259,8 @@
       "section": "osnove_bezbednosti",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 1,
@@ -26830,56 +27103,62 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 216,
-      "text": "С Саобраћајни з знак приказан н на слици оз значава: ца чешће и у ) близину д",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "дела пута на оју крећу, коме се дец у већем бро ) место од к ) место од саобраћаја"
+          "text": "близину дела пута на коме се деца чешће и у већем броју крећу,"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "место од којег почиње зона школе,"
         },
         {
           "letter": "в",
-          "text": "којег почиње е зона школе, а успореног д којег по а. очиње зона г"
+          "text": "место од којег почиње зона успореног саобраћаја."
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p034_y0585.png",
+      "image": "verify_saobracajna_signalizacija_216.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 217,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "место гд де се завршав и у већем број ва део пута н а којем се де ца чешће и"
+          "text": "место где се завршава део пута на којем се деца чешће и у већем броју крећу,"
         },
         {
           "letter": "б",
-          "text": "завршет"
+          "text": "завршетак зоне школе,"
         },
         {
           "letter": "в",
-          "text": "место саобраћа ју крећу, ле, авршава зон так зоне школ где се за аја. на успорен ног"
+          "text": "место где се завршава зона успореног саобраћаја."
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p034_y0054.png",
-      "section": "saobracajna_signalizacija"
+      "image": "verify_saobracajna_signalizacija_217.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 218,

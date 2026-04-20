@@ -51,3 +51,230 @@
 {"section": "saobracajna_signalizacija", "question_id": 214, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_214.png"}], "timestamp": "2026-04-20T19:57:42.867802"}
 {"section": "saobracajna_signalizacija", "question_id": 214, "changes": [{"action": "text_changed", "from": "С Саобраћајни з знак приказан н на слици оз значава: одземни или а коме се пешач", "to": "Саобраћајни знак приказан на слици означава:"}, {"action": "option_text_changed", "position": 0, "letter": "а", "from": "налази по олаз, чају опасност и надземни ) излаз за п ) близ", "to": "место на коме се налази подземни или надземни пешачки пролаз"}, {"action": "option_text_changed", "position": 1, "letter": "б", "from": "", "to": "излаз за пешаке у случају опасности"}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "ти, ењеног за р са леве стран рекреацију и не пута. и", "to": "близину објекта намењеног за рекреацију и спортске активност"}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:04:21.830682"}
 {"section": "saobracajna_signalizacija", "question_id": 215, "changes": [{"action": "text_changed", "from": "С Саобраћајни з знак приказан н на слици оз значава: ницу пута и ) наилазак њену", "to": "Саобраћајни знак приказан на слици означава:"}, {"action": "image_cropped", "file": "verify_saobracajna_signalizacija_215.png"}, {"action": "option_text_changed", "position": 0, "letter": "а", "from": "на посебно ину, на опасно м т од саобраћа т до излаза онице.", "to": "наилазак на посебно опасну деоницу пута и њену дужину,"}, {"action": "option_text_changed", "position": 1, "letter": "б", "from": "место на пу ајног знака, са пута ра уту и његову у", "to": "наилазак на опасно место на путу и његову удаљеност од саобр"}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "ади обиласка а", "to": "удаљеност до излаза са пута ради обиласка опасне деонице."}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:06:40.815238"}
+{"section": "saobracajna_signalizacija", "question_id": 215, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:21:11.265261"}
+{"section": "saobracajna_signalizacija", "question_id": 216, "changes": [{"action": "text_changed", "from": "С Саобраћајни з знак приказан н на слици оз значава: ца чешће и у ) близину д", "to": "Саобраћајни знак приказан на слици означава:"}, {"action": "image_cropped", "file": "verify_saobracajna_signalizacija_216.png"}, {"action": "option_text_changed", "position": 0, "letter": "а", "from": "дела пута на оју крећу, коме се дец у већем бро ) место од к", "to": "близину дела пута на коме се деца чешће и у већем броју крећ"}, {"action": "option_text_changed", "position": 1, "letter": "б", "from": "", "to": "место од којег почиње зона школе,"}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "којег почиње е зона школе, а успореног д којег по а. очиње з", "to": "место од којег почиње зона успореног саобраћаја."}], "timestamp": "2026-04-20T20:21:53.814760"}
+{"section": "saobracajna_signalizacija", "question_id": 216, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:22:00.015888"}
+{"section": "saobracajna_signalizacija", "question_id": 217, "changes": [{"action": "text_changed", "from": "Саобраћајни и знак приказ зан на слици о означава:", "to": "Саобраћајни знак приказан на слици означава:"}, {"action": "image_cropped", "file": "verify_saobracajna_signalizacija_217.png"}, {"action": "option_text_changed", "position": 0, "letter": "а", "from": "место гд де се завршав и у већем број ва део пута н а којем ", "to": "место где се завршава део пута на којем се деца чешће и у ве"}, {"action": "option_text_changed", "position": 1, "letter": "б", "from": "завршет", "to": "завршетак зоне школе,"}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "место саобраћа ју крећу, ле, авршава зон так зоне школ где с", "to": "место где се завршава зона успореног саобраћаја."}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:22:41.798078"}
+{"section": "saobracajna_signalizacija", "question_id": 217, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:22:48.984503"}
+{"section": "osnove_bezbednosti", "question_id": 1, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["б"]}], "timestamp": "2026-04-20T20:23:21.219611"}
+{"section": "osnove_bezbednosti", "question_id": 1, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:23:29.980820"}
+{"section": "osnove_bezbednosti", "question_id": 2, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:23:53.355419"}
+{"section": "osnove_bezbednosti", "question_id": 3, "changes": [{"action": "answers_changed", "from": ["а", "б", "в"], "to": ["а", "б"]}], "timestamp": "2026-04-20T20:24:11.472198"}
+{"section": "osnove_bezbednosti", "question_id": 3, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:24:12.748488"}
+{"section": "osnove_bezbednosti", "question_id": 4, "changes": [{"action": "option_text_changed", "position": 0, "letter": "а", "from": "радници извођача радова, односно управљача пута", "to": "радници извођача радова, односно управљача пута,"}, {"action": "option_text_changed", "position": 1, "letter": "б", "from": "униформисани комунални полицајци", "to": "униформисани комунални полицајци,"}, {"action": "option_text_changed", "position": 2, "letter": "в", "from": "униформисани полицијски службеници", "to": "униформисани полицијски службеници,"}, {"action": "option_text_changed", "position": 3, "letter": "г", "from": "службеници надлежног органа за саобраћај", "to": "службеници надлежног органа за саобраћај."}, {"action": "answers_changed", "from": ["а", "б", "в", "г", "д"], "to": ["а", "в"]}], "timestamp": "2026-04-20T20:24:55.239927"}
+{"section": "osnove_bezbednosti", "question_id": 4, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:24:57.404621"}
+{"section": "osnove_bezbednosti", "question_id": 5, "changes": [{"action": "answers_changed", "from": ["б", "в", "г"], "to": ["б", "г"]}], "timestamp": "2026-04-20T20:25:24.983980"}
+{"section": "osnove_bezbednosti", "question_id": 5, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:25:28.735788"}
+{"section": "osnove_bezbednosti", "question_id": 6, "changes": [{"action": "answers_changed", "from": ["б", "в"], "to": ["б"]}], "timestamp": "2026-04-20T20:25:54.236817"}
+{"section": "osnove_bezbednosti", "question_id": 6, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:25:55.450747"}
+{"section": "osnove_bezbednosti", "question_id": 7, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:26:12.411250"}
+{"section": "osnove_bezbednosti", "question_id": 8, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:26:23.673905"}
+{"section": "osnove_bezbednosti", "question_id": 9, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:26:42.404985"}
+{"section": "osnove_bezbednosti", "question_id": 10, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:26:54.520822"}
+{"section": "osnove_bezbednosti", "question_id": 11, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:27:05.767815"}
+{"section": "osnove_bezbednosti", "question_id": 12, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["а"]}], "timestamp": "2026-04-20T20:27:18.855004"}
+{"section": "osnove_bezbednosti", "question_id": 12, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:27:20.032593"}
+{"section": "osnove_bezbednosti", "question_id": 13, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:27:28.257385"}
+{"section": "osnove_bezbednosti", "question_id": 14, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:27:36.974164"}
+{"section": "osnove_bezbednosti", "question_id": 15, "changes": [{"action": "text_changed", "from": "Пешак је приказан на сликама број: 4", "to": "Пешак је приказан на сликама број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_15.png"}, {"action": "answers_changed", "from": [], "to": ["а", "г"]}], "timestamp": "2026-04-20T20:28:09.820322"}
+{"section": "osnove_bezbednosti", "question_id": 15, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:28:19.448484"}
+{"section": "osnove_bezbednosti", "question_id": 16, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:34:14.653978"}
+{"section": "osnove_bezbednosti", "question_id": 17, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:34:18.087756"}
+{"section": "osnove_bezbednosti", "question_id": 18, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:34:21.790983"}
+{"section": "osnove_bezbednosti", "question_id": 19, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:34:32.885147"}
+{"section": "osnove_bezbednosti", "question_id": 20, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:34:37.909686"}
+{"section": "osnove_bezbednosti", "question_id": 21, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:36:33.778930"}
+{"section": "osnove_bezbednosti", "question_id": 21, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:36:36.742791"}
+{"section": "osnove_bezbednosti", "question_id": 22, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:36:44.454163"}
+{"section": "osnove_bezbednosti", "question_id": 23, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:36:48.385799"}
+{"section": "osnove_bezbednosti", "question_id": 24, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:36:53.384596"}
+{"section": "osnove_bezbednosti", "question_id": 25, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:36:58.265507"}
+{"section": "osnove_bezbednosti", "question_id": 26, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:03.782635"}
+{"section": "osnove_bezbednosti", "question_id": 27, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:07.583081"}
+{"section": "osnove_bezbednosti", "question_id": 28, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:15.113242"}
+{"section": "osnove_bezbednosti", "question_id": 29, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:20.049411"}
+{"section": "osnove_bezbednosti", "question_id": 30, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:23.313038"}
+{"section": "osnove_bezbednosti", "question_id": 31, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:27.747204"}
+{"section": "osnove_bezbednosti", "question_id": 32, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:36.742682"}
+{"section": "osnove_bezbednosti", "question_id": 33, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:45.714153"}
+{"section": "osnove_bezbednosti", "question_id": 34, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:54.116459"}
+{"section": "osnove_bezbednosti", "question_id": 35, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:37:58.083610"}
+{"section": "osnove_bezbednosti", "question_id": 36, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:03.926992"}
+{"section": "osnove_bezbednosti", "question_id": 37, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:09.055535"}
+{"section": "osnove_bezbednosti", "question_id": 38, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:14.034385"}
+{"section": "osnove_bezbednosti", "question_id": 39, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:18.831565"}
+{"section": "osnove_bezbednosti", "question_id": 40, "changes": [{"action": "answers_changed", "from": ["б", "в", "г"], "to": ["в"]}], "timestamp": "2026-04-20T20:38:23.935180"}
+{"section": "osnove_bezbednosti", "question_id": 40, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:31.000353"}
+{"section": "osnove_bezbednosti", "question_id": 41, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:37.776322"}
+{"section": "osnove_bezbednosti", "question_id": 42, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:43.411695"}
+{"section": "osnove_bezbednosti", "question_id": 43, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:46.613401"}
+{"section": "osnove_bezbednosti", "question_id": 44, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:38:54.068004"}
+{"section": "osnove_bezbednosti", "question_id": 45, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:00.748143"}
+{"section": "osnove_bezbednosti", "question_id": 46, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:05.179700"}
+{"section": "osnove_bezbednosti", "question_id": 47, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:08.949767"}
+{"section": "osnove_bezbednosti", "question_id": 48, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:13.101684"}
+{"section": "osnove_bezbednosti", "question_id": 49, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:18.069863"}
+{"section": "osnove_bezbednosti", "question_id": 50, "changes": [{"action": "answers_changed", "from": ["а", "в"], "to": ["в"]}], "timestamp": "2026-04-20T20:39:21.577454"}
+{"section": "osnove_bezbednosti", "question_id": 50, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:28.865071"}
+{"section": "osnove_bezbednosti", "question_id": 51, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:33.869936"}
+{"section": "osnove_bezbednosti", "question_id": 52, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:39.907602"}
+{"section": "osnove_bezbednosti", "question_id": 53, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:46.532004"}
+{"section": "osnove_bezbednosti", "question_id": 54, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:39:54.068851"}
+{"section": "osnove_bezbednosti", "question_id": 55, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:01.325817"}
+{"section": "osnove_bezbednosti", "question_id": 56, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:07.282723"}
+{"section": "osnove_bezbednosti", "question_id": 57, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:13.466926"}
+{"section": "osnove_bezbednosti", "question_id": 58, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:20.014512"}
+{"section": "osnove_bezbednosti", "question_id": 59, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:24.779231"}
+{"section": "osnove_bezbednosti", "question_id": 60, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:28.810892"}
+{"section": "osnove_bezbednosti", "question_id": 61, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:34.605675"}
+{"section": "osnove_bezbednosti", "question_id": 62, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:39.883540"}
+{"section": "osnove_bezbednosti", "question_id": 63, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:44.084529"}
+{"section": "osnove_bezbednosti", "question_id": 64, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:40:48.745267"}
+{"section": "osnove_bezbednosti", "question_id": 65, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_65.png"}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:41:06.805125"}
+{"section": "osnove_bezbednosti", "question_id": 65, "changes": [{"action": "text_changed", "from": "Возило је приказано на сликама означеним бројевима: 4 5 6", "to": "Возило је приказано на сликама означеним бројевима:"}], "timestamp": "2026-04-20T20:41:17.744206"}
+{"section": "osnove_bezbednosti", "question_id": 65, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:41:23.693163"}
+{"section": "osnove_bezbednosti", "question_id": 66, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:41:32.456828"}
+{"section": "osnove_bezbednosti", "question_id": 67, "changes": [{"action": "text_changed", "from": "Бицикл је приказан на сликама означеним бројевима: 4", "to": "Бицикл је приказан на сликама означеним бројевима:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_67.png"}, {"action": "answers_changed", "from": [], "to": ["а", "г"]}], "timestamp": "2026-04-20T20:41:52.962624"}
+{"section": "osnove_bezbednosti", "question_id": 67, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:42:00.601566"}
+{"section": "osnove_bezbednosti", "question_id": 68, "changes": [{"action": "text_changed", "from": "Моторно возилоје приказано на сликама означеним бројевима: 4 5 6", "to": "Моторно возилоје приказано на сликама означеним бројевима:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_68.png"}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:42:24.584318"}
+{"section": "osnove_bezbednosti", "question_id": 68, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:42:46.814788"}
+{"section": "osnove_bezbednosti", "question_id": 69, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:42:54.907992"}
+{"section": "osnove_bezbednosti", "question_id": 70, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:42:59.008691"}
+{"section": "osnove_bezbednosti", "question_id": 71, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:03.367110"}
+{"section": "osnove_bezbednosti", "question_id": 72, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:43:08.802230"}
+{"section": "osnove_bezbednosti", "question_id": 72, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:17.686907"}
+{"section": "osnove_bezbednosti", "question_id": 73, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:43:25.007970"}
+{"section": "osnove_bezbednosti", "question_id": 73, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:27.239821"}
+{"section": "osnove_bezbednosti", "question_id": 74, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:30.085746"}
+{"section": "osnove_bezbednosti", "question_id": 75, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "г", "д"]}], "timestamp": "2026-04-20T20:43:38.633206"}
+{"section": "osnove_bezbednosti", "question_id": 75, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:41.343630"}
+{"section": "osnove_bezbednosti", "question_id": 76, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["а", "б", "г"]}], "timestamp": "2026-04-20T20:43:48.702849"}
+{"section": "osnove_bezbednosti", "question_id": 76, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:50.032849"}
+{"section": "osnove_bezbednosti", "question_id": 77, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:43:57.079895"}
+{"section": "osnove_bezbednosti", "question_id": 78, "changes": [{"action": "answers_changed", "from": [], "to": ["г"]}], "timestamp": "2026-04-20T20:44:00.064500"}
+{"section": "osnove_bezbednosti", "question_id": 78, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:04.446135"}
+{"section": "osnove_bezbednosti", "question_id": 79, "changes": [{"action": "answers_changed", "from": [], "to": ["г"]}], "timestamp": "2026-04-20T20:44:10.285534"}
+{"section": "osnove_bezbednosti", "question_id": 79, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:10.839541"}
+{"section": "osnove_bezbednosti", "question_id": 80, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:16.202139"}
+{"section": "osnove_bezbednosti", "question_id": 81, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "г"]}], "timestamp": "2026-04-20T20:44:22.699201"}
+{"section": "osnove_bezbednosti", "question_id": 81, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:23.463332"}
+{"section": "osnove_bezbednosti", "question_id": 82, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "г"]}], "timestamp": "2026-04-20T20:44:25.660874"}
+{"section": "osnove_bezbednosti", "question_id": 82, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:28.828579"}
+{"section": "osnove_bezbednosti", "question_id": 83, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:33.064917"}
+{"section": "osnove_bezbednosti", "question_id": 84, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:44:35.229124"}
+{"section": "osnove_bezbednosti", "question_id": 84, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:37.717959"}
+{"section": "osnove_bezbednosti", "question_id": 85, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:44:40.250228"}
+{"section": "osnove_bezbednosti", "question_id": 85, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:41.017209"}
+{"section": "osnove_bezbednosti", "question_id": 86, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:45.811525"}
+{"section": "osnove_bezbednosti", "question_id": 87, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "в"]}], "timestamp": "2026-04-20T20:44:50.700524"}
+{"section": "osnove_bezbednosti", "question_id": 87, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:53.403342"}
+{"section": "osnove_bezbednosti", "question_id": 88, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:44:58.073328"}
+{"section": "osnove_bezbednosti", "question_id": 89, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:01.835721"}
+{"section": "osnove_bezbednosti", "question_id": 90, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["а", "б", "г"]}], "timestamp": "2026-04-20T20:45:04.384425"}
+{"section": "osnove_bezbednosti", "question_id": 90, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:06.027663"}
+{"section": "osnove_bezbednosti", "question_id": 91, "changes": [{"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:45:08.216533"}
+{"section": "osnove_bezbednosti", "question_id": 91, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:09.917499"}
+{"section": "osnove_bezbednosti", "question_id": 92, "changes": [{"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:45:11.951038"}
+{"section": "osnove_bezbednosti", "question_id": 92, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:14.436933"}
+{"section": "osnove_bezbednosti", "question_id": 93, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "в", "г"]}], "timestamp": "2026-04-20T20:45:18.882896"}
+{"section": "osnove_bezbednosti", "question_id": 93, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:24.944801"}
+{"section": "osnove_bezbednosti", "question_id": 94, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:45:28.235427"}
+{"section": "osnove_bezbednosti", "question_id": 94, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:29.256440"}
+{"section": "osnove_bezbednosti", "question_id": 95, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["а", "б", "в"]}], "timestamp": "2026-04-20T20:45:32.624266"}
+{"section": "osnove_bezbednosti", "question_id": 95, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:34.556005"}
+{"section": "osnove_bezbednosti", "question_id": 96, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:37.585010"}
+{"section": "osnove_bezbednosti", "question_id": 97, "changes": [{"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:45:39.834534"}
+{"section": "osnove_bezbednosti", "question_id": 97, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:44.538087"}
+{"section": "osnove_bezbednosti", "question_id": 98, "changes": [{"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:45:48.890323"}
+{"section": "osnove_bezbednosti", "question_id": 98, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:50.031503"}
+{"section": "osnove_bezbednosti", "question_id": 99, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:54.438375"}
+{"section": "osnove_bezbednosti", "question_id": 100, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:45:58.286039"}
+{"section": "osnove_bezbednosti", "question_id": 101, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:00.277525"}
+{"section": "osnove_bezbednosti", "question_id": 102, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:06.062124"}
+{"section": "osnove_bezbednosti", "question_id": 103, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:46:08.197537"}
+{"section": "osnove_bezbednosti", "question_id": 103, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:09.752447"}
+{"section": "osnove_bezbednosti", "question_id": 104, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:46:11.778939"}
+{"section": "osnove_bezbednosti", "question_id": 104, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:12.349260"}
+{"section": "osnove_bezbednosti", "question_id": 105, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:14.667697"}
+{"section": "osnove_bezbednosti", "question_id": 106, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:46:17.390356"}
+{"section": "osnove_bezbednosti", "question_id": 106, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:18.124640"}
+{"section": "osnove_bezbednosti", "question_id": 107, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:23.543216"}
+{"section": "osnove_bezbednosti", "question_id": 108, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:26.817323"}
+{"section": "osnove_bezbednosti", "question_id": 109, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:33.293628"}
+{"section": "osnove_bezbednosti", "question_id": 110, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:38.193883"}
+{"section": "osnove_bezbednosti", "question_id": 111, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:41.890968"}
+{"section": "osnove_bezbednosti", "question_id": 112, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:45.377296"}
+{"section": "osnove_bezbednosti", "question_id": 113, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:46:49.367162"}
+{"section": "osnove_bezbednosti", "question_id": 114, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_114.png"}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:47:06.403423"}
+{"section": "osnove_bezbednosti", "question_id": 114, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_114.png"}], "timestamp": "2026-04-20T20:47:54.203750"}
+{"section": "osnove_bezbednosti", "question_id": 114, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:48:43.707159"}
+{"section": "osnove_bezbednosti", "question_id": 68, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_68.png"}], "timestamp": "2026-04-20T20:51:09.998160"}
+{"section": "osnove_bezbednosti", "question_id": 115, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:51:36.685543"}
+{"section": "osnove_bezbednosti", "question_id": 116, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:51:41.373369"}
+{"section": "osnove_bezbednosti", "question_id": 117, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:51:43.566185"}
+{"section": "osnove_bezbednosti", "question_id": 118, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:51:46.093406"}
+{"section": "osnove_bezbednosti", "question_id": 119, "changes": [{"action": "text_changed", "from": "Теретно возило је приказано на слици број: 4", "to": "Теретно возило је приказано на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_119.png"}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:52:07.081701"}
+{"section": "osnove_bezbednosti", "question_id": 119, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:52:12.030106"}
+{"section": "osnove_bezbednosti", "question_id": 120, "changes": [{"action": "text_changed", "from": "Скуп возила је приказан на слици број: 4", "to": "Скуп возила је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_120.png"}, {"action": "answers_changed", "from": ["а"], "to": ["г"]}], "timestamp": "2026-04-20T20:52:33.134039"}
+{"section": "osnove_bezbednosti", "question_id": 120, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:52:35.753278"}
+{"section": "osnove_bezbednosti", "question_id": 121, "changes": [{"action": "text_changed", "from": "Туристички воз је приказан на слици број: 4", "to": "Туристички воз је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_121.png"}, {"action": "answers_changed", "from": [], "to": ["г"]}], "timestamp": "2026-04-20T20:52:48.899847"}
+{"section": "osnove_bezbednosti", "question_id": 121, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:52:51.079499"}
+{"section": "osnove_bezbednosti", "question_id": 122, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:52:56.103398"}
+{"section": "osnove_bezbednosti", "question_id": 123, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:52:59.775378"}
+{"section": "osnove_bezbednosti", "question_id": 124, "changes": [{"action": "text_changed", "from": "Радна машина је приказана на слици број: (V≤ 45 km/h) 4", "to": "Радна машина је приказана на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_124.png"}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:53:16.921563"}
+{"section": "osnove_bezbednosti", "question_id": 124, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:53:19.222936"}
+{"section": "osnove_bezbednosti", "question_id": 125, "changes": [{"action": "text_changed", "from": "Трактор је приказан на слици број: 4", "to": "Трактор је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_125.png"}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:53:33.706286"}
+{"section": "osnove_bezbednosti", "question_id": 125, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:53:39.380035"}
+{"section": "osnove_bezbednosti", "question_id": 126, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:53:44.727095"}
+{"section": "osnove_bezbednosti", "question_id": 127, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:53:55.155023"}
+{"section": "osnove_bezbednosti", "question_id": 128, "changes": [{"action": "text_changed", "from": "Мотокултиватор је приказан на слици број: 4", "to": "Мотокултиватор је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_128.png"}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:54:11.507306"}
+{"section": "osnove_bezbednosti", "question_id": 128, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:54:23.395939"}
+{"section": "osnove_bezbednosti", "question_id": 129, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:54:27.540095"}
+{"section": "osnove_bezbednosti", "question_id": 130, "changes": [{"action": "text_changed", "from": "Прикључно возило је приказано на слици број: 4", "to": "Прикључно возило је приказано на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_130.png"}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:54:39.236527"}
+{"section": "osnove_bezbednosti", "question_id": 130, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:54:40.705850"}
+{"section": "osnove_bezbednosti", "question_id": 131, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:54:53.340683"}
+{"section": "osnove_bezbednosti", "question_id": 132, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:55:07.669916"}
+{"section": "osnove_bezbednosti", "question_id": 133, "changes": [{"action": "verified"}], "timestamp": "2026-04-20T20:55:20.727421"}
+{"section": "osnove_bezbednosti", "question_id": 134, "changes": [{"action": "text_changed", "from": "Трамвај је приказан на слици број: 4", "to": "Трамвај је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_134.png"}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:55:34.110008"}
+{"section": "osnove_bezbednosti", "question_id": 131, "changes": [{"action": "text_changed", "from": "Прикључно возило за трактор је приказано на слици број: 4", "to": "Прикључно возило за трактор је приказано на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_131.png"}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T20:57:38.840649"}
+{"section": "osnove_bezbednosti", "question_id": 132, "changes": [{"action": "text_changed", "from": "Прикључак за извођење радова је приказан на слици број: 4", "to": "Прикључак за извођење радова је приказан на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_132.png"}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-20T20:58:40.758305"}
+{"section": "osnove_bezbednosti", "question_id": 133, "changes": [{"action": "text_changed", "from": "Запрежно возило је приказано на слици број: 4", "to": "Запрежно возило је приказано на слици број:"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_133.png"}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-20T20:59:09.655122"}
+{"section": "osnove_bezbednosti", "question_id": 134, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:00:02.665043"}
+{"section": "osnove_bezbednosti", "question_id": 135, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:00:16.840590"}
+{"section": "osnove_bezbednosti", "question_id": 136, "changes": [{"action": "text_changed", "from": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за в", "to": "Лек који садржи психоактивну супстанцу и који се не сме употребљавати пре и за в"}, {"action": "image_cropped", "file": "verify_osnove_bezbednosti_136.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-20T21:00:41.563227"}
+{"section": "osnove_bezbednosti", "question_id": 137, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:00:48.515744"}
+{"section": "osnove_bezbednosti", "question_id": 138, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:00:51.992412"}
+{"section": "osnove_bezbednosti", "question_id": 139, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:01.783563"}
+{"section": "osnove_bezbednosti", "question_id": 140, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:06.858465"}
+{"section": "osnove_bezbednosti", "question_id": 141, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:14.649522"}
+{"section": "osnove_bezbednosti", "question_id": 142, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:21.961987"}
+{"section": "osnove_bezbednosti", "question_id": 143, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:29.370599"}
+{"section": "osnove_bezbednosti", "question_id": 144, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:34.561531"}
+{"section": "osnove_bezbednosti", "question_id": 145, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:01:39.144800"}
+{"section": "osnove_bezbednosti", "question_id": 146, "changes": [{"action": "flag_changed", "flag": "is_changed", "from": false, "to": true}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б", "г"]}], "timestamp": "2026-04-20T21:01:56.656138"}
+{"section": "osnove_bezbednosti", "question_id": 147, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_147.png"}, {"action": "answers_changed", "from": ["а"], "to": ["а", "г"]}], "timestamp": "2026-04-20T21:02:11.993304"}
+{"section": "osnove_bezbednosti", "question_id": 147, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:02:17.294572"}
+{"section": "osnove_bezbednosti", "question_id": 148, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:02:40.817483"}
+{"section": "osnove_bezbednosti", "question_id": 149, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:02:47.112646"}
+{"section": "osnove_bezbednosti", "question_id": 150, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:02:52.342269"}
+{"section": "osnove_bezbednosti", "question_id": 151, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:02:56.285667"}
+{"section": "osnove_bezbednosti", "question_id": 152, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_152.png"}], "timestamp": "2026-04-20T21:03:07.453691"}
+{"section": "osnove_bezbednosti", "question_id": 152, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:03:13.499986"}
+{"section": "osnove_bezbednosti", "question_id": 153, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_153.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:03:27.438216"}
+{"section": "osnove_bezbednosti", "question_id": 154, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_154.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:03:47.900259"}
+{"section": "osnove_bezbednosti", "question_id": 155, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:03:56.441974"}
+{"section": "osnove_bezbednosti", "question_id": 156, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_156.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:12.228122"}
+{"section": "osnove_bezbednosti", "question_id": 157, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:16.277998"}
+{"section": "osnove_bezbednosti", "question_id": 158, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:23.195078"}
+{"section": "osnove_bezbednosti", "question_id": 159, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:28.056591"}
+{"section": "osnove_bezbednosti", "question_id": 160, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:32.871273"}
+{"section": "osnove_bezbednosti", "question_id": 161, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:39.477917"}
+{"section": "osnove_bezbednosti", "question_id": 162, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:44.910519"}
+{"section": "osnove_bezbednosti", "question_id": 163, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:04:48.289852"}
+{"section": "osnove_bezbednosti", "question_id": 164, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_164.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:01.630189"}
+{"section": "osnove_bezbednosti", "question_id": 165, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:05.423392"}
+{"section": "osnove_bezbednosti", "question_id": 166, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_166.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:15.458142"}
+{"section": "osnove_bezbednosti", "question_id": 167, "changes": [{"action": "image_cropped", "file": "verify_osnove_bezbednosti_167.png"}, {"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:28.550076"}
+{"section": "osnove_bezbednosti", "question_id": 168, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:32.294096"}
+{"section": "osnove_bezbednosti", "question_id": 169, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:36.514176"}
+{"section": "osnove_bezbednosti", "question_id": 170, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-20T21:05:41.480552"}
