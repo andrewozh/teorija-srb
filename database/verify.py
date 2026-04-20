@@ -18,7 +18,18 @@ QUESTIONS_FILE = BASE_DIR / "questions.json"
 IMAGES_DIR = BASE_DIR / "images"
 SECTIONS_FILE = BASE_DIR / "sections.json"
 LOG_FILE = BASE_DIR / "verify_log.jsonl"
+DB_NEW_DIR = BASE_DIR.parent / "db_new"
 PORT = 8765
+
+SECTION_DIR_MAP = {
+    "osnove_bezbednosti": "01_osnove_bezbednosti",
+    "vozaci": "02_vozaci",
+    "vozila": "03_vozila",
+    "saobracajna_signalizacija": "04_signalizacija",
+    "pravila_saobracaja": "05_pravila_saobracaja",
+    "posebne_mere": "06_posebne_mere",
+    "posledice": "07_posledice",
+}
 
 
 def log_changes(entry: dict):
@@ -66,104 +77,166 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <title>Question Verifier</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; color: #222; padding: 20px; max-width: 800px; margin: 0 auto; }
-h1 { font-size: 20px; margin-bottom: 16px; color: #8b6914; }
-.nav { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; align-items: center; }
-.nav select, .nav input, .nav button { padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 14px; }
-.nav button { cursor: pointer; background: #d4a54a; color: #fff; border: none; font-weight: 600; }
-.nav button:hover { background: #b8912e; }
-.nav .btn-outline { background: #fff; border: 1px solid #ccc; color: #444; }
-.nav .btn-outline:hover { background: #eee; }
-.filters { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
-.filters a { padding: 5px 12px; border-radius: 999px; font-size: 12px; font-family: monospace; text-decoration: none; border: 1px solid #ccc; color: #555; background: #fff; }
-.filters a:hover { background: #eee; }
-.filters a.active { background: #d4a54a; color: #fff; border-color: #d4a54a; }
-.filters a.f-changed { border-color: #c9960a; color: #8b6914; }
-.filters a.f-changed.active { background: #d4a54a; color: #fff; }
-.filters a.f-removed { border-color: #cc4444; color: #aa3333; }
-.filters a.f-removed.active { background: #cc4444; color: #fff; }
-.filters a.f-new { border-color: #44aa44; color: #338833; }
-.filters a.f-new.active { background: #44aa44; color: #fff; }
-.filters a.f-problems { border-color: #cc6600; color: #aa5500; }
-.filters a.f-problems.active { background: #cc6600; color: #fff; }
-.status { padding: 8px 12px; border-radius: 8px; font-size: 12px; font-family: monospace; }
+body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; color: #222; font-size: 13px; }
+
+/* === FIXED HEADER === */
+.header { position: sticky; top: 0; z-index: 100; background: #f5f5f0; border-bottom: 1px solid #ccc; padding: 6px 12px; }
+.header-row { display: flex; gap: 6px; align-items: center; flex-wrap: nowrap; }
+.header select, .header input, .header button { padding: 4px 8px; border-radius: 6px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 13px; }
+.header select { max-width: 220px; }
+.header input[type=number] { width: 64px; }
+.header button { cursor: pointer; background: #d4a54a; color: #fff; border: none; font-weight: 600; padding: 4px 10px; }
+.header button:hover { background: #b8912e; }
+.header .btn-outline { background: #fff; border: 1px solid #ccc; color: #444; }
+.header .btn-outline:hover { background: #eee; }
+.status { padding: 3px 8px; border-radius: 6px; font-size: 11px; font-family: monospace; white-space: nowrap; }
 .status-exists { background: #e8f5e8; color: #2d6a2d; }
 .status-missing { background: #f5e8e8; color: #aa3333; }
 .status-empty { background: #f5f0e0; color: #8b6914; }
-.card { background: #fff; border-radius: 12px; padding: 16px; margin-bottom: 12px; border: 1px solid #ddd; }
-.card h3 { font-size: 14px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; font-family: monospace; }
-.field { margin-bottom: 12px; }
-.field label { display: block; font-size: 12px; color: #888; margin-bottom: 4px; font-family: monospace; text-transform: uppercase; }
-.field textarea, .field input[type=text], .field input[type=number], .field select { width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; background: #fafafa; color: #222; font-size: 14px; font-family: inherit; resize: vertical; }
-.field textarea { min-height: 60px; }
-.option-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; padding: 8px; border-radius: 8px; background: #fafafa; border: 1px solid #ddd; }
-.option-row.correct { border-color: #5c7a48; background: #f0f7ec; }
-.option-letter { font-weight: 700; font-size: 16px; width: 24px; text-align: center; flex-shrink: 0; }
-.option-text { flex: 1; }
-.option-text input { width: 100%; padding: 6px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 13px; }
-.option-correct { cursor: pointer; }
-.option-correct input { cursor: pointer; width: 18px; height: 18px; }
-.img-preview { max-width: 100%; border-radius: 8px; margin: 8px 0; }
-.flags { display: flex; gap: 8px; flex-wrap: wrap; }
-.flag { padding: 4px 10px; border-radius: 999px; font-size: 11px; font-family: monospace; }
-.flag-removed { background: #fce8e8; color: #aa3333; }
-.flag-changed { background: #fdf3dc; color: #8b6914; }
-.flag-new { background: #e8f5e8; color: #338833; }
-.meta-row { display: flex; gap: 16px; flex-wrap: wrap; }
-.meta-item { font-size: 12px; color: #888; font-family: monospace; }
-.save-bar { position: sticky; bottom: 0; background: #f5f5f0; padding: 12px 0; border-top: 1px solid #ddd; display: flex; gap: 8px; justify-content: flex-end; }
-.save-bar button { padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; }
-.save-bar .btn-save { background: #2d6a2d; color: white; }
-.save-bar .btn-save:hover { background: #3d8a3d; }
-.msg { padding: 10px; border-radius: 8px; margin-bottom: 12px; font-size: 13px; }
-.msg-ok { background: #e8f5e8; color: #2d6a2d; }
-.msg-err { background: #fce8e8; color: #aa3333; }
-.id-grid { display: flex; flex-wrap: wrap; gap: 4px; margin: 12px 0; }
-.id-btn { width: 40px; height: 30px; border-radius: 6px; border: 1px solid #ddd; background: #fff; color: #888; font-size: 11px; font-family: monospace; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; }
+
+/* === FILTERS === */
+.filters-bar { padding: 4px 12px; display: flex; gap: 4px; flex-wrap: wrap; align-items: center; font-size: 11px; }
+.filters-bar a { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-family: monospace; text-decoration: none; border: 1px solid #ccc; color: #555; background: #fff; }
+.filters-bar a:hover { background: #eee; }
+.filters-bar a.active { background: #d4a54a; color: #fff; border-color: #d4a54a; }
+.filters-bar a.f-changed { border-color: #c9960a; color: #8b6914; }
+.filters-bar a.f-changed.active { background: #d4a54a; color: #fff; }
+.filters-bar a.f-removed { border-color: #cc4444; color: #aa3333; }
+.filters-bar a.f-removed.active { background: #cc4444; color: #fff; }
+.filters-bar a.f-new { border-color: #44aa44; color: #338833; }
+.filters-bar a.f-new.active { background: #44aa44; color: #fff; }
+.filters-bar a.f-problems { border-color: #cc6600; color: #aa5500; }
+.filters-bar a.f-problems.active { background: #cc6600; color: #fff; }
+
+/* === ID GRID (pills) === */
+.id-grid { display: flex; flex-wrap: wrap; gap: 2px; padding: 4px 12px 4px; }
+.id-btn { width: 30px; height: 24px; border-radius: 4px; border: 1px solid #ddd; background: #fff; color: #888; font-size: 10px; font-family: monospace; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; }
 .id-btn:hover { background: #eee; }
 .id-btn.exists { color: #2d6a2d; border-color: #5c7a48; }
 .id-btn.current { background: #d4a54a; color: #fff; border-color: #d4a54a; font-weight: 700; }
 .id-btn.missing { color: #aa3333; border-color: #cc4444; }
+
+/* === TWO-COLUMN LAYOUT === */
+.main { display: flex; gap: 0; padding: 0; }
+.col-left { flex: 1; min-width: 0; padding: 8px 12px; overflow-y: auto; }
+.col-right { width: 50%; min-width: 380px; padding: 8px 12px; position: sticky; top: 80px; align-self: flex-start; max-height: calc(100vh - 90px); overflow-y: auto; }
+.col-right img { width: 100%; border-radius: 6px; border: 1px solid #ddd; }
+.col-right .no-screenshot { color: #999; font-size: 12px; font-family: monospace; padding: 20px; text-align: center; background: #fafafa; border-radius: 6px; border: 1px dashed #ccc; }
+
+/* === CARDS === */
+.card { background: #fff; border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; border: 1px solid #ddd; }
+.card h3 { font-size: 11px; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; font-family: monospace; }
+.field { margin-bottom: 8px; }
+.field label { display: block; font-size: 11px; color: #888; margin-bottom: 2px; font-family: monospace; text-transform: uppercase; }
+.field textarea, .field input[type=text], .field input[type=number], .field select { width: 100%; padding: 5px 8px; border-radius: 4px; border: 1px solid #ccc; background: #fafafa; color: #222; font-size: 13px; font-family: inherit; }
+.field textarea { min-height: 40px; resize: none; overflow: hidden; }
+
+/* === COMPACT NUMERIC ROW === */
+.num-row { display: flex; gap: 12px; }
+.num-row .field { flex: 0 0 auto; }
+.num-row .field input[type=number] { width: 64px; }
+
+/* === OPTIONS === */
+.option-row { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; padding: 5px 8px; border-radius: 6px; background: #fafafa; border: 1px solid #ddd; }
+.option-row.correct { border-color: #5c7a48; background: #f0f7ec; }
+.option-letter { font-weight: 700; font-size: 14px; width: 20px; text-align: center; flex-shrink: 0; }
+.option-text { flex: 1; min-width: 0; }
+.option-text input { width: 100%; padding: 4px 6px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #222; font-size: 13px; }
+.option-correct { cursor: pointer; flex-shrink: 0; }
+.option-correct input { cursor: pointer; width: 16px; height: 16px; }
+
+/* === FLAGS === */
+.flags-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.flag { padding: 2px 8px; border-radius: 999px; font-size: 10px; font-family: monospace; }
+.flag-removed { background: #fce8e8; color: #aa3333; }
+.flag-changed { background: #fdf3dc; color: #8b6914; }
+.flag-new { background: #e8f5e8; color: #338833; }
+
+/* === IMAGE UPLOAD === */
+.upload-row { display: flex; gap: 8px; align-items: center; }
+.upload-row label { font-size: 11px; color: #888; font-family: monospace; text-transform: uppercase; white-space: nowrap; }
+.img-preview { max-width: 100%; max-height: 120px; border-radius: 6px; margin: 4px 0; }
+
+/* === SAVE BAR === */
+.save-bar { position: sticky; bottom: 0; background: #f5f5f0; padding: 8px 12px; border-top: 1px solid #ddd; display: flex; gap: 8px; justify-content: flex-end; z-index: 50; }
+.save-bar button { padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
+.save-bar .btn-save { background: #2d6a2d; color: white; }
+.save-bar .btn-save:hover { background: #3d8a3d; }
+
+/* === MESSAGES === */
+.msg { padding: 6px 12px; border-radius: 6px; margin: 4px 12px; font-size: 12px; }
+.msg-ok { background: #e8f5e8; color: #2d6a2d; }
+.msg-err { background: #fce8e8; color: #aa3333; }
+
+/* === META === */
+.meta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+.meta-item { font-size: 11px; color: #888; font-family: monospace; }
 </style>
 </head>
 <body>
-<h1>🔍 Question Verifier</h1>
-{message}
-<form method="GET" action="/">
-<div class="nav">
+
+<!-- FIXED HEADER -->
+<div class="header">
+<form method="GET" action="/" id="navform">
+<div class="header-row">
     <select name="section" onchange="this.form.submit()">
         {section_options}
     </select>
-    <input type="number" name="id" value="{current_id}" min="1" style="width:80px" placeholder="ID">
+    <input type="number" name="id" value="{current_id}" min="1" placeholder="ID">
     <button type="submit">Go</button>
-    <button type="button" class="btn-outline" onclick="go({prev_id})">← Prev</button>
-    <button type="button" class="btn-outline" onclick="go({next_id})">Next →</button>
+    <button type="button" class="btn-outline" onclick="go({prev_id})">←</button>
+    <button type="button" class="btn-outline" onclick="go({next_id})">→</button>
     <span class="{status_class}">{status_text}</span>
 </div>
 </form>
-
-<div class="filters">
+<div class="filters-bar">
     {filter_buttons}
 </div>
+</div>
+
+{message}
 
 <div class="id-grid">{id_grid}</div>
 
-<form method="POST" action="/save" enctype="multipart/form-data">
+<!-- TWO-COLUMN LAYOUT -->
+<form method="POST" action="/save" enctype="multipart/form-data" id="editform">
 <input type="hidden" name="section" value="{current_section}">
 <input type="hidden" name="original_id" value="{current_id}">
 
-{question_form}
-
-<div class="save-bar">
-    <button type="submit" class="btn-save">💾 Save</button>
+<div class="main">
+    <div class="col-left">
+        {question_form}
+        <div class="save-bar">
+            <button type="submit" class="btn-save">💾 Save</button>
+        </div>
+    </div>
+    <div class="col-right">
+        {screenshot_html}
+    </div>
 </div>
 </form>
 
 <script>
 function go(id) {
     const section = document.querySelector('select[name=section]').value;
-    window.location = '/?section=' + section + '&id=' + id;
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get('filter');
+    let url = '/?section=' + section + '&id=' + id;
+    if (filter) url += '&filter=' + filter;
+    window.location = url;
 }
+
+// Auto-expand textareas
+function autoResize(el) {
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('textarea').forEach(function(ta) {
+        autoResize(ta);
+        ta.addEventListener('input', function() { autoResize(this); });
+    });
+});
 </script>
 </body>
 </html>"""
@@ -174,26 +247,28 @@ def render_question_form(q, section, qid):
         return f"""
         <div class="card">
             <h3>Question {qid} — NOT PARSED</h3>
-            <p style="color:#c9715c;margin-bottom:12px;">This question was not found in the database. Fill in to create it.</p>
+            <p style="color:#c9715c;margin-bottom:8px;font-size:12px;">Not found in database. Fill in to create.</p>
             <div class="field">
                 <label>Text</label>
                 <textarea name="text" placeholder="Question text..."></textarea>
             </div>
-            <div class="field">
-                <label>Points</label>
-                <input type="number" name="points" value="2" min="1" max="4">
+            <div class="num-row">
+                <div class="field">
+                    <label>Points</label>
+                    <input type="number" name="points" value="2" min="1" max="4">
+                </div>
+                <div class="field">
+                    <label>Correct count</label>
+                    <input type="number" name="correct_answers_count" value="1" min="1" max="5">
+                </div>
             </div>
-            <div class="field">
-                <label>Correct answers count</label>
-                <input type="number" name="correct_answers_count" value="1" min="1" max="5">
-            </div>
-            <div class="field">
+            <div class="upload-row">
                 <label>Image</label>
-                <input type="file" name="image" accept="image/*">
+                <input type="file" name="image" accept="image/*" style="font-size:12px;">
             </div>
-            <div class="field">
-                <label>Options (one per line: letter|text|correct — e.g. а|правилом саобраћаја|false)</label>
-                <textarea name="options_raw" rows="5" placeholder="а|text|false&#10;б|text|true&#10;в|text|false"></textarea>
+            <div class="field" style="margin-top:8px;">
+                <label>Options (letter|text|correct — e.g. а|правилом саобраћаја|false)</label>
+                <textarea name="options_raw" rows="5" placeholder="а|text|false&#10;б|text|true&#10;в|text|false" style="min-height:80px;resize:vertical;"></textarea>
             </div>
         </div>"""
 
@@ -218,7 +293,7 @@ def render_question_form(q, section, qid):
             <div class="option-correct" title="Correct answer">
                 <input type="checkbox" name="opt_{i}_correct" {checked}>
             </div>
-            <label style="font-size:10px;color:#aa3333;cursor:pointer;display:flex;align-items:center;gap:2px;" title="Delete this option">
+            <label style="font-size:10px;color:#aa3333;cursor:pointer;display:flex;align-items:center;gap:2px;" title="Delete">
                 <input type="checkbox" name="opt_{i}_delete"> ✕
             </label>
             <input type="hidden" name="opt_{i}_letter" value="{o['letter']}">
@@ -233,21 +308,21 @@ def render_question_form(q, section, qid):
 
     return f"""
     <div class="card">
-        <h3>Question {q['id']} — {section}</h3>
-        <div class="meta-row" style="margin-bottom:12px;">
-            <span class="meta-item">points: {q['points']}</span>
-            <span class="meta-item">correct_count: {q['correct_answers_count']}</span>
-            <span class="meta-item">categories: {cats}</span>
-            <span class="meta-item">has_image: {q['has_image']}</span>
+        <h3>Q{q['id']} — {section}</h3>
+        <div class="meta-row" style="margin-bottom:6px;">
+            <span class="meta-item">pts: {q['points']}</span>
+            <span class="meta-item">correct: {q['correct_answers_count']}</span>
+            <span class="meta-item">cats: {cats}</span>
+            <span class="meta-item">img: {q['has_image']}</span>
         </div>
-        <div style="display:flex;gap:16px;margin-top:8px;">
-            <label style="font-size:13px;display:flex;align-items:center;gap:4px;">
+        <div class="flags-row">
+            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
                 <input type="checkbox" name="flag_removed" {chk_removed}> <span class="flag flag-removed">removed</span>
             </label>
-            <label style="font-size:13px;display:flex;align-items:center;gap:4px;">
+            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
                 <input type="checkbox" name="flag_changed" {chk_changed}> <span class="flag flag-changed">changed</span>
             </label>
-            <label style="font-size:13px;display:flex;align-items:center;gap:4px;">
+            <label style="font-size:12px;display:flex;align-items:center;gap:3px;">
                 <input type="checkbox" name="flag_new" {chk_new}> <span class="flag flag-new">new</span>
             </label>
         </div>
@@ -258,35 +333,37 @@ def render_question_form(q, section, qid):
         <div class="field">
             <textarea name="text">{q['text']}</textarea>
         </div>
-        <div class="field">
-            <label>Points</label>
-            <input type="number" name="points" value="{q['points']}" min="1" max="4">
-        </div>
-        <div class="field">
-            <label>Correct answers count</label>
-            <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" min="1" max="6">
+        <div class="num-row">
+            <div class="field">
+                <label>Points</label>
+                <input type="number" name="points" value="{q['points']}" min="1" max="4">
+            </div>
+            <div class="field">
+                <label>Correct count</label>
+                <input type="number" name="correct_answers_count" value="{q['correct_answers_count']}" min="1" max="6">
+            </div>
         </div>
     </div>
 
     <div class="card">
         <h3>Image</h3>
         {img_html}
-        <div class="field">
-            <label>Upload new image</label>
-            <input type="file" name="image" accept="image/*">
+        <div class="upload-row">
+            <label>Upload</label>
+            <input type="file" name="image" accept="image/*" style="font-size:12px;">
         </div>
     </div>
 
     <div class="card">
-        <h3>Options <span style="font-size:11px;color:#888;font-weight:400;">(checkbox = correct answer, ✕ = delete)</span></h3>
+        <h3>Options <span style="font-size:10px;color:#888;font-weight:400;">(✓ = correct, ✕ = delete)</span></h3>
         <input type="hidden" name="options_count" value="{len(q['options'])}">
         {options_html}
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid #ddd;">
-            <div style="font-size:12px;color:#888;margin-bottom:6px;font-family:monospace;">ADD OPTION</div>
-            <div style="display:flex;gap:8px;align-items:center;">
-                <input type="text" name="new_opt_letter" placeholder="е" style="width:40px;padding:6px;border-radius:4px;border:1px solid #ccc;text-align:center;">
-                <input type="text" name="new_opt_text" placeholder="Текст варианта..." style="flex:1;padding:6px;border-radius:4px;border:1px solid #ccc;">
-                <label style="font-size:11px;display:flex;align-items:center;gap:3px;white-space:nowrap;">
+        <div style="margin-top:8px;padding-top:8px;border-top:1px solid #ddd;">
+            <div style="font-size:10px;color:#888;margin-bottom:4px;font-family:monospace;">ADD OPTION</div>
+            <div style="display:flex;gap:6px;align-items:center;">
+                <input type="text" name="new_opt_letter" placeholder="е" style="width:36px;padding:4px;border-radius:4px;border:1px solid #ccc;text-align:center;font-size:13px;">
+                <input type="text" name="new_opt_text" placeholder="Текст варианта..." style="flex:1;padding:4px 6px;border-radius:4px;border:1px solid #ccc;font-size:13px;">
+                <label style="font-size:11px;display:flex;align-items:center;gap:2px;white-space:nowrap;">
                     <input type="checkbox" name="new_opt_correct"> ✓
                 </label>
             </div>
@@ -298,6 +375,7 @@ class VerifyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
 
+        # Serve question images from database/images
         if parsed.path == "/image/" or parsed.path.startswith("/image/"):
             filename = parsed.path.replace("/image/", "")
             filepath = IMAGES_DIR / filename
@@ -309,6 +387,29 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             else:
                 self.send_response(404)
                 self.end_headers()
+            return
+
+        # Serve screenshots from db_new
+        if parsed.path.startswith("/screenshot/"):
+            # /screenshot/<section>/<qNNN>.png
+            parts = parsed.path.split("/")
+            if len(parts) >= 4:
+                section_id = parts[2]
+                filename = parts[3]
+                dir_name = SECTION_DIR_MAP.get(section_id, "")
+                if dir_name:
+                    filepath = DB_NEW_DIR / dir_name / filename
+                    if filepath.exists():
+                        ct = "image/png"
+                        if filename.endswith(".jpg") or filename.endswith(".jpeg"):
+                            ct = "image/jpeg"
+                        self.send_response(200)
+                        self.send_header("Content-Type", ct)
+                        self.end_headers()
+                        self.wfile.write(filepath.read_bytes())
+                        return
+            self.send_response(404)
+            self.end_headers()
             return
 
         params = parse_qs(parsed.query)
@@ -389,13 +490,13 @@ class VerifyHandler(SimpleHTTPRequestHandler):
         if q:
             if len(q.get("options", [])) < 2 or len(q.get("text", "")) < 5:
                 status_class = "status status-empty"
-                status_text = f"Q{qid} — parsed but incomplete"
+                status_text = f"Q{qid} — incomplete"
             else:
                 status_class = "status status-exists"
-                status_text = f"Q{qid} — OK ({len(q['options'])} options)"
+                status_text = f"Q{qid} — OK ({len(q['options'])} opts)"
         else:
             status_class = "status status-missing"
-            status_text = f"Q{qid} — NOT IN DATABASE"
+            status_text = f"Q{qid} — NOT IN DB"
 
         # Navigation — respects filter
         if filtered_ids:
@@ -459,6 +560,21 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
         question_form = render_question_form(q, section, qid)
 
+        # Screenshot HTML
+        screenshot_filename = f"q{qid:03d}.png"
+        screenshot_url = f"/screenshot/{section}/{screenshot_filename}"
+        # Check if file exists
+        dir_name = SECTION_DIR_MAP.get(section, "")
+        screenshot_exists = False
+        if dir_name:
+            screenshot_path = DB_NEW_DIR / dir_name / screenshot_filename
+            screenshot_exists = screenshot_path.exists()
+
+        if screenshot_exists:
+            screenshot_html = f'<img src="{screenshot_url}" alt="Screenshot Q{qid}">'
+        else:
+            screenshot_html = f'<div class="no-screenshot">No screenshot for Q{qid}<br><span style="font-size:10px;">{screenshot_filename}</span></div>'
+
         html = HTML_TEMPLATE.replace(
             "{section_options}", section_options
         ).replace(
@@ -481,6 +597,8 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             "{filter_buttons}", filter_buttons
         ).replace(
             "{message}", message
+        ).replace(
+            "{screenshot_html}", screenshot_html
         )
 
         self.send_response(200)
@@ -678,6 +796,7 @@ def main():
     print(f"Starting verifier at http://localhost:{PORT}")
     print(f"Database: {QUESTIONS_FILE}")
     print(f"Images: {IMAGES_DIR}")
+    print(f"Screenshots: {DB_NEW_DIR}")
     server = HTTPServer(("", PORT), VerifyHandler)
     try:
         server.serve_forever()
