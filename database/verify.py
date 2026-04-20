@@ -157,6 +157,12 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .upload-row label { font-size: 11px; color: #888; font-family: monospace; text-transform: uppercase; white-space: nowrap; }
 .img-preview { max-width: 100%; max-height: 120px; border-radius: 6px; margin: 4px 0; }
 
+/* === CROP TOOL === */
+.crop-container { position: relative; }
+.crop-container img { width: 100%; display: block; border-radius: 6px; border: 1px solid #ddd; }
+#cropCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: crosshair; border-radius: 6px; }
+.crop-hint { font-size: 11px; color: #888; font-family: monospace; text-align: center; margin-top: 4px; min-height: 16px; }
+
 /* === DIFF HIGHLIGHTS === */
 .diff-display { font-size: 16px; line-height: 1.5; padding: 4px 8px; margin-top: 2px; border-radius: 4px; background: #fafaf0; border: 1px solid #e8e0c0; display: none; }
 .diff-display:not(:empty) { display: block; }
@@ -344,6 +350,118 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('input[type=file]').forEach(function(el) {
         el.addEventListener('change', checkChanges);
     });
+
+    // === CROP TOOL ===
+    const imgEl = document.getElementById('screenshotImg');
+    const canvas = document.getElementById('cropCanvas');
+    const cropHint = document.getElementById('cropHint');
+    if (imgEl && canvas) {
+        const ctx = canvas.getContext('2d');
+        let drawing = false, startX = 0, startY = 0, rect = null, hasSelection = false;
+
+        function syncCanvasSize() {
+            canvas.width = imgEl.clientWidth;
+            canvas.height = imgEl.clientHeight;
+        }
+
+        imgEl.addEventListener('load', syncCanvasSize);
+        window.addEventListener('resize', function() { syncCanvasSize(); drawRect(); });
+        syncCanvasSize();
+
+        function drawRect() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (!rect) return;
+            ctx.fillStyle = 'rgba(0,0,0,0.35)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(rect.x, rect.y, rect.w, rect.h);
+            ctx.strokeStyle = '#4a4';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([6, 3]);
+            ctx.strokeRect(rect.x, rect.y, rect.w, rect.h);
+            ctx.setLineDash([]);
+        }
+
+        canvas.addEventListener('mousedown', function(e) {
+            const r = canvas.getBoundingClientRect();
+            startX = Math.max(0, Math.min(canvas.width, e.clientX - r.left));
+            startY = Math.max(0, Math.min(canvas.height, e.clientY - r.top));
+            drawing = true;
+            rect = null;
+            hasSelection = false;
+            cropHint.textContent = 'Drag to select area';
+        });
+
+        canvas.addEventListener('mousemove', function(e) {
+            if (!drawing) return;
+            const r = canvas.getBoundingClientRect();
+            const cx = Math.max(0, Math.min(canvas.width, e.clientX - r.left));
+            const cy = Math.max(0, Math.min(canvas.height, e.clientY - r.top));
+            rect = {
+                x: Math.min(startX, cx), y: Math.min(startY, cy),
+                w: Math.abs(cx - startX), h: Math.abs(cy - startY)
+            };
+            drawRect();
+        });
+
+        canvas.addEventListener('mouseup', function() {
+            drawing = false;
+            if (rect && rect.w > 10 && rect.h > 10) {
+                hasSelection = true;
+                cropHint.textContent = 'Enter = crop, Esc = cancel';
+            }
+        });
+
+        function doCrop() {
+            if (!rect || !hasSelection) return;
+            const scaleX = imgEl.naturalWidth / imgEl.clientWidth;
+            const scaleY = imgEl.naturalHeight / imgEl.clientHeight;
+            const sx = Math.round(rect.x * scaleX);
+            const sy = Math.round(rect.y * scaleY);
+            const sw = Math.round(rect.w * scaleX);
+            const sh = Math.round(rect.h * scaleY);
+            const offscreen = document.createElement('canvas');
+            offscreen.width = sw;
+            offscreen.height = sh;
+            offscreen.getContext('2d').drawImage(imgEl, sx, sy, sw, sh, 0, 0, sw, sh);
+            // Store as base64 in hidden input, show preview
+            const dataUrl = offscreen.toDataURL('image/png');
+            document.getElementById('cropDataInput').value = dataUrl;
+            const preview = document.getElementById('cropPreview');
+            preview.src = dataUrl;
+            preview.style.display = 'block';
+            document.getElementById('imageCard').classList.add('changed-border');
+            // Clear selection overlay
+            clearSelection();
+            cropHint.textContent = 'Cropped — click Save to apply';
+        }
+
+        function clearSelection() {
+            rect = null;
+            hasSelection = false;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            cropHint.textContent = 'Drag to select area';
+        }
+
+        window.addEventListener('keydown', function(e) {
+            if (!hasSelection) return;
+            const tag = (document.activeElement || {}).tagName;
+            const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+            if (e.key === 'Enter' && !isInput) {
+                e.preventDefault();
+                doCrop();
+            }
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                clearSelection();
+                if (isInput) document.activeElement.blur();
+            }
+        });
+
+        // Focus away from inputs after finishing selection
+        canvas.addEventListener('mouseup', function() {
+            if (hasSelection) document.activeElement.blur();
+        });
+    }
 });
 </script>
 </body>
@@ -436,8 +554,10 @@ def render_question_form(q, section, qid):
     </div>
 
     <!-- Row 2: Image -->
-    <div class="card" style="padding:6px;">
+    <div class="card" style="padding:6px;" id="imageCard">
         {img_html}
+        <img id="cropPreview" style="display:none;max-width:100%;border-radius:6px;margin:4px 0;border:2px solid #4a4;">
+        <input type="hidden" name="crop_data" id="cropDataInput" value="">
         <div class="upload-row">
             <label>Image</label>
             <input type="file" name="image" accept="image/*" style="font-size:12px;">
@@ -686,7 +806,11 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             screenshot_exists = screenshot_path.exists()
 
         if screenshot_exists:
-            screenshot_html = f'<img src="{screenshot_url}" alt="Screenshot Q{qid}">'
+            screenshot_html = f'''<div class="crop-container" id="cropContainer">
+                <img src="{screenshot_url}" alt="Screenshot Q{qid}" id="screenshotImg" crossorigin="anonymous">
+                <canvas id="cropCanvas"></canvas>
+                <div class="crop-hint" id="cropHint">Drag to select area</div>
+            </div>'''
         else:
             screenshot_html = f'<div class="no-screenshot">No screenshot for Q{qid}<br><span style="font-size:10px;">{screenshot_filename}</span></div>'
 
@@ -760,6 +884,36 @@ class VerifyHandler(SimpleHTTPRequestHandler):
         return fields, files
 
     def do_POST(self):
+        parsed = urlparse(self.path)
+
+        # Crop image endpoint
+        if parsed.path == "/crop-image":
+            fields, files = self.parse_multipart()
+            section = fields.get("section", "")
+            qid = int(fields.get("id", "0"))
+            if "image" in files and section and qid:
+                image_filename = f"verify_{section}_{qid}.png"
+                img_path = IMAGES_DIR / image_filename
+                IMAGES_DIR.mkdir(exist_ok=True)
+                with open(img_path, "wb") as f:
+                    f.write(files["image"]["data"])
+                # Update database
+                data = load_data()
+                idx, q = find_question(data, section, qid)
+                if q:
+                    q["image"] = image_filename
+                    q["has_image"] = True
+                    save_data(data)
+                    log_changes({"section": section, "question_id": qid, "changes": [{"action": "image_cropped", "file": image_filename}]})
+                self.send_response(200)
+                self.send_header("Content-Type", "text/plain")
+                self.end_headers()
+                self.wfile.write(b"OK")
+            else:
+                self.send_response(400)
+                self.end_headers()
+            return
+
         fields, files = self.parse_multipart()
 
         section = fields.get("section", "")
@@ -833,6 +987,20 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             if image_filename:
                 changes.append({"action": "image_uploaded", "file": image_filename})
                 q["image"] = image_filename
+                q["has_image"] = True
+
+            # Handle crop from screenshot
+            crop_data = fields.get("crop_data", "").strip()
+            if crop_data and crop_data.startswith("data:image/png;base64,"):
+                import base64
+                b64 = crop_data.split(",", 1)[1]
+                crop_filename = f"verify_{section}_{original_id}.png"
+                crop_path = IMAGES_DIR / crop_filename
+                IMAGES_DIR.mkdir(exist_ok=True)
+                with open(crop_path, "wb") as f:
+                    f.write(base64.b64decode(b64))
+                changes.append({"action": "image_cropped", "file": crop_filename})
+                q["image"] = crop_filename
                 q["has_image"] = True
 
             # Flags
