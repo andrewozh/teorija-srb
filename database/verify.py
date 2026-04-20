@@ -9,9 +9,16 @@ import json
 import os
 import shutil
 import io
+import base64
 from pathlib import Path
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
+
+try:
+    import anthropic
+    HAS_ANTHROPIC = True
+except ImportError:
+    HAS_ANTHROPIC = False
 
 BASE_DIR = Path(__file__).parent
 QUESTIONS_FILE = BASE_DIR / "questions.json"
@@ -30,6 +37,62 @@ SECTION_DIR_MAP = {
     "posebne_mere": "06_posebne_mere",
     "posledice": "07_posledice",
 }
+
+
+VISION_MODEL = "claude-sonnet-4-6"
+
+# Serbian Latin → Cyrillic
+_LAT2CYR_DIGRAPHS = {"dž": "џ", "Dž": "Џ", "DŽ": "Џ", "lj": "љ", "Lj": "Љ", "LJ": "Љ", "nj": "њ", "Nj": "Њ", "NJ": "Њ"}
+_LAT2CYR = str.maketrans({
+    'a': 'а', 'b': 'б', 'c': 'ц', 'č': 'ч', 'ć': 'ћ', 'd': 'д', 'đ': 'ђ',
+    'e': 'е', 'f': 'ф', 'g': 'г', 'h': 'х', 'i': 'и', 'j': 'ј', 'k': 'к',
+    'l': 'л', 'm': 'м', 'n': 'н', 'o': 'о', 'p': 'п', 'r': 'р', 's': 'с',
+    'š': 'ш', 't': 'т', 'u': 'у', 'v': 'в', 'z': 'з', 'ž': 'ж',
+    'A': 'А', 'B': 'Б', 'C': 'Ц', 'Č': 'Ч', 'Ć': 'Ћ', 'D': 'Д', 'Đ': 'Ђ',
+    'E': 'Е', 'F': 'Ф', 'G': 'Г', 'H': 'Х', 'I': 'И', 'J': 'Ј', 'K': 'К',
+    'L': 'Л', 'M': 'М', 'N': 'Н', 'O': 'О', 'P': 'П', 'R': 'Р', 'S': 'С',
+    'Š': 'Ш', 'T': 'Т', 'U': 'У', 'V': 'В', 'Z': 'З', 'Ž': 'Ж',
+})
+
+def _lat2cyr(text):
+    for lat, cyr in _LAT2CYR_DIGRAPHS.items():
+        text = text.replace(lat, cyr)
+    return text.translate(_LAT2CYR)
+
+def ai_parse_screenshot(image_path):
+    """Send screenshot to Claude Vision, return parsed dict."""
+    if not HAS_ANTHROPIC:
+        return {"error": "anthropic package not installed"}
+    rules = (DB_NEW_DIR / "PARSING_RULES.md").read_text(encoding="utf-8")
+    prompt = rules + "\n\n---\n\nParse this question screenshot according to the rules above.\nCopy all text EXACTLY as shown — character by character. Do NOT transliterate between Cyrillic and Latin scripts.\nReturn ONLY valid JSON, no markdown fences, no commentary.\n"
+
+    image_data = base64.standard_b64encode(image_path.read_bytes()).decode("utf-8")
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not api_key:
+        # Try loading from .bashrc
+        import subprocess
+        result = subprocess.run(["bash", "-c", "grep ANTHROPIC_API_KEY ~/.bashrc | cut -d= -f2"], capture_output=True, text=True)
+        api_key = result.stdout.strip()
+    client = anthropic.Anthropic(api_key=api_key)
+    response = client.messages.create(
+        model=VISION_MODEL, max_tokens=1024,
+        messages=[{"role": "user", "content": [
+            {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": image_data}},
+            {"type": "text", "text": prompt},
+        ]}],
+    )
+    text = response.content[0].text.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1]
+        text = text.rsplit("```", 1)[0].strip()
+    result = json.loads(text)
+    # Fix Cyrillic
+    if "text" in result:
+        result["text"] = _lat2cyr(result["text"])
+    for opt in result.get("options", []):
+        if "text" in opt:
+            opt["text"] = _lat2cyr(opt["text"])
+    return result
 
 
 def log_changes(entry: dict):
@@ -179,6 +242,9 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 .save-bar button { padding: 8px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; }
 .save-bar .btn-save { background: #2d6a2d; color: white; }
 .save-bar .btn-save:hover { background: #3d8a3d; }
+.save-bar .btn-ai { background: #5b4bb5; color: white; }
+.save-bar .btn-ai:hover { background: #7b6bd5; }
+.save-bar .btn-ai:disabled { opacity: 0.5; cursor: wait; }
 
 /* === MESSAGES === */
 .msg { padding: 6px 12px; border-radius: 6px; margin: 4px 12px; font-size: 12px; }
@@ -224,6 +290,7 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
     <div class="col-left">
         {question_form}
         <div class="save-bar">
+            <button type="button" class="btn-ai" id="aiParseBtn" onclick="aiParse()">🤖 AI Parse</button>
             <button type="submit" class="btn-save">💾 Save</button>
         </div>
     </div>
@@ -456,6 +523,62 @@ document.addEventListener('DOMContentLoaded', function() {
             if (hasSelection) document.activeElement.blur();
         });
     }
+
+    // === AI PARSE ===
+    window.aiParse = function() {
+        const btn = document.getElementById('aiParseBtn');
+        btn.disabled = true;
+        btn.textContent = '🤖 Parsing...';
+        const section = document.querySelector('input[name=section]').value;
+        const qid = document.querySelector('input[name=original_id]').value;
+        const fd = new FormData();
+        fd.append('section', section);
+        fd.append('id', qid);
+        fetch('/ai-parse', { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(function(data) {
+                btn.disabled = false;
+                btn.textContent = '🤖 AI Parse';
+                if (data.error) { alert('AI Error: ' + data.error); return; }
+                // Fill text
+                const textEl = document.querySelector('textarea[name=text]');
+                if (textEl && data.text) { textEl.value = data.text; autoResize(textEl); }
+                // Fill points
+                const ptsEl = document.querySelector('input[name=points]');
+                if (ptsEl && data.points) ptsEl.value = data.points;
+                // Fill correct count
+                const ccEl = document.querySelector('input[name=correct_answers_count]');
+                if (ccEl && data.correct_answers_count) ccEl.value = data.correct_answers_count;
+                // Fill categories
+                ['A','B','C','D','F'].forEach(function(cat) {
+                    const cb = document.querySelector('input[name=cat_' + cat + ']');
+                    if (cb) cb.checked = (data.categories || []).includes(cat);
+                });
+                // Fill options
+                var opts = data.options || [];
+                for (var i = 0; i < opts.length; i++) {
+                    var ta = document.querySelector('textarea[name=opt_' + i + '_text]');
+                    if (ta) { ta.value = opts[i].text || ''; autoResize(ta); }
+                    var cb = document.querySelector('input[name=opt_' + i + '_correct]');
+                    if (cb) cb.checked = (data.correct_answers || []).includes(opts[i].letter);
+                }
+                // Fill flags
+                var status = data.status;
+                var fr = document.querySelector('input[name=flag_removed]');
+                var fc = document.querySelector('input[name=flag_changed]');
+                var fn = document.querySelector('input[name=flag_new]');
+                if (fr) fr.checked = status === 'removed';
+                if (fc) fc.checked = status === 'changed';
+                if (fn) fn.checked = status === 'new';
+                // Trigger diff
+                checkChanges();
+            })
+            .catch(function(err) {
+                btn.disabled = false;
+                btn.textContent = '🤖 AI Parse';
+                alert('Error: ' + err);
+            });
+    };
 
     // === GLOBAL HOTKEYS ===
     let confirmSave = false;
@@ -937,6 +1060,32 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         parsed = urlparse(self.path)
+
+        # AI Parse endpoint
+        if parsed.path == "/ai-parse":
+            fields, files = self.parse_multipart()
+            section = fields.get("section", "")
+            qid = int(fields.get("id", "0"))
+            dir_name = SECTION_DIR_MAP.get(section, "")
+            screenshot_path = DB_NEW_DIR / dir_name / f"q{qid:03d}.png" if dir_name else None
+            if screenshot_path and screenshot_path.exists():
+                try:
+                    result = ai_parse_screenshot(screenshot_path)
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/json")
+                    self.end_headers()
+                    self.wfile.write(json.dumps(result, ensure_ascii=False).encode("utf-8"))
+                except Exception as e:
+                    self.send_response(500)
+                    self.send_header("Content-Type", "application/json")
+                    self.end_headers()
+                    self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            else:
+                self.send_response(404)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": "Screenshot not found"}).encode("utf-8"))
+            return
 
         # Crop image endpoint
         if parsed.path == "/crop-image":
