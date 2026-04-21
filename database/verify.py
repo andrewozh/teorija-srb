@@ -237,7 +237,10 @@ body { font-family: -apple-system, system-ui, sans-serif; background: #f5f5f0; c
 /* === IMAGE UPLOAD === */
 .upload-row { display: flex; gap: 8px; align-items: center; }
 .upload-row label { font-size: 11px; color: #888; font-family: monospace; text-transform: uppercase; white-space: nowrap; }
-.img-preview { max-width: 100%; max-height: 120px; border-radius: 6px; margin: 4px 0; }
+.img-preview { max-width: 48%; border-radius: 6px; margin: 4px 0; }
+.img-preview.old-img { border: 2px solid #cc4444; }
+#cropPreview.new-img { border: 2px solid #4a4; }
+.img-row { display: flex; gap: 8px; align-items: flex-start; }
 
 /* === CROP TOOL === */
 .crop-container { position: relative; }
@@ -441,7 +444,23 @@ document.addEventListener('DOMContentLoaded', function() {
         el.addEventListener('change', checkChanges);
     });
     document.querySelectorAll('input[type=file]').forEach(function(el) {
-        el.addEventListener('change', checkChanges);
+        el.addEventListener('change', function() {
+            checkChanges();
+            // Show file preview in cropPreview
+            var preview = document.getElementById('cropPreview');
+            if (preview && this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = '';
+                    preview.classList.add('new-img');
+                    var oldImg = document.querySelector('.img-preview');
+                    if (oldImg) oldImg.classList.add('old-img');
+                    document.getElementById('imageCard').classList.add('changed-border');
+                };
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
     });
 
     // === CROP TOOL ===
@@ -526,6 +545,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const preview = document.getElementById('cropPreview');
             preview.src = dataUrl;
             preview.style.display = 'block';
+            preview.classList.add('new-img');
+            var oldImg = document.querySelector('.img-preview');
+            if (oldImg) oldImg.classList.add('old-img');
             document.getElementById('imageCard').classList.add('changed-border');
             // Clear selection overlay
             clearSelection();
@@ -825,8 +847,10 @@ def render_question_form(q, section, qid):
 
     <!-- Row 2: Image -->
     <div class="card" style="padding:6px;" id="imageCard">
-        {img_html}
-        <img id="cropPreview" style="display:none;max-width:100%;border-radius:6px;margin:4px 0;border:2px solid #4a4;">
+        <div class="img-row">
+            {img_html}
+            <img id="cropPreview" style="display:none;max-width:48%;border-radius:6px;margin:4px 0;border:2px solid #4a4;">
+        </div>
         <input type="hidden" name="crop_data" id="cropDataInput" value="">
         <div class="upload-row">
             <label>Image</label>
