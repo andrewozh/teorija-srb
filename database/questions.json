@@ -28191,122 +28191,127 @@
     },
     {
       "id": 218,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "да одређ ђена саобраћа е појединих в ајна трака ни врста возила ије намењена чији је симб за ол кретање приказан"
+          "text": "да одређена саобраћајна трака није намењена за кретање појединих врста возила чији је симбол приказан на знаку"
         },
         {
           "letter": "б",
-          "text": "да је од н на знаку, дређена саобр е врсте возил у, а тој деоници озила чији је с за ан раћајна трак ла чији је сим ка намењена кретање на знаку"
+          "text": "да је одређена саобраћајна трака намењена за кретање врсте возила чији је симбол приказан на знаку"
         },
         {
           "letter": "в",
-          "text": "да је на мбол приказ и пута забра симбол прик ањено кретањ ње у"
+          "text": "да је на тој деоници пута забрањено кретање врсте возила чији је симбол приказан на знаку"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p034_y0054.png",
-      "section": "saobracajna_signalizacija"
-    },
-    {
-      "id": 219,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
-      "options": [
-        {
-          "letter": "а",
-          "text": "близину у дела пута на коме пос раћаја, стоји опасно ост због загу"
-        },
-        {
-          "letter": "б",
-          "text": "приближ ушења саобр жавање суже да ењу коловоза а које може представ"
-        },
-        {
-          "letter": "в",
-          "text": "место г вља извесну где се због опасност, г завршавањ не оја ња саобраћај траке, саобраћа укључуј сужења кол ајних трак ју у једну сао ловоза и см ка, возила обраћајну тра мањења бро наизменичн аку. но"
-        }
-      ],
-      "points": 2,
-      "correct_answers_count": 1,
-      "has_image": true,
-      "image": "p034_y0286.png",
-      "section": "saobracajna_signalizacija",
-      "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
-    },
-    {
-      "id": 220,
-      "text": "С Саобраћајни з знак приказан н на слици оз значава: надвожњак на ) близину м",
-      "options": [
-        {
-          "letter": "а",
-          "text": "места на којем м се налази н а путу, ) место на к ) место ода"
-        },
-        {
-          "letter": "б",
-          "text": ""
-        },
-        {
-          "letter": "в",
-          "text": "коме се заврш акле почиње а шава аутопут т, аутопут"
-        }
-      ],
-      "points": 2,
-      "correct_answers_count": 1,
-      "has_image": true,
-      "image": "p035_y0054.png",
-      "section": "saobracajna_signalizacija",
-      "correct_answers": [
-        "в"
-      ]
-    },
-    {
-      "id": 221,
-      "text": "С Саобраћајни з знак приказан н на слици оз значава: ти, ) излаз за п",
-      "options": [
-        {
-          "letter": "а",
-          "text": ""
-        },
-        {
-          "letter": "б",
-          "text": "ешаке у случ објекта нам активности, с а коме се пешачки про чају опасност ) близину спортске а ) место на ењеног за р са десне стра рекреацију и ане пута, одземни или и"
-        },
-        {
-          "letter": "в",
-          "text": "налази по олаз. и"
-        }
-      ],
-      "points": 2,
-      "correct_answers_count": 1,
-      "has_image": true,
-      "image": "p035_y0054.png",
+      "image": "verify_saobracajna_signalizacija_218.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
-      "id": 222,
-      "text": "С Саобраћајни з знак приказан н на слици оз значава: т до објекта е активности ешаке у случ ме се налази ост до њега. ) удаљеност",
+      "id": 219,
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "намењеног з и, са леве стра за рекреацију у и спортск ) излаз за п ) смер у ком ане пута, ти"
+          "text": "близину дела пута на коме постоји опасност због загушења саобраћаја"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "приближавање сужењу коловоза које може да представља извесну опасност"
         },
         {
           "letter": "в",
-          "text": "чају опасност излаз за случ чај опасности и"
+          "text": "место где се због завршавања саобраћајне траке, сужења коловоза и смањења броја саобраћајних трака, возила наизменично укључују у једну саобраћајну траку"
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 1,
+      "has_image": true,
+      "image": "verify_saobracajna_signalizacija_219.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
+    },
+    {
+      "id": 220,
+      "text": "Саобраћајни знак приказан на слици означава:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "близину места на којем се налази надвожњак на путу"
+        },
+        {
+          "letter": "б",
+          "text": "место на коме се завршава аутопут"
+        },
+        {
+          "letter": "в",
+          "text": "место одакле почиње аутопут"
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 1,
+      "has_image": true,
+      "image": "verify_saobracajna_signalizacija_220.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
+    },
+    {
+      "id": 221,
+      "text": "Саобраћајни знак приказан на слици означава:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "излаз за пешаке у случају опасности,"
+        },
+        {
+          "letter": "б",
+          "text": "близину објекта намењеног за рекреацију и спортске активности, са десне стране пута,"
+        },
+        {
+          "letter": "в",
+          "text": "место на коме се налази подземни или надземни пешачки пролаз."
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 1,
+      "has_image": true,
+      "image": "verify_saobracajna_signalizacija_221.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
+    },
+    {
+      "id": 222,
+      "text": "Саобраћајни знак приказан на слици означава:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "удаљеност до објекта намењеног за рекреацију и спортске активности, са леве стране пута,"
+        },
+        {
+          "letter": "б",
+          "text": "излаз за пешаке у случају опасности,"
+        },
+        {
+          "letter": "в",
+          "text": "смер у коме се налази излаз за случај опасности и удаљеност до њега."
         }
       ],
       "points": 2,
@@ -28315,23 +28320,25 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_222.png",
+      "is_verified": true
     },
     {
       "id": 223,
-      "text": "С Саобраћајни з знак приказан н на слици оз значава: ешаке у случ ме се налази ост до њега, ) излаз за п",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "излаз за пешаке у случају опасности"
         },
         {
           "letter": "б",
-          "text": "чају опасност ти, ) смер у ком излаз за случ чај опасности и и удаљено ) удаљеност"
+          "text": "смер у коме се налази излаз за случај опасности и удаљеност до њега"
         },
         {
           "letter": "в",
-          "text": "т до објекта е активности намењеног з и, са десне стр за рекреацију у"
+          "text": "удаљеност до објекта намењеног за рекреацију и спортске активности, са десне стране пута"
         }
       ],
       "points": 2,
@@ -28340,80 +28347,90 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_223.png",
+      "is_verified": true
     },
     {
       "id": 224,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "почетак брзине к"
+          "text": "почетак деонице на којој се врши контрола брзине кретања возила"
         },
         {
           "letter": "б",
-          "text": "почетак поштова возила"
+          "text": "почетак деонице пута на којој је обавезно поштовање највеће дозвољене брзине кретања возила"
         },
         {
           "letter": "в",
-          "text": "почетак поштова возила, смера да деонице на кретања вози а којој се в ила, ута на којо дозвољене б врши контро ола деонице п ање највеће ој је обавезн брзине кретањ но ња деонице п ање највеће када возачи ају светлосни ута на којо дозвољене б који долазе и знак упозор ој је обавезн брзине кретањ но ња ног"
+          "text": "почетак деонице пута на којој је обавезно поштовање највеће дозвољене брзине кретања возила, када возачи који долазе из супротног смера дају светлосни знак упозорења."
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p035_y0054.png",
-      "section": "saobracajna_signalizacija"
+      "image": "verify_saobracajna_signalizacija_224.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 225,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "пут који им се возило ене улево на мора кретати а следећој р ево забрањено и ако намера раскрсници ава на да скре којој је с"
+          "text": "пут којим се возило мора кретати ако намерава да скрене улево на следећој раскрсници на којој је скретање улево забрањено"
         },
         {
           "letter": "б",
-          "text": "раскрсни скретање уле о, ретање уле во ицу на ко ено, ојој је скр забрање"
+          "text": "раскрсницу на којој је скретање улево забрањено"
         },
         {
           "letter": "в",
-          "text": "смер кре етања обилаз радови. зним путем н на месту где с се"
+          "text": "смер кретања обилазним путем на месту где се изводе радови"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p035_y0054.png",
-      "section": "saobracajna_signalizacija"
+      "image": "verify_saobracajna_signalizacija_225.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 226,
-      "text": "Саобраћајни и знак приказ зан на слици о означава:",
+      "text": "Саобраћајни знак приказан на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "правац карактер"
+          "text": "правац пута до одредишта или карактеристичног објекта"
         },
         {
           "letter": "б",
-          "text": "претход пута ристичног об дно обаве јавања на ра обраћајних т у правца крет до одре бјекта, ештење в аскрсници н трака, ања после пр дишта ил ли озачу рад а путевима ди са престрој више сао"
+          "text": "претходно обавештење возачу ради престројавања на раскрсници на путевима са више саобраћајних трака"
         },
         {
           "letter": "в",
-          "text": "потврду роласка раскрсни ице. ИКА СР РБИЈА ОВА−У 35 УПРАВА СА АОБРАЋАЈН НЕ ПОЛИЦИ ИЈЕ"
+          "text": "потврду правац кретања после проласка раскрснице"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p035_y0318.png",
+      "image": "verify_saobracajna_signalizacija_226.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
-        "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 227,
@@ -28435,11 +28452,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p036_y0054.png",
+      "image": "verify_saobracajna_signalizacija_227.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 228,
@@ -28465,7 +28483,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 229,
@@ -28491,7 +28510,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 230,
@@ -28517,7 +28537,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 231,
@@ -28543,7 +28564,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 232,
@@ -28569,7 +28591,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 233,
@@ -28591,11 +28614,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p037_y0054.png",
+      "image": "verify_saobracajna_signalizacija_233.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 234,
@@ -28621,7 +28645,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 235,
@@ -28647,7 +28672,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 236,
@@ -28669,11 +28695,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p037_y0054.png",
+      "image": "verify_saobracajna_signalizacija_236.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 237,
@@ -28699,7 +28726,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 238,
@@ -28725,7 +28753,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 239,
@@ -28751,7 +28780,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 240,
@@ -28777,7 +28807,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 241,
@@ -28803,7 +28834,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 242,
@@ -28829,7 +28861,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 243,
@@ -28855,7 +28888,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 244,
@@ -28881,7 +28915,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 245,
@@ -28907,7 +28942,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 246,
@@ -28933,7 +28969,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 247,
@@ -28959,7 +28996,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 248,
@@ -28981,11 +29019,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p039_y0054.png",
+      "image": "verify_saobracajna_signalizacija_248.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 249,
@@ -29011,7 +29050,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 250,
@@ -29037,7 +29077,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 251,
@@ -29063,7 +29104,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 252,
@@ -29089,7 +29131,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 253,
@@ -29115,7 +29158,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 254,
@@ -29141,7 +29185,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 255,
@@ -29167,7 +29212,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 256,
@@ -29193,7 +29239,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 257,
@@ -29219,7 +29266,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 258,
@@ -29245,7 +29293,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 259,
@@ -29271,7 +29320,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 260,
@@ -29293,12 +29343,13 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p041_y0054.png",
+      "image": "verify_saobracajna_signalizacija_260.png",
       "section": "saobracajna_signalizacija",
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 261,
@@ -29325,7 +29376,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 262,
@@ -29352,7 +29404,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 263,
@@ -29378,7 +29431,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 264,
@@ -29400,11 +29454,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p042_y0054.png",
+      "image": "verify_saobracajna_signalizacija_264.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 265,
@@ -29430,7 +29485,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 266,
@@ -29455,7 +29511,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 267,
@@ -29481,7 +29538,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 268,
@@ -29507,7 +29565,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 269,
@@ -29537,7 +29596,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 270,
@@ -29559,11 +29619,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p043_y0528.png",
+      "image": "verify_saobracajna_signalizacija_270.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 271,
@@ -29588,7 +29649,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_271.png",
+      "is_verified": true
     },
     {
       "id": 272,
@@ -29613,84 +29676,90 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_272.png",
+      "is_verified": true
     },
     {
       "id": 273,
-      "text": "Д Допунска табл ла приказана на слици озн начава: ичита забра не важи, а које изри ограничење н а које изри ограничење в обавештења ња временске ) време за",
+      "text": "Допунска табла приказана на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "ана, обавезa , односно о ) време за "
+          "text": "време за које изричита забрана, обавеза, односно ограничење не важи"
         },
         {
           "letter": "б",
-          "text": "ичита забра ана, обавезa односно о ) додатна коришћењ ажи, а о врсти е зоне паркир и начину ања"
+          "text": "време за које изричита забрана, обавеза, односно ограничење важи"
         },
         {
           "letter": "в",
-          "text": "у"
+          "text": "додатна обавештења о врсти и начину коришћења временске зоне паркирања"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p044_y0285.png",
+      "image": "verify_saobracajna_signalizacija_273.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 274,
-      "text": "Д Допунске табл ле које садрж слици: же текстуалн не поруке, к ао у си итуацији на с ) речима д",
+      "text": "Допунске табле које садрже текстуалне поруке, као у ситуацији на слици:",
       "options": [
         {
           "letter": "а",
-          "text": "дају додатна обавештења еменске зоне ење које ниј г знака, нања забране учесници у а о врсти и е паркирања, ије у вези са и начину ко ) речима да оришћења вре"
+          "text": "речима дају додатна обавештења о врсти и начину коришћења временске зоне паркирања"
         },
         {
           "letter": "б",
-          "text": "ају обавеште а значењем ) речима ст саобраћајног тављају до зн"
+          "text": "речима дају обавештење које није у вези са значењем саобраћајног знака"
         },
         {
           "letter": "в",
-          "text": ", ограничења у саобраћају а у"
-        }
-      ],
-      "points": 2,
-      "correct_answers_count": 1,
-      "has_image": false,
-      "section": "saobracajna_signalizacija",
-      "correct_answers": [
-        "а"
-      ]
-    },
-    {
-      "id": 275,
-      "text": "Д Допунске табл ле које садрж ји на слици: же поруке у облику симб бола, ка ао у ситуациј еђују значењ м ближе одре ) симболом",
-      "options": [
-        {
-          "letter": "а",
-          "text": "ње знакова уз з које се ист ) симболом тичу, м дају обавеш"
-        },
-        {
-          "letter": "б",
-          "text": "штењa која ни ису у вези са а значењем ) симболом саобраћајних м стављају ња и обавез х знакова, до знањ зе којих се , у"
-        },
-        {
-          "letter": "в",
-          "text": "ња забране учесници у ограничењ саобраћају у морају прид државати. РЕПУ РАШЊИХ П УБЛИ ПОСЛ МИ ИНИСТАРСТ ТВО УНУТР"
+          "text": "речима стављају до знања забране, ограничења и обавезе којих се учесници у саобраћају морају придржавати"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p044_y0285.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_274.png",
+      "is_verified": true
+    },
+    {
+      "id": 275,
+      "text": "Допунске табле које садрже поруке у облику симбола, као у ситуацији на слици:",
+      "options": [
+        {
+          "letter": "а",
+          "text": "симболом ближе одређују значење знакова уз које се истичу"
+        },
+        {
+          "letter": "б",
+          "text": "симболом дају обавештења која нису у вези са значењем саобраћајних знакова"
+        },
+        {
+          "letter": "в",
+          "text": "симболом стављају до знања забране, ограничења и обавезе којих се учесници у саобраћају морају придржавати"
+        }
+      ],
+      "points": 2,
+      "correct_answers_count": 1,
+      "has_image": true,
+      "image": "verify_saobracajna_signalizacija_275.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 276,
@@ -29712,7 +29781,9 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "image": "verify_saobracajna_signalizacija_276.png",
+      "correct_answers": []
     },
     {
       "id": 277,
