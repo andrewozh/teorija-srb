@@ -13,6 +13,9 @@ database/images/*.png
 database/images.backup
 database/questions.backup.json
 
+db_new/**/*.png
+db_new/**/*.json
+
 # App copies of data (synced via `make sync-data`)
 app/static/questions.json
 app/static/images/
