@@ -183,6 +183,8 @@ def main():
             qid = q["id"]
             if qid not in answers:
                 continue
+            if q.get("is_verified"):
+                continue
             correct = answers[qid]
 
             if "correct_answers" not in q:

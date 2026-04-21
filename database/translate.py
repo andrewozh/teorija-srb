@@ -26,7 +26,7 @@ import anthropic
 
 QUESTIONS_JSON = Path(__file__).parent / "questions.json"
 
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-sonnet-4-6"
 SYSTEM_PROMPT = (
     "Переведи с сербского на русский. Это вопрос из экзамена по вождению. "
     "Внимательно работай с терминологией: если у термина есть точный аналог в ПДД РФ — используй его "

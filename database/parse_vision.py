@@ -88,7 +88,17 @@ def call_vision(image_path: Path, prompt: str) -> dict:
         text = text.rsplit("```", 1)[0]
         text = text.strip()
 
-    return json.loads(text)
+    # Fix unescaped quotes inside JSON string values
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        import re
+        fixed = re.sub(
+            r'(?<=: ")(.*?)(?="[,}\]\n])',
+            lambda m: m.group(0).replace('\\"', '"').replace('"', '\\"') if '"' in m.group(0) else m.group(0),
+            text, flags=re.DOTALL
+        )
+        return json.loads(fixed)
 
 
 # Serbian Latin → Cyrillic post-processing
