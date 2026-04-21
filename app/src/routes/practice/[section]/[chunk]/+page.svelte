@@ -228,21 +228,36 @@
 			{@const isMulti = q.correct_answers_count > 1}
 			{@const qProg = getQuestionProgress(q.section, q.id)}
 			<div class="slide">
-				<!-- Image (flex-shrink, min 20% of content area) -->
-				{#if q.has_image && q.image}
-					<div class="q-image-area">
-						<img src="{base}/images/{q.image}" alt="" class="q-image" loading="lazy" />
+				<div class="slide-body">
+					<!-- Tags + Image -->
+					<div class="q-media" class:q-media-has-image={q.has_image && q.image}>
+						<div class="q-tags">
+							{#if q.is_changed}
+								<Tag tone="accent">
+									<span class="tag-dot accent-dot"></span>
+									{lang === 'sr' ? 'Измењено' : 'Изменено'}
+								</Tag>
+							{/if}
+							{#if q.is_new}
+								<Tag tone="accent">
+									<span class="tag-dot accent-dot"></span>
+									{lang === 'sr' ? 'Ново' : 'Новый'}
+								</Tag>
+							{/if}
+							{#if qProg && qProg.wrong > 0}
+								<Tag tone="wrong">
+									<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
+									{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
+								</Tag>
+							{/if}
+						</div>
+						{#if q.has_image && q.image}
+							<img src="{base}/images/{q.image}" alt="" class="q-image" loading="lazy" />
+						{/if}
 					</div>
-				{/if}
 
-				<!-- Question text (never shrinks, always visible) -->
-				<div class="q-text-area">
-					<div class="q-text">
-						{#if q.is_changed}<span class="marker-dot marker-changed"></span>{/if}
-						{#if q.is_new}<span class="marker-dot marker-new"></span>{/if}
-						{#if qProg && qProg.wrong > 0}<span class="marker-dot marker-wrong"></span>{/if}
-						{qText(q, lang)}
-					</div>
+					<!-- Question text -->
+					<div class="q-text">{qText(q, lang)}</div>
 					<div class="q-meta">
 						{isMulti
 							? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
@@ -251,8 +266,8 @@
 					</div>
 				</div>
 
-				<!-- Answers (scrollable if needed) -->
-				<div class="q-answers-area">
+				<!-- Answers zone -->
+				<div class="slide-answers">
 					{#each q.options as option}
 						<AnswerOption
 							letter={option.letter}
@@ -263,37 +278,38 @@
 						/>
 					{/each}
 
+					<!-- Multi-answer confirm -->
 					{#if isMulti && !qs.answered && qs.selected.size > 0}
 						<button class="q-confirm-btn" onclick={() => confirmMultiAnswer(i)}>
 							{t('question.confirm', lang)} ({qs.selected.size})
 						</button>
 					{/if}
-				</div>
 
-				<!-- Footer (pinned to bottom) -->
-				<div class="q-footer">
-					<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
-						<Icon name="language" size={19} stroke={1.6} />
-					</button>
-					<button
-						class="q-footer-icon"
-						class:q-footer-active={i === currentIndex && bookmarked}
-						onclick={handleToggleBookmark}
-					>
-						<Icon name={i === currentIndex && bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
-					</button>
-					<button class="q-footer-icon" onclick={() => {}}>
-						<Icon name="flag" size={19} stroke={1.6} />
-					</button>
-					<div class="q-footer-spacer"></div>
-					{#if qs.answered}
-						<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
-							{i < questions.length - 1
-								? (lang === 'sr' ? 'Следеће' : 'Далее')
-								: '✓'}
-							<Icon name="chev-right" size={14} color="var(--accent-ink)" />
+					<!-- Footer -->
+					<div class="q-footer">
+						<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
+							<Icon name="language" size={19} stroke={1.6} />
 						</button>
-					{/if}
+						<button
+							class="q-footer-icon"
+							class:q-footer-active={i === currentIndex && bookmarked}
+							onclick={handleToggleBookmark}
+						>
+							<Icon name={i === currentIndex && bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
+						</button>
+						<button class="q-footer-icon" onclick={() => {}}>
+							<Icon name="flag" size={19} stroke={1.6} />
+						</button>
+						<div class="q-footer-spacer"></div>
+						{#if qs.answered}
+							<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
+								{i < questions.length - 1
+									? (lang === 'sr' ? 'Следеће' : 'Далее')
+									: '✓'}
+								<Icon name="chev-right" size={14} color="var(--accent-ink)" />
+							</button>
+						{/if}
+					</div>
 				</div>
 			</div>
 		{/each}
@@ -348,7 +364,7 @@
 	}
 	.carousel::-webkit-scrollbar { display: none; }
 
-	/* Slide — flex column, all sections compete for space */
+	/* Slide */
 	.slide {
 		min-width: 100%;
 		width: 100%;
@@ -359,28 +375,36 @@
 		overflow: hidden;
 	}
 
-	/* Image: ideal 35%, shrinks down to min 20%, hidden overflow */
-	.q-image-area {
-		flex: 0 1 35%;
-		min-height: 20%;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 4px 16px 0;
-	}
-	.q-image {
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		display: block;
+	.slide-body {
+		flex: 1;
+		overflow-y: auto;
+		padding: 16px 16px 8px;
+		-webkit-overflow-scrolling: touch;
 	}
 
-	/* Question text: never shrinks, always visible */
-	.q-text-area {
-		flex: 0 0 auto;
-		padding: 8px 16px 4px;
+	.slide-answers {
+		padding: 12px 14px 14px;
+		padding-bottom: calc(14px + env(safe-area-inset-bottom));
+		display: flex; flex-direction: column; gap: 8px;
+		background: var(--answer-zone-bg);
+		flex-shrink: 0;
+		border-top: 0.5px solid var(--hairline);
 	}
+
+	/* Media / Tags */
+	.q-media { position: relative; margin-bottom: 10px; }
+	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
+	.q-tags {
+		display: flex; gap: 6px; flex-wrap: wrap;
+	}
+	.tag-dot {
+		width: 5px; height: 5px; border-radius: 3px;
+		display: inline-block;
+	}
+	.accent-dot { background: var(--accent); }
+
+	.q-image { width: 100%; display: block; }
+
 	.q-text {
 		font-size: 16px; font-weight: 500;
 		line-height: 1.4; letter-spacing: -0.2px;
@@ -388,32 +412,8 @@
 	}
 	.q-meta {
 		font-family: var(--font-mono); font-size: 11px;
-		color: var(--ink3); margin-top: 4px;
+		color: var(--ink3); margin-top: 6px;
 		letter-spacing: 0.3px;
-	}
-
-	/* Marker dots before question text */
-	.marker-dot {
-		display: inline-block;
-		width: 8px; height: 8px; border-radius: 50%;
-		margin-right: 4px;
-		vertical-align: middle;
-		position: relative; top: -1px;
-	}
-	.marker-changed { background: var(--accent); }
-	.marker-new { background: #44aa44; }
-	.marker-wrong { background: var(--wrong); }
-
-	/* Answers: ideal 45%, scrollable if exceeds 60% */
-	.q-answers-area {
-		flex: 1 1 45%;
-		max-height: 60%;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
-		padding: 8px 14px;
-		display: flex; flex-direction: column; gap: 8px;
-		background: var(--answer-zone-bg);
-		border-top: 0.5px solid var(--hairline);
 	}
 
 	/* Confirm button */
@@ -425,12 +425,10 @@
 		letter-spacing: -0.1px; cursor: pointer;
 	}
 
-	/* Footer — pinned at bottom */
+	/* Footer */
 	.q-footer {
-		flex: 0 0 auto;
 		display: flex; align-items: center; gap: 4px;
-		padding: 4px 14px;
-		padding-bottom: calc(4px + env(safe-area-inset-bottom));
+		margin-top: 6px;
 	}
 	.q-footer-icon {
 		width: 44px; height: 44px; border-radius: 12px;
