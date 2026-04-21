@@ -85,6 +85,24 @@ def ai_parse_screenshot(image_path):
     if text.startswith("```"):
         text = text.split("\n", 1)[1]
         text = text.rsplit("```", 1)[0].strip()
+    # Fix unescaped quotes inside JSON string values
+    # e.g. "text": "...знак „Опасност на путу" (I-25)."
+    import re
+    def fix_json_quotes(s):
+        try:
+            json.loads(s)
+            return s
+        except json.JSONDecodeError:
+            # Escape unescaped quotes inside string values
+            # Match content between ": " and the next ", " or "} or "]
+            fixed = re.sub(
+                r'(?<=: ")(.*?)(?="[,}\]\n])',
+                lambda m: m.group(0).replace('\\"', '"').replace('"', '\\"') if '"' in m.group(0) else m.group(0),
+                s, flags=re.DOTALL
+            )
+            return fixed
+
+    text = fix_json_quotes(text)
     result = json.loads(text)
     # Fix Cyrillic
     if "text" in result:
