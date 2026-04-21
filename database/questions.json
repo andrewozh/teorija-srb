@@ -29763,19 +29763,19 @@
     },
     {
       "id": 276,
-      "text": "Допунска та абла приказан на на слици о означава: , односно м од клизавог или снега, у којима или изричита",
+      "text": "Допунска табла приказана на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "близину у дела пута, места на ком ме бог постоји настанка"
+          "text": "близину дела пута, односно места на коме постоји опасност од клизавог коловоза због настанка поледице или снега"
         },
         {
           "letter": "б",
-          "text": "временс опасност о а поледице и ске услове коловоза зб важи знако а наредба, ка ом ада означена је на кол"
+          "text": "временске услове у којима важи знаком означена опасност или изричита наредба, када је на коловозу снег"
         },
         {
           "letter": "в",
-          "text": "деоницу а опасност и ловозу снег, у пута на ком ки нак"
+          "text": "деоницу пута на коме се снег чисти машински и поставља се за време чишћења снега уз знак „Опасност на путу\" (И-25)"
         }
       ],
       "points": 2,
@@ -29783,45 +29783,53 @@
       "has_image": true,
       "section": "saobracajna_signalizacija",
       "image": "verify_saobracajna_signalizacija_276.png",
-      "correct_answers": []
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 277,
-      "text": "Допунска та абла приказан на на слици о означава: аркирања или",
+      "text": "Допунска табла приказана на слици означава:",
       "options": [
         {
           "letter": "а",
-          "text": "примену у забране па 10 m са леве с и заустављањ аћајног знака и заустављањ ња а, возила 1"
+          "text": "примену забране паркирања или заустављања возила 10 m са леве стране саобраћајног знака"
         },
         {
           "letter": "б",
-          "text": "примену стране саобра аркирања или е стране саобр аркирања или у забране па 10 m са десне ња ка, ња"
+          "text": "примену забране паркирања или заустављања возила 10 m са десне стране саобраћајног знака"
         },
         {
           "letter": "в",
-          "text": "примену раћајног знак и заустављањ ака. у забране па возила 10 m иза саоб браћајног зна"
+          "text": "примену забране паркирања или заустављања возила 10 m иза саобраћајног знака"
         }
       ],
-      "points": 1,
+      "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "section": "saobracajna_signalizacija"
+      "section": "saobracajna_signalizacija",
+      "image": "verify_saobracajna_signalizacija_277.png",
+      "correct_answers": [
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 278,
-      "text": "Допунска та абла приказан на на слици, о означава: аркирања или",
+      "text": "Допунска табла приказана на слици, означава:",
       "options": [
         {
           "letter": "а",
-          "text": "примену у забране па испред и иза с и заустављањ г знака, ња возила и"
+          "text": "примену забране паркирања или заустављања возила испред и иза саобраћајног знака"
         },
         {
           "letter": "б",
-          "text": "примену саобраћајног аркирања или у забране па иза саобраћај и заустављањ ња возила и"
+          "text": "примену забране паркирања или заустављања возила иза саобраћајног знака"
         },
         {
           "letter": "в",
-          "text": "примену ног знака, аркирања или раћајног знак у забране па и заустављањ ка. ња"
+          "text": "примену забране паркирања или заустављања возила испред саобраћајног знака"
         }
       ],
       "points": 2,
@@ -29829,9 +29837,10 @@
       "has_image": true,
       "section": "saobracajna_signalizacija",
       "correct_answers": [
-        "а",
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_278.png",
+      "is_verified": true
     },
     {
       "id": 279,
@@ -29853,11 +29862,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p045_y0054.png",
+      "image": "verify_saobracajna_signalizacija_279.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 280,
@@ -29883,7 +29893,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 281,
@@ -29909,7 +29920,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 282,
@@ -29934,7 +29946,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_282.png",
+      "is_verified": true
     },
     {
       "id": 283,
@@ -29959,7 +29973,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_283.png",
+      "is_verified": true
     },
     {
       "id": 284,
@@ -29984,7 +30000,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_284.png",
+      "is_verified": true
     },
     {
       "id": 285,
@@ -30009,7 +30027,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_285.png",
+      "is_verified": true
     },
     {
       "id": 286,
@@ -30034,7 +30054,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_286.png",
+      "is_verified": true
     },
     {
       "id": 287,
@@ -30059,7 +30081,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_287.png",
+      "is_verified": true
     },
     {
       "id": 288,
@@ -30085,7 +30109,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 289,
@@ -30110,7 +30135,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_289.png",
+      "is_verified": true
     },
     {
       "id": 290,
@@ -30135,7 +30162,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_290.png",
+      "is_verified": true
     },
     {
       "id": 291,
@@ -30157,11 +30186,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p047_y0254.png",
+      "image": "verify_saobracajna_signalizacija_291.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 292,
@@ -30183,11 +30213,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p047_y0564.png",
+      "image": "verify_saobracajna_signalizacija_292.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 293,
@@ -30212,7 +30243,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_293.png",
+      "is_verified": true
     },
     {
       "id": 294,
@@ -30238,7 +30271,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 295,
@@ -30264,7 +30298,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 296,
@@ -30290,7 +30325,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 297,
@@ -30316,7 +30352,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 298,
@@ -30341,7 +30378,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_298.png",
+      "is_verified": true
     },
     {
       "id": 299,
@@ -30366,7 +30405,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_299.png",
+      "is_verified": true
     },
     {
       "id": 300,
@@ -30388,11 +30429,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p048_y0065.png",
+      "image": "verify_saobracajna_signalizacija_300.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 301,
@@ -30417,7 +30459,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_301.png",
+      "is_verified": true
     },
     {
       "id": 302,
@@ -30442,7 +30486,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_302.png",
+      "is_verified": true
     },
     {
       "id": 303,
@@ -30481,7 +30527,8 @@
         "а",
         "в",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 304,
@@ -30506,7 +30553,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 305,
@@ -30531,7 +30579,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 306,
@@ -30556,7 +30605,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 307,
@@ -30595,7 +30645,8 @@
         "б",
         "в",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 308,
@@ -30620,7 +30671,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 309,
@@ -30645,7 +30697,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 310,
@@ -30670,7 +30723,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 311,
@@ -30695,7 +30749,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 312,
@@ -30720,7 +30775,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 313,
@@ -30741,7 +30797,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 314,
@@ -30766,7 +30823,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 315,
@@ -30796,7 +30854,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 316,
@@ -30826,7 +30885,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 317,
@@ -30852,11 +30912,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p050_y0065.png",
+      "image": "verify_saobracajna_signalizacija_317.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 318,
@@ -30881,7 +30942,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 319,
@@ -30907,7 +30969,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 320,
@@ -30932,7 +30995,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 321,
@@ -30959,7 +31023,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 322,
@@ -30990,7 +31055,8 @@
       "is_changed": true,
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 323,
@@ -31020,7 +31086,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 324,
@@ -31050,7 +31117,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 325,
@@ -31076,11 +31144,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p051_y0077.png",
+      "image": "verify_saobracajna_signalizacija_325.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 326,
@@ -31105,7 +31174,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 327,
@@ -31135,7 +31205,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 328,
@@ -31165,7 +31236,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 329,
@@ -31190,7 +31262,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 330,
@@ -31216,7 +31289,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 331,
@@ -31242,7 +31316,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 332,
@@ -31268,7 +31343,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 333,
@@ -31295,7 +31371,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 334,
@@ -31321,7 +31398,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 335,
@@ -31347,7 +31425,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 336,
@@ -31373,7 +31452,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 337,
@@ -31399,7 +31479,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 338,
@@ -31425,7 +31506,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 339,
@@ -31451,7 +31533,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 340,
@@ -31478,7 +31561,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 341,
@@ -31504,7 +31588,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 342,
@@ -31530,7 +31615,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 343,
@@ -31556,7 +31642,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 344,
@@ -31582,7 +31669,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 345,
@@ -31604,11 +31692,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p054_y0053.png",
+      "image": "verify_saobracajna_signalizacija_345.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 346,
@@ -31633,7 +31722,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 347,
@@ -31659,7 +31749,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 348,
@@ -31685,7 +31776,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 349,
@@ -31711,7 +31803,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 350,
@@ -31737,7 +31830,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 351,
@@ -31759,11 +31853,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p054_y0608.png",
+      "image": "verify_saobracajna_signalizacija_351.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 352,
@@ -31789,7 +31884,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 353,
@@ -31815,7 +31911,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 354,
@@ -31841,7 +31938,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 355,
@@ -31863,11 +31961,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p055_y0054.png",
+      "image": "verify_saobracajna_signalizacija_355.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 356,
@@ -31893,7 +31992,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 357,
@@ -31919,7 +32019,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 358,
@@ -31941,11 +32042,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p056_y0065.png",
+      "image": "verify_saobracajna_signalizacija_358.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 359,
@@ -31971,7 +32073,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 360,
@@ -31997,7 +32100,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 361,
@@ -32023,7 +32127,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 362,
@@ -32045,11 +32150,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p057_y0065.png",
+      "image": "verify_saobracajna_signalizacija_362.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 363,
@@ -32075,7 +32181,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 364,
@@ -32101,7 +32208,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 365,
@@ -32127,7 +32235,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 366,
@@ -32180,7 +32289,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 368,
@@ -32206,7 +32316,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 369,
@@ -32232,7 +32343,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 370,
@@ -32258,7 +32370,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 371,
@@ -32284,7 +32397,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 372,
@@ -32310,7 +32424,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 373,
@@ -32336,7 +32451,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 374,
@@ -32366,7 +32482,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 375,
@@ -32391,7 +32508,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 376,
@@ -32416,7 +32534,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 377,
@@ -32441,7 +32560,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 378,
@@ -32467,7 +32587,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 379,
@@ -32494,7 +32615,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 380,
@@ -32519,7 +32641,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 381,
@@ -32544,7 +32668,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 382,
@@ -32570,7 +32695,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 383,
@@ -32595,7 +32721,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 384,
@@ -32621,7 +32748,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 385,
@@ -32643,11 +32771,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p060_y0054.png",
+      "image": "verify_saobracajna_signalizacija_385.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 386,
@@ -32681,7 +32810,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 387,
@@ -32706,7 +32836,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 388,
@@ -32732,7 +32863,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 389,
@@ -32754,11 +32886,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p060_y0065.png",
+      "image": "verify_saobracajna_signalizacija_389.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 390,
@@ -32779,11 +32912,13 @@
       ],
       "points": 2,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_390.png",
+      "is_verified": true
     },
     {
       "id": 391,
@@ -32808,7 +32943,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 392,
@@ -32830,11 +32966,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p060_y0288.png",
+      "image": "verify_saobracajna_signalizacija_392.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 393,
@@ -32860,7 +32997,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 394,
@@ -32885,7 +33023,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 395,
@@ -32910,7 +33049,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 396,
@@ -32935,7 +33075,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 397,
@@ -32961,7 +33102,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 398,
@@ -32987,7 +33129,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 399,
@@ -33012,7 +33155,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 400,
@@ -33038,7 +33182,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 401,
@@ -33064,7 +33209,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 402,
@@ -33089,7 +33235,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 403,
@@ -33114,7 +33261,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 404,
@@ -33139,7 +33287,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 405,
@@ -33165,7 +33314,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 406,
@@ -33195,7 +33345,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 407,
@@ -33221,7 +33372,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 408,
@@ -33247,7 +33399,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 409,
@@ -33272,7 +33425,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 410,
@@ -33298,7 +33452,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 411,
@@ -33323,7 +33478,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 412,
@@ -33348,7 +33504,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 413,
@@ -33373,7 +33530,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 414,
@@ -33399,7 +33557,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 415,
@@ -33429,7 +33588,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 416,
@@ -33454,7 +33614,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 417,
@@ -33476,11 +33637,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p064_y0065.png",
+      "image": "verify_saobracajna_signalizacija_417.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 418,
@@ -33506,7 +33668,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 419,
@@ -33532,7 +33695,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 420,
@@ -33558,7 +33722,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 421,
@@ -33584,7 +33749,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 422,
@@ -33610,7 +33776,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 423,
@@ -33635,7 +33802,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 424,
@@ -33660,7 +33828,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 425,
@@ -33682,11 +33851,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p065_y0260.png",
+      "image": "verify_saobracajna_signalizacija_425.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 426,
@@ -33707,7 +33877,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_426.png",
+      "is_verified": true
     },
     {
       "id": 427,
@@ -33728,7 +33900,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_427.png",
+      "is_verified": true
     },
     {
       "id": 428,
@@ -33753,7 +33927,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 429,
@@ -33778,7 +33953,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 430,
@@ -33803,7 +33979,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 431,
@@ -33829,7 +34006,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 432,
@@ -33854,7 +34032,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 433,
@@ -33880,7 +34059,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 434,
@@ -33905,7 +34085,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_434.png",
+      "is_verified": true
     },
     {
       "id": 435,
@@ -33927,11 +34109,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p066_y0065.png",
+      "image": "verify_saobracajna_signalizacija_435.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 436,
@@ -33956,7 +34139,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 437,
@@ -33981,7 +34165,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 438,
@@ -34006,7 +34191,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 439,
@@ -34032,7 +34218,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 440,
@@ -34054,11 +34241,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p067_y0065.png",
+      "image": "verify_saobracajna_signalizacija_440.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 441,
@@ -34084,7 +34272,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 442,
@@ -34109,7 +34298,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 443,
@@ -34134,7 +34324,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 444,
@@ -34159,7 +34350,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_444.png",
+      "is_verified": true
     },
     {
       "id": 445,
@@ -34184,7 +34377,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 446,
@@ -34210,12 +34404,13 @@
       "points": 2,
       "correct_answers_count": 2,
       "has_image": true,
-      "image": "p067_y0335.png",
+      "image": "verify_saobracajna_signalizacija_446.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 447,
@@ -34249,13 +34444,14 @@
       "points": 2,
       "correct_answers_count": 3,
       "has_image": true,
-      "image": "p067_y0636.png",
+      "image": "verify_saobracajna_signalizacija_447.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 448,
@@ -34280,7 +34476,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_448.png",
+      "is_verified": true
     },
     {
       "id": 449,
@@ -34306,7 +34504,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 450,
@@ -34331,7 +34530,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 451,
@@ -34356,7 +34556,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_451.png",
+      "is_verified": true
     },
     {
       "id": 452,
@@ -34381,7 +34583,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_452.png",
+      "is_verified": true
     },
     {
       "id": 453,
@@ -34406,7 +34610,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 454,
@@ -34428,11 +34633,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p068_y0572.png",
+      "image": "verify_saobracajna_signalizacija_454.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 455,
@@ -34457,7 +34663,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_455.png",
+      "is_verified": true
     },
     {
       "id": 456,
@@ -34482,7 +34690,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_456.png",
+      "is_verified": true
     },
     {
       "id": 457,
@@ -34508,7 +34718,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 458,
@@ -34533,7 +34744,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_458.png",
+      "is_verified": true
     },
     {
       "id": 459,
@@ -34558,7 +34771,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_459.png",
+      "is_verified": true
     },
     {
       "id": 460,
@@ -34580,11 +34795,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p069_y0263.png",
+      "image": "verify_saobracajna_signalizacija_460.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 461,
@@ -34609,7 +34825,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_461.png",
+      "is_verified": true
     },
     {
       "id": 462,
@@ -34634,7 +34852,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_462.png",
+      "is_verified": true
     },
     {
       "id": 463,
@@ -34659,7 +34879,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_463.png",
+      "is_verified": true
     },
     {
       "id": 464,
@@ -34685,7 +34907,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 465,
@@ -34707,11 +34930,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p070_y0592.png",
+      "image": "verify_saobracajna_signalizacija_465.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 466,
@@ -34736,7 +34960,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_466.png",
+      "is_verified": true
     },
     {
       "id": 467,
@@ -34761,7 +34987,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_467.png",
+      "is_verified": true
     },
     {
       "id": 468,
@@ -34783,11 +35011,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p070_y0230.png",
+      "image": "verify_saobracajna_signalizacija_468.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 469,
@@ -34812,7 +35041,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_469.png",
+      "is_verified": true
     },
     {
       "id": 470,
@@ -34837,11 +35068,13 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_470.png",
+      "is_verified": true
     },
     {
       "id": 471,
-      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови и семафори означени бројем: : 4 5",
+      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови и семафори означени бројем:",
       "options": [
         {
           "letter": "а",
@@ -34866,8 +35099,14 @@
       ],
       "points": 2,
       "correct_answers_count": 2,
-      "has_image": false,
-      "section": "saobracajna_signalizacija"
+      "has_image": true,
+      "section": "saobracajna_signalizacija",
+      "image": "verify_saobracajna_signalizacija_471.png",
+      "correct_answers": [
+        "а",
+        "г"
+      ],
+      "is_verified": true
     },
     {
       "id": 472,
@@ -34894,7 +35133,8 @@
       "is_new": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 473,
@@ -34916,11 +35156,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p071_y0587.png",
+      "image": "verify_saobracajna_signalizacija_473.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 474,
@@ -34945,7 +35186,9 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_474.png",
+      "is_verified": true
     },
     {
       "id": 475,
@@ -34971,11 +35214,12 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 476,
-      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови означени бројем: 4 5 6",
+      "text": "На сигналној табли којом се означавају краткотрајна покретна радилишта на путу, постављају се саобраћајни знакови означени бројем:",
       "options": [
         {
           "letter": "а",
@@ -35004,8 +35248,15 @@
       ],
       "points": 2,
       "correct_answers_count": 3,
-      "has_image": false,
-      "section": "saobracajna_signalizacija"
+      "has_image": true,
+      "section": "saobracajna_signalizacija",
+      "image": "verify_saobracajna_signalizacija_476.png",
+      "correct_answers": [
+        "а",
+        "в",
+        "д"
+      ],
+      "is_verified": true
     },
     {
       "id": 477,
@@ -35030,7 +35281,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 478,
@@ -35056,7 +35308,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 479,
@@ -35082,7 +35335,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 480,
@@ -35108,7 +35362,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 481,
@@ -35134,7 +35389,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 482,
@@ -35173,7 +35429,8 @@
         "б",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 483,
@@ -35199,7 +35456,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 484,
@@ -35225,7 +35483,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 485,
@@ -35251,7 +35510,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 486,
@@ -35273,11 +35533,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p073_y0054.png",
+      "image": "verify_saobracajna_signalizacija_486.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 487,
@@ -35303,7 +35564,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 488,
@@ -35329,156 +35591,170 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 489,
-      "text": "Зн хо от оз нак полици оризонтално творене шаке значава да: ијског служ лагано мах − доле, са дла хање аном руком горе − одрученом р е окренутим на доле, при иказан на сли ици, нак, треба да ијем смеру с тање возила, чијем смеру с ) возач у ч убрза крет ) возач у ч",
+      "text": "Знак полицијског службеника – лагано махање хоризонтално одрученом руком горе – доле, са дланом отворене шаке окренутим на доле, приказан на слици, означава да:",
       "options": [
         {
           "letter": "а",
-          "text": "се даје тај зн а"
+          "text": "возач у чијем смеру се даје тај знак, треба да убрза кретање возила"
         },
         {
           "letter": "б",
-          "text": "се даје тај з ло ближе лицу које даје нак треба да а , помери односно о ) возач у ч своје возил овлашћеном л чијем смеру с раскрсници е знак, нак треба да"
+          "text": "возач у чијем смеру се даје тај знак треба да помери своје возило ближе раскрсници, односно овлашћеном лицу које даје знак"
         },
         {
           "letter": "в",
-          "text": "се даје тај з а возила. а"
+          "text": "возач у чијем смеру се даје тај знак треба да смањи брзину кретања возила"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_saobracajna_signalizacija_489.png",
+      "is_verified": true
     },
     {
       "id": 490,
-      "text": "У У ситуацији п приказаној на а слици: ) дужни сте",
+      "text": "У ситуацији приказаној на слици:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "дужни сте да се зауставите"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "можете наставити кретање"
         },
         {
           "letter": "в",
-          "text": "е да се зауста аставити крет те да кретањ авите, ) можете на ) дужни ст тање, ње наставит те смањеном м"
+          "text": "дужни сте да кретање наставите смањеном брзином"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p074_y0091.png",
+      "image": "verify_saobracajna_signalizacija_490.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 491,
-      "text": "У У ситуацији п приказаној на а слици дужни и сте да: ) смањите б",
+      "text": "У ситуацији приказаној на слици дужни сте да:",
       "options": [
         {
           "letter": "а",
-          "text": ""
+          "text": "смањите брзину кретања возила"
         },
         {
           "letter": "б",
-          "text": ""
+          "text": "убрзате кретање возила"
         },
         {
           "letter": "в",
-          "text": "брзину кретањ ња возила, ла, о ближе овлаш ) убрзате кр ) померите које даје з ретање возил своје возило знак. шћеном лицу у"
+          "text": "померите своје возило ближе овлашћеном лицу које даје знак"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p074_y0091.png",
+      "image": "verify_saobracajna_signalizacija_491.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 492,
-      "text": "Знак који д слици означ даје полициј ава да: ијски службе еник приказа ан на",
+      "text": "Знак који даје полицијски службеник приказан на слици означава да:",
       "options": [
         {
           "letter": "а",
-          "text": "возач у смањи б"
+          "text": "возач у чијем смеру се даје тај знак треба да смањи брзину кретања возила"
         },
         {
           "letter": "б",
-          "text": "је возач да зауст"
+          "text": "је возач у чијем смеру се даје тај знак обавезан да заустави возило"
         },
         {
           "letter": "в",
-          "text": "је возач да уклон чијем смеру брзину кретањ у се даје тај ња возила, знак треба да ан у чијем смер тави возило, у чијем смер ни возило са ру се даје тај ј знак обавез ан"
+          "text": "је возач у чијем смеру се даје тај знак обавезан да уклони возило са коловоза"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
-      "section": "saobracajna_signalizacija"
+      "has_image": true,
+      "section": "saobracajna_signalizacija",
+      "image": "verify_saobracajna_signalizacija_492.png",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 493,
-      "text": "У ситуацији приказаној н на слици дуж жни сте да:",
+      "text": "У ситуацији приказаној на слици дужни сте да:",
       "options": [
         {
           "letter": "а",
-          "text": "смањите"
+          "text": "смањите брзину кретања возила"
         },
         {
           "letter": "б",
-          "text": "уклонит"
+          "text": "уклоните возило са коловоза"
         },
         {
           "letter": "в",
-          "text": "заустави е брзину крет те возило са к тања возила, коловоза, ите возило"
+          "text": "зауставите возило"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p074_y0348.png",
-      "section": "saobracajna_signalizacija"
+      "image": "verify_saobracajna_signalizacija_493.png",
+      "section": "saobracajna_signalizacija",
+      "correct_answers": [
+        "в"
+      ],
+      "is_verified": true
     },
     {
       "id": 494,
-      "text": "У ситуацији приказаној н на слици дуж жни сте да:",
+      "text": "У ситуацији приказаној на слици дужни сте да:",
       "options": [
         {
           "letter": "а",
-          "text": "смањите"
+          "text": "смањите брзину кретања возила"
         },
         {
           "letter": "б",
-          "text": "убрзате"
+          "text": "убрзате кретање возила"
         },
         {
           "letter": "в",
-          "text": "померит е брзину крет тања возила, ила, озило ближе м лицу које д кретање вози те своје во о овлашћеном е раскрсниц ци"
+          "text": "померите своје возило ближе раскрсници, односно овлашћеном лицу које даје знак"
         }
       ],
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p074_y0348.png",
+      "image": "verify_saobracajna_signalizacija_494.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 495,
@@ -35504,7 +35780,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 496,
@@ -35530,7 +35807,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 497,
@@ -35552,11 +35830,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p075_y0054.png",
+      "image": "verify_saobracajna_signalizacija_497.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 498,
@@ -35582,7 +35861,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 499,
@@ -35608,7 +35888,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 500,
@@ -35634,7 +35915,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 501,
@@ -35660,7 +35942,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 502,
@@ -35685,7 +35968,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 503,
@@ -35710,7 +35994,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 504,
@@ -35735,7 +36020,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 505,
@@ -35760,7 +36046,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 506,
@@ -35785,7 +36072,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 507,
@@ -35810,7 +36098,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 508,
@@ -35835,7 +36124,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 509,
@@ -35870,7 +36160,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 510,
@@ -35905,7 +36196,8 @@
         "в",
         "г",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 511,
@@ -35935,7 +36227,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 512,
@@ -35970,7 +36263,8 @@
         "а",
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 513,
@@ -36005,7 +36299,8 @@
         "а",
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 514,
@@ -36030,7 +36325,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 515,
@@ -36051,7 +36347,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 516,
@@ -36087,7 +36384,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 517,
@@ -36112,7 +36410,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 518,
@@ -36138,7 +36437,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 519,
@@ -36164,7 +36464,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 520,
@@ -36189,7 +36490,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 521,
@@ -36215,7 +36517,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 522,
@@ -36241,7 +36544,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 523,
@@ -36267,7 +36571,8 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 524,
@@ -36289,11 +36594,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p079_y0066.png",
+      "image": "verify_saobracajna_signalizacija_524.png",
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 1,
