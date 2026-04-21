@@ -36624,7 +36624,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 2,
@@ -36650,7 +36651,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 3,
@@ -36676,7 +36678,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 4,
@@ -36701,10 +36704,9 @@
       "image": "p001_y0609.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
-        "а",
-        "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 5,
@@ -36729,7 +36731,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 6,
@@ -36752,7 +36755,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 7,
@@ -36779,7 +36783,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 8,
@@ -36802,7 +36807,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 9,
@@ -36824,7 +36830,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 10,
@@ -36849,10 +36856,9 @@
       "image": "p002_y0249.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
-        "а",
-        "б",
-        "в"
-      ]
+        "а"
+      ],
+      "is_verified": true
     },
     {
       "id": 11,
@@ -36877,7 +36883,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 12,
@@ -36902,7 +36909,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 13,
@@ -36923,7 +36931,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 14,
@@ -36948,7 +36957,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 15,
@@ -36974,7 +36984,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 16,
@@ -37000,7 +37011,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 17,
@@ -37031,7 +37043,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 18,
@@ -37062,7 +37075,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 19,
@@ -37087,7 +37101,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 20,
@@ -37112,7 +37127,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 21,
@@ -37138,7 +37154,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 22,
@@ -37164,7 +37181,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 23,
@@ -37190,7 +37208,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 24,
@@ -37216,7 +37235,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 25,
@@ -37246,7 +37266,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 26,
@@ -37271,7 +37292,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 27,
@@ -37297,7 +37319,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 28,
@@ -37322,7 +37345,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 29,
@@ -37352,7 +37376,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 30,
@@ -37377,7 +37402,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 31,
@@ -37402,11 +37428,13 @@
       ],
       "points": 2,
       "correct_answers_count": 2,
-      "has_image": false,
+      "has_image": true,
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_31.png",
+      "is_verified": true
     },
     {
       "id": 32,
@@ -37431,7 +37459,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 33,
@@ -37456,7 +37485,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 34,
@@ -37478,11 +37508,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p004_y0077.png",
+      "image": "verify_pravila_saobracaja_34.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 35,
@@ -37507,7 +37538,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 36,
@@ -37533,7 +37565,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 37,
@@ -37558,7 +37591,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 38,
@@ -37584,7 +37618,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 39,
@@ -37610,7 +37645,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 40,
@@ -37636,7 +37672,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 41,
@@ -37662,7 +37699,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 42,
@@ -37691,7 +37729,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 43,
@@ -37717,11 +37756,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 44,
-      "text": "Знак за обележавање возила којим се врши организован превоз деце је означен бројем: 4",
+      "text": "Знак за обележавање возила којим се врши организован превоз деце је означен бројем:",
       "options": [
         {
           "letter": "а",
@@ -37742,8 +37782,13 @@
       ],
       "points": 2,
       "correct_answers_count": 1,
-      "has_image": false,
-      "section": "pravila_saobracaja"
+      "has_image": true,
+      "section": "pravila_saobracaja",
+      "image": "verify_pravila_saobracaja_44.png",
+      "is_verified": true,
+      "correct_answers": [
+        "а"
+      ]
     },
     {
       "id": 45,
@@ -37768,7 +37813,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 46,
@@ -37793,7 +37839,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 47,
@@ -37815,11 +37862,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p006_y0054.png",
+      "image": "verify_pravila_saobracaja_47.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 48,
@@ -37844,7 +37892,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 49,
@@ -37869,7 +37918,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 50,
@@ -37913,7 +37963,8 @@
         "б",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 51,
@@ -37947,7 +37998,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 52,
@@ -37982,7 +38034,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 53,
@@ -38017,7 +38070,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 54,
@@ -38047,7 +38101,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 55,
@@ -38091,7 +38146,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 56,
@@ -38125,7 +38181,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 57,
@@ -38169,7 +38226,8 @@
         "а",
         "б",
         "е"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 58,
@@ -38204,7 +38262,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 59,
@@ -38239,7 +38298,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 60,
@@ -38269,7 +38329,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 61,
@@ -38299,7 +38360,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 62,
@@ -38324,7 +38386,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 63,
@@ -38350,7 +38413,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 64,
@@ -38376,7 +38440,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 65,
@@ -38402,7 +38467,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 66,
@@ -38427,7 +38493,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 67,
@@ -38453,7 +38520,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 68,
@@ -38478,7 +38546,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 69,
@@ -38503,7 +38572,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 70,
@@ -38528,7 +38598,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 71,
@@ -38558,7 +38629,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 72,
@@ -38583,7 +38655,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 73,
@@ -38609,7 +38682,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 74,
@@ -38635,11 +38709,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 75,
-      "text": "У ситуацији приказаној на слици возач, који се укључује у саобраћај из гараже на непрегледном месту,дужан је да:",
+      "text": "У ситуацији приказаној на слици возач, који се укључује у саобраћај из гараже на непрегледном месту, дужан је да:",
       "options": [
         {
           "letter": "а",
@@ -38661,7 +38736,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 76,
@@ -38687,7 +38763,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 77,
@@ -38713,7 +38790,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 78,
@@ -38739,7 +38817,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 79,
@@ -38764,7 +38843,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 80,
@@ -38790,7 +38870,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 81,
@@ -38816,7 +38897,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 82,
@@ -38842,7 +38924,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 83,
@@ -38867,7 +38950,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 84,
@@ -38893,7 +38977,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 85,
@@ -38919,7 +39004,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 86,
@@ -38949,7 +39035,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 87,
@@ -38978,7 +39065,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 88,
@@ -39003,7 +39092,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 89,
@@ -39031,7 +39121,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 90,
@@ -39056,7 +39147,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 91,
@@ -39081,7 +39173,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 92,
@@ -39109,7 +39202,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 93,
@@ -39135,7 +39229,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 94,
@@ -39164,7 +39259,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 95,
@@ -39193,7 +39289,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 96,
@@ -39218,7 +39315,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 97,
@@ -39243,7 +39341,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 98,
@@ -39278,7 +39377,8 @@
       "correct_answers": [
         "б",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 99,
@@ -39304,7 +39404,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 100,
@@ -39329,7 +39430,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 101,
@@ -39355,7 +39457,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 102,
@@ -39380,7 +39483,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 103,
@@ -39406,7 +39510,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 104,
@@ -39431,7 +39536,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 105,
@@ -39457,7 +39563,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 106,
@@ -39482,7 +39589,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 107,
@@ -39508,7 +39616,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 108,
@@ -39534,7 +39643,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 109,
@@ -39560,7 +39670,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 110,
@@ -39585,7 +39696,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 111,
@@ -39611,7 +39723,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 112,
@@ -39637,7 +39750,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 113,
@@ -39663,7 +39777,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 114,
@@ -39684,11 +39799,13 @@
       ],
       "points": 2,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_114.png",
+      "is_verified": true
     },
     {
       "id": 115,
@@ -39710,11 +39827,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p014_y0066.png",
+      "image": "verify_pravila_saobracaja_115.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 116,
@@ -39739,7 +39857,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 117,
@@ -39761,11 +39880,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p014_y0313.png",
+      "image": "verify_pravila_saobracaja_117.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 118,
@@ -39791,7 +39911,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 119,
@@ -39817,7 +39938,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 120,
@@ -39843,7 +39965,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 121,
@@ -39869,7 +39992,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 122,
@@ -39894,7 +40018,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 123,
@@ -39920,7 +40045,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 124,
@@ -39946,7 +40072,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 125,
@@ -39971,7 +40098,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 126,
@@ -39996,7 +40124,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 127,
@@ -40027,7 +40156,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 128,
@@ -40053,7 +40183,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 129,
@@ -40075,11 +40206,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p016_y0067.png",
+      "image": "verify_pravila_saobracaja_129.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 130,
@@ -40105,7 +40237,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 131,
@@ -40131,7 +40264,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 132,
@@ -40157,7 +40291,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 133,
@@ -40183,7 +40318,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 134,
@@ -40209,7 +40345,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 135,
@@ -40234,7 +40371,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 136,
@@ -40260,7 +40398,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 137,
@@ -40285,7 +40424,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 138,
@@ -40311,7 +40451,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 139,
@@ -40336,7 +40477,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 140,
@@ -40363,7 +40505,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 141,
@@ -40388,7 +40531,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 142,
@@ -40414,7 +40558,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 143,
@@ -40439,7 +40584,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 144,
@@ -40461,7 +40607,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 145,
@@ -40486,7 +40633,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 146,
@@ -40512,7 +40661,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 147,
@@ -40534,7 +40684,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 148,
@@ -40560,7 +40711,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 149,
@@ -40586,7 +40738,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 150,
@@ -40612,7 +40765,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 151,
@@ -40638,7 +40792,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 152,
@@ -40660,7 +40815,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 153,
@@ -40685,7 +40841,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 154,
@@ -40711,7 +40868,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 155,
@@ -40741,7 +40899,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 156,
@@ -40780,7 +40939,8 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 157,
@@ -40806,7 +40966,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 158,
@@ -40832,7 +40993,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 159,
@@ -40855,7 +41017,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 160,
@@ -40881,7 +41044,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 161,
@@ -40907,7 +41071,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 162,
@@ -40933,7 +41098,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 163,
@@ -40959,7 +41125,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 164,
@@ -40985,7 +41152,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 165,
@@ -41011,7 +41179,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 166,
@@ -41038,7 +41207,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 167,
@@ -41060,7 +41230,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 168,
@@ -41090,7 +41262,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 169,
@@ -41115,7 +41288,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 170,
@@ -41145,7 +41319,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 171,
@@ -41171,7 +41346,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 172,
@@ -41197,7 +41373,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 173,
@@ -41223,7 +41400,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 174,
@@ -41249,7 +41427,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 175,
@@ -41275,7 +41454,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 176,
@@ -41305,7 +41485,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 177,
@@ -41330,7 +41511,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 178,
@@ -41356,7 +41538,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 179,
@@ -41381,7 +41564,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 180,
@@ -41406,7 +41590,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 181,
@@ -41432,7 +41617,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 182,
@@ -41459,7 +41645,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 183,
@@ -41489,7 +41676,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 184,
@@ -41519,7 +41707,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 185,
@@ -41544,7 +41733,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 186,
@@ -41575,7 +41765,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 187,
@@ -41605,7 +41796,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 188,
@@ -41636,7 +41828,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 189,
@@ -41666,7 +41859,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 190,
@@ -41691,7 +41885,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 191,
@@ -41713,7 +41908,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 192,
@@ -41744,7 +41940,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 193,
@@ -41769,7 +41966,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 194,
@@ -41791,7 +41989,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 195,
@@ -41813,7 +42012,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 196,
@@ -41838,7 +42038,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 197,
@@ -41864,7 +42065,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 198,
@@ -41889,7 +42091,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 199,
@@ -41915,7 +42118,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 200,
@@ -41941,7 +42145,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 201,
@@ -41966,7 +42171,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 202,
@@ -41992,7 +42198,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 203,
@@ -42018,7 +42225,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 204,
@@ -42043,7 +42251,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 205,
@@ -42069,7 +42278,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 206,
@@ -42094,7 +42304,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 207,
@@ -42120,7 +42331,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 208,
@@ -42146,7 +42358,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 209,
@@ -42176,7 +42389,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 210,
@@ -42206,7 +42420,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 211,
@@ -42232,7 +42447,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 212,
@@ -42258,7 +42474,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 213,
@@ -42284,7 +42501,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 214,
@@ -42310,7 +42528,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 215,
@@ -42336,7 +42555,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 216,
@@ -42362,7 +42582,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 217,
@@ -42392,7 +42613,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 218,
@@ -42414,7 +42636,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 219,
@@ -42440,7 +42663,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 220,
@@ -42466,7 +42690,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 221,
@@ -42492,7 +42717,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 222,
@@ -42518,7 +42744,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 223,
@@ -42542,7 +42769,9 @@
       "has_image": true,
       "image": "p029_y0065.png",
       "section": "pravila_saobracaja",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 224,
@@ -42568,7 +42797,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 225,
@@ -42598,7 +42828,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 226,
@@ -42624,7 +42855,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 227,
@@ -42650,7 +42882,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 228,
@@ -42680,7 +42913,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 229,
@@ -42706,7 +42940,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 230,
@@ -42732,7 +42967,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 231,
@@ -42758,7 +42994,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 232,
@@ -42784,7 +43021,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 233,
@@ -42810,7 +43048,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 234,
@@ -42836,7 +43075,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 235,
@@ -42866,7 +43106,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 236,
@@ -42897,7 +43138,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 237,
@@ -42920,7 +43162,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 238,
@@ -42942,7 +43185,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 239,
@@ -42964,7 +43208,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 240,
@@ -42986,7 +43231,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 241,
@@ -43012,7 +43258,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 242,
@@ -43038,7 +43285,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 243,
@@ -43064,7 +43312,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 244,
@@ -43094,7 +43343,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 245,
@@ -43120,7 +43370,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 246,
@@ -43150,7 +43401,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 247,
@@ -43180,7 +43432,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 248,
@@ -43206,7 +43459,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 249,
@@ -43228,7 +43482,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 250,
@@ -43255,7 +43510,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 251,
@@ -43282,7 +43538,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 252,
@@ -43312,7 +43569,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 253,
@@ -43330,11 +43588,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p032_y0053.png",
+      "image": "verify_pravila_saobracaja_253.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 254,
@@ -43356,7 +43615,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 255,
@@ -43382,7 +43642,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 256,
@@ -43408,7 +43669,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 257,
@@ -43434,7 +43696,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 258,
@@ -43456,7 +43719,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 259,
@@ -43478,7 +43742,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 260,
@@ -43500,7 +43765,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 261,
@@ -43526,7 +43792,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 262,
@@ -43552,7 +43819,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 263,
@@ -43578,7 +43846,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 264,
@@ -43600,7 +43869,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 265,
@@ -43626,7 +43896,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 266,
@@ -43648,7 +43919,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 267,
@@ -43679,7 +43951,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 268,
@@ -43705,7 +43978,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 269,
@@ -43731,7 +44005,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 270,
@@ -43757,7 +44032,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 271,
@@ -43779,7 +44055,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 272,
@@ -43805,7 +44082,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 273,
@@ -43831,7 +44109,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 274,
@@ -43852,11 +44131,13 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_274.png",
+      "is_verified": true
     },
     {
       "id": 275,
@@ -43878,11 +44159,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p035_y0272.png",
+      "image": "verify_pravila_saobracaja_275.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 276,
@@ -43907,7 +44189,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 277,
@@ -43933,7 +44216,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 278,
@@ -43958,7 +44242,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 279,
@@ -43984,7 +44269,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 280,
@@ -44009,7 +44295,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 281,
@@ -44034,7 +44321,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 282,
@@ -44059,7 +44347,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 283,
@@ -44084,7 +44373,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 284,
@@ -44109,7 +44399,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 285,
@@ -44134,7 +44425,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 286,
@@ -44159,7 +44451,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 287,
@@ -44185,7 +44478,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 288,
@@ -44207,7 +44501,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 289,
@@ -44233,7 +44528,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 290,
@@ -44259,11 +44555,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 291,
-      "text": "У ситуацији приказаној на слици претицање: А",
+      "text": "У ситуацији приказаној на слици претицање:",
       "options": [
         {
           "letter": "а",
@@ -44281,11 +44578,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 292,
-      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, претицање врши: А",
+      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, претицање врши:",
       "options": [
         {
           "letter": "а",
@@ -44303,11 +44604,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 293,
-      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, претиче путничко возило: А",
+      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, претиче путничко возило:",
       "options": [
         {
           "letter": "а",
@@ -44329,11 +44634,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 294,
-      "text": "У ситуацији приказаној на слици обилажење колона возила: А",
+      "text": "У ситуацији приказаној на слици обилажење колона возила:",
       "options": [
         {
           "letter": "а",
@@ -44351,11 +44660,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 295,
-      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, који се претиче: А",
+      "text": "У ситуацији приказаној на слици возач мопеда, односно мотоцикла, који се претиче:",
       "options": [
         {
           "letter": "а",
@@ -44377,7 +44690,11 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 296,
@@ -44402,7 +44719,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 297,
@@ -44428,7 +44746,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 298,
@@ -44455,7 +44774,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 299,
@@ -44478,7 +44798,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 300,
@@ -44504,7 +44825,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 301,
@@ -44534,7 +44856,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 302,
@@ -44560,7 +44883,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 303,
@@ -44599,7 +44923,8 @@
         "а",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 304,
@@ -44629,7 +44954,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 305,
@@ -44659,7 +44985,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 306,
@@ -44685,7 +45012,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 307,
@@ -44716,7 +45044,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 308,
@@ -44742,12 +45071,13 @@
       "points": 3,
       "correct_answers_count": 2,
       "has_image": true,
-      "image": "p039_y0076.png",
+      "image": "verify_pravila_saobracaja_308.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 309,
@@ -44772,7 +45102,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 310,
@@ -44798,7 +45129,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 311,
@@ -44827,7 +45159,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 312,
@@ -44853,7 +45186,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 313,
@@ -44874,14 +45208,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "D"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true,
+      "image": "verify_pravila_saobracaja_313.png"
     },
     {
       "id": 314,
@@ -44903,11 +45239,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p039_y0268.png",
+      "image": "verify_pravila_saobracaja_314.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 315,
@@ -44929,11 +45266,12 @@
       "points": 3,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p039_y0482.png",
+      "image": "verify_pravila_saobracaja_315.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 316,
@@ -44954,14 +45292,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "D"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_316.png",
+      "is_verified": true
     },
     {
       "id": 317,
@@ -44986,14 +45326,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "D"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_317.png",
+      "is_verified": true
     },
     {
       "id": 318,
@@ -45025,7 +45367,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 319,
@@ -45054,11 +45397,12 @@
       "categories": [
         "D"
       ],
-      "image": "p040_y0064.png",
+      "image": "verify_pravila_saobracaja_319.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 320,
@@ -45083,14 +45427,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "D"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_320.png",
+      "is_verified": true
     },
     {
       "id": 321,
@@ -45123,7 +45469,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 322,
@@ -45149,7 +45496,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 323,
@@ -45178,7 +45526,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 324,
@@ -45208,7 +45557,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 325,
@@ -45237,7 +45587,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 326,
@@ -45269,7 +45620,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 327,
@@ -45302,7 +45654,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 328,
@@ -45323,14 +45676,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "D"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_328.png",
+      "is_verified": true
     },
     {
       "id": 329,
@@ -45351,14 +45706,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_329.png",
+      "is_verified": true
     },
     {
       "id": 330,
@@ -45383,14 +45740,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_330.png",
+      "is_verified": true
     },
     {
       "id": 331,
@@ -45411,14 +45770,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_331.png",
+      "is_verified": true
     },
     {
       "id": 332,
@@ -45443,14 +45804,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_332.png",
+      "is_verified": true
     },
     {
       "id": 333,
@@ -45480,11 +45843,12 @@
         "B",
         "C"
       ],
-      "image": "p041_y0076.png",
+      "image": "verify_pravila_saobracaja_333.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 334,
@@ -45509,14 +45873,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_334.png",
+      "is_verified": true
     },
     {
       "id": 335,
@@ -45548,7 +45914,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 336,
@@ -45578,11 +45945,12 @@
         "B",
         "C"
       ],
-      "image": "p041_y0212.png",
+      "image": "verify_pravila_saobracaja_336.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 337,
@@ -45611,7 +45979,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 338,
@@ -45641,7 +46010,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 339,
@@ -45671,7 +46041,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 340,
@@ -45701,7 +46072,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 341,
@@ -45731,7 +46103,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 342,
@@ -45756,7 +46129,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 343,
@@ -45785,7 +46159,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 344,
@@ -45818,7 +46193,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 345,
@@ -45846,7 +46222,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 346,
@@ -45874,7 +46251,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 347,
@@ -45902,7 +46280,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 348,
@@ -45930,7 +46309,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 349,
@@ -45958,7 +46338,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 350,
@@ -45986,7 +46367,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 351,
@@ -46014,7 +46396,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 352,
@@ -46042,7 +46425,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 353,
@@ -46072,7 +46456,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 354,
@@ -46106,7 +46491,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 355,
@@ -46134,7 +46520,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 356,
@@ -46162,7 +46549,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 357,
@@ -46190,7 +46578,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 358,
@@ -46218,7 +46607,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 359,
@@ -46246,7 +46637,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 360,
@@ -46275,7 +46667,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 361,
@@ -46300,11 +46693,12 @@
       "categories": [
         "C"
       ],
-      "image": "p043_y0064.png",
+      "image": "verify_pravila_saobracaja_361.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 362,
@@ -46333,7 +46727,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 363,
@@ -46362,7 +46757,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 364,
@@ -46383,14 +46779,16 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_364.png",
+      "is_verified": true
     },
     {
       "id": 365,
@@ -46422,7 +46820,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 366,
@@ -46450,7 +46849,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 367,
@@ -46478,7 +46878,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 368,
@@ -46506,7 +46907,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 369,
@@ -46534,7 +46936,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 370,
@@ -46563,7 +46966,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 371,
@@ -46592,7 +46996,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 372,
@@ -46620,7 +47025,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 373,
@@ -46649,7 +47055,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 374,
@@ -46678,7 +47085,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 375,
@@ -46706,7 +47114,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 376,
@@ -46735,7 +47144,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 377,
@@ -46764,7 +47174,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 378,
@@ -46792,7 +47203,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 379,
@@ -46821,7 +47233,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 380,
@@ -46850,7 +47263,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 381,
@@ -46879,7 +47293,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 382,
@@ -46912,7 +47327,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 383,
@@ -46937,7 +47353,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 384,
@@ -46967,7 +47384,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 385,
@@ -46997,7 +47415,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 386,
@@ -47027,7 +47446,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 387,
@@ -47057,7 +47477,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 388,
@@ -47087,7 +47508,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 389,
@@ -47113,7 +47535,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 390,
@@ -47135,7 +47558,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 391,
@@ -47160,7 +47584,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 392,
@@ -47190,7 +47615,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 393,
@@ -47220,7 +47646,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 394,
@@ -47250,7 +47677,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 395,
@@ -47280,7 +47708,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 396,
@@ -47310,7 +47739,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 397,
@@ -47332,7 +47762,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 398,
@@ -47354,7 +47785,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 399,
@@ -47376,7 +47808,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 400,
@@ -47398,7 +47831,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 401,
@@ -47420,7 +47854,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 402,
@@ -47442,7 +47877,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 403,
@@ -47464,7 +47900,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 404,
@@ -47486,7 +47923,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 405,
@@ -47509,7 +47947,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 406,
@@ -47540,7 +47979,8 @@
       "is_changed": true,
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 407,
@@ -47566,7 +48006,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 408,
@@ -47597,7 +48038,8 @@
       "is_changed": true,
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 409,
@@ -47627,7 +48069,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 410,
@@ -47652,7 +48095,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 411,
@@ -47677,7 +48121,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 412,
@@ -47699,7 +48144,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 413,
@@ -47721,7 +48167,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 414,
@@ -47751,7 +48198,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 415,
@@ -47776,7 +48224,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 416,
@@ -47805,7 +48254,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 417,
@@ -47835,7 +48285,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 418,
@@ -47857,7 +48308,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 419,
@@ -47879,7 +48331,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 420,
@@ -47904,7 +48357,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 421,
@@ -47929,7 +48383,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 422,
@@ -47955,7 +48410,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 423,
@@ -47977,7 +48433,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 424,
@@ -47998,11 +48455,13 @@
       ],
       "points": 2,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_424.png",
+      "is_verified": true
     },
     {
       "id": 425,
@@ -48024,11 +48483,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p050_y0254.png",
+      "image": "verify_pravila_saobracaja_425.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 426,
@@ -48054,7 +48514,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 427,
@@ -48079,7 +48540,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 428,
@@ -48105,7 +48567,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 429,
@@ -48131,7 +48594,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 430,
@@ -48157,7 +48621,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 431,
@@ -48178,7 +48643,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 432,
@@ -48200,7 +48666,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 433,
@@ -48225,7 +48692,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 434,
@@ -48251,7 +48719,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 435,
@@ -48272,7 +48741,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 436,
@@ -48294,7 +48764,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 437,
@@ -48319,7 +48790,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 438,
@@ -48344,7 +48816,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 439,
@@ -48369,7 +48842,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 440,
@@ -48399,7 +48873,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 441,
@@ -48425,7 +48900,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 442,
@@ -48455,7 +48931,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 443,
@@ -48481,7 +48958,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 444,
@@ -48511,7 +48989,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 445,
@@ -48537,7 +49016,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 446,
@@ -48562,7 +49042,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 447,
@@ -48587,7 +49068,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 448,
@@ -48608,7 +49090,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 449,
@@ -48633,7 +49116,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 450,
@@ -48659,7 +49143,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 451,
@@ -48684,7 +49169,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 452,
@@ -48709,7 +49195,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 453,
@@ -48731,7 +49218,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 454,
@@ -48756,7 +49244,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 455,
@@ -48778,7 +49267,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 456,
@@ -48803,7 +49293,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 457,
@@ -48833,7 +49324,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 458,
@@ -48864,7 +49356,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 459,
@@ -48889,7 +49382,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 460,
@@ -48914,7 +49408,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 461,
@@ -48940,7 +49435,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 462,
@@ -48965,7 +49461,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 463,
@@ -48990,7 +49487,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 464,
@@ -49016,7 +49514,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 465,
@@ -49038,7 +49537,11 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": false,
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "is_verified": true,
+      "correct_answers": [
+        "в"
+      ]
     },
     {
       "id": 466,
@@ -49064,7 +49567,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 467,
@@ -49094,7 +49598,8 @@
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 468,
@@ -49120,7 +49625,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 469,
@@ -49146,7 +49652,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 470,
@@ -49168,7 +49675,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 471,
@@ -49198,7 +49706,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 472,
@@ -49224,7 +49733,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 473,
@@ -49254,7 +49764,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 474,
@@ -49280,7 +49791,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 475,
@@ -49302,7 +49814,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 476,
@@ -49327,7 +49840,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 477,
@@ -49352,7 +49866,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 478,
@@ -49377,7 +49892,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 479,
@@ -49399,7 +49915,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 480,
@@ -49421,7 +49938,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 481,
@@ -49447,7 +49965,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 482,
@@ -49472,7 +49991,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 483,
@@ -49494,7 +50014,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 484,
@@ -49519,7 +50040,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 485,
@@ -49545,7 +50067,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 486,
@@ -49571,7 +50094,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 487,
@@ -49596,7 +50120,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 488,
@@ -49621,7 +50146,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 489,
@@ -49647,7 +50173,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 490,
@@ -49669,7 +50196,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 491,
@@ -49691,7 +50219,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 492,
@@ -49717,7 +50246,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 493,
@@ -49743,7 +50273,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 494,
@@ -49769,7 +50300,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 495,
@@ -49794,7 +50326,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 496,
@@ -49820,7 +50353,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 497,
@@ -49846,7 +50380,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 498,
@@ -49872,11 +50407,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 499,
-      "text": "Возач не сме да заустави или паркира возило: (Заокружити два одговора)",
+      "text": "Возач не сме да заустави или паркира возило:",
       "options": [
         {
           "letter": "а",
@@ -49896,13 +50432,14 @@
         }
       ],
       "points": 2,
-      "correct_answers_count": 1,
+      "correct_answers_count": 2,
       "has_image": false,
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 500,
@@ -49928,7 +50465,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 501,
@@ -49953,7 +50491,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 502,
@@ -49979,7 +50518,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 503,
@@ -50005,7 +50545,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 504,
@@ -50031,7 +50572,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 505,
@@ -50056,7 +50598,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 506,
@@ -50081,7 +50624,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 507,
@@ -50107,7 +50651,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 508,
@@ -50133,7 +50678,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 509,
@@ -50159,7 +50705,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 510,
@@ -50181,7 +50728,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 511,
@@ -50206,7 +50754,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 512,
@@ -50232,7 +50781,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 513,
@@ -50258,7 +50808,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 514,
@@ -50283,7 +50834,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 515,
@@ -50309,7 +50861,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 516,
@@ -50334,7 +50887,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 517,
@@ -50360,7 +50914,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 518,
@@ -50386,7 +50941,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 519,
@@ -50412,7 +50968,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 520,
@@ -50438,7 +50995,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 521,
@@ -50463,7 +51021,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 522,
@@ -50488,7 +51047,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 523,
@@ -50513,7 +51073,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 524,
@@ -50539,7 +51100,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 525,
@@ -50565,7 +51127,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 526,
@@ -50591,7 +51154,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 527,
@@ -50616,7 +51180,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 528,
@@ -50642,7 +51207,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 529,
@@ -50668,7 +51234,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 530,
@@ -50694,7 +51261,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 531,
@@ -50719,7 +51287,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 532,
@@ -50744,7 +51313,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 533,
@@ -50770,7 +51340,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 534,
@@ -50795,7 +51366,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 535,
@@ -50820,7 +51392,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 536,
@@ -50846,7 +51419,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 537,
@@ -50878,7 +51452,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 538,
@@ -50907,7 +51482,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 539,
@@ -50935,7 +51511,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 540,
@@ -50963,7 +51540,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 541,
@@ -50995,7 +51573,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 542,
@@ -51024,7 +51603,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 543,
@@ -51052,7 +51632,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 544,
@@ -51083,7 +51664,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 545,
@@ -51111,7 +51693,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 546,
@@ -51139,7 +51722,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 547,
@@ -51167,7 +51751,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 548,
@@ -51195,7 +51780,11 @@
         "D",
         "F"
       ],
-      "section": "pravila_saobracaja"
+      "section": "pravila_saobracaja",
+      "correct_answers": [
+        "б"
+      ],
+      "is_verified": true
     },
     {
       "id": 549,
@@ -51223,7 +51812,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 550,
@@ -51254,7 +51844,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 551,
@@ -51282,7 +51873,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 552,
@@ -51307,7 +51899,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 553,
@@ -51335,7 +51928,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 554,
@@ -51363,7 +51957,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 555,
@@ -51391,7 +51986,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 556,
@@ -51415,11 +52011,12 @@
         "D",
         "F"
       ],
-      "image": "p064_y0065.png",
+      "image": "verify_pravila_saobracaja_556.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 557,
@@ -51444,7 +52041,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 558,
@@ -51478,7 +52076,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 559,
@@ -51504,7 +52103,8 @@
       "is_removed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 560,
@@ -51527,7 +52127,9 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "pravila_saobracaja",
-      "is_removed": true
+      "is_removed": true,
+      "is_verified": true,
+      "correct_answers": []
     },
     {
       "id": 561,
@@ -51552,7 +52154,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 562,
@@ -51584,7 +52187,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 563,
@@ -51616,7 +52220,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 564,
@@ -51647,7 +52252,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 565,
@@ -51678,7 +52284,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 566,
@@ -51708,7 +52315,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 567,
@@ -51738,7 +52346,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 568,
@@ -51769,7 +52378,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 569,
@@ -51797,7 +52407,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 570,
@@ -51827,7 +52438,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 571,
@@ -51858,7 +52470,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 572,
@@ -51886,7 +52499,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 573,
@@ -51916,7 +52530,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 574,
@@ -51946,7 +52561,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 575,
@@ -51977,7 +52593,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 576,
@@ -52008,7 +52625,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 577,
@@ -52038,7 +52656,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 578,
@@ -52068,7 +52687,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 579,
@@ -52099,7 +52719,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 580,
@@ -52138,7 +52759,8 @@
         "а",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 581,
@@ -52160,11 +52782,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p066_y0171.png",
+      "image": "verify_pravila_saobracaja_581.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 582,
@@ -52200,7 +52823,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 583,
@@ -52236,7 +52860,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 584,
@@ -52272,7 +52897,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 585,
@@ -52303,7 +52929,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 586,
@@ -52339,7 +52966,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 587,
@@ -52366,7 +52994,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 588,
@@ -52393,7 +53022,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 589,
@@ -52420,7 +53050,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 590,
@@ -52456,7 +53087,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 591,
@@ -52483,7 +53115,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 592,
@@ -52510,7 +53143,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 593,
@@ -52541,7 +53175,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 594,
@@ -52572,7 +53207,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 595,
@@ -52603,7 +53239,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 596,
@@ -52634,7 +53271,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 597,
@@ -52666,7 +53304,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 598,
@@ -52698,7 +53337,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 599,
@@ -52729,7 +53369,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 600,
@@ -52761,7 +53402,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 601,
@@ -52792,7 +53434,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 602,
@@ -52823,7 +53466,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 603,
@@ -52853,7 +53497,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 604,
@@ -52882,7 +53527,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 605,
@@ -52911,7 +53557,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 606,
@@ -52941,7 +53588,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 607,
@@ -52971,7 +53619,8 @@
       "correct_answers": [
         "б",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 608,
@@ -53001,7 +53650,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 609,
@@ -53031,7 +53681,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 610,
@@ -53056,7 +53707,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 611,
@@ -53081,7 +53733,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 612,
@@ -53106,7 +53759,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 613,
@@ -53134,7 +53788,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 614,
@@ -53162,7 +53817,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 615,
@@ -53190,7 +53846,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 616,
@@ -53215,7 +53872,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 617,
@@ -53239,7 +53897,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 618,
@@ -53269,7 +53928,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 619,
@@ -53294,7 +53954,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 620,
@@ -53323,7 +53984,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 621,
@@ -53352,7 +54014,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 622,
@@ -53377,7 +54040,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 623,
@@ -53409,7 +54073,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 624,
@@ -53441,11 +54106,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 625,
-      "text": "У ситуацији приказаној на слици бициклистичком траком се креће на прописан начин возач мопеда означен бројем: А",
+      "text": "У ситуацији приказаној на слици бициклистичком траком се креће на прописан начин возач мопеда означен бројем:",
       "options": [
         {
           "letter": "а",
@@ -53467,7 +54133,11 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 626,
@@ -53495,11 +54165,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 627,
-      "text": "У ситуацији приказаној на слици, када се возачи мопеда, односно мотоцикала, крећу у групи, на прописан начин се крећу возачи означени бројевима: А",
+      "text": "У ситуацији приказаној на слици, када се возачи мопеда, односно мотоцикала, крећу у групи, на прописан начин се крећу возачи означени бројевима:",
       "options": [
         {
           "letter": "а",
@@ -53521,11 +54192,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 628,
-      "text": "Возач мопеда, односно мотоцикла, када управља возилом: А",
+      "text": "Возач мопеда, односно мотоцикла, када управља возилом:",
       "options": [
         {
           "letter": "а",
@@ -53551,11 +54226,15 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 629,
-      "text": "Возач мопеда, односно мотоцикла, када управља возилом: А",
+      "text": "Возач мопеда, односно мотоцикла, када управља возилом:",
       "options": [
         {
           "letter": "а",
@@ -53581,11 +54260,15 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 630,
-      "text": "Возач мопеда, односно мотоцикла, када управља возилом: А",
+      "text": "Возач мопеда, односно мотоцикла, када управља возилом:",
       "options": [
         {
           "letter": "а",
@@ -53611,11 +54294,15 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 631,
-      "text": "Прописно управља возилом возач на слици: 4 А",
+      "text": "Прописно управља возилом возач на слици:",
       "options": [
         {
           "letter": "а",
@@ -53637,12 +54324,19 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p071_y0174.png",
-      "section": "pravila_saobracaja"
+      "image": "verify_pravila_saobracaja_631.png",
+      "section": "pravila_saobracaja",
+      "correct_answers": [
+        "б"
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 632,
-      "text": "За време вожње закопчану заштитну кацигу мора носити на глави возач: А",
+      "text": "За време вожње закопчану заштитну кацигу мора носити на глави возач:",
       "options": [
         {
           "letter": "а",
@@ -53668,11 +54362,15 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 633,
-      "text": "За време вожње закопчану заштитну кацигу мора носити на глави возач: А",
+      "text": "За време вожње закопчану заштитну кацигу мора носити на глави возач:",
       "options": [
         {
           "letter": "а",
@@ -53703,11 +54401,15 @@
         "а",
         "в",
         "г"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 634,
-      "text": "Возач мопеда, трицикла, односно мотоцикла: А",
+      "text": "Возач мопеда, трицикла, односно мотоцикла:",
       "options": [
         {
           "letter": "а",
@@ -53728,11 +54430,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 635,
-      "text": "Возач мопеда, трицикла, односно мотоцикла: А",
+      "text": "Возач мопеда, трицикла, односно мотоцикла:",
       "options": [
         {
           "letter": "а",
@@ -53753,11 +54459,15 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 636,
-      "text": "Мопед, односно мотоцикл, у саобраћају на путу може да има прикључно возило: А",
+      "text": "Мопед, односно мотоцикл, у саобраћају на путу може да има прикључно возило:",
       "options": [
         {
           "letter": "а",
@@ -53778,7 +54488,11 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 637,
@@ -53803,7 +54517,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 638,
@@ -53829,11 +54544,12 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 639,
-      "text": "Пешак који гура мопед у саобраћају на путу, који нема тротоар: А",
+      "text": "Пешак који гура мопед у саобраћају на путу, који нема тротоар:",
       "options": [
         {
           "letter": "а",
@@ -53855,11 +54571,15 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 640,
-      "text": "У ситуацији приказаној на слици непрописно гура мопед особа означена бројем: А",
+      "text": "У ситуацији приказаној на слици непрописно гура мопед особа означена бројем:",
       "options": [
         {
           "letter": "а",
@@ -53881,7 +54601,11 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 641,
@@ -53911,7 +54635,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 642,
@@ -53936,7 +54661,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 643,
@@ -53962,7 +54688,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 644,
@@ -53989,7 +54716,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 645,
@@ -54014,7 +54742,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 646,
@@ -54040,7 +54769,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 647,
@@ -54065,7 +54795,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 648,
@@ -54090,7 +54821,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 649,
@@ -54116,7 +54848,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 650,
@@ -54141,7 +54874,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 651,
@@ -54166,7 +54900,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 652,
@@ -54188,11 +54923,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p072_y0519.png",
+      "image": "verify_pravila_saobracaja_652.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 653,
@@ -54217,7 +54953,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 654,
@@ -54239,11 +54976,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p073_y0039.png",
+      "image": "verify_pravila_saobracaja_654.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 655,
@@ -54268,7 +55006,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 656,
@@ -54294,7 +55033,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 657,
@@ -54320,7 +55060,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 658,
@@ -54345,7 +55086,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 659,
@@ -54367,7 +55109,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 660,
@@ -54392,7 +55135,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 661,
@@ -54414,7 +55158,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 662,
@@ -54436,7 +55181,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 663,
@@ -54462,7 +55208,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 664,
@@ -54488,7 +55235,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 665,
@@ -54514,7 +55262,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 666,
@@ -54535,7 +55284,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 667,
@@ -54560,7 +55310,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 668,
@@ -54586,7 +55337,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 669,
@@ -54608,7 +55360,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 670,
@@ -54634,7 +55387,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 671,
@@ -54660,7 +55414,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 672,
@@ -54682,11 +55437,12 @@
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
-      "image": "p075_y0058.png",
+      "image": "verify_pravila_saobracaja_672.png",
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 673,
@@ -54712,7 +55468,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 674,
@@ -54748,7 +55505,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 675,
@@ -54784,7 +55542,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 676,
@@ -54820,7 +55579,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 677,
@@ -54856,7 +55616,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 678,
@@ -54892,11 +55653,12 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 679,
-      "text": "На аутопут, односно мотопут, возач може да се укључи, односно искључи: А",
+      "text": "На аутопут, односно мотопут, возач може да се укључи, односно искључи:",
       "options": [
         {
           "letter": "а",
@@ -54915,6 +55677,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -54922,7 +55685,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 680,
@@ -54938,13 +55702,14 @@
         },
         {
           "letter": "в",
-          "text": "3. А"
+          "text": "3"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -54954,7 +55719,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 681,
@@ -54970,13 +55736,14 @@
         },
         {
           "letter": "в",
-          "text": "дужан је да укључи леви показивач правца. А"
+          "text": "дужан је да укључи леви показивач правца"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -54985,7 +55752,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 682,
@@ -55004,6 +55773,7 @@
       "correct_answers_count": 1,
       "has_image": true,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -55012,7 +55782,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 683,
@@ -55028,13 +55799,14 @@
         },
         {
           "letter": "в",
-          "text": "3. А"
+          "text": "3"
         }
       ],
       "points": 2,
       "correct_answers_count": 1,
       "has_image": true,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -55043,11 +55815,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 684,
-      "text": "На аутопуту са више саобраћајних трака намењених кретању возила у једном смеру, возач моторног возила: А",
+      "text": "На аутопуту са више саобраћајних трака намењених кретању возила у једном смеру, возач моторног возила:",
       "options": [
         {
           "letter": "а",
@@ -55066,6 +55839,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -55073,11 +55847,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 685,
-      "text": "Зауставном траком кретање возила: А",
+      "text": "Зауставном траком кретање возила:",
       "options": [
         {
           "letter": "а",
@@ -55096,6 +55871,7 @@
       "correct_answers_count": 1,
       "has_image": false,
       "categories": [
+        "A",
         "B",
         "C",
         "D"
@@ -55103,7 +55879,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 686,
@@ -55131,7 +55908,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 687,
@@ -55162,7 +55940,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 688,
@@ -55193,7 +55972,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 689,
@@ -55224,7 +56004,8 @@
       "is_changed": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 690,
@@ -55252,7 +56033,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 691,
@@ -55282,7 +56064,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 692,
@@ -55312,7 +56095,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 693,
@@ -55342,7 +56126,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 694,
@@ -55373,7 +56158,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 695,
@@ -55404,7 +56190,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 696,
@@ -55435,7 +56222,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 697,
@@ -55466,7 +56254,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 698,
@@ -55498,7 +56287,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 699,
@@ -55530,7 +56320,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 700,
@@ -55561,7 +56352,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 701,
@@ -55593,7 +56385,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 702,
@@ -55624,7 +56417,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 703,
@@ -55656,7 +56450,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 704,
@@ -55687,7 +56482,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 705,
@@ -55713,7 +56509,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 706,
@@ -55738,7 +56535,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 707,
@@ -55763,7 +56561,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 708,
@@ -55788,7 +56587,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 709,
@@ -55818,7 +56618,8 @@
       "correct_answers": [
         "а",
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 710,
@@ -55843,7 +56644,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 711,
@@ -55868,7 +56670,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 712,
@@ -55898,7 +56701,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 713,
@@ -55920,7 +56724,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 714,
@@ -55942,7 +56747,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 715,
@@ -55964,7 +56770,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 716,
@@ -55986,7 +56793,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 717,
@@ -56016,7 +56824,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 718,
@@ -56046,7 +56855,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 719,
@@ -56068,7 +56878,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 720,
@@ -56090,7 +56901,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 721,
@@ -56112,7 +56924,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 722,
@@ -56134,7 +56947,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 723,
@@ -56156,7 +56970,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 724,
@@ -56186,7 +57001,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 725,
@@ -56222,7 +57038,8 @@
         "а",
         "б",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 726,
@@ -56245,7 +57062,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 727,
@@ -56267,7 +57085,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 728,
@@ -56289,7 +57108,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 729,
@@ -56311,7 +57131,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 730,
@@ -56337,7 +57158,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 731,
@@ -56363,7 +57185,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 732,
@@ -56388,7 +57211,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 733,
@@ -56413,7 +57237,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 734,
@@ -56438,7 +57263,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 735,
@@ -56473,7 +57299,8 @@
         "а",
         "в",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 736,
@@ -56498,7 +57325,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 737,
@@ -56523,7 +57351,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 738,
@@ -56553,7 +57382,8 @@
       "correct_answers": [
         "б",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 739,
@@ -56575,7 +57405,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 740,
@@ -56598,7 +57429,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 741,
@@ -56620,7 +57452,9 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_changed": true,
+      "is_verified": true
     },
     {
       "id": 742,
@@ -56643,7 +57477,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 743,
@@ -56673,7 +57508,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 744,
@@ -56704,7 +57540,8 @@
       "correct_answers": [
         "в",
         "г"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 745,
@@ -56731,7 +57568,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 746,
@@ -56758,7 +57596,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 747,
@@ -56780,7 +57619,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 748,
@@ -56802,7 +57642,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 749,
@@ -56824,7 +57665,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 750,
@@ -56854,7 +57696,8 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 751,
@@ -56890,7 +57733,8 @@
         "а",
         "б",
         "д"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 752,
@@ -56913,7 +57757,8 @@
       "is_changed": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 753,
@@ -56936,7 +57781,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 754,
@@ -56959,7 +57805,8 @@
       "is_changed": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 755,
@@ -56981,7 +57828,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 756,
@@ -57003,7 +57851,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 757,
@@ -57028,7 +57877,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 758,
@@ -57053,7 +57903,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 759,
@@ -57078,7 +57929,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 760,
@@ -57103,7 +57955,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 761,
@@ -57129,7 +57982,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 762,
@@ -57159,7 +58013,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 763,
@@ -57188,7 +58043,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 764,
@@ -57218,7 +58074,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 765,
@@ -57247,7 +58104,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 766,
@@ -57276,7 +58134,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 767,
@@ -57306,7 +58165,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 768,
@@ -57334,7 +58194,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 769,
@@ -57359,7 +58220,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 770,
@@ -57384,7 +58246,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 771,
@@ -57412,7 +58275,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 772,
@@ -57440,7 +58304,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 773,
@@ -57465,7 +58330,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 774,
@@ -57493,7 +58359,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 775,
@@ -57524,7 +58391,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 776,
@@ -57549,7 +58417,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 777,
@@ -57579,7 +58448,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 778,
@@ -57605,11 +58475,12 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 779,
-      "text": "Возач мопеда, односно мотоцикла, када управља возилом: А",
+      "text": "Возач мопеда, односно мотоцикла, када управља возилом:",
       "options": [
         {
           "letter": "а",
@@ -57635,7 +58506,11 @@
       "correct_answers": [
         "а",
         "б"
-      ]
+      ],
+      "categories": [
+        "A"
+      ],
+      "is_verified": true
     },
     {
       "id": 780,
@@ -57661,7 +58536,8 @@
       "is_new": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 781,
@@ -57690,7 +58566,8 @@
       "is_new": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 782,
@@ -57723,7 +58600,8 @@
       "is_new": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 783,
@@ -57744,7 +58622,7 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
@@ -57752,7 +58630,9 @@
       "is_new": true,
       "correct_answers": [
         "а"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_783.png",
+      "is_verified": true
     },
     {
       "id": 784,
@@ -57777,7 +58657,7 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
@@ -57785,7 +58665,9 @@
       "is_new": true,
       "correct_answers": [
         "б"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_784.png",
+      "is_verified": true
     },
     {
       "id": 785,
@@ -57806,7 +58688,7 @@
       ],
       "points": 3,
       "correct_answers_count": 1,
-      "has_image": false,
+      "has_image": true,
       "categories": [
         "C"
       ],
@@ -57814,7 +58696,9 @@
       "is_new": true,
       "correct_answers": [
         "в"
-      ]
+      ],
+      "image": "verify_pravila_saobracaja_785.png",
+      "is_verified": true
     },
     {
       "id": 786,
@@ -57839,7 +58723,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 787,
@@ -57864,7 +58749,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 788,
@@ -57889,7 +58775,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 789,
@@ -57914,7 +58801,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 790,
@@ -57939,7 +58827,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 791,
@@ -57964,7 +58853,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 792,
@@ -57989,7 +58879,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 793,
@@ -58014,7 +58905,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 794,
@@ -58039,7 +58931,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "а"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 795,
@@ -58064,7 +58957,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 796,
@@ -58089,7 +58983,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "в"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 797,
@@ -58114,7 +59009,8 @@
       "section": "pravila_saobracaja",
       "correct_answers": [
         "б"
-      ]
+      ],
+      "is_verified": true
     },
     {
       "id": 1,
