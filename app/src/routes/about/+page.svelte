@@ -70,12 +70,12 @@
 				{/each}
 			{/if}
 			<div class="about-row">
-				<span class="about-label">{lang === 'sr' ? 'Извор питања' : 'Источник'}</span>
-				<span class="about-val">МУП Србије</span>
+				<span class="about-label">{lang === 'sr' ? 'Извор питања' : 'Источник вопросов'}</span>
+				<a href="https://www.mup.gov.rs/wps/portal/sr/gradjani/dokumenta/vozacka%20dozvola/ispitna%20pitanja%20i%20ostala%20dokumenta%20za%20osposobljavanje%20kandidata/" target="_blank" class="about-link">МУП Србије →</a>
 			</div>
 			<div class="about-row about-row-last">
-				<span class="about-label">{lang === 'sr' ? 'Извор одговора' : 'Ответы'}</span>
-				<span class="about-val">МУП Србије</span>
+				<span class="about-label">{lang === 'sr' ? 'Извор одговора' : 'Источник ответов'}</span>
+				<a href="https://autoskolasljivic.com/wp-content/uploads/2020/09/SVA-PITANJA-sa-resenjima.pdf" target="_blank" class="about-link">Auto škola Šljivić (PDF) →</a>
 			</div>
 		</div>
 
@@ -144,6 +144,7 @@
 	.tag-removed { background: #fce8e8; color: #aa3333; }
 	.about-label { font-size: 13px; color: var(--ink3); }
 	.about-val { font-size: 13px; color: var(--ink); font-family: var(--font-mono); text-align: right; }
+	.about-link { font-size: 13px; color: var(--accent); font-family: var(--font-mono); text-decoration: none; }
 
 	.coffee-btn {
 		width: 100%; height: 52px; border-radius: 16px;
