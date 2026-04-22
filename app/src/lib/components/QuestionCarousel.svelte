@@ -15,7 +15,7 @@
 	import { t, sectionName } from '$lib/i18n.js';
 	import type { Question, Lang } from '$lib/types.js';
 	import Icon from '$lib/components/Icon.svelte';
-	import Tag from '$lib/components/Tag.svelte';
+
 	import QuestionPills from '$lib/components/QuestionPills.svelte';
 	import AnswerOption from '$lib/components/AnswerOption.svelte';
 
@@ -284,28 +284,8 @@
 			{@const qProg = getQuestionProgress(q.section, q.id)}
 			<div class="slide">
 				<div class="slide-body" class:has-image={q.has_image && q.image}>
-					<!-- Tags + Image -->
+					<!-- Image -->
 					<div class="q-media" class:q-media-has-image={q.has_image && q.image}>
-						<div class="q-tags">
-							{#if q.is_changed}
-								<Tag tone="accent">
-									<span class="tag-dot accent-dot"></span>
-									{lang === 'sr' ? 'Измењено' : 'Изменено'}
-								</Tag>
-							{/if}
-							{#if q.is_new}
-								<Tag tone="accent">
-									<span class="tag-dot accent-dot"></span>
-									{lang === 'sr' ? 'Ново' : 'Новый'}
-								</Tag>
-							{/if}
-							{#if qProg && qProg.wrong > 0}
-								<Tag tone="wrong">
-									<Icon name="warn" size={10} color="var(--wrong)" stroke={2} />
-									{lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}
-								</Tag>
-							{/if}
-						</div>
 						{#if q.has_image && q.image}
 							<img
 								src="{base}/images/{q.image}"
@@ -327,6 +307,9 @@
 					<div class="q-text-wrap">
 						<div class="q-text">{qText(q, lang)}</div>
 						<div class="q-meta">
+							{#if q.is_changed}<span class="meta-dot meta-dot-changed" title={lang === 'sr' ? 'Измењено' : 'Изменено'}></span>{/if}
+							{#if q.is_new}<span class="meta-dot meta-dot-new" title={lang === 'sr' ? 'Ново' : 'Новый'}></span>{/if}
+							{#if qProg && qProg.wrong > 0}<span class="meta-dot meta-dot-wrong" title={lang === 'sr' ? 'Претходно погрешно' : 'Ранее неверно'}></span>{/if}
 							{isMulti
 								? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
 								: (lang === 'sr' ? 'Изабери један одговор' : 'Выберите один ответ')}
@@ -500,15 +483,19 @@
 		min-height: 0;
 		overflow: hidden;
 	}
-	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
-	.q-tags {
-		display: flex; gap: 6px; flex-wrap: wrap;
-	}
-	.tag-dot {
-		width: 5px; height: 5px; border-radius: 3px;
+	/* Meta dots for question status */
+	.meta-dot {
 		display: inline-block;
+		width: 8px; height: 8px;
+		border-radius: 50%;
+		margin-right: 4px;
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
 	}
-	.accent-dot { background: var(--accent); }
+	.meta-dot-changed { background: var(--accent); }
+	.meta-dot-new { background: #44aa44; }
+	.meta-dot-wrong { background: var(--wrong); }
 
 	.q-image {
 		width: 100%;
