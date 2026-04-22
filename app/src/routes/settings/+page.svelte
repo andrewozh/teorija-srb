@@ -114,7 +114,7 @@
 				{/each}
 			</div>
 			<div class="cat-desc">
-				{settings.category} · {lang === 'sr' ? '1780 питања' : '1780 вопросов'}
+				{settings.category} · {lang === 'sr' ? '2288 питања' : '2288 вопросов'}
 			</div>
 		</div>
 
@@ -180,12 +180,12 @@
 		<div class="section-card" style="margin-top: 16px;">
 			<a href="{base}/about" class="settings-row about-row">
 				<span class="row-label">{lang === 'sr' ? 'О апликацији' : 'О приложении'}</span>
-				<span class="row-val">v0.1.1-alpha →</span>
+				<span class="row-val">v0.2.0-beta →</span>
 			</a>
 		</div>
 
 		<div class="settings-footer">
-			Teorija v0.1.1-alpha
+			Teorija v0.2.0-beta
 		</div>
 	</div>
 </div>
