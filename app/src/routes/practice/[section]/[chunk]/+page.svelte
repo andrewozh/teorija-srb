@@ -284,32 +284,32 @@
 							{t('question.confirm', lang)} ({qs.selected.size})
 						</button>
 					{/if}
+				</div>
 
-					<!-- Footer -->
-					<div class="q-footer">
-						<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
-							<Icon name="language" size={19} stroke={1.6} />
+				<!-- Footer (fixed at bottom of slide) -->
+				<div class="q-footer">
+					<button class="q-footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
+						<Icon name="language" size={19} stroke={1.6} />
+					</button>
+					<button
+						class="q-footer-icon"
+						class:q-footer-active={i === currentIndex && bookmarked}
+						onclick={handleToggleBookmark}
+					>
+						<Icon name={i === currentIndex && bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
+					</button>
+					<button class="q-footer-icon" onclick={() => {}}>
+						<Icon name="flag" size={19} stroke={1.6} />
+					</button>
+					<div class="q-footer-spacer"></div>
+					{#if qs.answered}
+						<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
+							{i < questions.length - 1
+								? (lang === 'sr' ? 'Следеће' : 'Далее')
+								: '✓'}
+							<Icon name="chev-right" size={14} color="var(--accent-ink)" />
 						</button>
-						<button
-							class="q-footer-icon"
-							class:q-footer-active={i === currentIndex && bookmarked}
-							onclick={handleToggleBookmark}
-						>
-							<Icon name={i === currentIndex && bookmarked ? 'bookmark-fill' : 'bookmark'} size={19} stroke={1.6} />
-						</button>
-						<button class="q-footer-icon" onclick={() => {}}>
-							<Icon name="flag" size={19} stroke={1.6} />
-						</button>
-						<div class="q-footer-spacer"></div>
-						{#if qs.answered}
-							<button class="q-next-btn q-next-accent" onclick={nextQuestion}>
-								{i < questions.length - 1
-									? (lang === 'sr' ? 'Следеће' : 'Далее')
-									: '✓'}
-								<Icon name="chev-right" size={14} color="var(--accent-ink)" />
-							</button>
-						{/if}
-					</div>
+					{/if}
 				</div>
 			</div>
 		{/each}
@@ -383,8 +383,7 @@
 	}
 
 	.slide-answers {
-		padding: 12px 14px 14px;
-		padding-bottom: calc(14px + env(safe-area-inset-bottom));
+		padding: 12px 14px 8px;
 		display: flex; flex-direction: column; gap: 8px;
 		background: var(--answer-zone-bg);
 		flex-shrink: 0;
@@ -425,10 +424,15 @@
 		letter-spacing: -0.1px; cursor: pointer;
 	}
 
-	/* Footer */
+	/* Footer — fixed at bottom of each slide */
 	.q-footer {
 		display: flex; align-items: center; gap: 4px;
-		margin-top: 6px;
+		padding: 4px 14px;
+		padding-bottom: calc(4px + env(safe-area-inset-bottom));
+		flex-shrink: 0;
+		margin-top: auto;
+		border-top: 0.5px solid var(--hairline);
+		background: var(--bg);
 	}
 	.q-footer-icon {
 		width: 44px; height: 44px; border-radius: 12px;
