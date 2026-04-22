@@ -5,7 +5,7 @@ const translations: Record<string, Record<Lang, string>> = {
 	'app.title': { sr: 'Возачки испит', ru: 'Экзамен по вождению' },
 
 	// Home
-	'home.practice': { sr: 'Тренировка', ru: 'Тренировка' },
+	'home.practice': { sr: 'Сва питања', ru: 'Все вопросы' },
 	'home.practice.sub': { sr: 'питања', ru: 'вопросов' },
 	'home.exam': { sr: 'Испит', ru: 'Экзамен' },
 	'home.exam.passed': { sr: 'положених', ru: 'сдано' },
@@ -17,7 +17,7 @@ const translations: Record<string, Record<Lang, string>> = {
 	'home.stats.sub': { sr: 'Преглед напретка', ru: 'Обзор прогресса' },
 
 	// Practice
-	'practice.title': { sr: 'Тренировка', ru: 'Тренировка' },
+	'practice.title': { sr: 'Сва питања', ru: 'Все вопросы' },
 	'practice.questions': { sr: 'питања', ru: 'вопросов' },
 
 	// Question

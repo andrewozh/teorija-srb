@@ -43,7 +43,7 @@
 
 <div class="page">
 	<Header
-		title={lang === 'sr' ? 'Учење' : 'Обучение'}
+		title={lang === 'sr' ? 'Сва питања' : 'Все вопросы'}
 		home onback={() => goto(`${base}/`)}
 		onsettings={() => goto(`${base}/settings`)}
 	/>

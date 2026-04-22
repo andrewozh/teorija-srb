@@ -84,12 +84,12 @@
 				</div>
 			</div>
 
-			<!-- Hero card — assisted learning -->
+			<!-- Hero card — training (placeholder for future) -->
 			<a href="{base}/practice" class="hero-card">
 				<div class="hero-top">
 					<div>
 						<div class="hero-label">{lang === 'sr' ? 'Данашња сесија' : 'Сегодняшняя сессия'}</div>
-						<div class="hero-title">{lang === 'sr' ? 'Препоручени тест' : 'Рекомендованный тест'}</div>
+						<div class="hero-title">{lang === 'sr' ? 'Обучење' : 'Обучение'}</div>
 						<div class="hero-sub">{lang === 'sr' ? '20 нових + 5 понављања' : '20 новых + 5 повторений'}</div>
 					</div>
 					<div class="hero-icon-wrap">
@@ -108,7 +108,7 @@
 			<a href="{base}/practice" class="sec-card">
 				<div class="sec-icon"><Icon name="book" size={18} stroke={1.6} /></div>
 				<div class="sec-body">
-					<div class="sec-title">{t('home.practice', lang)}</div>
+					<div class="sec-title">{lang === 'sr' ? 'Сва питања' : 'Все вопросы'}</div>
 					<div class="sec-sub">{lang === 'sr' ? '7 области · 2288 питања' : '7 разделов · 2288 вопросов'}</div>
 				</div>
 				<div class="sec-count">{progressPercent}%</div>
