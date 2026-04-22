@@ -2,46 +2,39 @@
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { loadQuestions, getActiveQuestions } from '$lib/data.js';
+	import { loadQuestions, getSrsStats, getSrsSessionQuestions } from '$lib/data.js';
 	import {
 		getSettings,
 		updateSettings,
-		subscribe,
-		getQuestionProgress,
-		getMistakeQuestionKeys
+		subscribe
 	} from '$lib/store.js';
-	import { t } from '$lib/i18n.js';
-	import type { Lang, QuestionsData } from '$lib/types.js';
+	import type { Lang, Question, QuestionsData } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import QuestionCarousel from '$lib/components/QuestionCarousel.svelte';
 
 	let lang = $state<Lang>(getSettings().lang);
 	let count = $state(getSettings().learnCount || 20);
 	let learned = $state(0);
 	let review = $state(0);
+	let learning = $state(0);
 	let newCount = $state(0);
-	let totalActive = $state(0);
+	let data = $state<QuestionsData | null>(null);
+	let sessionQuestions = $state<Question[]>([]);
+	let inSession = $state(false);
+
+	async function refreshStats() {
+		if (!data) return;
+		const stats = getSrsStats(data);
+		learned = stats.learned;
+		review = stats.review;
+		learning = stats.learning;
+		newCount = stats.newCount;
+	}
 
 	onMount(async () => {
-		const data = await loadQuestions();
-		const active = getActiveQuestions(data);
-		totalActive = active.length;
-
-		// Count stats
-		let l = 0, r = 0, n = 0;
-		for (const q of active) {
-			const prog = getQuestionProgress(q.section, q.id);
-			if (prog && prog.correct > 0 && prog.correct >= prog.wrong + 2) {
-				l++;
-			} else if (prog && prog.wrong > 0) {
-				r++;
-			} else {
-				n++;
-			}
-		}
-		learned = l;
-		review = r;
-		newCount = n;
+		data = await loadQuestions();
+		refreshStats();
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
@@ -50,11 +43,28 @@
 	});
 
 	function startSession() {
-		// TODO: implement SRS question selection + launch carousel
-		goto(`${base}/practice`);
+		if (!data) return;
+		sessionQuestions = getSrsSessionQuestions(data, count);
+		if (sessionQuestions.length > 0) {
+			inSession = true;
+		}
+	}
+
+	function endSession() {
+		inSession = false;
+		refreshStats();
 	}
 </script>
 
+{#if inSession && sessionQuestions.length > 0}
+<QuestionCarousel
+	questions={sessionQuestions}
+	headerTitle={lang === 'sr' ? 'СЕСИЈА' : 'СЕССИЯ'}
+	headerSub="{sessionQuestions.length} {lang === 'sr' ? 'питања' : 'вопросов'}"
+	onBack={endSession}
+	onComplete={endSession}
+/>
+{:else}
 <div class="page">
 	<Header
 		title={lang === 'sr' ? 'Препоручено' : 'Рекомендовано'}
@@ -73,7 +83,7 @@
 		<div class="stat-strip">
 			{#each [
 				{ v: learned, l: lang === 'sr' ? 'Научено' : 'Изучено' },
-				{ v: review, l: lang === 'sr' ? 'Понављање' : 'Повторение' },
+				{ v: review + learning, l: lang === 'sr' ? 'Понављање' : 'Повторение' },
 				{ v: newCount, l: lang === 'sr' ? 'Ново' : 'Новые' },
 			] as stat, i}
 				{#if i > 0}<div class="stat-divider"></div>{/if}
@@ -127,6 +137,7 @@
 		</button>
 	</div>
 </div>
+{/if}
 
 <style>
 	.page { height: 100%; display: flex; flex-direction: column; }

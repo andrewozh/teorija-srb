@@ -43,6 +43,7 @@ export interface QuestionProgress {
 	correct: number;
 	wrong: number;
 	last: string;
+	streak?: number;  // consecutive correct answers (reset on wrong)
 }
 
 export interface SectionProgress {

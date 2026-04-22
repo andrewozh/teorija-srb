@@ -86,11 +86,13 @@ export function recordAnswer(section: string, questionId: number, correct: boole
 		state.progress[section] = {};
 	}
 	const key = String(questionId);
-	const prev = state.progress[section][key] || { correct: 0, wrong: 0, last: '' };
+	const prev = state.progress[section][key] || { correct: 0, wrong: 0, last: '', streak: 0 };
 	if (correct) {
 		prev.correct += 1;
+		prev.streak = (prev.streak || 0) + 1;
 	} else {
 		prev.wrong += 1;
+		prev.streak = 0;
 	}
 	prev.last = new Date().toISOString().split('T')[0];
 	state.progress[section][key] = prev;
