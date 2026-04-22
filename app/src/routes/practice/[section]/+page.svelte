@@ -100,6 +100,17 @@
 		return map;
 	});
 
+	// Pre-compute global chunk index for each topic's chunk
+	let topicChunkStartIndex = $derived.by(() => {
+		const starts: number[] = [];
+		let idx = 0;
+		for (const g of topicGroups) {
+			starts.push(idx);
+			idx += g.chunks.length;
+		}
+		return starts;
+	});
+
 	let pct = $derived(totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0);
 </script>
 
@@ -129,8 +140,7 @@
 
 		{#if topics && topicGroups.length > 0}
 			<!-- Topic-based layout -->
-			{@const globalIdx = { value: 0 }}
-			{#each topicGroups as group}
+			{#each topicGroups as group, gi}
 				<div class="topic-section">
 					<div class="topic-header">
 						<div class="topic-name">{topicName(group.topic, lang)}</div>
@@ -151,12 +161,12 @@
 					{/if}
 
 					{#each group.chunks as chunk, ci}
-						{@const idx = globalIdx.value}
+						{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
 						{@const stat = computeQuestionStats(chunk.questions)}
 						{@const isDone = stat.correct === chunk.questions.length}
 						{@const isStarted = stat.correct > 0 || stat.wrong > 0}
 						<a
-							href="{base}/practice/{sectionId}/{idx}"
+							href="{base}/practice/{sectionId}/{globalChunkIdx}"
 							class="block-card"
 							style:opacity={!isStarted ? '0.5' : '1'}
 						>
@@ -176,7 +186,6 @@
 							</div>
 							<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
 						</a>
-						{@const _ = globalIdx.value++}
 					{/each}
 				</div>
 			{/each}
