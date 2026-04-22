@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { loadQuestions, getActiveQuestions } from '$lib/data.js';
 	import { getSettings, updateSettings, exportState, importState, resetState, subscribe } from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Settings, Lang, Accent, Category } from '$lib/types.js';
@@ -11,11 +13,19 @@
 	let showResetConfirm = $state(false);
 	let importMessage = $state('');
 	let lang = $state<Lang>(getSettings().lang);
+	let catQuestionCount = $state(0);
+
+	onMount(async () => {
+		const data = await loadQuestions();
+		catQuestionCount = getActiveQuestions(data).length;
+	});
 
 	$effect(() => {
-		const unsub = subscribe(() => {
+		const unsub = subscribe(async () => {
 			settings = getSettings();
 			lang = getSettings().lang;
+			const data = await loadQuestions();
+			catQuestionCount = getActiveQuestions(data).length;
 		});
 		return unsub;
 	});
@@ -114,7 +124,7 @@
 				{/each}
 			</div>
 			<div class="cat-desc">
-				{settings.category} · {lang === 'sr' ? '2288 питања' : '2288 вопросов'}
+				{settings.category} · {catQuestionCount} {lang === 'sr' ? 'питања' : 'вопросов'}
 			</div>
 		</div>
 

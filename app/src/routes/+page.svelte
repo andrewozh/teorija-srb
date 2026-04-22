@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { loadQuestions, getActiveQuestions } from '$lib/data.js';
 	import {
 		getTotalCompletedCount,
 		getMistakeQuestionKeys,
@@ -23,20 +25,28 @@
 	let passedExams = $state(getPassedExamCount());
 	let totalExams = $state(getExams().length);
 	let lang = $state<Lang>(getSettings().lang);
+	let totalQuestions = $state(2288);
+
+	onMount(async () => {
+		const data = await loadQuestions();
+		totalQuestions = getActiveQuestions(data).length;
+	});
 
 	$effect(() => {
-		const unsub = subscribe(() => {
+		const unsub = subscribe(async () => {
 			completed = getTotalCompletedCount();
 			mistakeCount = getMistakeQuestionKeys().length;
 			passedExams = getPassedExamCount();
 			totalExams = getExams().length;
 			lang = getSettings().lang;
 			onboarded = isOnboarded();
+			// Recount when category changes
+			const data = await loadQuestions();
+			totalQuestions = getActiveQuestions(data).length;
 		});
 		return unsub;
 	});
 
-	const totalQuestions = 1756;
 	let progressPercent = $derived(Math.round((completed / totalQuestions) * 100));
 	let onboarded = $state(isOnboarded());
 	let showHome = $derived(onboarded);
@@ -109,7 +119,7 @@
 				<div class="sec-icon"><Icon name="book" size={18} stroke={1.6} /></div>
 				<div class="sec-body">
 					<div class="sec-title">{lang === 'sr' ? 'Сва питања' : 'Все вопросы'}</div>
-					<div class="sec-sub">{lang === 'sr' ? '7 области · 2288 питања' : '7 разделов · 2288 вопросов'}</div>
+					<div class="sec-sub">{lang === 'sr' ? '7 области' : '7 разделов'} · {totalQuestions} {lang === 'sr' ? 'питања' : 'вопросов'}</div>
 				</div>
 				<div class="sec-count">{progressPercent}%</div>
 			</a>
@@ -164,8 +174,8 @@
 			</div>
 			<div class="empty-desc">
 				{lang === 'sr'
-					? '2288 питања из 7 области за полагање возачког испита. Ради офлајн. Сав напредак остаје на уређају.'
-					: '2288 вопросов из 7 разделов для сдачи экзамена по вождению. Работает офлайн. Весь прогресс хранится на устройстве.'}
+					? `${totalQuestions} питања из 7 области за полагање возачког испита. Ради офлајн. Сав напредак остаје на уређају.`
+					: `${totalQuestions} вопросов из 7 разделов для сдачи экзамена по вождению. Работает офлайн. Весь прогресс хранится на устройстве.`}
 			</div>
 	
 			<div class="empty-actions">

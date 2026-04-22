@@ -1,5 +1,6 @@
 import { base } from '$app/paths';
-import type { Question, QuestionsData, SectionMeta, Chunk, Lang, Option } from './types.js';
+import type { Question, QuestionsData, SectionMeta, Chunk, Lang, Option, Category } from './types.js';
+import { getSettings } from './store.js';
 
 let cachedData: QuestionsData | null = null;
 
@@ -10,8 +11,14 @@ export async function loadQuestions(): Promise<QuestionsData> {
 	return cachedData;
 }
 
+function matchesCategory(q: Question, cat: Category): boolean {
+	// Empty categories = applies to all categories
+	return !q.categories || q.categories.length === 0 || q.categories.includes(cat);
+}
+
 export function getActiveQuestions(data: QuestionsData): Question[] {
-	return data.questions.filter((q) => !q.is_removed);
+	const cat = getSettings().category;
+	return data.questions.filter((q) => !q.is_removed && matchesCategory(q, cat));
 }
 
 export function getSections(data: QuestionsData): SectionMeta[] {
@@ -19,7 +26,8 @@ export function getSections(data: QuestionsData): SectionMeta[] {
 }
 
 export function getQuestionsBySection(data: QuestionsData, sectionId: string): Question[] {
-	return data.questions.filter((q) => q.section === sectionId && !q.is_removed);
+	const cat = getSettings().category;
+	return data.questions.filter((q) => q.section === sectionId && !q.is_removed && matchesCategory(q, cat));
 }
 
 export function getChunks(questions: Question[], chunkSize = 20): Chunk[] {
