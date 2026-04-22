@@ -11,7 +11,7 @@ function defaultState(): AppState {
 		exams: [],
 		onboarded: false,
 		settings: {
-			theme: 'dark',
+			theme: 'system',
 			fontSize: 'medium',
 			lang: 'sr',
 			accent: 'gold',
