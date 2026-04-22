@@ -2,47 +2,25 @@
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { loadQuestions, getRandomExamQuestions, questionKey, qText, oText } from '$lib/data.js';
-	import { recordAnswer, addExamResult, getSettings, getExams, subscribe } from '$lib/store.js';
+	import { loadQuestions, getRandomExamQuestions, questionKey, qText } from '$lib/data.js';
+	import { addExamResult, getSettings, getExams, subscribe } from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
 	import type { Question, ExamResult, Lang } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
 	import Icon from '$lib/components/Icon.svelte';
-	import QuestionPills from '$lib/components/QuestionPills.svelte';
-	import AnswerOption from '$lib/components/AnswerOption.svelte';
+	import QuestionCarousel from '$lib/components/QuestionCarousel.svelte';
 
 	type ExamPhase = 'intro' | 'active' | 'results';
 
 	let phase = $state<ExamPhase>('intro');
 	let questions = $state<Question[]>([]);
-	let currentIndex = $state(0);
-	let selectedAnswers = $state<Set<string>>(new Set());
-	let isAnswered = $state(false);
-	let isCorrect = $state(false);
-	let answers = $state<Record<string, string[]>>({});
-	let wrongIds = $state<string[]>([]);
-	let score = $state(0);
 	let lang = $state<Lang>(getSettings().lang);
 	let examHistory = $state<ExamResult[]>([...getExams()].reverse());
 
-	let timeRemaining = $state(45 * 60);
-	let timerInterval: ReturnType<typeof setInterval> | undefined;
-
-	let currentQuestion = $derived(questions[currentIndex]);
-	let hasMultipleAnswers = $derived(currentQuestion ? currentQuestion.correct_answers_count > 1 : false);
+	// Results data
+	let score = $state(0);
+	let wrongIds = $state<string[]>([]);
 	let passed = $derived(wrongIds.length <= 5);
-
-	let minutes = $derived(Math.floor(timeRemaining / 60));
-	let seconds = $derived(timeRemaining % 60);
-	let timeDisplay = $derived(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
-	let timeWarning = $derived(timeRemaining < 5 * 60);
-
-	let pillStates = $derived(questions.map((q, i) => {
-		const key = questionKey(q);
-		if (wrongIds.includes(key)) return 'wrong';
-		if (answers[key]) return 'correct';
-		return 'unanswered';
-	}));
 
 	$effect(() => {
 		const unsub = subscribe(() => {
@@ -55,95 +33,29 @@
 	async function startExam() {
 		const data = await loadQuestions();
 		questions = getRandomExamQuestions(data, 41);
-		currentIndex = 0;
-		selectedAnswers = new Set();
-		isAnswered = false;
-		answers = {};
-		wrongIds = [];
 		score = 0;
-		timeRemaining = 45 * 60;
+		wrongIds = [];
 		phase = 'active';
-
-		timerInterval = setInterval(() => {
-			timeRemaining--;
-			if (timeRemaining <= 0) finishExam();
-		}, 1000);
-	}
-
-	function selectAnswer(letter: string) {
-		if (isAnswered) return;
-		if (hasMultipleAnswers) {
-			const newSet = new Set(selectedAnswers);
-			if (newSet.has(letter)) newSet.delete(letter);
-			else newSet.add(letter);
-			selectedAnswers = newSet;
-		} else {
-			selectedAnswers = new Set([letter]);
-			submitAnswer();
-		}
-	}
-
-	function confirmMultiAnswer() {
-		if (selectedAnswers.size === 0) return;
-		submitAnswer();
-	}
-
-	function submitAnswer() {
-		if (!currentQuestion || !currentQuestion.correct_answers) return;
-		isAnswered = true;
-		const correctSet = new Set(currentQuestion.correct_answers);
-		isCorrect =
-			selectedAnswers.size === correctSet.size &&
-			[...selectedAnswers].every((a) => correctSet.has(a));
-		const key = questionKey(currentQuestion);
-		answers[key] = [...selectedAnswers];
-		if (isCorrect) score++;
-		else wrongIds.push(key);
-		recordAnswer(currentQuestion.section, currentQuestion.id, isCorrect);
-	}
-
-	function nextQuestion() {
-		if (currentIndex < questions.length - 1) {
-			currentIndex++;
-			selectedAnswers = new Set();
-			isAnswered = false;
-			isCorrect = false;
-		} else {
-			finishExam();
-		}
 	}
 
 	function finishExam() {
-		if (timerInterval) { clearInterval(timerInterval); timerInterval = undefined; }
+		// Calculate results from carousel state — we'll receive via onComplete
 		const result: ExamResult = {
 			date: new Date().toISOString(),
 			score,
 			total: questions.length,
 			passed: wrongIds.length <= 5,
 			wrong_ids: wrongIds,
-			answers
+			answers: {}
 		};
 		addExamResult(result);
 		phase = 'results';
-	}
-
-	function optionState(letter: string): 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' {
-		if (!isAnswered) return selectedAnswers.has(letter) ? 'selected' : 'idle';
-		const isCorrectAnswer = currentQuestion?.correct_answers?.includes(letter);
-		const wasSelected = selectedAnswers.has(letter);
-		if (isCorrectAnswer) return 'correct';
-		if (wasSelected && !isCorrectAnswer) return 'wrong';
-		return 'muted';
 	}
 
 	function formatDate(iso: string): string {
 		const d = new Date(iso);
 		return d.toLocaleDateString('sr-Latn-RS', { day: 'numeric', month: 'short' });
 	}
-
-	onMount(() => {
-		return () => { if (timerInterval) clearInterval(timerInterval); };
-	});
 </script>
 
 <div class="page">
@@ -160,7 +72,6 @@
 				{lang === 'sr' ? 'стварним условима.' : 'реальных условиях.'}
 			</div>
 
-			<!-- Rules -->
 			<div class="rules-card">
 				{#each [['41', lang === 'sr' ? 'питања' : 'вопрос'], ['45', lang === 'sr' ? 'минута' : 'минут'], ['37', lang === 'sr' ? 'за пролаз' : 'для сдачи'], ['2', lang === 'sr' ? 'казнена поена' : 'штрафных балла']] as [num, label], i}
 					<div class="rule-row" class:rule-last={i === 3}>
@@ -170,7 +81,6 @@
 				{/each}
 			</div>
 
-			<!-- History -->
 			{#if examHistory.length > 0}
 				<div class="history-label">{lang === 'sr' ? 'Последњи покушаји' : 'Последние попытки'}</div>
 				<div class="history-card">
@@ -189,63 +99,20 @@
 			</button>
 		</div>
 
-	{:else if phase === 'active' && currentQuestion}
-		<!-- Active exam header -->
-		<div class="exam-header">
-			<button class="q-header-btn" onclick={() => { if (confirm(t('exam.finish', lang) + '?')) finishExam(); }}>
-				<Icon name="back" size={20} />
-			</button>
-			<div class="exam-header-center">
-				<div class="exam-counter">
-					{String(currentIndex + 1).padStart(2, '0')}<span class="exam-total"> / {questions.length}</span>
-				</div>
-			</div>
-			<div class="exam-timer" class:timer-warn={timeWarning}>
-				⏱ {timeDisplay}
-			</div>
-		</div>
-
-		<QuestionPills current={currentIndex} states={pillStates} />
-
-		<div class="q-body">
-			{#if currentQuestion.has_image && currentQuestion.image}
-				<div class="q-image-wrap">
-					<img src="{base}/images/{currentQuestion.image}" alt="" class="q-image" />
-				</div>
-			{/if}
-			<div class="q-text">{qText(currentQuestion, lang)}</div>
-			{#if hasMultipleAnswers}
-				<div class="q-meta">{t('question.multi', lang)} ({currentQuestion.correct_answers_count})</div>
-			{/if}
-		</div>
-
-		<div class="q-answers">
-			{#each currentQuestion.options as option}
-				<AnswerOption
-					letter={option.letter}
-					text={oText(option, lang)}
-					state={optionState(option.letter)}
-					multi={hasMultipleAnswers}
-					onclick={() => selectAnswer(option.letter)}
-				/>
-			{/each}
-
-			{#if hasMultipleAnswers && !isAnswered && selectedAnswers.size > 0}
-				<button class="q-confirm-btn" onclick={confirmMultiAnswer}>
-					{t('question.confirm', lang)} ({selectedAnswers.size})
-				</button>
-			{/if}
-
-			{#if isAnswered}
-				<div class="q-footer">
-					<div class="q-footer-spacer"></div>
-					<button class="q-next-btn" onclick={nextQuestion}>
-						{currentIndex < questions.length - 1 ? (lang === 'sr' ? 'Следеће' : 'Далее') : t('exam.finish', lang)}
-						<Icon name="chev-right" size={14} color="var(--accent-ink)" />
-					</button>
-				</div>
-			{/if}
-		</div>
+	{:else if phase === 'active'}
+		<QuestionCarousel
+			{questions}
+			headerTitle={lang === 'sr' ? 'ИСПИТ' : 'ЭКЗАМЕН'}
+			showLangToggle={false}
+			showBookmark={false}
+			showFlag={false}
+			showTimer={true}
+			timerSeconds={2700}
+			onBack={() => { if (confirm(t('exam.finish', lang) + '?')) finishExam(); }}
+			onComplete={() => finishExam()}
+			bind:score
+			bind:wrongIds
+		/>
 
 	{:else if phase === 'results'}
 		<Header
@@ -298,7 +165,6 @@
 	.page { height: 100%; display: flex; flex-direction: column; }
 	.scroll-area { flex: 1; overflow: auto; padding: 20px 16px 24px; }
 
-	/* Intro */
 	.intro-label {
 		font-family: var(--font-mono); font-size: 10px; color: var(--ink3);
 		letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
@@ -349,68 +215,6 @@
 		letter-spacing: -0.1px; cursor: pointer;
 	}
 
-	/* Active exam */
-	.exam-header {
-		display: flex; align-items: center; gap: 8px;
-		padding: 6px 16px 4px; height: 48px; flex-shrink: 0;
-	}
-	.q-header-btn {
-		width: 36px; height: 36px; border-radius: 12px;
-		border: none; background: transparent; color: var(--ink);
-		display: flex; align-items: center; justify-content: center;
-		cursor: pointer; flex-shrink: 0;
-	}
-	.exam-header-center { flex: 1; text-align: center; }
-	.exam-counter {
-		font-family: var(--font-mono); font-size: 13px;
-		color: var(--ink); letter-spacing: 0.3px;
-	}
-	.exam-total { color: var(--ink4); }
-	.exam-timer {
-		font-family: var(--font-mono); font-size: 12px;
-		color: var(--ink); padding: 6px 12px;
-		background: var(--surface2); border-radius: 10px;
-	}
-	.timer-warn { background: var(--wrong-wash); color: var(--wrong); animation: pulse 1s infinite; }
-
-	.q-body { flex: 1; overflow: auto; padding: 16px 16px 8px; }
-	.q-image-wrap {
-		width: 100%; border-radius: 16px; overflow: hidden;
-		border: 0.5px solid var(--hairline); margin-bottom: 14px;
-	}
-	.q-image { width: 100%; display: block; }
-	.q-text {
-		font-size: 16px; font-weight: 500; line-height: 1.4;
-		letter-spacing: -0.2px; color: var(--ink);
-	}
-	.q-meta {
-		font-family: var(--font-mono); font-size: 11px;
-		color: var(--ink3); margin-top: 6px; letter-spacing: 0.3px;
-	}
-
-	.q-answers {
-		padding: 12px 14px 14px;
-		display: flex; flex-direction: column; gap: 8px;
-		background: var(--answer-zone-bg);
-		border-top: 0.5px solid var(--hairline);
-		flex-shrink: 0;
-	}
-	.q-confirm-btn {
-		width: 100%; height: 48px; border-radius: 16px;
-		background: var(--accent); color: var(--accent-ink);
-		border: none; font-family: var(--font-ui);
-		font-size: 15px; font-weight: 600; cursor: pointer;
-	}
-	.q-footer { display: flex; align-items: center; gap: 4px; margin-top: 6px; }
-	.q-footer-spacer { flex: 1; }
-	.q-next-btn {
-		height: 44px; padding: 0 22px; border-radius: 14px;
-		background: var(--accent); color: var(--accent-ink);
-		border: none; font-family: var(--font-ui);
-		font-size: 14px; font-weight: 600; cursor: pointer;
-		display: flex; align-items: center; gap: 6px;
-	}
-
 	/* Results */
 	.result-card {
 		text-align: center; padding: 32px 24px;
@@ -441,6 +245,4 @@
 		display: block; text-align: center; margin-top: 16px;
 		color: var(--accent); font-weight: 500; font-size: 14px;
 	}
-
-	@keyframes pulse { 50% { opacity: 0.7; } }
 </style>
