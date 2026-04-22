@@ -228,7 +228,7 @@
 			{@const isMulti = q.correct_answers_count > 1}
 			{@const qProg = getQuestionProgress(q.section, q.id)}
 			<div class="slide">
-				<div class="slide-body">
+				<div class="slide-body" class:has-image={q.has_image && q.image}>
 					<!-- Tags + Image -->
 					<div class="q-media" class:q-media-has-image={q.has_image && q.image}>
 						<div class="q-tags">
@@ -256,13 +256,15 @@
 						{/if}
 					</div>
 
-					<!-- Question text -->
-					<div class="q-text">{qText(q, lang)}</div>
-					<div class="q-meta">
-						{isMulti
-							? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
-							: (lang === 'sr' ? 'Изабери један одговор' : 'Выберите один ответ')}
-						· {q.points} {lang === 'sr' ? 'поен' : 'балл'}
+					<!-- Question text (never shrinks) -->
+					<div class="q-text-wrap">
+						<div class="q-text">{qText(q, lang)}</div>
+						<div class="q-meta">
+							{isMulti
+								? (lang === 'sr' ? 'Изабери више одговора' : 'Выберите несколько ответов')
+								: (lang === 'sr' ? 'Изабери један одговор' : 'Выберите один ответ')}
+							· {q.points} {lang === 'sr' ? 'поен' : 'балл'}
+						</div>
 					</div>
 				</div>
 
@@ -373,25 +375,49 @@
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		position: relative;
 	}
 
+	/* Question container: takes remaining space after answers */
+	/* min 20% (40% with image), max 60% */
 	.slide-body {
-		flex: 1;
-		overflow-y: auto;
-		padding: 16px 16px 8px;
-		-webkit-overflow-scrolling: touch;
+		flex: 1 1 auto;
+		min-height: 20%;
+		max-height: 60%;
+		overflow: hidden;
+		padding: 8px 16px 8px;
+		position: relative;
+		z-index: 2;
+		background: var(--bg);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.slide-body.has-image {
+		min-height: 40%;
 	}
 
+	/* Answers container: claims natural size, scrolls if too tall */
 	.slide-answers {
-		padding: 12px 14px 8px;
+		flex: 0 0 auto;
+		max-height: 60%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 10px 14px 8px;
 		display: flex; flex-direction: column; gap: 8px;
 		background: var(--answer-zone-bg);
-		flex-shrink: 0;
 		border-top: 0.5px solid var(--hairline);
+		z-index: 1;
 	}
 
-	/* Media / Tags */
-	.q-media { position: relative; margin-bottom: 10px; }
+	/* Media / Tags — shrinks when space is tight, but doesn't grow */
+	.q-media {
+		position: relative;
+		margin-bottom: 6px;
+		flex: 0 1 auto;
+		min-height: 0;
+		overflow: hidden;
+	}
 	.q-media-has-image .q-tags { position: absolute; top: 8px; left: 8px; z-index: 2; }
 	.q-tags {
 		display: flex; gap: 6px; flex-wrap: wrap;
@@ -402,8 +428,18 @@
 	}
 	.accent-dot { background: var(--accent); }
 
-	.q-image { width: 100%; display: block; }
+	.q-image {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center top;
+		display: block;
+	}
 
+	/* Text + meta — never shrink */
+	.q-text-wrap {
+		flex-shrink: 0;
+	}
 	.q-text {
 		font-size: 16px; font-weight: 500;
 		line-height: 1.4; letter-spacing: -0.2px;
@@ -411,7 +447,7 @@
 	}
 	.q-meta {
 		font-family: var(--font-mono); font-size: 11px;
-		color: var(--ink3); margin-top: 6px;
+		color: var(--ink3); margin-top: 4px;
 		letter-spacing: 0.3px;
 	}
 
@@ -424,15 +460,15 @@
 		letter-spacing: -0.1px; cursor: pointer;
 	}
 
-	/* Footer — fixed at bottom of each slide */
+	/* Footer — fixed at bottom of each slide, above answers in z-order */
 	.q-footer {
 		display: flex; align-items: center; gap: 4px;
 		padding: 4px 14px;
 		padding-bottom: calc(4px + env(safe-area-inset-bottom));
 		flex-shrink: 0;
-		margin-top: auto;
 		border-top: 0.5px solid var(--hairline);
 		background: var(--bg);
+		z-index: 2;
 	}
 	.q-footer-icon {
 		width: 44px; height: 44px; border-radius: 12px;
