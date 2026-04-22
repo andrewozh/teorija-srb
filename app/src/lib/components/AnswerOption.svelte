@@ -86,5 +86,6 @@
 		line-height: 1.45;
 		letter-spacing: -0.1px;
 		padding-top: 4px;
+
 	}
 </style>

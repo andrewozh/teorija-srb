@@ -251,7 +251,11 @@
 		</button>
 		<div class="q-header-center">
 			<div class="q-header-context">
-				{headerTitle}{#if headerSub} · {headerSub}{/if}
+				{#if headerSub}
+					{headerSub}&nbsp;·&nbsp;{String(currentIndex + 1).padStart(2, '0')}<span class="q-header-total">&nbsp;/&nbsp;{questions.length}</span>
+				{:else}
+					{headerTitle}&nbsp;·&nbsp;{String(currentIndex + 1).padStart(2, '0')}<span class="q-header-total">&nbsp;/&nbsp;{questions.length}</span>
+				{/if}
 			</div>
 			{#if showTimer}
 				<div class="q-header-counter q-header-timer">
@@ -259,7 +263,11 @@
 				</div>
 			{:else}
 				<div class="q-header-counter">
-					{String(currentIndex + 1).padStart(2, '0')}<span class="q-header-total"> / {questions.length}</span>
+					{#if questions[currentIndex]}
+						{sectionName(questions[currentIndex].section, lang)}&nbsp;·&nbsp;№{questions[currentIndex].id}
+					{:else}
+						{headerTitle}
+					{/if}
 				</div>
 			{/if}
 		</div>
@@ -410,6 +418,7 @@
 		color: var(--ink); letter-spacing: 0.3px;
 	}
 	.q-header-total { color: var(--ink4); }
+	.q-header-qid { color: var(--ink3); font-size: 11px; }
 	.q-header-timer {
 		font-size: 15px;
 		font-weight: 600;
@@ -513,6 +522,7 @@
 		font-size: 16px; font-weight: 500;
 		line-height: 1.4; letter-spacing: -0.2px;
 		color: var(--ink);
+
 	}
 	.q-meta {
 		font-family: var(--font-mono); font-size: 11px;

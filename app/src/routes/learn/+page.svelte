@@ -60,7 +60,6 @@
 <QuestionCarousel
 	questions={sessionQuestions}
 	headerTitle={lang === 'sr' ? 'СЕСИЈА' : 'СЕССИЯ'}
-	headerSub="{sessionQuestions.length} {lang === 'sr' ? 'питања' : 'вопросов'}"
 	onBack={endSession}
 	onComplete={endSession}
 />
