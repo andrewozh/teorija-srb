@@ -1,17 +1,35 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	import { loadQuestions } from '$lib/data.js';
 	import { getSettings, subscribe } from '$lib/store.js';
 	import { t } from '$lib/i18n.js';
-	import type { Lang } from '$lib/types.js';
+	import type { Lang, QuestionsData } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
 	let lang = $state<Lang>(getSettings().lang);
+	let showBreakdown = $state(false);
+	let sectionCounts = $state<{name: string, count: number, newCount: number, changed: number, removed: number}[]>([]);
 
 	$effect(() => {
 		const unsub = subscribe(() => { lang = getSettings().lang; });
 		return unsub;
+	});
+
+	onMount(async () => {
+		const data = await loadQuestions();
+		sectionCounts = data.metadata.sections.map(s => {
+			const qs = data.questions.filter(q => q.section === s.id);
+			return {
+				name: s.name,
+				count: qs.length,
+				newCount: qs.filter(q => q.is_new).length,
+				changed: qs.filter(q => q.is_changed).length,
+				removed: qs.filter(q => q.is_removed).length,
+			};
+		});
 	});
 </script>
 
@@ -32,17 +50,32 @@
 				<span class="about-label">{lang === 'sr' ? 'База ажурирана' : 'База обновлена'}</span>
 				<span class="about-val">12. април 2026.</span>
 			</div>
-			<div class="about-row">
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div class="about-row about-row-clickable" onclick={() => showBreakdown = !showBreakdown}>
 				<span class="about-label">{lang === 'sr' ? 'Број питања' : 'Кол-во вопросов'}</span>
-				<span class="about-val">1,780</span>
+				<span class="about-val">2,315 {showBreakdown ? '▾' : '▸'}</span>
 			</div>
+			{#if showBreakdown}
+				{#each sectionCounts as { name, count, newCount, changed, removed }}
+					<div class="about-row about-row-sub">
+						<span class="about-label">{name}</span>
+						<span class="about-val-group">
+							{#if newCount}<span class="tag-new">+{newCount}</span>{/if}
+							{#if changed}<span class="tag-changed">~{changed}</span>{/if}
+							{#if removed}<span class="tag-removed">-{removed}</span>{/if}
+							<span class="about-val">{count}</span>
+						</span>
+					</div>
+				{/each}
+			{/if}
 			<div class="about-row">
 				<span class="about-label">{lang === 'sr' ? 'Извор питања' : 'Источник'}</span>
-				<span class="about-val">АМСС →</span>
+				<span class="about-val">МУП Србије</span>
 			</div>
 			<div class="about-row about-row-last">
 				<span class="about-label">{lang === 'sr' ? 'Извор одговора' : 'Ответы'}</span>
-				<span class="about-val">АМСС →</span>
+				<span class="about-val">МУП Србије</span>
 			</div>
 		</div>
 
@@ -98,6 +131,17 @@
 		border-bottom: 0.5px solid var(--hairline);
 	}
 	.about-row-last { border-bottom: none; }
+	.about-row-clickable { cursor: pointer; }
+	.about-row-clickable:active { background: var(--surface2); }
+	.about-row-sub { padding-left: 32px; background: var(--surface2); }
+	.about-val-group { display: flex; align-items: center; gap: 6px; }
+	.about-val-group span:not(.about-val) {
+		font-family: var(--font-mono); font-size: 10px;
+		padding: 1px 5px; border-radius: 4px;
+	}
+	.tag-new { background: #e8f5e8; color: #2d6a2d; }
+	.tag-changed { background: #fdf3dc; color: #8b6914; }
+	.tag-removed { background: #fce8e8; color: #aa3333; }
 	.about-label { font-size: 13px; color: var(--ink3); }
 	.about-val { font-size: 13px; color: var(--ink); font-family: var(--font-mono); text-align: right; }
 
