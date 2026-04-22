@@ -2647,3 +2647,7 @@
 {"section": "posledice", "question_id": 180, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-21T22:36:21.546909"}
 {"section": "posledice", "question_id": 181, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-21T22:36:29.699551"}
 {"section": "posledice", "question_id": 182, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-21T22:36:34.858666"}
+{"section": "vozila", "question_id": 10, "changes": [{"action": "answers_changed", "from": ["б", "в"], "to": ["б"]}], "timestamp": "2026-04-22T22:22:02.083974"}
+{"section": "saobracajna_signalizacija", "question_id": 5, "changes": [{"action": "answers_changed", "from": ["а", "в", "г"], "to": ["а", "в"]}], "timestamp": "2026-04-22T22:22:24.033366"}
+{"section": "pravila_saobracaja", "question_id": 31, "changes": [{"action": "answers_changed", "from": ["а"], "to": ["а", "б"]}], "timestamp": "2026-04-22T22:22:42.631268"}
+{"section": "pravila_saobracaja", "question_id": 473, "changes": [{"action": "correct_count_changed", "from": 1, "to": 2}], "timestamp": "2026-04-22T22:23:04.965186"}

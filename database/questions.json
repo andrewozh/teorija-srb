@@ -309,8 +309,7 @@
       "has_image": false,
       "section": "osnove_bezbednosti",
       "correct_answers": [
-        "а",
-        "г"
+        "а"
       ],
       "is_verified": true,
       "text_ru": "В целях безопасного участия детей в дорожном движении семья несёт ответственность за:"
@@ -13650,8 +13649,7 @@
       "has_image": false,
       "section": "vozila",
       "correct_answers": [
-        "б",
-        "в"
+        "б"
       ],
       "is_verified": true,
       "text_ru": "При смене владельца, носителя права пользования, смене места жительства владельца на территорию другого регистрационного района или других данных, вносимых в свидетельство о регистрации транспортного средства для тракторов, прицепных транспортных средств для тракторов и мотокультиваторов:"
@@ -25644,8 +25642,7 @@
       "section": "saobracajna_signalizacija",
       "correct_answers": [
         "а",
-        "в",
-        "г"
+        "в"
       ],
       "is_verified": true,
       "text_ru": "Дорожные знаки устанавливаются:"
@@ -42848,7 +42845,8 @@
       "has_image": true,
       "section": "pravila_saobracaja",
       "correct_answers": [
-        "а"
+        "а",
+        "б"
       ],
       "image": "verify_pravila_saobracaja_31.webp",
       "is_verified": true,
@@ -56987,7 +56985,7 @@
         }
       ],
       "points": 2,
-      "correct_answers_count": 1,
+      "correct_answers_count": 2,
       "has_image": false,
       "section": "pravila_saobracaja",
       "correct_answers": [
