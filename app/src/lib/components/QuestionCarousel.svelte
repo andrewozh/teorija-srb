@@ -28,6 +28,7 @@
 		showFlag = true,
 		showTimer = false,
 		timerSeconds = 2700,
+		forceLang = undefined,
 		onBack,
 		onComplete = undefined,
 		score = $bindable(0),
@@ -41,6 +42,7 @@
 		showFlag?: boolean;
 		showTimer?: boolean;
 		timerSeconds?: number;
+		forceLang?: Lang;
 		onBack: () => void;
 		onComplete?: () => void;
 		score?: number;
@@ -48,7 +50,7 @@
 	} = $props();
 
 	let currentIndex = $state(0);
-	let lang = $state<Lang>(getSettings().lang);
+	let lang = $state<Lang>(forceLang ?? getSettings().lang);
 
 	// Per-question answer state
 	let questionStates = $state<Record<number, {
@@ -90,7 +92,7 @@
 		updateBookmarkState();
 
 		const unsub = subscribe(() => {
-			lang = getSettings().lang;
+			if (!forceLang) lang = getSettings().lang;
 			updateBookmarkState();
 		});
 
@@ -156,7 +158,7 @@
 		questionStates[qIndex] = { selected: sel, answered: true, correct: isCorrect };
 		recordAnswer(q.section, q.id, isCorrect);
 		if (isCorrect) {
-			score++;
+			score += q.points;
 		} else {
 			wrongIds = [...wrongIds, questionKey(q)];
 		}

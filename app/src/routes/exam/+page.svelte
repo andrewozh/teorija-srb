@@ -20,7 +20,7 @@
 	// Results data
 	let score = $state(0);
 	let wrongIds = $state<string[]>([]);
-	let passed = $derived(wrongIds.length <= 5);
+	let passed = $derived(score >= 80);
 
 	$effect(() => {
 		const unsub = subscribe(() => {
@@ -44,7 +44,7 @@
 			date: new Date().toISOString(),
 			score,
 			total: questions.length,
-			passed: wrongIds.length <= 5,
+			passed: score >= 80,
 			wrong_ids: wrongIds,
 			answers: {}
 		};
@@ -73,7 +73,7 @@
 			</div>
 
 			<div class="rules-card">
-				{#each [['41', lang === 'sr' ? 'питања' : 'вопрос'], ['45', lang === 'sr' ? 'минута' : 'минут'], ['37', lang === 'sr' ? 'за пролаз' : 'для сдачи'], ['2', lang === 'sr' ? 'казнена поена' : 'штрафных балла']] as [num, label], i}
+				{#each [['41', lang === 'sr' ? 'питање' : 'вопрос'], ['100', lang === 'sr' ? 'поена укупно' : 'баллов всего'], ['80', lang === 'sr' ? 'поена за пролаз' : 'баллов для сдачи'], ['45', lang === 'sr' ? 'минута' : 'минут']] as [num, label], i}
 					<div class="rule-row" class:rule-last={i === 3}>
 						<div class="rule-num">{num}</div>
 						<div class="rule-label">{label}</div>
@@ -108,6 +108,7 @@
 			showFlag={false}
 			showTimer={true}
 			timerSeconds={2700}
+			forceLang="sr"
 			onBack={() => { if (confirm(t('exam.finish', lang) + '?')) finishExam(); }}
 			onComplete={() => finishExam()}
 			bind:score
@@ -133,10 +134,10 @@
 					{passed ? t('exam.passed', lang) : t('exam.failed', lang)}
 				</div>
 				<div class="result-score">
-					{score}<span class="result-total">/{questions.length}</span>
+					{score}<span class="result-total">/100</span>
 				</div>
 				<div class="result-errors">
-					{wrongIds.length} {t('exam.errors', lang)}
+					{wrongIds.length} {t('exam.errors', lang)} · {lang === 'sr' ? 'потребно' : 'нужно'} ≥80
 				</div>
 			</div>
 

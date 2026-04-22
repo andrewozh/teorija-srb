@@ -36,10 +36,95 @@ export function getChunks(questions: Question[], chunkSize = 20): Chunk[] {
 	return chunks;
 }
 
-export function getRandomExamQuestions(data: QuestionsData, count = 41): Question[] {
+/**
+ * Generate exam questions: 41 questions totaling exactly targetPoints,
+ * distributed proportionally across sections.
+ */
+export function getRandomExamQuestions(data: QuestionsData, count = 41, targetPoints = 100): Question[] {
 	const active = getActiveQuestions(data).filter((q) => q.correct_answers && q.correct_answers.length > 0);
-	const shuffled = [...active].sort(() => Math.random() - 0.5);
-	return shuffled.slice(0, count);
+
+	// Group by section
+	const bySec: Record<string, Question[]> = {};
+	for (const q of active) {
+		if (!bySec[q.section]) bySec[q.section] = [];
+		bySec[q.section].push(q);
+	}
+
+	// Proportional allocation per section
+	const sectionIds = Object.keys(bySec).sort((a, b) => bySec[b].length - bySec[a].length);
+	const total = active.length;
+	const allocation: Record<string, number> = {};
+	let allocated = 0;
+	const remainders: [string, number][] = [];
+
+	for (const s of sectionIds) {
+		const exact = count * bySec[s].length / total;
+		const base = Math.floor(exact);
+		allocation[s] = Math.max(1, base); // at least 1 per section
+		remainders.push([s, exact - base]);
+		allocated += allocation[s];
+	}
+	// Distribute remaining slots by highest remainder
+	remainders.sort((a, b) => b[1] - a[1]);
+	for (const [s] of remainders) {
+		if (allocated >= count) break;
+		allocation[s]++;
+		allocated++;
+	}
+	// If over-allocated (due to min 1), trim largest sections
+	while (allocated > count) {
+		for (const s of sectionIds) {
+			if (allocation[s] > 1 && allocated > count) {
+				allocation[s]--;
+				allocated--;
+			}
+		}
+	}
+
+	// Pick random questions per section
+	const shuffle = <T>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
+	let selected: Question[] = [];
+	const pools: Record<string, Question[]> = {};
+	for (const s of sectionIds) {
+		const pool = shuffle(bySec[s]);
+		pools[s] = pool;
+		selected.push(...pool.slice(0, allocation[s]));
+	}
+
+	// Adjust to hit exactly targetPoints — swap one point at a time
+	for (let attempt = 0; attempt < 500; attempt++) {
+		const currentPoints = selected.reduce((sum, q) => sum + q.points, 0);
+		if (currentPoints === targetPoints) break;
+
+		const needMore = currentPoints < targetPoints;
+		// Find a question to replace with one that's 1 point more/less
+		let swapped = false;
+		const indices = shuffle(selected.map((_, i) => i));
+
+		for (const idx of indices) {
+			const oldQ = selected[idx];
+			const wantedPts = needMore ? oldQ.points + 1 : oldQ.points - 1;
+			if (wantedPts < 1 || wantedPts > 4) continue;
+
+			// Try same section first, then any section
+			const tryOrder = [oldQ.section, ...sectionIds.filter(s => s !== oldQ.section)];
+			for (const s of tryOrder) {
+				const replacement = pools[s].find(
+					(q) => q.points === wantedPts && !selected.includes(q)
+				);
+				if (replacement) {
+					selected[idx] = replacement;
+					swapped = true;
+					break;
+				}
+			}
+			if (swapped) break;
+		}
+
+		if (!swapped) break;
+	}
+
+	return shuffle(selected);
 }
 
 export function questionKey(q: Question): string {
