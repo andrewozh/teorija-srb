@@ -20,7 +20,7 @@
 		return unsub;
 	});
 
-	const categories: Category[] = ['A', 'B', 'C', 'D', 'F'];
+	const categories: Category[] = ['A', 'B', 'C', 'D', 'F', 'M'];
 
 	function setCategory(cat: Category) {
 		updateSettings({ category: cat });

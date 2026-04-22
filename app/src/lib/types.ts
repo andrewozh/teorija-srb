@@ -63,7 +63,7 @@ export interface ExamResult {
 }
 
 export type Accent = 'gold' | 'clay' | 'sage' | 'azure' | 'plum';
-export type Category = 'A' | 'B' | 'C' | 'D' | 'F';
+export type Category = 'A' | 'B' | 'C' | 'D' | 'F' | 'M';
 
 export interface Settings {
 	theme: 'light' | 'dark' | 'system';
