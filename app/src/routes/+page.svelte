@@ -84,20 +84,20 @@
 				</div>
 			</div>
 
-			<!-- Hero card — training (placeholder for future) -->
-			<a href="{base}/practice" class="hero-card">
+			<!-- Hero card — assisted learning -->
+			<a href="{base}/learn" class="hero-card">
 				<div class="hero-top">
 					<div>
 						<div class="hero-label">{lang === 'sr' ? 'Данашња сесија' : 'Сегодняшняя сессия'}</div>
 						<div class="hero-title">{lang === 'sr' ? 'Обучење' : 'Обучение'}</div>
-						<div class="hero-sub">{lang === 'sr' ? '20 нових + 5 понављања' : '20 новых + 5 повторений'}</div>
+						<div class="hero-sub">{getSettings().learnCount || 20} {lang === 'sr' ? 'питања по сесији' : 'вопросов за сессию'}</div>
 					</div>
 					<div class="hero-icon-wrap">
 						<Icon name="bolt" size={20} color="var(--accent-ink)" stroke={2} />
 					</div>
 				</div>
 				<div class="hero-bottom">
-					<div class="hero-time">~6 {lang === 'sr' ? 'минута' : 'минут'}</div>
+					<div class="hero-time">~{Math.round((getSettings().learnCount || 20) * 20 / 60)} {lang === 'sr' ? 'минута' : 'минут'}</div>
 					<div class="hero-cta">
 						{lang === 'sr' ? 'Почни' : 'Начать'} <Icon name="chev-right" size={14} color="var(--accent-ink)" />
 					</div>

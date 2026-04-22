@@ -71,6 +71,7 @@ export interface Settings {
 	lang: Lang;
 	accent: Accent;
 	category: Category;
+	learnCount: number;
 }
 
 export interface AppState {

@@ -15,7 +15,8 @@ function defaultState(): AppState {
 			fontSize: 'medium',
 			lang: 'sr',
 			accent: 'gold',
-			category: 'B'
+			category: 'B',
+			learnCount: 20
 		}
 	};
 }
