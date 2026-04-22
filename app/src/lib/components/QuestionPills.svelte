@@ -11,7 +11,18 @@
 		if (scrollEl && current >= 0) {
 			const active = scrollEl.querySelector('[data-active="true"]') as HTMLElement;
 			if (active) {
-				active.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'instant' });
+				const container = scrollEl;
+				const padding = 48;
+				const activeLeft = active.offsetLeft;
+				const activeRight = activeLeft + active.offsetWidth;
+				const visibleLeft = container.scrollLeft;
+				const visibleRight = visibleLeft + container.clientWidth;
+
+				if (activeLeft - padding < visibleLeft) {
+					container.scrollTo({ left: activeLeft - padding, behavior: 'smooth' });
+				} else if (activeRight + padding > visibleRight) {
+					container.scrollTo({ left: activeRight + padding - container.clientWidth, behavior: 'smooth' });
+				}
 			}
 		}
 	});
