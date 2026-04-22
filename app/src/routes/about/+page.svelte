@@ -80,20 +80,32 @@
 		</div>
 
 		<div class="about-card">
-			<div class="about-row">
-				<span class="about-label">{lang === 'sr' ? 'Политика приватности' : 'Политика конфиденциальности'}</span>
-				<span class="about-val">→</span>
-			</div>
 			<div class="about-row about-row-last">
 				<span class="about-label">{lang === 'sr' ? 'Отворени код' : 'Открытый код'}</span>
-				<span class="about-val">GitHub →</span>
+				<a href="https://github.com/andrewozh/teorija-srb" target="_blank" class="about-link">GitHub →</a>
 			</div>
 		</div>
 
-		<button class="coffee-btn">
-			<Icon name="coffee" size={16} stroke={1.6} />
-			{lang === 'sr' ? 'Купи ми кафу' : 'Купи мне кофе'}
-		</button>
+		<div class="author-card">
+			<img src="https://github.com/andrewozh.png" alt="Andrew Ozhegov" class="author-avatar" />
+			<div class="author-info">
+				<div class="author-label">{lang === 'sr' ? 'Направио' : 'Сделал'}</div>
+				<div class="author-name">Andrew Ozhegov</div>
+				<div class="author-links">
+					<a href="https://github.com/andrewozh" target="_blank" title="GitHub">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+					</a>
+					<a href="https://t.me/andrewozh" target="_blank" title="Telegram">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012.056 0h-.112zM17.5 7.39l-1.976 9.322c-.145.658-.537.818-1.092.508l-3.016-2.222-1.455 1.4c-.16.16-.295.295-.605.295l.213-3.054 5.56-5.022c.242-.213-.054-.334-.373-.12L8.32 13.617l-2.96-.924c-.64-.203-.658-.64.136-.95l11.566-4.458c.537-.194 1.006.13.832.95l.005.054z"/></svg>
+					</a>
+					<a href="https://andrewozh.github.io" target="_blank" title="Website">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
 	</div>
 </div>
 
@@ -146,12 +158,41 @@
 	.about-val { font-size: 13px; color: var(--ink); font-family: var(--font-mono); text-align: right; }
 	.about-link { font-size: 13px; color: var(--accent); font-family: var(--font-mono); text-decoration: none; }
 
-	.coffee-btn {
-		width: 100%; height: 52px; border-radius: 16px;
-		background: var(--surface); color: var(--ink);
-		border: 1px solid var(--hairline);
-		font-family: var(--font-ui); font-size: 14px; font-weight: 500;
-		cursor: pointer;
-		display: flex; align-items: center; justify-content: center; gap: 8px;
+	/* Author card */
+	.author-card {
+		background: var(--surface);
+		border-radius: 18px;
+		border: 0.5px solid var(--hairline);
+		margin-bottom: 18px;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
 	}
+	.author-avatar {
+		width: 72px; height: 72px; border-radius: 50%;
+		border: 2px solid var(--hairline);
+		flex-shrink: 0;
+	}
+	.author-info { flex: 1; }
+	.author-label {
+		font-family: var(--font-mono); font-size: 10px;
+		color: var(--ink3); letter-spacing: 1px;
+		text-transform: uppercase; margin-bottom: 2px;
+	}
+	.author-name {
+		font-size: 16px; font-weight: 600;
+		letter-spacing: -0.2px; margin-bottom: 8px;
+	}
+	.author-links {
+		display: flex; gap: 12px;
+	}
+	.author-links a {
+		color: var(--ink3);
+		transition: color 0.15s;
+		display: flex; align-items: center;
+	}
+	.author-links a:hover { color: var(--accent); }
+
+
 </style>
