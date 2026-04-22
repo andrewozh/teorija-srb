@@ -252,7 +252,19 @@
 							{/if}
 						</div>
 						{#if q.has_image && q.image}
-							<img src="{base}/images/{q.image}" alt="" class="q-image" loading="lazy" />
+							<img
+								src="{base}/images/{q.image}"
+								alt=""
+								class="q-image"
+								loading="lazy"
+								onload={(e) => {
+									const img = e.currentTarget;
+									const displayWidth = img.clientWidth;
+									const scale = displayWidth / img.naturalWidth;
+									const displayHeight = img.naturalHeight * scale;
+									img.parentElement.style.minHeight = (displayHeight * 0.3) + 'px';
+								}}
+							/>
 						{/if}
 					</div>
 
