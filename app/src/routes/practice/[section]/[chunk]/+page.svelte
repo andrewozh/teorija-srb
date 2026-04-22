@@ -6,6 +6,7 @@
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
 	import { getSettings, subscribe } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
+	import { getTopicsForSection } from '$lib/topics.js';
 	import type { Question, Lang } from '$lib/types.js';
 	import QuestionCarousel from '$lib/components/QuestionCarousel.svelte';
 
@@ -18,10 +19,28 @@
 	onMount(async () => {
 		const data = await loadQuestions();
 		const sectionQuestions = getQuestionsBySection(data, sectionId);
-		const chunks = getChunks(sectionQuestions);
-		const chunk = chunks[chunkIndex];
-		if (chunk) {
-			questions = chunk.questions;
+		const topics = getTopicsForSection(sectionId);
+
+		if (topics) {
+			// Build global chunk list from topics
+			const qMap = new Map(sectionQuestions.map(q => [q.id, q]));
+			const allChunks: Question[][] = [];
+			for (const topic of topics) {
+				const tqs = topic.questionIds.map(id => qMap.get(id)).filter(Boolean) as Question[];
+				const tChunks = getChunks(tqs);
+				for (const c of tChunks) {
+					allChunks.push(c.questions);
+				}
+			}
+			if (chunkIndex < allChunks.length) {
+				questions = allChunks[chunkIndex];
+			}
+		} else {
+			const chunks = getChunks(sectionQuestions);
+			const chunk = chunks[chunkIndex];
+			if (chunk) {
+				questions = chunk.questions;
+			}
 		}
 
 		const unsub = subscribe(() => {

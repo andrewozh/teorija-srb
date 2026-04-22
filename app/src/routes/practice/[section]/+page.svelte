@@ -4,56 +4,101 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, getSectionCompletedCount, subscribe, getSettings } from '$lib/store.js';
+	import { getQuestionProgress, subscribe, getSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
-	import type { Chunk, Lang } from '$lib/types.js';
+	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
+	import type { Question, Chunk, Lang } from '$lib/types.js';
+	import type { Topic } from '$lib/topics.js';
 	import Header from '$lib/components/Header.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
 
 	let sectionId = $derived($page.params.section);
+	let questions = $state<Question[]>([]);
 	let chunks = $state<Chunk[]>([]);
-	let chunkStats = $state<Array<{ total: number; correct: number; wrong: number }>>([]);
+	let topics = $state<Topic[] | null>(null);
+	let expandedHints = $state<Set<string>>(new Set());
 	let totalQuestions = $state(0);
 	let totalCorrect = $state(0);
 	let totalWrong = $state(0);
 	let lang = $state<Lang>(getSettings().lang);
 
-	function computeChunkStats(chunks: Chunk[]): Array<{ total: number; correct: number; wrong: number }> {
-		return chunks.map((chunk) => {
-			let correct = 0;
-			let wrong = 0;
-			for (const q of chunk.questions) {
-				const prog = getQuestionProgress(q.section, q.id);
-				if (prog) {
-					if (prog.correct > 0) correct++;
-					else if (prog.wrong > 0) wrong++;
-				}
+	// Topic chunks: each topic split into chunks of ≤20
+	interface TopicGroup {
+		topic: Topic;
+		chunks: Chunk[];
+		stats: { total: number; correct: number; wrong: number };
+	}
+	let topicGroups = $state<TopicGroup[]>([]);
+
+	function computeQuestionStats(qs: Question[]): { correct: number; wrong: number } {
+		let correct = 0, wrong = 0;
+		for (const q of qs) {
+			const prog = getQuestionProgress(q.section, q.id);
+			if (prog) {
+				if (prog.correct > 0) correct++;
+				else if (prog.wrong > 0) wrong++;
 			}
-			return { total: chunk.questions.length, correct, wrong };
+		}
+		return { correct, wrong };
+	}
+
+	function buildTopicGroups(allQuestions: Question[], topics: Topic[]): TopicGroup[] {
+		const qMap = new Map(allQuestions.map(q => [q.id, q]));
+		return topics.map(topic => {
+			const tqs = topic.questionIds.map(id => qMap.get(id)).filter(Boolean) as Question[];
+			const tChunks = getChunks(tqs);
+			const stats = computeQuestionStats(tqs);
+			return { topic, chunks: tChunks, stats: { total: tqs.length, ...stats } };
 		});
+	}
+
+	function recalc() {
+		if (topics) {
+			topicGroups = buildTopicGroups(questions, topics);
+			totalCorrect = topicGroups.reduce((s, g) => s + g.stats.correct, 0);
+			totalWrong = topicGroups.reduce((s, g) => s + g.stats.wrong, 0);
+		} else {
+			chunks = getChunks(questions);
+			const stats = computeQuestionStats(questions);
+			totalCorrect = stats.correct;
+			totalWrong = stats.wrong;
+		}
 	}
 
 	onMount(async () => {
 		const data = await loadQuestions();
-		const questions = getQuestionsBySection(data, sectionId);
-		chunks = getChunks(questions);
+		questions = getQuestionsBySection(data, sectionId);
 		totalQuestions = questions.length;
-		chunkStats = computeChunkStats(chunks);
-		recalcTotals();
+		topics = getTopicsForSection(sectionId);
+		recalc();
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
-			chunkStats = computeChunkStats(chunks);
-			recalcTotals();
+			recalc();
 		});
 		return unsub;
 	});
 
-	function recalcTotals() {
-		totalCorrect = chunkStats.reduce((s, c) => s + c.correct, 0);
-		totalWrong = chunkStats.reduce((s, c) => s + c.wrong, 0);
+	function toggleHint(topicId: string) {
+		const next = new Set(expandedHints);
+		if (next.has(topicId)) next.delete(topicId);
+		else next.add(topicId);
+		expandedHints = next;
 	}
+
+	// For topic-based: we need a global chunk index for routing
+	// Build a flat chunk index map: globalIndex → { topicIndex, localChunkIndex }
+	let globalChunkMap = $derived.by(() => {
+		if (!topics) return [];
+		const map: Array<{ questions: Question[] }> = [];
+		for (const g of topicGroups) {
+			for (const c of g.chunks) {
+				map.push({ questions: c.questions });
+			}
+		}
+		return map;
+	});
 
 	let pct = $derived(totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0);
 </script>
@@ -82,35 +127,91 @@
 			</div>
 		</div>
 
-		<div class="blocks-label">
-			{chunks.length} {lang === 'sr' ? 'блокова' : 'блоков'}
-		</div>
+		{#if topics && topicGroups.length > 0}
+			<!-- Topic-based layout -->
+			{@const globalIdx = { value: 0 }}
+			{#each topicGroups as group}
+				<div class="topic-section">
+					<div class="topic-header">
+						<div class="topic-name">{topicName(group.topic, lang)}</div>
+						<div class="topic-right">
+							<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
+							<!-- svelte-ignore a11y_click_events_have_key_events -->
+							<!-- svelte-ignore a11y_no_static_element_interactions -->
+							<span class="topic-hint-btn" onclick={() => toggleHint(group.topic.id)}>
+								<Icon name="info" size={14} color="var(--accent)" stroke={1.8} />
+							</span>
+						</div>
+					</div>
 
-		{#each chunks as chunk, i}
-			{@const stat = chunkStats[i] || { total: 0, correct: 0, wrong: 0 }}
-			{@const isDone = stat.correct === stat.total}
-			{@const isStarted = stat.correct > 0 || stat.wrong > 0}
-			<a
-				href="{base}/practice/{sectionId}/{chunk.index}"
-				class="block-card"
-				style:opacity={!isStarted ? '0.5' : '1'}
-			>
-				<div class="block-num" class:block-done={isDone}>
-					{#if isDone}
-						<Icon name="check" size={13} stroke={2.5} />
-					{:else}
-						{i + 1}
+					{#if expandedHints.has(group.topic.id)}
+						<div class="topic-hint">
+							{topicHint(group.topic, lang)}
+						</div>
 					{/if}
+
+					{#each group.chunks as chunk, ci}
+						{@const idx = globalIdx.value}
+						{@const stat = computeQuestionStats(chunk.questions)}
+						{@const isDone = stat.correct === chunk.questions.length}
+						{@const isStarted = stat.correct > 0 || stat.wrong > 0}
+						<a
+							href="{base}/practice/{sectionId}/{idx}"
+							class="block-card"
+							style:opacity={!isStarted ? '0.5' : '1'}
+						>
+							<div class="block-num" class:block-done={isDone}>
+								{#if isDone}
+									<Icon name="check" size={13} stroke={2.5} />
+								{:else}
+									{ci + 1}
+								{/if}
+							</div>
+							<div class="block-name">
+								{lang === 'sr' ? 'Блок' : 'Блок'} {ci + 1}
+								<span class="block-range">Q{chunk.questions[0]?.id}–{chunk.questions[chunk.questions.length - 1]?.id}</span>
+							</div>
+							<div class="block-bar">
+								<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} />
+							</div>
+							<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
+						</a>
+						{@const _ = globalIdx.value++}
+					{/each}
 				</div>
-				<div class="block-name">
-					{lang === 'sr' ? 'Блок' : 'Блок'} {String(i + 1).padStart(2, '0')}
-				</div>
-				<div class="block-bar">
-					<ProgressBar value={stat.correct} total={stat.total} height={2} />
-				</div>
-				<div class="block-count">{stat.correct}/{stat.total}</div>
-			</a>
-		{/each}
+			{/each}
+		{:else}
+			<!-- Flat chunks (sections without topics) -->
+			<div class="blocks-label">
+				{chunks.length} {lang === 'sr' ? 'блокова' : 'блоков'}
+			</div>
+
+			{#each chunks as chunk, i}
+				{@const stat = computeQuestionStats(chunk.questions)}
+				{@const isDone = stat.correct === chunk.questions.length}
+				{@const isStarted = stat.correct > 0 || stat.wrong > 0}
+				<a
+					href="{base}/practice/{sectionId}/{chunk.index}"
+					class="block-card"
+					style:opacity={!isStarted ? '0.5' : '1'}
+				>
+					<div class="block-num" class:block-done={isDone}>
+						{#if isDone}
+							<Icon name="check" size={13} stroke={2.5} />
+						{:else}
+							{i + 1}
+						{/if}
+					</div>
+					<div class="block-name">
+						{lang === 'sr' ? 'Блок' : 'Блок'} {String(i + 1).padStart(2, '0')}
+					</div>
+					<div class="block-bar">
+						<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} />
+					</div>
+					<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
+				</a>
+			{/each}
+		{/if}
 	</div>
 </div>
 
@@ -145,6 +246,54 @@
 	.correct-text { color: var(--correct); }
 	.wrong-text { color: var(--wrong); }
 
+	/* Topic layout */
+	.topic-section {
+		margin-bottom: 16px;
+	}
+	.topic-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 10px 4px 6px;
+	}
+	.topic-name {
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--ink);
+		letter-spacing: -0.1px;
+		flex: 1;
+	}
+	.topic-right {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		flex-shrink: 0;
+	}
+	.topic-count {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		color: var(--ink3);
+	}
+	.topic-hint-btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		padding: 4px;
+		border-radius: 8px;
+	}
+	.topic-hint-btn:active { background: var(--surface2); }
+	.topic-hint {
+		padding: 10px 14px;
+		margin: 0 0 8px;
+		border-radius: 14px;
+		background: var(--accent-wash);
+		font-size: 13px;
+		line-height: 1.5;
+		color: var(--ink);
+	}
+
+	/* Flat chunks label */
 	.blocks-label {
 		font-family: var(--font-mono);
 		font-size: 10px;
@@ -154,6 +303,7 @@
 		padding: 10px 4px;
 	}
 
+	/* Block cards */
 	.block-card {
 		display: flex;
 		align-items: center;
@@ -163,6 +313,8 @@
 		padding: 12px 14px;
 		margin-bottom: 5px;
 		border: 0.5px solid var(--hairline);
+		text-decoration: none;
+		color: inherit;
 	}
 	.block-num {
 		width: 24px; height: 24px; border-radius: 6px;
@@ -179,6 +331,12 @@
 		flex: 1;
 		font-size: 13px;
 		letter-spacing: -0.1px;
+	}
+	.block-range {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		color: var(--ink3);
+		margin-left: 6px;
 	}
 	.block-bar { width: 80px; }
 	.block-count {
