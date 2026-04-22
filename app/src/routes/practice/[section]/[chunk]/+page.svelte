@@ -298,6 +298,7 @@
 							{t('question.confirm', lang)} ({qs.selected.size})
 						</button>
 					{/if}
+					<div class="footer-spacer"></div>
 				</div>
 
 				<!-- Footer (fixed at bottom of slide) -->
@@ -390,10 +391,13 @@
 		position: relative;
 	}
 
-	/* Question container: takes remaining space after answers */
-	/* min 20% (40% with image), max 60% */
+	/*
+	   Two blocks sharing space between header and footer:
+	   - Question: natural size, shrinks FIRST, max 60%
+	   - Answers: natural size, NEVER shrinks, fills remaining, scrolls
+	*/
 	.slide-body {
-		flex: 1 1 auto;
+		flex: 0 1 auto;       /* no grow, SHRINKS, basis = content */
 		min-height: 20%;
 		max-height: 60%;
 		overflow: hidden;
@@ -404,15 +408,12 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-	}
-	.slide-body.has-image {
-		min-height: 40%;
+		box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.12);
 	}
 
-	/* Answers container: claims natural size, scrolls if too tall */
 	.slide-answers {
-		flex: 0 0 auto;
-		max-height: 60%;
+		flex: 1 0 auto;       /* GROWS to fill, no shrink, basis = content */
+		min-height: 0;        /* allows overflow-y to work */
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		padding: 10px 14px 8px;
@@ -463,6 +464,12 @@
 		letter-spacing: 0.3px;
 	}
 
+	/* Spacer at bottom of answers to account for absolute footer */
+	.footer-spacer {
+		flex-shrink: 0;
+		height: calc(52px + env(safe-area-inset-bottom));
+	}
+
 	/* Confirm button */
 	.q-confirm-btn {
 		width: 100%; height: 48px; border-radius: 16px;
@@ -474,13 +481,17 @@
 
 	/* Footer — fixed at bottom of each slide, above answers in z-order */
 	.q-footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 		display: flex; align-items: center; gap: 4px;
 		padding: 4px 14px;
 		padding-bottom: calc(4px + env(safe-area-inset-bottom));
-		flex-shrink: 0;
 		border-top: 0.5px solid var(--hairline);
 		background: var(--bg);
-		z-index: 2;
+		z-index: 3;
+		box-shadow: 0 -4px 12px -2px rgba(0, 0, 0, 0.12);
 	}
 	.q-footer-icon {
 		width: 44px; height: 44px; border-radius: 12px;
