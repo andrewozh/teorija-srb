@@ -160,7 +160,7 @@
 
 			<!-- Footer -->
 			<div class="home-footer">
-				<a href="{base}/about">{lang === 'sr' ? 'О апликацији' : 'О приложении'}</a>
+				<a href="{base}/about">Teorija v0.8.1-beta</a>
 			</div>
 		</div>
 	{:else}

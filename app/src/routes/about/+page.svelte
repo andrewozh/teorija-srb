@@ -42,7 +42,7 @@
 				<img src="{base}/icon-192.png" alt="Teorija" width="96" height="96" style="border-radius: 22px; box-shadow: 0 2px 12px rgba(0,0,0,0.25), 0 0 0 0.5px var(--hairline);" />
 			</div>
 			<div class="about-name">Teorija <span class="beta-badge">beta</span></div>
-			<div class="about-version">0.2.0</div>
+			<div class="about-version">0.8.1-beta</div>
 		</div>
 
 		<div class="about-card">
