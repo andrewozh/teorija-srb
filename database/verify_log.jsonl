@@ -2682,3 +2682,9 @@
 {"section": "pravila_saobracaja", "question_id": 15, "changes": [{"action": "text_ru_changed", "from": "У ситуацији приказаној на слици поступање возача регулисано је:", "to": "В ситуации, показанной на рисунке, действия водителя регулируются:"}], "timestamp": "2026-04-23T14:38:59.053244"}
 {"section": "pravila_saobracaja", "question_id": 15, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-23T14:39:31.657284"}
 {"section": "osnove_bezbednosti", "question_id": 116, "changes": [{"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-04-23T19:38:05.235025"}
+{"section": "osnove_bezbednosti", "question_id": 122, "changes": [{"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-04-23T19:54:52.364063"}
+{"section": "vozaci", "question_id": 128, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-04-24T07:33:08.285678"}
+{"section": "vozaci", "question_id": 128, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-24T07:33:13.680611"}
+{"section": "osnove_bezbednosti", "question_id": 44, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-24T07:33:53.672725"}
+{"section": "osnove_bezbednosti", "question_id": 47, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-24T07:34:14.853745"}
+{"section": "saobracajna_signalizacija", "question_id": 111, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-04-24T07:37:03.094687"}
