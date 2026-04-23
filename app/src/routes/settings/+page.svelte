@@ -190,12 +190,12 @@
 		<div class="section-card" style="margin-top: 16px;">
 			<a href="{base}/about" class="settings-row about-row">
 				<span class="row-label">{lang === 'sr' ? 'О апликацији' : 'О приложении'}</span>
-				<span class="row-val">v0.8.1-beta →</span>
+				<span class="row-val">v0.8.2-beta →</span>
 			</a>
 		</div>
 
 		<div class="settings-footer">
-			Teorija v0.8.1-beta
+			Teorija v0.8.2-beta
 		</div>
 	</div>
 </div>
