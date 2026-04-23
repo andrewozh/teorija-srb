@@ -50,6 +50,7 @@
 	} = $props();
 
 	let currentIndex = $state(0);
+	let effectiveForceLang = $derived(forceLang);
 	let lang = $state<Lang>(forceLang ?? getSettings().lang);
 
 	// Per-question answer state
@@ -81,7 +82,8 @@
 	}));
 
 	// Timer state
-	let timerRemaining = $state(timerSeconds);
+	let timerRemaining = $state(0);
+	$effect(() => { timerRemaining = timerSeconds; });
 	let timerInterval: ReturnType<typeof setInterval> | undefined = undefined;
 
 	// Carousel ref
@@ -92,7 +94,7 @@
 		updateBookmarkState();
 
 		const unsub = subscribe(() => {
-			if (!forceLang) lang = getSettings().lang;
+			if (!effectiveForceLang) lang = getSettings().lang;
 			updateBookmarkState();
 		});
 
@@ -222,7 +224,7 @@
 		}
 	}
 
-	function optionStateForQuestion(qIndex: number, letter: string): 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' {
+	function optionStateForQuestion(qIndex: number, letter: string): 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' | 'missed' {
 		const qs = getQState(qIndex);
 		const q = questions[qIndex];
 		if (!qs.answered) {
@@ -230,7 +232,8 @@
 		}
 		const isCorrectAnswer = q?.correct_answers?.includes(letter);
 		const wasSelected = qs.selected.has(letter);
-		if (isCorrectAnswer) return 'correct';
+		if (isCorrectAnswer && wasSelected) return 'correct';
+		if (isCorrectAnswer && !wasSelected) return 'missed';
 		if (wasSelected && !isCorrectAnswer) return 'wrong';
 		return 'muted';
 	}
@@ -418,7 +421,6 @@
 		color: var(--ink); letter-spacing: 0.3px;
 	}
 	.q-header-total { color: var(--ink4); }
-	.q-header-qid { color: var(--ink3); font-size: 11px; }
 	.q-header-timer {
 		font-size: 15px;
 		font-weight: 600;

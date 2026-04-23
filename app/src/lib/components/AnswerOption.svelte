@@ -4,7 +4,7 @@
 	let { letter, text, state = 'idle', multi = true, onclick }: {
 		letter: string;
 		text: string;
-		state?: 'idle' | 'selected' | 'correct' | 'wrong' | 'muted';
+		state?: 'idle' | 'selected' | 'correct' | 'wrong' | 'muted' | 'missed';
 		multi?: boolean;
 		onclick?: () => void;
 	} = $props();
@@ -16,6 +16,8 @@
 			<Icon name="check" size={14} color="#fff" stroke={2.5} />
 		{:else if state === 'wrong'}
 			<Icon name="x" size={13} color="#fff" stroke={2.5} />
+		{:else if state === 'missed'}
+			<Icon name="check" size={14} color="#fff" stroke={2.5} />
 		{:else}
 			{letter}
 		{/if}
@@ -42,6 +44,7 @@
 	.answer-selected { background: var(--accent-wash); border-color: var(--accent); }
 	.answer-correct { background: var(--correct-wash); border-color: var(--correct); }
 	.answer-wrong { background: var(--wrong-wash); border-color: var(--wrong); }
+	.answer-missed { background: #fff7ed; border-color: #f59e0b; }
 	.answer-muted { background: var(--surface); border-color: var(--hairline); }
 	.answer-muted .answer-text { color: var(--ink3); }
 
@@ -75,6 +78,11 @@
 	}
 	.answer-wrong .answer-dot {
 		background: var(--wrong);
+		color: #fff;
+		border-color: transparent;
+	}
+	.answer-missed .answer-dot {
+		background: #f59e0b;
 		color: #fff;
 		border-color: transparent;
 	}
