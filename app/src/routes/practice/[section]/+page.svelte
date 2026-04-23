@@ -156,7 +156,9 @@
 
 					{#if expandedHints.has(group.topic.id)}
 						<div class="topic-hint">
-							{topicHint(group.topic, lang)}
+							{@html topicHint(group.topic, lang)
+								.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+								.replace(/\n/g, '<br>')}
 						</div>
 					{/if}
 
