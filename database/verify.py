@@ -800,11 +800,14 @@ def render_question_form(q, section, qid):
         cls = "correct" if is_correct else ""
         checked = "checked" if is_correct else ""
         escaped_text = o['text'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        escaped_text_ru = o.get('text_ru', '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
         options_html += f"""
         <div class="option-row {cls}">
             <span class="option-letter">{o['letter']})</span>
             <div class="option-text">
                 <textarea name="opt_{i}_text" rows="1" data-original="{escaped_text}">{escaped_text}</textarea>
+                <div class="diff-display"></div>
+                <textarea name="opt_{i}_text_ru" rows="1" data-original="{escaped_text_ru}" style="font-size:13px;color:#6688aa;margin-top:2px;">{escaped_text_ru}</textarea>
                 <div class="diff-display"></div>
             </div>
             <div class="option-correct" title="Correct answer">
@@ -838,9 +841,13 @@ def render_question_form(q, section, qid):
             <input type="number" name="display_id" value="{q['id']}" disabled style="width:68px;font-size:22px;font-weight:700;text-align:center;padding:6px;border-radius:6px;border:1px solid #ccc;background:#f0f0e8;">
         </div>
         <div style="flex:1;">
-            <div class="field" style="margin-bottom:0;">
+            <div class="field" style="margin-bottom:4px;">
                 <textarea name="text" data-original="{q['text']}" style="font-size:23px;line-height:1.0;">{q['text']}</textarea>
                 <div class="diff-display" id="diff-text"></div>
+            </div>
+            <div class="field" style="margin-bottom:0;">
+                <textarea name="text_ru" data-original="{q.get('text_ru', '')}" style="font-size:16px;line-height:1.2;color:#6688aa;">{q.get('text_ru', '')}</textarea>
+                <div class="diff-display"></div>
             </div>
         </div>
     </div>
@@ -1334,6 +1341,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
                 changes.append({"action": "text_changed", "from": q["text"][:80], "to": text[:80]})
                 q["text"] = text
 
+            if text_ru and q.get("text_ru", "") != text_ru:
+                changes.append({"action": "text_ru_changed", "from": q.get("text_ru", "")[:80], "to": text_ru[:80]})
+                q["text_ru"] = text_ru
+
             if q["points"] != points:
                 changes.append({"action": "points_changed", "from": q["points"], "to": points})
                 q["points"] = points
@@ -1393,12 +1404,15 @@ class VerifyHandler(SimpleHTTPRequestHandler):
                     continue
 
                 opt_text = fields.get(f"opt_{i}_text", "")
+                opt_text_ru = fields.get(f"opt_{i}_text_ru", "").strip()
                 is_correct = f"opt_{i}_correct" in fields
 
                 if opt_text != old_text:
                     changes.append({"action": "option_text_changed", "position": i, "letter": letter, "from": old_text[:60], "to": opt_text[:60]})
 
                 new_opt = {**old_opt, "letter": letter, "text": opt_text}
+                if opt_text_ru:
+                    new_opt["text_ru"] = opt_text_ru
                 new_options.append(new_opt)
 
                 if is_correct:
