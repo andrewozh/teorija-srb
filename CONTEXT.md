@@ -2,7 +2,7 @@
 
 ## Project: Serbian Driving Theory Exam App — "Teorija"
 
-**Version:** 0.8.2-beta
+**Version:** 0.8.3-beta
 **Deployed:** https://andrewozh.github.io/driving-theory-srb/
 **Repo:** https://github.com/andrewozh/teorija-srb
 

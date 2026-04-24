@@ -160,7 +160,7 @@
 
 			<!-- Footer -->
 			<div class="home-footer">
-				<a href="{base}/about">Teorija v0.8.2-beta</a>
+				<a href="{base}/about">Teorija v0.8.3-beta</a>
 			</div>
 		</div>
 	{:else}
