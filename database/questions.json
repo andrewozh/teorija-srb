@@ -6465,7 +6465,6 @@
         "B"
       ],
       "section": "vozaci",
-      "is_removed": true,
       "correct_answers": [
         "а"
       ],
@@ -7038,7 +7037,6 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true,
       "correct_answers": [
         "а",
         "б"
@@ -7220,7 +7218,6 @@
       "correct_answers_count": 3,
       "has_image": false,
       "section": "vozaci",
-      "is_removed": true,
       "correct_answers": [
         "а",
         "б",
@@ -13394,7 +13391,6 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "vozila",
-      "is_removed": true,
       "correct_answers": [
         "б"
       ],
@@ -20404,7 +20400,6 @@
         "F"
       ],
       "section": "vozila",
-      "is_removed": true,
       "correct_answers": [
         "в"
       ],
@@ -25897,7 +25892,6 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "saobracajna_signalizacija",
-      "is_removed": true,
       "correct_answers": [
         "в"
       ],
@@ -59639,7 +59633,6 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "pravila_saobracaja",
-      "is_removed": true,
       "correct_answers": [
         "б"
       ],
@@ -69995,7 +69988,6 @@
       "correct_answers_count": 1,
       "has_image": false,
       "section": "posledice",
-      "is_removed": true,
       "correct_answers": [
         "б"
       ],
