@@ -6,6 +6,7 @@
 	import {
 		recordAnswer,
 		getQuestionProgress,
+		getMistakeStatus,
 		isBookmarked,
 		toggleBookmark,
 		subscribe,
@@ -75,9 +76,12 @@
 		const qs = getQState(i);
 		if (qs.answered && qs.correct) return 'correct';
 		if (qs.answered && !qs.correct) return 'wrong';
+		// Check mistake status (streak-based)
+		const mistake = getMistakeStatus(q.section, q.id);
+		if (mistake === 'recovering') return 'recovering';
+		if (mistake === 'wrong') return 'wrong';
 		const prog = getQuestionProgress(q.section, q.id);
 		if (prog && prog.correct > 0) return 'correct';
-		if (prog && prog.wrong > 0) return 'wrong';
 		return 'unanswered';
 	}));
 

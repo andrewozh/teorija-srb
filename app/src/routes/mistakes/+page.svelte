@@ -5,6 +5,7 @@
 	import { loadQuestions, parseQuestionKey, qText } from '$lib/data.js';
 	import {
 		getMistakeQuestionKeys,
+		getMistakeStatus,
 		getQuestionProgress,
 		subscribe,
 		getSettings
@@ -89,7 +90,8 @@
 						</div>
 						{#each questions as q}
 							{@const prog = getQuestionProgress(q.section, q.id)}
-							<div class="mistake-item">
+							{@const mStatus = getMistakeStatus(q.section, q.id)}
+							<div class="mistake-item" class:mistake-recovering={mStatus === "recovering"}>
 								<p class="mistake-text">{qText(q, lang)}</p>
 								{#if prog}
 									<div class="mistake-stats">
@@ -144,6 +146,9 @@
 		margin-bottom: 5px;
 		border: 0.5px solid var(--hairline);
 		border-left: 3px solid var(--wrong);
+	}
+	.mistake-item.mistake-recovering {
+		border-left-color: var(--recovering);
 	}
 	.mistake-text { font-size: 13px; line-height: 1.4; margin-bottom: 4px; }
 	.mistake-stats { display: flex; gap: 12px; }

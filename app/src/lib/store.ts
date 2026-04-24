@@ -121,13 +121,26 @@ export function getMistakeQuestionKeys(): string[] {
 	const keys: string[] = [];
 	for (const [section, questions] of Object.entries(state.progress)) {
 		for (const [qId, prog] of Object.entries(questions)) {
-			// A mistake is a question that was answered wrong and hasn't been corrected enough
-			if (prog.wrong > 0 && prog.correct < prog.wrong + 2) {
+			// streak < 2 means still a mistake:
+			//   streak=0 → wrong (last answer was incorrect)
+			//   streak=1 → recovering (1 correct after a wrong)
+			//   streak≥2 → cleared
+			if (prog.wrong > 0 && (prog.streak ?? 0) < 2) {
 				keys.push(`${section}:${qId}`);
 			}
 		}
 	}
 	return keys;
+}
+
+/** Check if a question is in "recovering" state: was wrong, but streak=1 */
+export function getMistakeStatus(section: string, questionId: number): 'none' | 'wrong' | 'recovering' {
+	const prog = state.progress[section]?.[String(questionId)];
+	if (!prog || prog.wrong === 0) return 'none';
+	const streak = prog.streak ?? 0;
+	if (streak >= 2) return 'none';
+	if (streak === 1) return 'recovering';
+	return 'wrong';
 }
 
 // Bookmark operations

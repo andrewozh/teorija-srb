@@ -36,7 +36,8 @@
 			class:pill-current={isCur}
 			class:pill-correct={!isCur && state === 'correct'}
 			class:pill-wrong={!isCur && state === 'wrong'}
-			class:pill-unanswered={!isCur && state !== 'correct' && state !== 'wrong'}
+			class:pill-recovering={!isCur && state === 'recovering'}
+			class:pill-unanswered={!isCur && state !== 'correct' && state !== 'wrong' && state !== 'recovering'}
 			data-active={isCur}
 			onclick={() => onclick?.(i)}
 		>
@@ -85,6 +86,10 @@
 	.pill-wrong {
 		background: var(--wrong-wash);
 		color: var(--wrong);
+	}
+	.pill-recovering {
+		background: var(--recovering-wash);
+		color: var(--recovering);
 	}
 	.pill-unanswered {
 		background: var(--surface2);
