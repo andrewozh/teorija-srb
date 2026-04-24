@@ -1,6 +1,10 @@
 # Project Context for AI Continuation
 
-## Project: Serbian Driving Theory Exam App
+## Project: Serbian Driving Theory Exam App — "Teorija"
+
+**Version:** 0.8.2-beta
+**Deployed:** https://andrewozh.github.io/driving-theory-srb/
+**Repo:** https://github.com/andrewozh/teorija-srb
 
 ### Repository Structure
 ```
@@ -8,60 +12,61 @@
 ├── database/                    ← PDF parsing, data extraction, verification
 │   ├── Makefile                 ← make parse, make answers, make translate, etc
 │   ├── sections.json            ← section definitions (order, PDF filenames, answer headers)
-│   ├── questions.json           ← THE DATABASE (2309 questions, all data)
-│   ├── questions.backup.json    ← backup before last rebuild
-│   ├── parse_v3.py              ← main question parser (PyMuPDF)
-│   ├── extract_answers.py       ← correct answer extractor (red circles in SVA PDF)
-│   ├── translate.py             ← Serbian→Russian translation (Claude API)
+│   ├── questions.json           ← THE DATABASE (2315 questions, 2288 active)
+│   ├── questions.backup.json    ← backup
+│   ├── parse_v3.py              ← main question parser (PyMuPDF) — preserves verified questions
+│   ├── extract_answers.py       ← correct answer extractor (red circles in SVA PDF) — skips verified
+│   ├── translate.py             ← Serbian→Russian translation (Claude API, model: claude-sonnet-4-6)
+│   ├── parse_vision.py          ← Claude Vision parser for question screenshots
+│   ├── crop_questions.py        ← crop question screenshots from SVA PDF (thick h-bar detection)
+│   ├── fix_points.py            ← fix points and last-option text from re-parsed PDFs
 │   ├── verify.py                ← web verification/editing tool (localhost:8765)
 │   ├── verify_log.jsonl         ← changelog of manual edits
-│   ├── source_17042026/         ← source PDFs (downloaded via make download)
-│   │   ├── Pravila saobracaja PDF.pdf
-│   │   ├── Saobracajna signalizacija PDF.pdf
-│   │   ├── Vozaci PDF.pdf
-│   │   ├── Vozila PDF.pdf
-│   │   ├── Osnove bezbednosti saobracaja i pojmovi i izrazi PDF.pdf
-│   │   ├── Posebne mere i ovlascenja PDF.pdf
-│   │   ├── Posledice nepostovanja propisa PDF.pdf
-│   │   ├── Objasnjenje ispitnih zadataka PDF.pdf
-│   │   ├── Objasnjenje izmene ispitnih pitanja PDF.pdf
-│   │   └── SVA-PITANJA-sa-resenjima.pdf      ← answers PDF (red circles)
-│   ├── saobracajData/           ← 3rd party parsed data (1701 questions, all with answers)
-│   │   ├── allQuestions.json    ← {qcId, Text, Choices[{Text, isCorrect}], ...}
-│   │   ├── categories.json
-│   │   └── img/                 ← their images
-│   └── images/                  ← extracted question images
-├── app/                         ← Svelte PWA (SvelteKit + static adapter)
-│   ├── Makefile                 ← make dev, make build, make deploy, make sync-data
-│   ├── SPEC.md                  ← feature spec
+│   ├── source_17042026/         ← source PDFs
+│   │   └── SVA-PITANJA-sa-resenjima.pdf  ← all sections merged + answers (red circles)
+│   └── images/                  ← extracted question images (967 files, WebP format)
+├── db_new/                      ← question screenshots organized by section
+│   ├── PARSING_RULES.md         ← English prompt for Claude Vision parsing
+│   ├── 01_osnove_bezbednosti/   ← 170 screenshots (q001.png – q170.png)
+│   ├── 02_vozaci/               ← 216 screenshots
+│   ├── 03_vozila/               ← 365 screenshots
+│   ├── 04_signalizacija/        ← 524 screenshots
+│   ├── 05_pravila_saobracaja/   ← 797 screenshots
+│   ├── 06_posebne_mere/         ← 61 screenshots
+│   └── 07_posledice/            ← 182 screenshots
+├── app/                         ← Svelte 5 PWA (SvelteKit + static adapter)
+│   ├── Makefile                 ← make dev, make build, make deploy (includes sync-data)
 │   ├── svelte.config.js         ← base: '/driving-theory-srb'
 │   ├── src/
 │   │   ├── lib/
-│   │   │   ├── types.ts         ← Question, Option, Settings, Lang, etc
-│   │   │   ├── store.ts         ← localStorage persistence (progress, bookmarks, exams)
-│   │   │   ├── data.ts          ← load questions.json, helpers (qText, oText, etc)
-│   │   │   ├── i18n.ts          ← UI translations (Serbian/Russian)
-│   │   │   ├── nav.ts           ← page title store
-│   │   │   ├── tokens.css       ← design tokens (colors, fonts, spacing)
-│   │   │   └── components/      ← Icon, Header, ProgressBar, Tag, AnswerOption, QuestionPills
-│   │   └── routes/              ← SvelteKit pages
-│   │       ├── +page.svelte     ← Home (welcome/main)
-│   │       ├── +layout.svelte   ← global shell
-│   │       ├── practice/        ← training flow
-│   │       ├── exam/            ← mock exam
-│   │       ├── mistakes/        ← wrong answers review
+│   │   │   ├── types.ts         ← Question, Option, Settings, Lang, Category, QuestionProgress (with streak)
+│   │   │   ├── store.ts         ← localStorage persistence, recordAnswer (tracks streak), getMistakeStatus
+│   │   │   ├── data.ts          ← loadQuestions, getActiveQuestions (category filter), SRS algorithm, exam generation
+│   │   │   ├── topics.ts        ← topic definitions with hints (section 1 only, 12 topics)
+│   │   │   ├── i18n.ts          ← UI translations (sr/ru)
+│   │   │   ├── tokens.css       ← design tokens, .beta-badge
+│   │   │   └── components/
+│   │   │       ├── QuestionCarousel.svelte ← SHARED question view (practice, bookmarks, mistakes, exam, learn)
+│   │   │       ├── AnswerOption.svelte     ← answer states: idle, selected, correct, wrong, muted, missed (orange)
+│   │   │       ├── QuestionPills.svelte    ← smooth scroll with padding
+│   │   │       ├── Header.svelte
+│   │   │       ├── Icon.svelte
+│   │   │       ├── ProgressBar.svelte
+│   │   │       └── Tag.svelte
+│   │   └── routes/
+│   │       ├── +page.svelte     ← Home (hero: learning, sec: all questions)
+│   │       ├── +layout.svelte   ← global shell, __toggleLang with fade animation
+│   │       ├── learn/           ← SRS assisted learning page
+│   │       ├── practice/        ← "All questions" — sections → topics/chunks → carousel
+│   │       ├── exam/            ← mock exam (41Q, 100pts, ≥80 to pass, forced Serbian)
+│   │       ├── mistakes/        ← wrong answers (red=wrong, orange=recovering)
 │   │       ├── statistics/      ← progress stats
-│   │       ├── settings/        ← theme, language, import/export
-│   │       └── about/           ← app info
+│   │       ├── settings/        ← theme(system default), language, category(B default), import/export
+│   │       └── about/           ← version, sources (MUP + autoskola), section breakdown, author card
 │   └── static/
 │       ├── questions.json       ← COPY of database/questions.json (via make sync-data)
-│       ├── images/              ← COPY of database/images/ (via make sync-data)
-│       ├── manifest.json
-│       ├── icon-192.png         ← Serbian cross icon
-│       └── icon-512.png
+│       └── images/              ← COPY of database/images/ (WebP)
 ├── Theory-handoff/              ← UI design from Claude Designer
-│   └── theory/project/          ← design HTML/CSS/JS prototypes
-├── .gitignore
 └── CONTEXT.md                   ← THIS FILE
 ```
 
@@ -69,152 +74,144 @@
 ```json
 {
   "metadata": {
-    "source": "МУП Србије",
+    "source": "МУП Србије — Управа саобраћајне полиције",
     "sections": [{"id": "osnove_bezbednosti", "name": "...", "questions": 170}, ...],
-    "total_questions": 2309
+    "total_questions": 2315
   },
   "questions": [
     {
-      "id": 1,                              // question number (unique within section)
-      "section": "pravila_saobracaja",       // section ID
+      "id": 1,
+      "section": "pravila_saobracaja",
       "text": "Question text in Serbian",
-      "text_ru": "Translation to Russian",   // optional, from translate.py
+      "text_ru": "Translation to Russian",
       "options": [
-        {"letter": "а", "text": "option text", "text_ru": "..."},
+        {"letter": "а", "text": "option text", "text_ru": "russian"},
         {"letter": "б", "text": "..."},
         {"letter": "в", "text": "..."}
       ],
-      "points": 2,                           // 1, 2, 3, or 4
-      "correct_answers_count": 1,            // how many correct answers
-      "correct_answers": ["б"],              // from extract_answers.py
+      "points": 2,                    // 1, 2, 3, or 4
+      "correct_answers_count": 1,
+      "correct_answers": ["б"],
       "has_image": true,
-      "image": "p001_y0197.png",             // filename in images/
-      "categories": ["B", "C"],              // vehicle categories, [] = all
-      "is_removed": true,                    // optional flags from colored backgrounds
+      "image": "p001_y0197.webp",     // WebP format in images/
+      "categories": ["B", "C"],       // A,B,C,D,F,M — empty = all categories
+      "is_removed": true,             // optional flags
       "is_changed": true,
-      "is_new": true
+      "is_new": true,
+      "is_verified": true             // manually verified
     }
   ]
 }
 ```
 
-### Sections (7 total, ordered as in answers PDF)
-| ID | Name | Questions | Max ID |
-|----|------|-----------|--------|
-| osnove_bezbednosti | Основе безбедности саобраћаја и појмови | 170 | 170 |
-| vozaci | Возачи | 216 | 216 |
-| vozila | Возила | 365 | 365 |
-| saobracajna_signalizacija | Саобраћајна сигнализација | 524 | 524 |
-| pravila_saobracaja | Правила саобраћаја | 797 | 797 |
-| posebne_mere | Посебне мере и овлашћења | 61 | 61 |
-| posledice | Последице непоштовања прописа | 182 | 182 |
+### Sections (7 total)
+| ID | Name | Active Qs |
+|----|------|-----------|
+| osnove_bezbednosti | Основе безбедности саобраћаја и појмови | 169 |
+| vozaci | Возачи | 201 |
+| vozila | Возила | 361 |
+| saobracajna_signalizacija | Саобраћајна сигнализација | 522 |
+| pravila_saobracaja | Правила саобраћаја | 794 |
+| posebne_mere | Посебне мере и овлашћења | 61 |
+| posledice | Последице непоштовања прописа | 180 |
 
 ### Vehicle Categories
-A (motorcycles), B (cars), C (trucks), D (buses), F (tractors)
+A (motorcycles), B (cars, DEFAULT), C (trucks), D (buses), F (tractors), M (mopeds)
 Questions without categories = for all categories.
+Category filtering implemented in getActiveQuestions().
 
-### Current State & Known Issues
-
-**What works:**
-- 2309 questions parsed from 7 official MUP PDFs
-- Verification web tool (verify.py) at localhost:8765
-- PWA app deployed to https://andrewozh.github.io/driving-theory-srb/
-- Translations to Russian (~1756 via Claude API)
-- App has carousel question view, mock exam, bookmarks, dark/light theme
-
-**What's broken (needs fixing):**
-1. **~30 questions with garbled text** — caused by table-layout pages in PDFs where PyMuPDF splits text into tiny fragments. Affected pages:
-   - Vozaci page 15 (Q173-185)
-   - Vozila pages 10, 23
-   - Signalizacija pages 20, 34, 35, 44, 74
-
-2. **Wrong points** on many questions — parser doesn't detect bold font (point value indicator)
-
-3. **Missing categories** — when category letter (A/B/C/D/F) is inside a text block, not standalone
-
-4. **Broken images** — on table pages, images are split into tiny xref fragments. Normal pages work fine.
-
-5. **Answers not loaded** — `make answers` not run on current database rebuild
-
-6. **9 problem questions**: vozaci Q24 (no options), posledice Q9 (1 option), vozila Q123/Q330 (empty), vozila Q213 (22 options = merged), etc.
-
-### Solution In Progress: Claude Vision Pipeline
-
-**The plan:** Send each PDF page as an image to Claude Vision API to get perfect parsing.
-
-**Tested successfully on Vozila page 10 (Q124-136):**
-- Sent rendered page (200 DPI) + our parsed data as prompt
-- Claude returned perfect JSON: text, options, points, categories, has_image
-- Cost: ~$0.04 per page, ~$10 for all 250 pages
-- Results applied to questions.json via simple Python script
-
-**Image extraction approach (tested on page 23):**
-- Question boxes have black rectangular borders in the PDF
-- Detect borders via vertical bars: black filled rects with `width < 3, height > 20`
-- Left column borders at x ≈ 22, right column at x ≈ 571
-- Merge consecutive touching bars by y-coordinate → each segment = one question
-- Crop from rendered page (200 DPI) using PIL
-- **Issue:** left boundary slightly cut off, needs x offset adjustment (-3px or so)
-
-**Code for border detection:**
-```python
-import fitz
-doc = fitz.open('source_17042026/Vozila PDF.pdf')
-page = doc[page_number]
-drawings = page.get_drawings()
-black_rects = [d['rect'] for d in drawings if d.get('fill') == (0, 0, 0)]
-# Vertical bars at x~22 (left col left edge) and x~571 (right col right edge)
-v_bars = [r for r in black_rects if r.width < 3 and r.height > 20]
-# Merge touching bars, crop from pixmap
+### QuestionCarousel Component
+Shared by all 5 modes with configurable props:
+```ts
+{
+  questions: Question[],
+  headerTitle: string,
+  headerSub?: string,        // enables "section · №id" in header
+  showLangToggle?: boolean,  // default true
+  showBookmark?: boolean,    // default true
+  showFlag?: boolean,        // default true
+  showTimer?: boolean,       // default false
+  timerSeconds?: number,     // default 2700
+  forceLang?: Lang,          // overrides user language
+  onBack: () => void,
+  onComplete?: () => void,
+  score?: number,            // bindable, sum of points
+  wrongIds?: string[],       // bindable
+}
 ```
+
+Layout: slide-body (question, flex-shrink:999) + slide-answers (scroll) + footer (position:absolute bottom)
+
+### Exam Rules (Serbian official)
+- 41 questions, exactly 100 points total
+- Proportional distribution across 7 sections
+- 45 minutes
+- Pass: ≥80 points (category B) / ≥104 (category C,D)
+- Questions forced to Serbian language
+- Score = sum of points for correct answers
+
+### SRS Algorithm (learn page)
+- Streak tracking: correct→streak+1, wrong→streak=0
+- Intervals: [0, 1, 3, 7, 21] days by streak level
+- Session priority: 1) due reviews 2) learning 3) new questions
+- New questions unlock progressively by section (≥30% of prev section progressed → next unlocks)
+- Formula: ~2700 / questions_per_session = days to prepare (at 2 sessions/day)
+
+### Mistakes Logic
+- streak=0 → red (last answer wrong)
+- streak=1 → orange (recovering, 1 correct after wrong)
+- streak≥2 → cleared, removed from mistakes
+
+### Topics System (section 1 only)
+12 topics defined in topics.ts with:
+- Serbian + Russian names
+- Formatted hints (**bold** terms, \n line breaks → rendered as HTML)
+- Question ID arrays
+- Chunks of ≤20 within each topic
+
+Other 6 sections use flat chunks of 20.
+
+### Verify.py (localhost:8765)
+- Two-column: form left, screenshot right (from db_new/)
+- Interactive crop tool (drag + Enter)
+- AI Parse button (Claude Vision → fills form)
+- Real-time word-level diff
+- Hotkeys: arrows, digits, Space+Enter (verify & next), Escape
+- Russian text editing (text_ru fields)
+- Category checkboxes (A,B,C,D,F,M)
+- Verified flag with green pills
+
+### Translation Notes
+- Latin→Cyrillic post-processing in parse_vision.py and verify.py
+- Key terminology: одстојање=дистанция, растојање=боковой интервал
+- Known issues: ~35 questions with bad translations (unverified), 7 without answers (unverified)
+- Duplicate SR texts normal (239× "Саобраћајни знак приказан на слици означава:" — different images)
 
 ### How to Work With This Project
 
-**Rebuild database from scratch:**
 ```bash
-cd database/
-make clean-all          # delete questions.json + images/
-make parse              # parse all 7 PDFs → questions.json + images/
-make answers            # extract correct answers from SVA PDF → merge into questions.json
+# Dev server
+cd app/ && make dev
+
+# Deploy (syncs data + builds + pushes to gh-pages)
+cd app/ && make deploy
+
+# Run verifier
+cd database/ && python3 verify.py  # needs ANTHROPIC_API_KEY for AI Parse
+
+# Translate missing
+cd database/ && python3 translate.py
+
+# Extract answers from PDF
+cd database/ && python3 extract_answers.py
 ```
 
-**Run verification tool:**
-```bash
-cd database/
-python3 verify.py       # opens http://localhost:8765
-```
-
-**Build and deploy app:**
-```bash
-cd app/
-make sync-data          # copy questions.json + images from database/
-make build              # build static site
-make deploy             # push to GitHub Pages (gh-pages branch)
-```
-
-**Translate questions:**
-```bash
-cd database/
-python3 translate.py --force   # re-translate all via Claude API
-# Requires ANTHROPIC_API_KEY in ~/.bashrc
-```
-
-### API Keys (in ~/.bashrc)
-- `ANTHROPIC_API_KEY` — for Claude (translation + vision)
-- `OPENAI_API_KEY` — for OpenAI (tested but not used)
-
-### Important Files to Read First
-1. `database/parse_v3.py` — the parser, all extraction logic
-2. `database/extract_answers.py` — answer extraction from red circles
-3. `database/verify.py` — web verification tool
-4. `database/sections.json` — section config
-5. `app/src/lib/types.ts` — TypeScript types (Question, Option, etc)
-6. `app/src/lib/store.ts` — app state management
-
-### Next Steps
-1. Build Vision pipeline script: render each page → Claude Vision → update questions.json
-2. Build image extraction: detect question borders → crop from page render
-3. Run `make answers` to fill correct answers
-4. Run translate.py to fill Russian translations
-5. Fix remaining problem questions via verify.py
-6. Deploy updated app
+### Known Issues / TODO
+1. 7 questions without correct answers (unverified)
+2. ~35 questions with bad Russian translations (unverified)  
+3. 8 questions with uncertain distance/interval translations (unverified)
+4. Topics defined only for section 1 — 6 more sections need topics
+5. Svelte warning: forceLang initial value capture (cosmetic)
+6. SRS learnCount estimate is approximate
+7. Category filtering doesn't update exam question count display
+8. Service worker not implemented (PWA works online only)
