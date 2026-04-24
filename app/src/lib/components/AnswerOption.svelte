@@ -44,7 +44,7 @@
 	.answer-selected { background: var(--accent-wash); border-color: var(--accent); }
 	.answer-correct { background: var(--correct-wash); border-color: var(--correct); }
 	.answer-wrong { background: var(--wrong-wash); border-color: var(--wrong); }
-	.answer-missed { background: #fff7ed; border-color: #f59e0b; }
+	.answer-missed { background: var(--accent-wash); border-color: #f59e0b; }
 	.answer-muted { background: var(--surface); border-color: var(--hairline); }
 	.answer-muted .answer-text { color: var(--ink3); }
 
