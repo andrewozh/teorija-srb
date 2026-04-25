@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, subscribe, getSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
@@ -36,8 +36,9 @@
 		for (const q of qs) {
 			const prog = getQuestionProgress(q.section, q.id);
 			if (prog) {
-				if (prog.correct > 0) correct++;
-				else if (prog.wrong > 0) wrong++;
+				const mistake = getMistakeStatus(q.section, q.id);
+				if (mistake === 'none' && prog.correct > 0) correct++;
+				else if (mistake !== 'none') wrong++;
 			}
 		}
 		return { correct, wrong };
@@ -176,11 +177,11 @@
 								{#if isDone}
 									<Icon name="check" size={13} stroke={2.5} />
 								{:else}
-									{ci + 1}
+									{globalChunkIdx + 1}
 								{/if}
 							</div>
 							<div class="block-name">
-								{lang === 'sr' ? 'Блок' : 'Блок'} {ci + 1}
+								{lang === 'sr' ? 'Блок' : 'Блок'} {String(globalChunkIdx + 1).padStart(2, '0')}
 								<span class="block-range">Q{chunk.questions[0]?.id}–{chunk.questions[chunk.questions.length - 1]?.id}</span>
 							</div>
 							<div class="block-bar">
