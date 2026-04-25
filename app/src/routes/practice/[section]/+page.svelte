@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
@@ -123,7 +123,6 @@
 	/>
 
 	<div class="scroll-area">
-		<div class="scroll-inner">
 		<!-- Section header -->
 		<div class="section-header-area">
 			<div class="section-meta">
@@ -225,31 +224,12 @@
 				</a>
 			{/each}
 		{/if}
-		<div class="footer-spacer"></div>
-		</div>
-	</div>
-
-	<div class="section-footer">
-		<button class="footer-icon" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
-			<Icon name="language" size={19} stroke={1.6} />
-		</button>
-		<div class="footer-spacer-flex"></div>
 	</div>
 </div>
 
 <style>
-	.page {
-		position: fixed;
-		inset: 0;
-		display: flex;
-		flex-direction: column;
-		background: var(--bg);
-		padding-top: env(safe-area-inset-top);
-		z-index: 10;
-	}
-	.scroll-area { flex: 1; overflow: auto; }
-	.scroll-inner { padding: 16px 14px 0; }
-	.footer-spacer { height: calc(56px + env(safe-area-inset-bottom)); }
+	.page { height: 100%; display: flex; flex-direction: column; }
+	.scroll-area { flex: 1; overflow: auto; padding: 16px 14px 20px; }
 
 	.section-header-area { padding: 4px 4px 16px; }
 	.section-meta {
@@ -378,25 +358,4 @@
 		width: 34px;
 		text-align: right;
 	}
-
-	/* Footer */
-	.section-footer {
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		padding: 4px 14px;
-		padding-bottom: calc(4px + env(safe-area-inset-bottom));
-		border-top: 0.5px solid var(--hairline);
-		background: var(--bg);
-		flex-shrink: 0;
-		box-shadow: 0 -4px 12px -2px rgba(0, 0, 0, 0.12);
-	}
-	.footer-icon {
-		width: 44px; height: 44px; border-radius: 12px;
-		background: transparent; border: none;
-		color: var(--ink2);
-		display: flex; align-items: center; justify-content: center;
-		cursor: pointer;
-	}
-	.footer-spacer-flex { flex: 1; }
 </style>
