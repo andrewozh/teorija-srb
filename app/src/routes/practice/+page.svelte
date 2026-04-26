@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getSections, getQuestionsBySection } from '$lib/data.js';
-	import { getSectionCompletedCount, getTotalCompletedCount, subscribe, getSettings, getBookmarks } from '$lib/store.js';
+	import { getSectionCompletedCount, getTotalCompletedCount, getQuestionProgress, subscribe, getSettings, getBookmarks } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import type { SectionMeta, Lang } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
@@ -17,25 +17,49 @@
 	let totalQuestions = $state(0);
 	let lang = $state<Lang>(getSettings().lang);
 	let bookmarkCount = $state(getBookmarks().length);
+	let sectionOldestDays = $state<Record<string, number | null>>({});
+
+	function computeSectionOldestDays(sectionId: string, data: any): number | null {
+		const qs = getQuestionsBySection(data, sectionId);
+		let oldest: string | null = null;
+		for (const q of qs) {
+			const prog = getQuestionProgress(q.section, q.id);
+			if (prog && prog.last) {
+				if (!oldest || prog.last < oldest) oldest = prog.last;
+			}
+		}
+		if (!oldest) return null;
+		const [y, m, d] = oldest.split('-').map(Number);
+		const then = new Date(y, m - 1, d).getTime();
+		const now = new Date().setHours(0, 0, 0, 0);
+		return Math.floor((now - then) / (1000 * 60 * 60 * 24));
+	}
+
+	let _data: any = null;
+
+	function recalcSections() {
+		if (!_data) return;
+		totalCompleted = getTotalCompletedCount();
+		bookmarkCount = getBookmarks().length;
+		for (const s of sections) {
+			sectionCompleted[s.id] = getSectionCompletedCount(s.id);
+			sectionOldestDays[s.id] = computeSectionOldestDays(s.id, _data);
+		}
+	}
 
 	onMount(async () => {
-		const data = await loadQuestions();
-		sections = getSections(data);
+		_data = await loadQuestions();
+		sections = getSections(_data);
 		for (const s of sections) {
-			const qs = getQuestionsBySection(data, s.id);
+			const qs = getQuestionsBySection(_data, s.id);
 			sectionQuestionCounts[s.id] = qs.length;
-			sectionCompleted[s.id] = getSectionCompletedCount(s.id);
 		}
-		totalQuestions = data.questions.filter(q => !q.is_removed).length;
-		totalCompleted = getTotalCompletedCount();
+		totalQuestions = _data.questions.filter((q: any) => !q.is_removed).length;
+		recalcSections();
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
-			totalCompleted = getTotalCompletedCount();
-			bookmarkCount = getBookmarks().length;
-			for (const s of sections) {
-				sectionCompleted[s.id] = getSectionCompletedCount(s.id);
-			}
+			recalcSections();
 		});
 		return unsub;
 	});
@@ -78,6 +102,9 @@
 					<div class="section-body">
 						<div class="section-title">{sectionName(section.id, lang)}</div>
 					</div>
+					{#if sectionOldestDays[section.id] !== null && sectionOldestDays[section.id] !== undefined}
+						<span class="section-age">{sectionOldestDays[section.id]}д</span>
+					{/if}
 					<div class="section-count">{done}/{total}</div>
 				</div>
 				<ProgressBar value={done} total={total} />
@@ -134,6 +161,12 @@
 	.bookmark-card .section-top { margin-bottom: 0; }
 	.bookmark-icon {
 		background: var(--accent-wash) !important;
+	}
+	.section-age {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		color: var(--ink4);
+		flex-shrink: 0;
 	}
 	.section-count {
 		font-family: var(--font-mono);

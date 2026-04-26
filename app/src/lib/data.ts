@@ -198,7 +198,8 @@ export interface SrsInfo {
 
 function daysBetween(dateStr: string): number {
 	if (!dateStr) return Infinity;
-	const then = new Date(dateStr).getTime();
+	const [y, m, d] = dateStr.split('-').map(Number);
+	const then = new Date(y, m - 1, d).getTime();
 	const now = new Date().setHours(0, 0, 0, 0);
 	return Math.floor((now - then) / (1000 * 60 * 60 * 24));
 }

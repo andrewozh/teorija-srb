@@ -27,9 +27,24 @@
 	interface TopicGroup {
 		topic: Topic;
 		chunks: Chunk[];
-		stats: { total: number; correct: number; wrong: number };
+		stats: { total: number; correct: number; wrong: number; oldestDays: number | null };
 	}
 	let topicGroups = $state<TopicGroup[]>([]);
+
+	function computeOldestDays(qs: Question[]): number | null {
+		let oldest: string | null = null;
+		for (const q of qs) {
+			const prog = getQuestionProgress(q.section, q.id);
+			if (prog && prog.last) {
+				if (!oldest || prog.last < oldest) oldest = prog.last;
+			}
+		}
+		if (!oldest) return null;
+		const [y, m, d] = oldest.split('-').map(Number);
+		const then = new Date(y, m - 1, d).getTime();
+		const now = new Date().setHours(0, 0, 0, 0);
+		return Math.floor((now - then) / (1000 * 60 * 60 * 24));
+	}
 
 	function computeQuestionStats(qs: Question[]): { correct: number; wrong: number } {
 		let correct = 0, wrong = 0;
@@ -50,7 +65,8 @@
 			const tqs = topic.questionIds.map(id => qMap.get(id)).filter(Boolean) as Question[];
 			const tChunks = getChunks(tqs);
 			const stats = computeQuestionStats(tqs);
-			return { topic, chunks: tChunks, stats: { total: tqs.length, ...stats } };
+			const oldestDays = computeOldestDays(tqs);
+			return { topic, chunks: tChunks, stats: { total: tqs.length, ...stats, oldestDays } };
 		});
 	}
 
@@ -146,6 +162,9 @@
 					<div class="topic-header">
 						<div class="topic-name">{topicName(group.topic, lang)}</div>
 						<div class="topic-right">
+							{#if group.stats.oldestDays !== null}
+								<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>
+							{/if}
 							<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
 							<!-- svelte-ignore a11y_click_events_have_key_events -->
 							<!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -281,6 +300,11 @@
 		align-items: center;
 		gap: 8px;
 		flex-shrink: 0;
+	}
+	.topic-age {
+		font-family: var(--font-mono);
+		font-size: 10px;
+		color: var(--ink4);
 	}
 	.topic-count {
 		font-family: var(--font-mono);
