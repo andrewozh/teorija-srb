@@ -1,15 +1,20 @@
 <script lang="ts">
-	let { value, total, color, height = 3, showMeta = false, label = '' }: {
+	let { value, total, color, height = 3, showMeta = false, label = '', wrong = 0, recovering = 0 }: {
 		value: number;
 		total: number;
 		color?: string;
 		height?: number;
 		showMeta?: boolean;
 		label?: string;
+		wrong?: number;
+		recovering?: number;
 	} = $props();
 
-	let pct = $derived(total > 0 ? Math.min(100, (value / total) * 100) : 0);
+	let pctCorrect = $derived(total > 0 ? Math.min(100, (value / total) * 100) : 0);
+	let pctRecovering = $derived(total > 0 ? Math.min(100 - pctCorrect, (recovering / total) * 100) : 0);
+	let pctWrong = $derived(total > 0 ? Math.min(100 - pctCorrect - pctRecovering, (wrong / total) * 100) : 0);
 	let c = $derived(color || 'var(--accent)');
+	let isMulti = $derived(wrong > 0 || recovering > 0);
 </script>
 
 <div class="progress-wrap">
@@ -20,7 +25,13 @@
 		</div>
 	{/if}
 	<div class="progress-track" style:height="{height}px" style:border-radius="{height}px">
-		<div class="progress-fill" style:width="{pct}%" style:background={c} style:border-radius="{height}px"></div>
+		{#if isMulti}
+			<div class="progress-fill" style:width="{pctCorrect + pctRecovering + pctWrong}%" style:background="var(--wrong)"></div>
+			<div class="progress-fill" style:width="{pctCorrect + pctRecovering}%" style:background="var(--recovering)"></div>
+			<div class="progress-fill" style:width="{pctCorrect}%" style:background="var(--correct)"></div>
+		{:else}
+			<div class="progress-fill" style:width="{pctCorrect}%" style:background={c}></div>
+		{/if}
 	</div>
 </div>
 

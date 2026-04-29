@@ -3,7 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getSections, getQuestionsBySection } from '$lib/data.js';
-	import { getSectionCompletedCount, getTotalCompletedCount, getQuestionProgress, subscribe, getSettings, getBookmarks } from '$lib/store.js';
+	import { getSectionCompletedCount, getTotalCompletedCount, getQuestionProgress, getMistakeStatus, subscribe, getSettings, getBookmarks } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import type { SectionMeta, Lang } from '$lib/types.js';
 	import Header from '$lib/components/Header.svelte';
@@ -18,6 +18,8 @@
 	let lang = $state<Lang>(getSettings().lang);
 	let bookmarkCount = $state(getBookmarks().length);
 	let sectionOldestDays = $state<Record<string, number | null>>({});
+	let sectionWrong = $state<Record<string, number>>({});
+	let sectionRecovering = $state<Record<string, number>>({});
 
 	function computeSectionOldestDays(sectionId: string, data: any): number | null {
 		const qs = getQuestionsBySection(data, sectionId);
@@ -37,14 +39,39 @@
 
 	let _data: any = null;
 
+	function computeSectionStats(sectionId: string, data: any): { correct: number; wrong: number; recovering: number } {
+		const qs = getQuestionsBySection(data, sectionId);
+		let correct = 0, wrong = 0, recovering = 0;
+		for (const q of qs) {
+			const prog = getQuestionProgress(q.section, q.id);
+			if (prog) {
+				const m = getMistakeStatus(q.section, q.id);
+				if (m === 'none' && prog.correct > 0) correct++;
+				else if (m === 'recovering') recovering++;
+				else if (m === 'wrong') wrong++;
+			}
+		}
+		return { correct, wrong, recovering };
+	}
+
 	function recalcSections() {
 		if (!_data) return;
-		totalCompleted = getTotalCompletedCount();
 		bookmarkCount = getBookmarks().length;
+		let tc = 0;
+		let tq = 0;
 		for (const s of sections) {
-			sectionCompleted[s.id] = getSectionCompletedCount(s.id);
+			const qs = getQuestionsBySection(_data, s.id);
+			sectionQuestionCounts[s.id] = qs.length;
+			const stats = computeSectionStats(s.id, _data);
+			sectionCompleted[s.id] = stats.correct;
+			sectionWrong[s.id] = stats.wrong;
+			sectionRecovering[s.id] = stats.recovering;
 			sectionOldestDays[s.id] = computeSectionOldestDays(s.id, _data);
+			tc += stats.correct;
+			tq += qs.length;
 		}
+		totalCompleted = tc;
+		totalQuestions = tq;
 	}
 
 	onMount(async () => {
@@ -107,7 +134,7 @@
 					{/if}
 					<div class="section-count">{done}/{total}</div>
 				</div>
-				<ProgressBar value={done} total={total} />
+				<ProgressBar value={done} total={total} wrong={sectionWrong[section.id] || 0} recovering={sectionRecovering[section.id] || 0} />
 			</a>
 		{/each}
 	</div>

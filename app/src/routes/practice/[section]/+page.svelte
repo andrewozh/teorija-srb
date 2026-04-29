@@ -21,13 +21,14 @@
 	let totalQuestions = $state(0);
 	let totalCorrect = $state(0);
 	let totalWrong = $state(0);
+	let totalRecovering = $state(0);
 	let lang = $state<Lang>(getSettings().lang);
 
 	// Topic chunks: each topic split into chunks of ≤20
 	interface TopicGroup {
 		topic: Topic;
 		chunks: Chunk[];
-		stats: { total: number; correct: number; wrong: number; oldestDays: number | null };
+		stats: { total: number; correct: number; wrong: number; recovering: number; oldestDays: number | null };
 	}
 	let topicGroups = $state<TopicGroup[]>([]);
 
@@ -46,17 +47,18 @@
 		return Math.floor((now - then) / (1000 * 60 * 60 * 24));
 	}
 
-	function computeQuestionStats(qs: Question[]): { correct: number; wrong: number } {
-		let correct = 0, wrong = 0;
+	function computeQuestionStats(qs: Question[]): { correct: number; wrong: number; recovering: number } {
+		let correct = 0, wrong = 0, recovering = 0;
 		for (const q of qs) {
 			const prog = getQuestionProgress(q.section, q.id);
 			if (prog) {
 				const mistake = getMistakeStatus(q.section, q.id);
 				if (mistake === 'none' && prog.correct > 0) correct++;
-				else if (mistake !== 'none') wrong++;
+				else if (mistake === 'recovering') recovering++;
+				else if (mistake === 'wrong') wrong++;
 			}
 		}
-		return { correct, wrong };
+		return { correct, wrong, recovering };
 	}
 
 	function buildTopicGroups(allQuestions: Question[], topics: Topic[]): TopicGroup[] {
@@ -75,23 +77,32 @@
 			topicGroups = buildTopicGroups(questions, topics);
 			totalCorrect = topicGroups.reduce((s, g) => s + g.stats.correct, 0);
 			totalWrong = topicGroups.reduce((s, g) => s + g.stats.wrong, 0);
+			totalRecovering = topicGroups.reduce((s, g) => s + g.stats.recovering, 0);
+			const topicQs = topicGroups.reduce((s, g) => s + g.stats.total, 0);
+			console.log(`[section] totalQs=${totalQuestions} topicQs=${topicQs} correct=${totalCorrect} wrong=${totalWrong} recovering=${totalRecovering} sum=${totalCorrect+totalWrong+totalRecovering} gap=${totalQuestions - totalCorrect - totalWrong - totalRecovering}`);
 		} else {
 			chunks = getChunks(questions);
 			const stats = computeQuestionStats(questions);
 			totalCorrect = stats.correct;
 			totalWrong = stats.wrong;
+			totalRecovering = stats.recovering;
 		}
 	}
 
+	let _sectionData: any = null;
+
 	onMount(async () => {
-		const data = await loadQuestions();
-		questions = getQuestionsBySection(data, sectionId);
+		_sectionData = await loadQuestions();
+		questions = getQuestionsBySection(_sectionData, sectionId);
 		totalQuestions = questions.length;
 		topics = getTopicsForSection(sectionId);
 		recalc();
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
+			// Recompute questions for current category
+			questions = getQuestionsBySection(_sectionData, sectionId);
+			totalQuestions = questions.length;
 			recalc();
 		});
 		return unsub;
@@ -145,10 +156,11 @@
 				{lang === 'sr' ? 'Област' : 'Раздел'} · {totalQuestions} {lang === 'sr' ? 'питања' : 'вопросов'}
 			</div>
 			<div class="section-big-title">{sectionName(sectionId, lang)}</div>
-			<ProgressBar value={totalCorrect} total={totalQuestions} height={4} />
+			<ProgressBar value={totalCorrect} total={totalQuestions} height={4} wrong={totalWrong} recovering={totalRecovering} />
 			<div class="section-stats">
 				<span>
 					<span class="correct-text">{totalCorrect}</span> {lang === 'sr' ? 'тачно' : 'верно'} ·
+					<span class="recovering-text">{totalRecovering}</span> {lang === 'sr' ? 'поновљено' : 'повтор'} ·
 					<span class="wrong-text">{totalWrong}</span> {lang === 'sr' ? 'погрешно' : 'неверно'}
 				</span>
 				<span>{pct}%</span>
@@ -204,7 +216,7 @@
 								<span class="block-range">Q{chunk.questions[0]?.id}–{chunk.questions[chunk.questions.length - 1]?.id}</span>
 							</div>
 							<div class="block-bar">
-								<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} />
+								<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} wrong={stat.wrong} recovering={stat.recovering} />
 							</div>
 							<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
 						</a>
@@ -237,7 +249,7 @@
 						{lang === 'sr' ? 'Блок' : 'Блок'} {String(i + 1).padStart(2, '0')}
 					</div>
 					<div class="block-bar">
-						<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} />
+						<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} wrong={stat.wrong} recovering={stat.recovering} />
 					</div>
 					<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
 				</a>
@@ -275,6 +287,7 @@
 		letter-spacing: 0.3px;
 	}
 	.correct-text { color: var(--correct); }
+	.recovering-text { color: var(--recovering); }
 	.wrong-text { color: var(--wrong); }
 
 	/* Topic layout */
