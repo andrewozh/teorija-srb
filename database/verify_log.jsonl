@@ -2698,3 +2698,4 @@
 {"section": "posledice", "question_id": 16, "changes": [{"action": "flag_changed", "flag": "is_removed", "from": true, "to": false}], "timestamp": "2026-04-24T11:42:06.018344"}
 {"section": "vozaci", "question_id": 32, "changes": [{"action": "flag_changed", "flag": "is_removed", "from": false, "to": true}], "timestamp": "2026-04-24T18:55:30.409097"}
 {"section": "vozila", "question_id": 329, "changes": [{"action": "text_ru_changed", "from": "У условима смањене видљивости терет који на путничком возилу прелази најистурени", "to": "В условиях ограниченной видимости груз, выступающий за наиболее выдающуюся точку"}], "timestamp": "2026-04-27T14:31:21.165801"}
+{"section": "vozaci", "question_id": 30, "changes": [{"action": "answers_changed", "from": ["а", "б"], "to": ["б"]}], "timestamp": "2026-04-29T23:52:39.713539"}
