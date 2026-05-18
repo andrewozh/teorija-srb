@@ -51,6 +51,7 @@
 	} = $props();
 
 	let currentIndex = $state(0);
+	let lightboxSrc = $state<string | null>(null);
 	let effectiveForceLang = $derived(forceLang);
 	let lang = $state<Lang>(forceLang ?? getSettings().lang);
 
@@ -307,6 +308,7 @@
 								alt=""
 								class="q-image"
 								loading="lazy"
+								onclick={() => { lightboxSrc = `${base}/images/${q.image}`; }}
 							/>
 						{/if}
 					</div>
@@ -382,6 +384,14 @@
 		{/each}
 	</div>
 </div>
+
+{#if lightboxSrc}
+<!-- svelte-ignore a11y_click_events_have_key_events -->
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="lightbox" onclick={() => { lightboxSrc = null; }}>
+	<img src={lightboxSrc} alt="" class="lightbox-img" />
+</div>
+{/if}
 {/if}
 
 <style>
@@ -581,5 +591,29 @@
 	.q-next-accent {
 		background: var(--accent);
 		color: var(--accent-ink);
+	}
+
+	/* Lightbox */
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		z-index: 100;
+		background: rgba(0, 0, 0, 0.92);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 16px;
+		cursor: zoom-out;
+	}
+	.lightbox-img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+		touch-action: pinch-zoom;
+		user-select: none;
+		-webkit-user-select: none;
+	}
+	.q-image {
+		cursor: zoom-in;
 	}
 </style>
