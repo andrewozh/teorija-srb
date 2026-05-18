@@ -2734,3 +2734,9 @@
 {"section": "pravila_saobracaja", "question_id": 615, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-05-18T23:44:45.355754"}
 {"section": "pravila_saobracaja", "question_id": 677, "changes": [{"action": "text_ru_changed", "from": "**По мотодороге разрешено движение:**", "to": "По мотодороге разрешено движение:"}], "timestamp": "2026-05-18T23:44:52.893422"}
 {"section": "pravila_saobracaja", "question_id": 677, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-05-18T23:44:57.597373"}
+{"section": "posledice", "question_id": 12, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}], "timestamp": "2026-05-18T23:55:26.002388"}
+{"section": "posledice", "question_id": 12, "changes": [{"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-05-18T23:55:36.504511"}
+{"section": "posledice", "question_id": 13, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["в"]}], "timestamp": "2026-05-18T23:55:42.548829"}
+{"section": "posledice", "question_id": 30, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-05-18T23:55:46.449816"}
+{"section": "posledice", "question_id": 83, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-05-18T23:56:04.256005"}
+{"section": "posledice", "question_id": 116, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-05-18T23:56:08.970958"}
