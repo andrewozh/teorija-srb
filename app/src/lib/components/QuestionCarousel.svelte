@@ -307,13 +307,6 @@
 								alt=""
 								class="q-image"
 								loading="lazy"
-								onload={(e) => {
-									const img = e.currentTarget as HTMLImageElement;
-									const displayWidth = img.clientWidth;
-									const scale = displayWidth / img.naturalWidth;
-									const displayHeight = img.naturalHeight * scale;
-									if (img.parentElement) img.parentElement.style.minHeight = (displayHeight * 0.3) + 'px';
-								}}
 							/>
 						{/if}
 					</div>
@@ -490,11 +483,11 @@
 		z-index: 1;
 	}
 
-	/* Media / Tags — shrinks when space is tight, but doesn't grow */
+	/* Media — takes remaining space in slide-body after text, image scales to fit */
 	.q-media {
 		position: relative;
 		margin-bottom: 6px;
-		flex: 0 1 auto;
+		flex: 1 1 0;
 		min-height: 0;
 		overflow: hidden;
 	}
