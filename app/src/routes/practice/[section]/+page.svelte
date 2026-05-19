@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
@@ -256,11 +256,18 @@
 			{/each}
 		{/if}
 	</div>
+
+	<div class="lang-footer">
+		<button class="lang-btn" onclick={() => { updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' }); }}>
+			<Icon name="language" size={19} stroke={1.6} />
+		</button>
+	</div>
 </div>
 
 <style>
-	.page { height: 100%; display: flex; flex-direction: column; }
-	.scroll-area { flex: 1; overflow: auto; padding: 16px 14px 20px; }
+	.page { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+	.scroll-area { flex: 1; overflow-y: auto; padding: 16px 14px 20px; scrollbar-width: none; position: relative; z-index: 1; }
+	.scroll-area::-webkit-scrollbar { display: none; }
 
 	.section-header-area { padding: 4px 4px 16px; }
 	.section-meta {
@@ -398,7 +405,29 @@
 
 	/* Desktop */
 	@media (min-width: 1024px) {
-		.page { position: static; height: auto; padding-top: 0; z-index: auto; }
 		.scroll-area { padding: 24px 40px 40px; max-width: 720px; }
+		.lang-footer { padding-bottom: 6px; }
 	}
+
+	/* Language footer */
+	.lang-footer {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		padding: 4px 14px;
+		padding-bottom: calc(4px + env(safe-area-inset-bottom));
+		border-top: 0.5px solid var(--hairline);
+		background: var(--bg);
+		position: relative;
+		z-index: 2;
+		box-shadow: 0 -4px 12px -2px rgba(0, 0, 0, 0.12);
+	}
+	.lang-btn {
+		width: 44px; height: 44px; border-radius: 12px;
+		background: transparent; border: none;
+		color: var(--ink2);
+		display: flex; align-items: center; justify-content: center;
+		cursor: pointer;
+	}
+
 </style>
