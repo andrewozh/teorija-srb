@@ -105,7 +105,18 @@
 			totalQuestions = questions.length;
 			recalc();
 		});
-		return unsub;
+
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === 'l' || e.key === 'L') {
+				updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' });
+			}
+		};
+		window.addEventListener('keydown', onKeyDown);
+
+		return () => {
+			unsub();
+			window.removeEventListener('keydown', onKeyDown);
+		};
 	});
 
 	function toggleHint(topicId: string) {
