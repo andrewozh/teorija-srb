@@ -276,8 +276,8 @@
 </div>
 
 <style>
-	.page { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
-	.scroll-area { flex: 1; overflow-y: auto; padding: 16px 14px 20px; scrollbar-width: none; position: relative; z-index: 1; }
+	.page { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; overscroll-behavior: none; }
+	.scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 16px 14px 20px; scrollbar-width: none; position: relative; z-index: 1; }
 	.scroll-area::-webkit-scrollbar { display: none; }
 
 	.section-header-area { padding: 4px 4px 16px; }
