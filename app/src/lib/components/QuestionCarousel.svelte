@@ -521,7 +521,7 @@
 		box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.12);
 	}
 	.slide-body.has-image {
-		min-height: 30%;
+		min-height: 50%;
 	}
 
 	.slide-answers {
