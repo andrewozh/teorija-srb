@@ -395,4 +395,10 @@
 		width: 34px;
 		text-align: right;
 	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.page { position: static; height: auto; padding-top: 0; z-index: auto; }
+		.scroll-area { padding: 24px 40px 40px; max-width: 720px; }
+	}
 </style>

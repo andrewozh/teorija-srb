@@ -51,6 +51,9 @@
 		background: var(--bg);
 		flex-shrink: 0;
 	}
+	@media (min-width: 1024px) {
+		.header { display: none; }
+	}
 	.header-btn {
 		width: 36px;
 		height: 36px;

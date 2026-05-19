@@ -202,4 +202,10 @@
 		letter-spacing: 0.3px;
 		flex-shrink: 0;
 	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 24px 40px 40px; max-width: 720px; }
+		.section-card { padding: 16px 20px; }
+	}
 </style>

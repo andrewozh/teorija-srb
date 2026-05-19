@@ -246,4 +246,9 @@
 		display: block; text-align: center; margin-top: 16px;
 		color: var(--accent); font-weight: 500; font-size: 14px;
 	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 28px 40px 40px; max-width: 640px; }
+	}
 </style>

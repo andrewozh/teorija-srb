@@ -225,4 +225,9 @@
 		font-family: var(--font-ui); font-size: 15px; font-weight: 600;
 		letter-spacing: -0.1px; cursor: pointer;
 	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 28px 40px 40px; max-width: 640px; }
+	}
 </style>

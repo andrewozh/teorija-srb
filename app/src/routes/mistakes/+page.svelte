@@ -154,4 +154,9 @@
 	.mistake-stats { display: flex; gap: 12px; }
 	.stat-correct { font-size: 12px; font-weight: 600; color: var(--correct); }
 	.stat-wrong { font-size: 12px; font-weight: 600; color: var(--wrong); }
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 24px 40px 40px; max-width: 720px; }
+	}
 </style>

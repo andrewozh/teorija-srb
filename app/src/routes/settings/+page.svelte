@@ -312,4 +312,9 @@
 		text-align: center;
 		letter-spacing: 0.3px;
 	}
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.page { max-width: 600px; }
+	}
 </style>

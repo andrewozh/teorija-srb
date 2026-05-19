@@ -314,4 +314,9 @@
 	}
 	.exam-score-total { color: var(--ink3); }
 	.exam-date { font-size: 11px; color: var(--ink3); margin-top: 2px; }
+
+	/* Desktop */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 28px 40px 40px; max-width: 960px; }
+	}
 </style>

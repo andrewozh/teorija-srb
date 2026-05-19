@@ -141,9 +141,17 @@ img {
   display: block;
 }
 
-/* Hide scrollbars */
+/* Hide scrollbars on mobile */
 *::-webkit-scrollbar { display: none; }
 * { scrollbar-width: none; }
+
+/* Desktop: show scrollbars, wider content */
+@media (min-width: 1024px) {
+  * { scrollbar-width: thin; }
+  *::-webkit-scrollbar { display: initial; width: 6px; height: 6px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: var(--ink4); border-radius: 3px; }
+}
 
 /* Beta badge */
 .beta-badge {

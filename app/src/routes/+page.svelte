@@ -362,4 +362,14 @@
 		font-family: var(--font-ui); font-size: 14px; font-weight: 500;
 		letter-spacing: -0.1px; cursor: pointer;
 	}
+
+	/* Desktop layout */
+	@media (min-width: 1024px) {
+		.scroll-area { padding: 32px 40px 40px; max-width: 960px; }
+		.hero-card { padding: 22px 24px 18px; }
+		.sec-card { padding: 16px 20px; }
+		.mini-row { gap: 12px; }
+		.mini-card { padding: 18px 18px; }
+		.home-footer { display: none; }
+	}
 </style>
