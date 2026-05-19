@@ -121,9 +121,8 @@ body {
   font-family: var(--font-ui);
   background: var(--bg);
   color: var(--ink);
-  height: 100dvh;
-  overflow: hidden;
-  overscroll-behavior: none;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 button {

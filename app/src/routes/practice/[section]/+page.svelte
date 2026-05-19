@@ -276,7 +276,12 @@
 </div>
 
 <style>
-	.page { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; overscroll-behavior: none; }
+	.page {
+		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
 	.scroll-area { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 16px 14px 20px; scrollbar-width: none; position: relative; z-index: 1; }
 	.scroll-area::-webkit-scrollbar { display: none; }
 
@@ -426,7 +431,6 @@
 		display: flex;
 		align-items: center;
 		padding: 4px 14px;
-		padding-bottom: calc(4px + env(safe-area-inset-bottom));
 		border-top: 0.5px solid var(--hairline);
 		background: var(--bg);
 		position: relative;

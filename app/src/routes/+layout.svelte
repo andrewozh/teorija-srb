@@ -56,15 +56,14 @@
 	/* Mobile shell */
 	.app-shell {
 		max-width: 480px;
-		height: 100dvh;
+		min-height: 100dvh;
 		margin: 0 auto;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		overflow: hidden;
 		padding-top: env(safe-area-inset-top);
-		padding-bottom: 0;
+		padding-bottom: env(safe-area-inset-bottom);
 		padding-left: env(safe-area-inset-left);
 		padding-right: env(safe-area-inset-right);
 	}
