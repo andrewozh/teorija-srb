@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '$lib/tokens.css';
-	import { getSettings, subscribe, updateSettings } from '$lib/store.js';
-	import type { Lang } from '$lib/types.js';
+	import { getSettings, subscribe } from '$lib/store.js';
 	import type { Snippet } from 'svelte';
+	import Sidebar from '$lib/components/Sidebar.svelte';
 
 	let { children }: { children: Snippet } = $props();
 
@@ -33,11 +33,27 @@
 	});
 </script>
 
-<div class="app-shell">
-	{@render children()}
+<div class="app-root">
+	<div class="app-sidebar">
+		<Sidebar />
+	</div>
+	<div class="app-shell">
+		{@render children()}
+	</div>
 </div>
 
 <style>
+	.app-root {
+		display: flex;
+		min-height: 100dvh;
+	}
+
+	/* Sidebar: hidden on mobile, visible on desktop */
+	.app-sidebar {
+		display: none;
+	}
+
+	/* Mobile shell: unchanged */
 	.app-shell {
 		max-width: 480px;
 		min-height: 100dvh;
@@ -45,9 +61,22 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		flex: 1;
 		padding-top: env(safe-area-inset-top);
 		padding-bottom: env(safe-area-inset-bottom);
 		padding-left: env(safe-area-inset-left);
 		padding-right: env(safe-area-inset-right);
+	}
+
+	/* Desktop: ≥1024px */
+	@media (min-width: 1024px) {
+		.app-sidebar {
+			display: block;
+		}
+		.app-shell {
+			max-width: none;
+			margin: 0;
+			padding: 0;
+		}
 	}
 </style>
