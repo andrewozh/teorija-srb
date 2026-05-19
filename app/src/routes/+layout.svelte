@@ -8,6 +8,7 @@
 
 	let theme = $state(getSettings().theme);
 	let accent = $state(getSettings().accent || 'gold');
+	let systemDark = $state(typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : true);
 
 	$effect(() => {
 		const unsub = subscribe(() => {
@@ -17,15 +18,14 @@
 		return unsub;
 	});
 
-	let resolvedTheme = $derived.by(() => {
-		if (theme === 'system') {
-			if (typeof window !== 'undefined') {
-				return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-			}
-			return 'dark';
-		}
-		return theme;
+	$effect(() => {
+		const mq = window.matchMedia('(prefers-color-scheme: dark)');
+		const handler = (e: MediaQueryListEvent) => { systemDark = e.matches; };
+		mq.addEventListener('change', handler);
+		return () => mq.removeEventListener('change', handler);
 	});
+
+	let resolvedTheme = $derived(theme === 'system' ? (systemDark ? 'dark' : 'light') : theme);
 
 	$effect(() => {
 		document.documentElement.setAttribute('data-theme', resolvedTheme);
