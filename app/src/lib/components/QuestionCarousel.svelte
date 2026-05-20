@@ -145,11 +145,6 @@
 				if (currentIndex < questions.length - 1) scrollToSlide(currentIndex + 1);
 				return;
 			}
-			// L: toggle language
-			if (e.key === 'l' || e.key === 'L') {
-				updateSettings({ lang: getSettings().lang === 'sr' ? 'ru' : 'sr' });
-				return;
-			}
 			// Arrow left: previous question
 			if (e.key === 'ArrowLeft') {
 				if (currentIndex > 0) scrollToSlide(currentIndex - 1);

@@ -53,16 +53,15 @@
 		display: none;
 	}
 
-	/* Mobile shell */
+	/* Mobile shell: unchanged */
 	.app-shell {
 		max-width: 480px;
-		height: 100dvh;
+		min-height: 100dvh;
 		margin: 0 auto;
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		flex: 1;
-		overflow: hidden;
 		padding-top: env(safe-area-inset-top);
 		padding-bottom: env(safe-area-inset-bottom);
 		padding-left: env(safe-area-inset-left);
@@ -71,9 +70,6 @@
 
 	/* Desktop: ≥1024px */
 	@media (min-width: 1024px) {
-		.app-root {
-			height: 100dvh;
-		}
 		.app-sidebar {
 			display: block;
 		}
@@ -81,8 +77,6 @@
 			max-width: none;
 			margin: 0;
 			padding: 0;
-			height: 100dvh;
-			overflow: hidden;
 		}
 	}
 </style>
