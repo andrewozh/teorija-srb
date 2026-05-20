@@ -277,7 +277,7 @@
 
 <style>
 	.page {
-		height: 100%;
+		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
@@ -425,14 +425,12 @@
 		.lang-footer { padding-bottom: 6px; }
 	}
 
-	/* Language footer — extends into app-shell's safe-area padding */
+	/* Language footer */
 	.lang-footer {
 		flex-shrink: 0;
 		display: flex;
 		align-items: center;
 		padding: 4px 14px;
-		padding-bottom: env(safe-area-inset-bottom);
-		margin-bottom: calc(-1 * env(safe-area-inset-bottom));
 		border-top: 0.5px solid var(--hairline);
 		background: var(--bg);
 		position: relative;
