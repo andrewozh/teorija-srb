@@ -1,4 +1,4 @@
-.PHONY: help install download parse answers stats validate clean clean-images clean-all
+.PHONY: help install download parse answers translate verify stats validate clean clean-images clean-all
 
 SRC = source_17042026
 
@@ -31,6 +31,9 @@ answers: ## Extract correct answers and merge into questions.json
 
 translate: ## Translate questions to Russian (resumable, safe to Ctrl+C)
 	python3 translate.py
+
+verify: ## Run question verifier (localhost:8765)
+	python3 verify.py
 
 stats: ## Show stats for parsed questions
 	@python3 -c " \

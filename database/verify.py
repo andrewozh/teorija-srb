@@ -13,6 +13,15 @@ import base64
 from pathlib import Path
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
+from PIL import Image
+
+
+def save_image_as_webp(image_data: bytes, dest_path: Path) -> None:
+    """Convert any image data to WebP and save."""
+    img = Image.open(io.BytesIO(image_data))
+    if img.mode == 'RGBA':
+        img = img.convert('RGB')
+    img.save(dest_path, 'WEBP', quality=85)
 
 try:
     import anthropic
@@ -1257,11 +1266,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
             section = fields.get("section", "")
             qid = int(fields.get("id", "0"))
             if "image" in files and section and qid:
-                image_filename = f"verify_{section}_{qid}.png"
+                image_filename = f"verify_{section}_{qid}.webp"
                 img_path = IMAGES_DIR / image_filename
                 IMAGES_DIR.mkdir(exist_ok=True)
-                with open(img_path, "wb") as f:
-                    f.write(files["image"]["data"])
+                save_image_as_webp(files["image"]["data"], img_path)
                 # Update database
                 data = load_data()
                 idx, q = find_question(data, section, qid)
@@ -1294,12 +1302,10 @@ class VerifyHandler(SimpleHTTPRequestHandler):
         # Handle image upload
         image_filename = ""
         if "image" in files:
-            ext = Path(files["image"]["filename"]).suffix or ".png"
-            image_filename = f"verify_{section}_{original_id}{ext}"
+            image_filename = f"verify_{section}_{original_id}.webp"
             img_path = IMAGES_DIR / image_filename
             IMAGES_DIR.mkdir(exist_ok=True)
-            with open(img_path, "wb") as f:
-                f.write(files["image"]["data"])
+            save_image_as_webp(files["image"]["data"], img_path)
 
         changes = []
 
@@ -1360,14 +1366,13 @@ class VerifyHandler(SimpleHTTPRequestHandler):
 
             # Handle crop from screenshot
             crop_data = fields.get("crop_data", "").strip()
-            if crop_data and crop_data.startswith("data:image/png;base64,"):
-                import base64
+            if crop_data and crop_data.startswith("data:image/"):
                 b64 = crop_data.split(",", 1)[1]
-                crop_filename = f"verify_{section}_{original_id}.png"
+                raw_bytes = base64.b64decode(b64)
+                crop_filename = f"verify_{section}_{original_id}.webp"
                 crop_path = IMAGES_DIR / crop_filename
                 IMAGES_DIR.mkdir(exist_ok=True)
-                with open(crop_path, "wb") as f:
-                    f.write(base64.b64decode(b64))
+                save_image_as_webp(raw_bytes, crop_path)
                 changes.append({"action": "image_cropped", "file": crop_filename})
                 q["image"] = crop_filename
                 q["has_image"] = True
