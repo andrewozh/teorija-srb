@@ -116,47 +116,9 @@
 			}, 1000);
 		}
 
-		
-		// Keyboard shortcuts (desktop)
-		const onKeyDown = (e: KeyboardEvent) => {
-			const q = questions[currentIndex];
-			if (!q) return;
-			const qs = getQState(currentIndex);
-
-			// 1-9: select answer by index
-			if (e.key >= '1' && e.key <= '9' && !qs.answered) {
-				const idx = parseInt(e.key) - 1;
-				if (q.options[idx]) {
-					selectAnswer(currentIndex, q.options[idx].letter);
-				}
-				return;
-			}
-			// Enter: confirm multi-answer or next question
-			if (e.key === 'Enter') {
-				if (!qs.answered && q.correct_answers_count > 1 && qs.selected.size > 0) {
-					confirmMultiAnswer(currentIndex);
-				} else if (qs.answered) {
-					nextQuestion();
-				}
-				return;
-			}
-			// Arrow right: next question
-			if (e.key === 'ArrowRight') {
-				if (currentIndex < questions.length - 1) scrollToSlide(currentIndex + 1);
-				return;
-			}
-			// Arrow left: previous question
-			if (e.key === 'ArrowLeft') {
-				if (currentIndex > 0) scrollToSlide(currentIndex - 1);
-				return;
-			}
-		};
-		window.addEventListener('keydown', onKeyDown);
-
 		return () => {
 			unsub();
 			if (timerInterval) clearInterval(timerInterval);
-			window.removeEventListener('keydown', onKeyDown);
 		};
 	});
 
@@ -654,72 +616,4 @@
 	.q-image {
 		cursor: zoom-in;
 	}
-
-	/* ─── Desktop ─── */
-	@media (min-width: 1024px) {
-		.qpage {
-			left: 240px;
-			padding-top: 0;
-		}
-		.q-header {
-			padding: 8px 32px 6px;
-			height: 52px;
-		}
-
-		/* Disable horizontal swipe */
-		.carousel {
-			overflow: hidden;
-			scroll-snap-type: none;
-		}
-
-		/* Two equal columns, left-aligned */
-		.slide {
-			flex-direction: row;
-			overflow: visible;
-		}
-		.slide-body {
-			flex: 1 1 0;
-			min-height: 0;
-			max-height: none;
-			overflow-y: auto;
-			padding: 24px 32px;
-			box-shadow: none;
-			border-right: 0.5px solid var(--hairline);
-			justify-content: flex-start;
-		}
-		.slide-body.has-image {
-			min-height: 0;
-		}
-		.slide-answers {
-			flex: 1 1 0;
-			padding: 24px 24px 8px;
-			border-top: none;
-			border-left: 0.5px solid var(--hairline);
-			background: var(--surface2);
-		}
-
-		/* Question text bigger */
-		.q-text {
-			font-size: 20px;
-			line-height: 1.35;
-			letter-spacing: -0.3px;
-		}
-
-		/* Image */
-		.q-media {
-			max-height: 50vh;
-			flex: 0 1 auto;
-		}
-
-		/* Footer */
-		.q-footer {
-			padding: 6px 32px;
-			padding-bottom: 8px;
-		}
-
-		/* Lightbox */
-		.lightbox {
-			left: 240px;
-		}
-	}
-	</style>
+</style>

@@ -95,18 +95,4 @@
 		background: var(--surface2);
 		color: var(--ink3);
 	}
-
-	/* Desktop: wrap pills */
-	@media (min-width: 1024px) {
-		.pills-row {
-			flex-wrap: wrap;
-			padding: 8px 24px 8px;
-			gap: 4px;
-		}
-		.pill {
-			min-width: 32px;
-			height: 28px;
-			font-size: 11px;
-		}
-	}
 </style>
