@@ -2740,3 +2740,42 @@
 {"section": "posledice", "question_id": 30, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["б"]}], "timestamp": "2026-05-18T23:55:46.449816"}
 {"section": "posledice", "question_id": 83, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-05-18T23:56:04.256005"}
 {"section": "posledice", "question_id": 116, "changes": [{"action": "flag_changed", "flag": "is_verified", "from": false, "to": true}, {"action": "answers_changed", "from": [], "to": ["а"]}], "timestamp": "2026-05-18T23:56:08.970958"}
+{"section": "saobracajna_signalizacija", "question_id": 499, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_499.png"}], "timestamp": "2026-06-01T09:54:58.621117"}
+{"section": "saobracajna_signalizacija", "question_id": 499, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_499.png"}], "timestamp": "2026-06-01T09:57:11.952916"}
+{"section": "saobracajna_signalizacija", "question_id": 499, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_499.png"}], "timestamp": "2026-06-01T09:58:43.058063"}
+{"section": "saobracajna_signalizacija", "question_id": 499, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_499.webp"}], "timestamp": "2026-06-01T10:00:10.793663"}
+{"section": "saobracajna_signalizacija", "question_id": 425, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_425.webp"}], "timestamp": "2026-06-01T10:00:49.575814"}
+{"section": "saobracajna_signalizacija", "question_id": 483, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_483.webp"}], "timestamp": "2026-06-01T10:01:04.829168"}
+{"section": "saobracajna_signalizacija", "question_id": 484, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_484.webp"}], "timestamp": "2026-06-01T10:01:19.024777"}
+{"section": "saobracajna_signalizacija", "question_id": 427, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_427.webp"}], "timestamp": "2026-06-01T10:01:29.356343"}
+{"section": "saobracajna_signalizacija", "question_id": 460, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_460.webp"}], "timestamp": "2026-06-01T10:01:45.025633"}
+{"section": "saobracajna_signalizacija", "question_id": 462, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_462.webp"}], "timestamp": "2026-06-01T10:01:58.151349"}
+{"section": "saobracajna_signalizacija", "question_id": 485, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_485.webp"}], "timestamp": "2026-06-01T10:02:17.246113"}
+{"section": "saobracajna_signalizacija", "question_id": 500, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_500.webp"}], "timestamp": "2026-06-01T10:02:29.191929"}
+{"section": "saobracajna_signalizacija", "question_id": 444, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_444.webp"}], "timestamp": "2026-06-01T10:02:45.394768"}
+{"section": "saobracajna_signalizacija", "question_id": 302, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_302.webp"}], "timestamp": "2026-06-01T10:02:57.091079"}
+{"section": "saobracajna_signalizacija", "question_id": 473, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_473.webp"}], "timestamp": "2026-06-01T10:03:16.216429"}
+{"section": "saobracajna_signalizacija", "question_id": 288, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_288.webp"}], "timestamp": "2026-06-01T10:03:27.913698"}
+{"section": "saobracajna_signalizacija", "question_id": 466, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_466.webp"}], "timestamp": "2026-06-01T10:03:40.768250"}
+{"section": "saobracajna_signalizacija", "question_id": 286, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_286.webp"}], "timestamp": "2026-06-01T10:03:51.111181"}
+{"section": "saobracajna_signalizacija", "question_id": 301, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_301.webp"}], "timestamp": "2026-06-01T10:04:04.796229"}
+{"section": "saobracajna_signalizacija", "question_id": 278, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_278.webp"}], "timestamp": "2026-06-01T10:04:15.704374"}
+{"section": "saobracajna_signalizacija", "question_id": 279, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_279.webp"}], "timestamp": "2026-06-01T10:04:33.103283"}
+{"section": "saobracajna_signalizacija", "question_id": 285, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_285.webp"}], "timestamp": "2026-06-01T10:04:44.520929"}
+{"section": "saobracajna_signalizacija", "question_id": 489, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_489.webp"}], "timestamp": "2026-06-01T10:05:01.707156"}
+{"section": "saobracajna_signalizacija", "question_id": 282, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_282.webp"}], "timestamp": "2026-06-01T10:05:09.914392"}
+{"section": "saobracajna_signalizacija", "question_id": 287, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_287.webp"}], "timestamp": "2026-06-01T10:05:31.119576"}
+{"section": "saobracajna_signalizacija", "question_id": 290, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_290.webp"}], "timestamp": "2026-06-01T10:05:39.128101"}
+{"section": "saobracajna_signalizacija", "question_id": 299, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_299.webp"}], "timestamp": "2026-06-01T10:05:50.785754"}
+{"section": "saobracajna_signalizacija", "question_id": 283, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_283.webp"}], "timestamp": "2026-06-01T10:06:00.853908"}
+{"section": "saobracajna_signalizacija", "question_id": 275, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_275.webp"}], "timestamp": "2026-06-01T10:06:27.079953"}
+{"section": "saobracajna_signalizacija", "question_id": 277, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_277.webp"}], "timestamp": "2026-06-01T10:06:38.250015"}
+{"section": "saobracajna_signalizacija", "question_id": 284, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_284.webp"}], "timestamp": "2026-06-01T10:06:51.674953"}
+{"section": "saobracajna_signalizacija", "question_id": 289, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_289.webp"}], "timestamp": "2026-06-01T10:07:01.926300"}
+{"section": "saobracajna_signalizacija", "question_id": 496, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_496.webp"}], "timestamp": "2026-06-01T10:07:19.442803"}
+{"section": "saobracajna_signalizacija", "question_id": 298, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_298.webp"}], "timestamp": "2026-06-01T10:07:33.645253"}
+{"section": "saobracajna_signalizacija", "question_id": 431, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_431.webp"}], "timestamp": "2026-06-01T10:07:44.202862"}
+{"section": "saobracajna_signalizacija", "question_id": 419, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_419.webp"}], "timestamp": "2026-06-01T10:08:00.960229"}
+{"section": "saobracajna_signalizacija", "question_id": 420, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_420.webp"}], "timestamp": "2026-06-01T10:08:10.111674"}
+{"section": "saobracajna_signalizacija", "question_id": 421, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_421.webp"}], "timestamp": "2026-06-01T10:08:25.835281"}
+{"section": "vozila", "question_id": 363, "changes": [{"action": "image_cropped", "file": "verify_vozila_363.webp"}], "timestamp": "2026-06-01T10:08:59.809702"}
