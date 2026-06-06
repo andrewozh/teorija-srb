@@ -53,6 +53,18 @@
 		display: none;
 	}
 
+	/* Covers the safe-area zone so scrolled content never bleeds behind the notch */
+	.app-shell::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: env(safe-area-inset-top);
+		background: var(--bg);
+		z-index: 50;
+	}
+
 	/* Mobile shell: unchanged */
 	.app-shell {
 		max-width: 480px;
