@@ -589,4 +589,14 @@
 		background: var(--accent);
 		color: var(--accent-ink);
 	}
+
+	@media (min-width: 1024px) {
+		.qpage {
+			position: static;
+			height: 100dvh;
+			padding-top: 0;
+			z-index: auto;
+			max-width: 680px;
+		}
+	}
 </style>
