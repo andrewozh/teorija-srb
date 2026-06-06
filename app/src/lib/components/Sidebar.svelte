@@ -60,7 +60,7 @@
 
 <nav class="sidebar">
 	<div class="sidebar-brand">
-		<div class="brand-icon">T</div>
+		<img src="{base}/icon-192.png" alt="Teorija" class="brand-icon" />
 		<div class="brand-text">
 			<div class="brand-name">Teorija</div>
 			<div class="brand-sub">возачки испит · {category}</div>
@@ -127,10 +127,8 @@
 	}
 	.brand-icon {
 		width: 32px; height: 32px; border-radius: 9px;
-		background: var(--ink); color: var(--bg);
-		display: flex; align-items: center; justify-content: center;
-		font-family: var(--font-ui); font-weight: 700; font-size: 16px;
-		letter-spacing: -0.3px; flex-shrink: 0;
+		flex-shrink: 0;
+		object-fit: cover;
 	}
 	.brand-name { font-size: 14px; font-weight: 600; color: var(--ink); letter-spacing: -0.1px; }
 	.brand-sub {
