@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
+	import { goto, afterNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
 	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
@@ -91,19 +91,24 @@
 
 	let _sectionData: any = null;
 
+	function reloadSection(id: string) {
+		if (!_sectionData) return;
+		questions = getQuestionsBySection(_sectionData, id);
+		totalQuestions = questions.length;
+		topics = getTopicsForSection(id);
+		expandedHints = new Set();
+		recalc();
+	}
+
+	afterNavigate(() => reloadSection(sectionId));
+
 	onMount(async () => {
 		_sectionData = await loadQuestions();
-		questions = getQuestionsBySection(_sectionData, sectionId);
-		totalQuestions = questions.length;
-		topics = getTopicsForSection(sectionId);
-		recalc();
+		reloadSection(sectionId);
 
 		const unsub = subscribe(() => {
 			lang = getSettings().lang;
-			// Recompute questions for current category
-			questions = getQuestionsBySection(_sectionData, sectionId);
-			totalQuestions = questions.length;
-			recalc();
+			reloadSection(sectionId);
 		});
 
 		const onKeyDown = (e: KeyboardEvent) => {
