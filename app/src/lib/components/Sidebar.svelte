@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getSections, getQuestionsBySection } from '$lib/data.js';
-	import { getQuestionProgress, getMistakeStatus, getMistakeQuestionKeys, subscribe, getSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, getMistakeQuestionKeys, subscribe, getSettings, updateSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import type { Lang, SectionMeta } from '$lib/types.js';
 	import Icon from './Icon.svelte';
@@ -92,6 +92,12 @@
 	</div>
 
 	<div class="sidebar-footer">
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<div class="nav-item lang-toggle" onclick={() => updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' })}>
+			<Icon name="language" size={16} color="var(--ink3)" stroke={1.5} />
+			<span class="nav-label">{lang === 'sr' ? 'Језик' : 'Язык'}</span>
+		</div>
 		<a href="{base}/settings" class="nav-item" class:nav-active={currentPath.includes('settings')}>
 			<Icon name="settings" size={16} color="var(--ink3)" stroke={1.5} />
 			<span class="nav-label">{lang === 'sr' ? 'Подешавања' : 'Настройки'}</span>
@@ -190,5 +196,8 @@
 	.sidebar-footer {
 		padding: 8px 12px 12px;
 		border-top: 1px solid var(--hairline);
+	}
+	.lang-toggle {
+		cursor: pointer;
 	}
 </style>

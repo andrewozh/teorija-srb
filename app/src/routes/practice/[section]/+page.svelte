@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
@@ -157,8 +157,13 @@
 	<Header
 		title={sectionName(sectionId, lang)}
 		onback={() => goto(`${base}/practice`)}
-		onsettings={() => goto(`${base}/settings`)}
-	/>
+	>
+		{#snippet trailing()}
+			<button class="lang-btn" onclick={() => updateSettings({ lang: lang === 'sr' ? 'ru' : 'sr' })}>
+				<Icon name="language" size={19} stroke={1.5} />
+			</button>
+		{/snippet}
+	</Header>
 
 	<div class="scroll-area">
 		<!-- Section header -->
@@ -270,6 +275,13 @@
 </div>
 
 <style>
+	.lang-btn {
+		width: 36px; height: 36px;
+		border-radius: 12px; border: none;
+		background: transparent; color: var(--ink);
+		display: flex; align-items: center; justify-content: center;
+		cursor: pointer; flex-shrink: 0;
+	}
 	.page { height: 100%; display: flex; flex-direction: column; }
 	.scroll-area { flex: 1; overflow: auto; padding: 16px 14px 20px; }
 
