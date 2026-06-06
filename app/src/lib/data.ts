@@ -251,15 +251,16 @@ export function getSrsStats(data: QuestionsData): SrsStats {
 
 /**
  * Select questions for an SRS session.
- * Priority: 1) due reviews  2) learning (in progress)  3) new questions
- */
-/**
- * Select questions for an SRS session.
- * Priority: 1) due reviews  2) learning (in progress)  3) new questions
- * New questions are selected progressively by section order:
- * - Start with section 1
- * - When ≥30% of a section is not "new", start mixing in the next section
- * - The more learned, the more from the next section
+ *
+ * While there are new (unanswered) questions:
+ *   ~70% of session = new questions in original order (by section, then by ID)
+ *   ~30% = reviews + mistakes (shuffled)
+ *
+ * When all questions have been answered at least once:
+ *   100% reviews/learning, prioritized by due date
+ *
+ * New questions unlock progressively by section:
+ *   Section 1 always available, section N unlocks when ≥30% of N-1 is not new.
  */
 export function getSrsSessionQuestions(data: QuestionsData, count: number): Question[] {
 	const active = getActiveQuestions(data).filter(
@@ -284,63 +285,70 @@ export function getSrsSessionQuestions(data: QuestionsData, count: number): Ques
 	const shuffle = <T>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
 	const selected: Question[] = [];
 
-	// 1) Reviews first (shuffled)
-	for (const q of shuffle(reviews)) {
-		if (selected.length >= count) break;
-		selected.push(q);
-	}
+	if (newQs.length > 0) {
+		// Phase 1: still have unanswered questions — 70% new, 30% review
+		// No progressive unlocking — go through ALL sections in order
+		const newCount = Math.round(count * 0.7);
 
-	// 2) Learning in progress
-	for (const q of shuffle(learningDue)) {
-		if (selected.length >= count) break;
-		selected.push(q);
-	}
-
-	// 3) New questions — progressive by section order
-	if (selected.length < count) {
+		// New questions: in original order across all sections
 		const sectionOrder = data.metadata.sections.map(s => s.id);
-		const newBySection: Record<string, Question[]> = {};
-		for (const q of newQs) {
-			if (!newBySection[q.section]) newBySection[q.section] = [];
-			newBySection[q.section].push(q);
+		const orderedNew: Question[] = [];
+		for (const sid of sectionOrder) {
+			const sectionNew = newQs
+				.filter(q => q.section === sid)
+				.sort((a, b) => a.id - b.id);
+			orderedNew.push(...sectionNew);
 		}
 
-		// Calculate progress per section (% that are NOT new)
-		const sectionProgress: Record<string, number> = {};
+		// Take first N new questions (in order)
+		for (const q of orderedNew) {
+			if (selected.length >= newCount) break;
+			selected.push(q);
+		}
+
+		// Fill review slots with mistakes + due reviews (shuffled)
+		const reviewPool = shuffle([...reviews, ...learningDue]);
+		for (const q of reviewPool) {
+			if (selected.length >= count) break;
+			selected.push(q);
+		}
+
+		// If not enough reviews, fill with more new
+		for (const q of orderedNew) {
+			if (selected.length >= count) break;
+			if (!selected.includes(q)) selected.push(q);
+		}
+	} else {
+		// Phase 2: all questions answered — SRS review with progressive unlocking
+		// Focus on earlier sections first, unlock next when ≥30% learned
+		const sectionOrder = data.metadata.sections.map(s => s.id);
+		const UNLOCK_THRESHOLD = 0.3;
+
+		const sectionLearned: Record<string, number> = {};
 		for (const sid of sectionOrder) {
 			const sectionQs = active.filter(q => q.section === sid);
-			if (sectionQs.length === 0) { sectionProgress[sid] = 1; continue; }
-			const notNew = sectionQs.filter(q => getQuestionSrs(q).status !== 'new').length;
-			sectionProgress[sid] = notNew / sectionQs.length;
+			if (sectionQs.length === 0) { sectionLearned[sid] = 1; continue; }
+			const learned = sectionQs.filter(q => getQuestionSrs(q).status === 'learned').length;
+			sectionLearned[sid] = learned / sectionQs.length;
 		}
 
-		// Build weighted pool of new questions
-		// Sections that are ≥30% progressed unlock the next section
-		const UNLOCK_THRESHOLD = 0.3;
-		const pool: Question[] = [];
-
+		// Collect reviewable questions from unlocked sections only
+		const reviewPool: Question[] = [];
 		for (let i = 0; i < sectionOrder.length; i++) {
 			const sid = sectionOrder[i];
-			const sectionNew = newBySection[sid] || [];
-			if (sectionNew.length === 0) continue;
-
-			if (i === 0) {
-				// First section always available
-				pool.push(...sectionNew);
-			} else {
-				// Check if previous section is progressed enough
-				const prevProgress = sectionProgress[sectionOrder[i - 1]] || 0;
-				if (prevProgress >= UNLOCK_THRESHOLD) {
-					pool.push(...sectionNew);
-				}
+			if (i > 0) {
+				const prevLearned = sectionLearned[sectionOrder[i - 1]] || 0;
+				if (prevLearned < UNLOCK_THRESHOLD) break;
 			}
+			const sectionReviews = [...reviews, ...learningDue].filter(q => q.section === sid);
+			reviewPool.push(...sectionReviews);
 		}
 
-		for (const q of shuffle(pool)) {
+		for (const q of shuffle(reviewPool)) {
 			if (selected.length >= count) break;
 			selected.push(q);
 		}
 	}
 
-	return shuffle(selected);
+	return selected;
 }
