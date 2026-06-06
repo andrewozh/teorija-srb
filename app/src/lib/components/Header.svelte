@@ -50,6 +50,9 @@
 		border-bottom: 0.5px solid var(--hairline);
 		background: var(--bg);
 		flex-shrink: 0;
+		position: sticky;
+		top: env(safe-area-inset-top);
+		z-index: 10;
 	}
 	@media (min-width: 1024px) {
 		.header { display: none; }
