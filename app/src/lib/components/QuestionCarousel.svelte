@@ -497,6 +497,7 @@
 		flex: 0 1 auto;
 		min-height: 0;
 		overflow: hidden;
+		border-radius: 16px;
 	}
 	/* Meta dots for question status */
 	.meta-dot {
