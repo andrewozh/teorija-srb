@@ -19,6 +19,9 @@
 	let chunks = $state<Chunk[]>([]);
 	let topics = $state<Topic[] | null>(null);
 	let modules = $state<TopicModule[] | null>(null);
+	const EXPANDED_STATE_KEY = 'driving-exam-practice-expanded-v1';
+	type ExpandedState = { hints: string[]; modules: string[] };
+	let rememberedExpansions = $state<Record<string, ExpandedState>>({});
 	let expandedHints = $state<Set<string>>(new Set());
 	let expandedModules = $state<Set<string>>(new Set());
 	let totalQuestions = $state(0);
@@ -100,20 +103,52 @@
 
 	let _sectionData: any = null;
 
+	function loadExpandedStates(): Record<string, ExpandedState> {
+		try {
+			const saved = localStorage.getItem(EXPANDED_STATE_KEY);
+			if (!saved) return {};
+			const parsed = JSON.parse(saved) as Record<string, ExpandedState>;
+			return parsed && typeof parsed === 'object' ? parsed : {};
+		} catch {
+			return {};
+		}
+	}
+
+	function saveExpandedState(): void {
+		if (!sectionId) return;
+		const next = {
+			...rememberedExpansions,
+			[sectionId]: { hints: [...expandedHints], modules: [...expandedModules] }
+		};
+		rememberedExpansions = next;
+		try {
+			localStorage.setItem(EXPANDED_STATE_KEY, JSON.stringify(next));
+		} catch {
+			// Storage may be unavailable or full; the current-page state still works.
+		}
+	}
+
+	function restoreExpandedState(id: string, sectionModules: TopicModule[] | null): void {
+		const saved = rememberedExpansions[id];
+		expandedHints = new Set(saved?.hints ?? []);
+		// First visit: all learning modules start open. Afterwards restore the user's exact choice.
+		expandedModules = new Set(saved ? saved.modules : (sectionModules?.map((module) => module.id) ?? []));
+	}
+
 	function reloadSection(id: string) {
 		if (!_sectionData) return;
 		questions = getQuestionsBySection(_sectionData, id);
 		totalQuestions = questions.length;
 		topics = getTopicsForSection(id);
 		modules = getTopicModulesForSection(id);
-		expandedHints = new Set();
-		expandedModules = new Set(modules?.map((module) => module.id) ?? []);
+		restoreExpandedState(id, modules);
 		recalc();
 	}
 
 	afterNavigate(() => reloadSection(sectionId));
 
 	onMount(async () => {
+		rememberedExpansions = loadExpandedStates();
 		_sectionData = await loadQuestions();
 		reloadSection(sectionId);
 
@@ -140,6 +175,7 @@
 		if (next.has(topicId)) next.delete(topicId);
 		else next.add(topicId);
 		expandedHints = next;
+		saveExpandedState();
 	}
 
 	function toggleModule(moduleId: string) {
@@ -147,6 +183,7 @@
 		if (next.has(moduleId)) next.delete(moduleId);
 		else next.add(moduleId);
 		expandedModules = next;
+		saveExpandedState();
 	}
 
 	let topicGroupIndexById = $derived(new Map(topicGroups.map((group, index) => [group.topic.id, index])));
