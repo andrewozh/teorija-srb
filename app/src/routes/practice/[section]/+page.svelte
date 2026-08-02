@@ -6,10 +6,11 @@
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
 	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
-	import { getTopicsForSection, topicName, topicHint } from '$lib/topics.js';
+	import { getTopicsForSection, getTopicModulesForSection, topicName, topicHint, moduleName, moduleSummary } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
-	import type { Topic } from '$lib/topics.js';
+	import type { Topic, TopicModule } from '$lib/topics.js';
 	import Header from '$lib/components/Header.svelte';
+	import TopicHint from '$lib/components/TopicHint.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
 
@@ -17,7 +18,9 @@
 	let questions = $state<Question[]>([]);
 	let chunks = $state<Chunk[]>([]);
 	let topics = $state<Topic[] | null>(null);
+	let modules = $state<TopicModule[] | null>(null);
 	let expandedHints = $state<Set<string>>(new Set());
+	let expandedModules = $state<Set<string>>(new Set());
 	let totalQuestions = $state(0);
 	let totalCorrect = $state(0);
 	let totalWrong = $state(0);
@@ -31,6 +34,12 @@
 		stats: { total: number; correct: number; wrong: number; recovering: number; oldestDays: number | null };
 	}
 	let topicGroups = $state<TopicGroup[]>([]);
+
+	interface ModuleGroup {
+		module: TopicModule;
+		topics: TopicGroup[];
+		stats: { total: number; correct: number; wrong: number; recovering: number };
+	}
 
 	function computeOldestDays(qs: Question[]): number | null {
 		let oldest: string | null = null;
@@ -96,7 +105,9 @@
 		questions = getQuestionsBySection(_sectionData, id);
 		totalQuestions = questions.length;
 		topics = getTopicsForSection(id);
+		modules = getTopicModulesForSection(id);
 		expandedHints = new Set();
+		expandedModules = new Set(modules?.map((module) => module.id) ?? []);
 		recalc();
 	}
 
@@ -130,6 +141,32 @@
 		else next.add(topicId);
 		expandedHints = next;
 	}
+
+	function toggleModule(moduleId: string) {
+		const next = new Set(expandedModules);
+		if (next.has(moduleId)) next.delete(moduleId);
+		else next.add(moduleId);
+		expandedModules = next;
+	}
+
+	let topicGroupIndexById = $derived(new Map(topicGroups.map((group, index) => [group.topic.id, index])));
+	let moduleGroups = $derived.by((): ModuleGroup[] => {
+		if (!modules) return [];
+		const byId = new Map(topicGroups.map((group) => [group.topic.id, group]));
+		return modules.map((module) => {
+			const moduleTopics = module.topicIds.map((id) => byId.get(id)).filter(Boolean) as TopicGroup[];
+			const stats = moduleTopics.reduce(
+				(total, group) => ({
+					total: total.total + group.stats.total,
+					correct: total.correct + group.stats.correct,
+					wrong: total.wrong + group.stats.wrong,
+					recovering: total.recovering + group.stats.recovering
+				}),
+				{ total: 0, correct: 0, wrong: 0, recovering: 0 }
+			);
+			return { module, topics: moduleTopics, stats };
+		});
+	});
 
 	// For topic-based: we need a global chunk index for routing
 	// Build a flat chunk index map: globalIndex → { topicIndex, localChunkIndex }
@@ -189,61 +226,72 @@
 		</div>
 
 		{#if topics && topicGroups.length > 0}
-			<!-- Topic-based layout -->
-			{#each topicGroups as group, gi}
-				<div class="topic-section">
-					<div class="topic-header">
-						<div class="topic-name">{topicName(group.topic, lang)}</div>
-						<div class="topic-right">
-							{#if group.stats.oldestDays !== null}
-								<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>
-							{/if}
-							<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
-							<!-- svelte-ignore a11y_click_events_have_key_events -->
-							<!-- svelte-ignore a11y_no_static_element_interactions -->
-							<span class="topic-hint-btn" onclick={() => toggleHint(group.topic.id)}>
-								<Icon name="info" size={14} color="var(--accent)" stroke={1.8} />
-							</span>
-						</div>
+			{#if moduleGroups.length > 0}
+				{#each moduleGroups as moduleGroup}
+					<section class="module-section" class:module-collapsed={!expandedModules.has(moduleGroup.module.id)}>
+						<button class="module-header" onclick={() => toggleModule(moduleGroup.module.id)} aria-expanded={expandedModules.has(moduleGroup.module.id)}>
+							<div class="module-copy">
+								<div class="module-name">{moduleName(moduleGroup.module, lang)}</div>
+								<div class="module-summary">{moduleSummary(moduleGroup.module, lang)}</div>
+							</div>
+							<div class="module-right">
+								<span>{moduleGroup.stats.correct}/{moduleGroup.stats.total}</span>
+								<Icon name={expandedModules.has(moduleGroup.module.id) ? 'chev-down' : 'chev-right'} size={16} stroke={1.8} />
+							</div>
+						</button>
+
+						{#if expandedModules.has(moduleGroup.module.id)}
+							<div class="module-topics">
+								{#each moduleGroup.topics as group}
+									{@const gi = topicGroupIndexById.get(group.topic.id) ?? 0}
+									<div class="topic-section">
+										<div class="topic-header">
+											<div class="topic-name">{topicName(group.topic, lang)}</div>
+											<div class="topic-right">
+												{#if group.stats.oldestDays !== null}<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>{/if}
+												<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
+												<button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} aria-expanded={expandedHints.has(group.topic.id)} onclick={() => toggleHint(group.topic.id)}>
+													<Icon name="info" size={14} color="var(--accent)" stroke={1.8} />
+												</button>
+											</div>
+										</div>
+
+										{#if expandedHints.has(group.topic.id)}
+											<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, lang)} {lang} /></div>
+										{/if}
+
+										{#each group.chunks as chunk, ci}
+											{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
+											{@const stat = computeQuestionStats(chunk.questions)}
+											{@const isDone = stat.correct === chunk.questions.length}
+											{@const isStarted = stat.correct > 0 || stat.wrong > 0}
+											<a href="{base}/practice/{sectionId}/{globalChunkIdx}" class="block-card" style:opacity={!isStarted ? '0.5' : '1'}>
+												<div class="block-num" class:block-done={isDone}>{#if isDone}<Icon name="check" size={13} stroke={2.5} />{:else}{globalChunkIdx + 1}{/if}</div>
+												<div class="block-name">{lang === 'sr' ? 'Блок' : 'Блок'} {String(globalChunkIdx + 1).padStart(2, '0')}<span class="block-range">Q{chunk.questions[0]?.id}–{chunk.questions[chunk.questions.length - 1]?.id}</span></div>
+												<div class="block-bar"><ProgressBar value={stat.correct} total={chunk.questions.length} height={2} wrong={stat.wrong} recovering={stat.recovering} /></div>
+												<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
+											</a>
+										{/each}
+									</div>
+								{/each}
+							</div>
+						{/if}
+					</section>
+				{/each}
+			{:else}
+				<!-- Existing flat topic layout for sections without modules -->
+				{#each topicGroups as group, gi}
+					<div class="topic-section">
+						<div class="topic-header"><div class="topic-name">{topicName(group.topic, lang)}</div><div class="topic-right"><span class="topic-count">{group.stats.correct}/{group.stats.total}</span><button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} onclick={() => toggleHint(group.topic.id)}><Icon name="info" size={14} color="var(--accent)" stroke={1.8} /></button></div></div>
+						{#if expandedHints.has(group.topic.id)}<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, lang)} {lang} /></div>{/if}
+						{#each group.chunks as chunk, ci}
+							{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
+							{@const stat = computeQuestionStats(chunk.questions)}
+							<a href="{base}/practice/{sectionId}/{globalChunkIdx}" class="block-card" style:opacity={!(stat.correct > 0 || stat.wrong > 0) ? '0.5' : '1'}><div class="block-num">{globalChunkIdx + 1}</div><div class="block-name">{lang === 'sr' ? 'Блок' : 'Блок'} {String(globalChunkIdx + 1).padStart(2, '0')}</div><div class="block-bar"><ProgressBar value={stat.correct} total={chunk.questions.length} height={2} wrong={stat.wrong} recovering={stat.recovering} /></div><div class="block-count">{stat.correct}/{chunk.questions.length}</div></a>
+						{/each}
 					</div>
-
-					{#if expandedHints.has(group.topic.id)}
-						<div class="topic-hint">
-							{@html topicHint(group.topic, lang)
-								.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-								.replace(/\n/g, '<br>')}
-						</div>
-					{/if}
-
-					{#each group.chunks as chunk, ci}
-						{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
-						{@const stat = computeQuestionStats(chunk.questions)}
-						{@const isDone = stat.correct === chunk.questions.length}
-						{@const isStarted = stat.correct > 0 || stat.wrong > 0}
-						<a
-							href="{base}/practice/{sectionId}/{globalChunkIdx}"
-							class="block-card"
-							style:opacity={!isStarted ? '0.5' : '1'}
-						>
-							<div class="block-num" class:block-done={isDone}>
-								{#if isDone}
-									<Icon name="check" size={13} stroke={2.5} />
-								{:else}
-									{globalChunkIdx + 1}
-								{/if}
-							</div>
-							<div class="block-name">
-								{lang === 'sr' ? 'Блок' : 'Блок'} {String(globalChunkIdx + 1).padStart(2, '0')}
-								<span class="block-range">Q{chunk.questions[0]?.id}–{chunk.questions[chunk.questions.length - 1]?.id}</span>
-							</div>
-							<div class="block-bar">
-								<ProgressBar value={stat.correct} total={chunk.questions.length} height={2} wrong={stat.wrong} recovering={stat.recovering} />
-							</div>
-							<div class="block-count">{stat.correct}/{chunk.questions.length}</div>
-						</a>
-					{/each}
-				</div>
-			{/each}
+				{/each}
+			{/if}
 		{:else}
 			<!-- Flat chunks (sections without topics) -->
 			<div class="blocks-label">
@@ -318,6 +366,25 @@
 	.recovering-text { color: var(--recovering); }
 	.wrong-text { color: var(--wrong); }
 
+	/* Learning modules */
+	.module-section {
+		margin: 0 -2px 12px;
+		border: .5px solid var(--hairline);
+		border-radius: 16px;
+		background: var(--surface);
+		overflow: hidden;
+	}
+	.module-header {
+		width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+		padding: 14px 14px 13px; border: 0; background: transparent; color: var(--ink); text-align: left; cursor: pointer;
+	}
+	.module-copy { min-width: 0; }
+	.module-name { font-size: 15px; font-weight: 650; letter-spacing: -.15px; }
+	.module-summary { margin-top: 3px; font-size: 11px; line-height: 1.35; color: var(--ink3); }
+	.module-right { display: flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 11px; color: var(--ink3); flex-shrink: 0; }
+	.module-topics { padding: 0 10px 8px; border-top: .5px solid var(--hairline); }
+	.module-collapsed .module-header { padding-bottom: 14px; }
+
 	/* Topic layout */
 	.topic-section {
 		margin-bottom: 16px;
@@ -357,16 +424,16 @@
 		display: flex;
 		align-items: center;
 		padding: 4px;
+		border: 0;
+		background: transparent;
 		border-radius: 8px;
 	}
 	.topic-hint-btn:active { background: var(--surface2); }
 	.topic-hint {
-		padding: 10px 14px;
-		margin: 0 0 8px;
+		padding: 12px 14px;
+		margin: 0 0 10px;
 		border-radius: 14px;
 		background: var(--accent-wash);
-		font-size: 13px;
-		line-height: 1.5;
 		color: var(--ink);
 	}
 
