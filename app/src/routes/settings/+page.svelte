@@ -137,6 +137,12 @@
 				<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
 				<div class="row-divider"></div>
 			</button>
+			<button class="row-item" onclick={() => updateSettings({ hintLang: settings.hintLang === 'sr' ? 'ru' : 'sr' })}>
+				<span class="row-label">{lang === 'sr' ? 'Језик савета' : 'Язык подсказок'}</span>
+				<span class="row-value">{settings.hintLang === 'sr' ? 'Српски' : 'Русский'}</span>
+				<Icon name="chev-right" size={14} color="var(--ink4)" stroke={2} />
+				<div class="row-divider"></div>
+			</button>
 			<button class="row-item" onclick={toggleLang}>
 				<span class="row-label">{lang === 'sr' ? 'Језик питања' : 'Язык вопросов'}</span>
 				<span class="row-value">{lang === 'sr' ? 'Српски' : 'Русский'}</span>

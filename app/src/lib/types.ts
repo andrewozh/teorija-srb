@@ -70,6 +70,7 @@ export interface Settings {
 	theme: 'light' | 'dark' | 'system';
 	fontSize: 'small' | 'medium' | 'large';
 	lang: Lang;
+	hintLang: Lang;
 	accent: Accent;
 	category: Category;
 	learnCount: number;

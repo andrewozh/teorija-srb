@@ -301,7 +301,7 @@
 					</div>
 
 										{#if expandedHints.has(group.topic.id)}
-											<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, lang)} {lang} /></div>
+											<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, getSettings().hintLang || "sr")} lang={getSettings().hintLang || "sr"} /></div>
 										{/if}
 
 										{#each group.chunks as chunk, ci}
@@ -327,7 +327,7 @@
 				{#each topicGroups as group, gi}
 					<div class="topic-section">
 						<div class="topic-header"><div class="topic-name">{topicName(group.topic, lang)}</div><div class="topic-right"><span class="topic-count">{group.stats.correct}/{group.stats.total}</span><button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} onclick={() => toggleHint(group.topic.id)}><Icon name="info" size={14} color="var(--accent)" stroke={1.8} /></button></div></div>
-						{#if expandedHints.has(group.topic.id)}<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, lang)} {lang} /></div>{/if}
+						{#if expandedHints.has(group.topic.id)}<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, getSettings().hintLang || "sr")} lang={getSettings().hintLang || "sr"} /></div>{/if}
 						{#each group.chunks as chunk, ci}
 							{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
 							{@const stat = computeQuestionStats(chunk.questions)}

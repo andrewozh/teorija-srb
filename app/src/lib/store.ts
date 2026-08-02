@@ -14,6 +14,7 @@ function defaultState(): AppState {
 			theme: 'system',
 			fontSize: 'medium',
 			lang: 'sr',
+			hintLang: 'sr',
 			accent: 'gold',
 			category: 'B',
 			learnCount: 20
