@@ -2779,3 +2779,4 @@
 {"section": "saobracajna_signalizacija", "question_id": 420, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_420.webp"}], "timestamp": "2026-06-01T10:08:10.111674"}
 {"section": "saobracajna_signalizacija", "question_id": 421, "changes": [{"action": "image_cropped", "file": "verify_saobracajna_signalizacija_421.webp"}], "timestamp": "2026-06-01T10:08:25.835281"}
 {"section": "vozila", "question_id": 363, "changes": [{"action": "image_cropped", "file": "verify_vozila_363.webp"}], "timestamp": "2026-06-01T10:08:59.809702"}
+{"section": "vozila", "question_id": 127, "changes": [{"action": "option_text_changed", "position": 3, "letter": "г", "from": "адним прикључним машинама м возилима за мотокулти трактор", "to": "тракторима, радним машинама, мотокултиваторима и прикључним "}], "timestamp": "2026-08-02T19:13:12.867928"}
