@@ -282,16 +282,23 @@
 								{#each moduleGroup.topics as group}
 									{@const gi = topicGroupIndexById.get(group.topic.id) ?? 0}
 									<div class="topic-section">
-										<div class="topic-header">
-											<div class="topic-name">{topicName(group.topic, lang)}</div>
-											<div class="topic-right">
-												{#if group.stats.oldestDays !== null}<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>{/if}
-												<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
-												<button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} aria-expanded={expandedHints.has(group.topic.id)} onclick={() => toggleHint(group.topic.id)}>
-													<Icon name="info" size={14} color="var(--accent)" stroke={1.8} />
-												</button>
-											</div>
-										</div>
+										<!-- svelte-ignore a11y_click_events_have_key_events -->
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
+					<div class="topic-header" onclick={() => toggleHint(group.topic.id)}>
+						<div class="topic-icon">
+							<Icon name="book" size={16} color="var(--accent)" stroke={1.8} />
+						</div>
+						<div class="topic-name">{topicName(group.topic, lang)}</div>
+						<div class="topic-right">
+							{#if group.stats.oldestDays !== null}
+								<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>
+							{/if}
+							<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
+							<div class="topic-chevron" style:transform={expandedHints.has(group.topic.id) ? 'rotate(180deg)' : 'rotate(0deg)'}>
+								<Icon name="chev-down" size={14} color="var(--ink3)" stroke={2} />
+							</div>
+						</div>
+					</div>
 
 										{#if expandedHints.has(group.topic.id)}
 											<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, lang)} {lang} /></div>
@@ -426,12 +433,21 @@
 	.topic-section {
 		margin-bottom: 16px;
 	}
-	.topic-header {
+		.topic-header {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 8px;
-		padding: 10px 4px 6px;
+		gap: 10px;
+		padding: 12px 8px 10px;
+		margin: 0 -4px;
+		border-radius: 12px;
+		cursor: pointer;
+		transition: background 0.15s ease;
+	}
+	.topic-header:active { background: var(--surface2); }
+	.topic-icon {
+		display: flex; align-items: center; justify-content: center;
+		width: 24px; height: 24px; border-radius: 6px;
+		background: var(--accent-wash); flex-shrink: 0;
 	}
 	.topic-name {
 		font-size: 14px;
@@ -446,26 +462,15 @@
 		gap: 8px;
 		flex-shrink: 0;
 	}
-	.topic-age {
-		font-family: var(--font-mono);
-		font-size: 10px;
-		color: var(--ink4);
-	}
 	.topic-count {
 		font-family: var(--font-mono);
 		font-size: 11px;
 		color: var(--ink3);
 	}
-	.topic-hint-btn {
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		padding: 4px;
-		border: 0;
-		background: transparent;
-		border-radius: 8px;
+	.topic-chevron {
+		display: flex; align-items: center; justify-content: center;
+		transition: transform 0.2s ease;
 	}
-	.topic-hint-btn:active { background: var(--surface2); }
 	.topic-hint {
 		padding: 12px 14px;
 		margin: 0 0 10px;
