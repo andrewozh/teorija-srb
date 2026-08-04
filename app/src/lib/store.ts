@@ -8,6 +8,7 @@ function defaultState(): AppState {
 		version: CURRENT_VERSION,
 		progress: {},
 		bookmarks: [],
+		difficultTopics: [],
 		exams: [],
 		onboarded: false,
 		settings: {
@@ -155,6 +156,26 @@ export function toggleBookmark(key: string): void {
 		state.bookmarks.splice(idx, 1);
 	} else {
 		state.bookmarks.push(key);
+	}
+	notify();
+}
+
+// Difficult-topic operations
+function topicKey(sectionId: string, topicId: string): string {
+	return `${sectionId}:${topicId}`;
+}
+
+export function isTopicDifficult(sectionId: string, topicId: string): boolean {
+	return state.difficultTopics.includes(topicKey(sectionId, topicId));
+}
+
+export function toggleDifficultTopic(sectionId: string, topicId: string): void {
+	const key = topicKey(sectionId, topicId);
+	const idx = state.difficultTopics.indexOf(key);
+	if (idx >= 0) {
+		state.difficultTopics.splice(idx, 1);
+	} else {
+		state.difficultTopics.push(key);
 	}
 	notify();
 }

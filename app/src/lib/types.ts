@@ -80,6 +80,7 @@ export interface AppState {
 	version: number;
 	progress: Progress;
 	bookmarks: string[];
+	difficultTopics: string[];
 	exams: ExamResult[];
 	settings: Settings;
 	onboarded: boolean;

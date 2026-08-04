@@ -4,7 +4,7 @@
 	import { goto, afterNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { loadQuestions, getQuestionsBySection, getChunks } from '$lib/data.js';
-	import { getQuestionProgress, getMistakeStatus, subscribe, getSettings, updateSettings } from '$lib/store.js';
+	import { getQuestionProgress, getMistakeStatus, isTopicDifficult, toggleDifficultTopic, subscribe, getSettings, updateSettings } from '$lib/store.js';
 	import { sectionName } from '$lib/i18n.js';
 	import { getTopicsForSection, getTopicModulesForSection, topicName, topicHint, moduleName, moduleSummary } from '$lib/topics.js';
 	import type { Question, Chunk, Lang } from '$lib/types.js';
@@ -294,6 +294,15 @@
 								<span class="topic-age">{group.stats.oldestDays}{lang === 'sr' ? 'д' : 'д'}</span>
 							{/if}
 							<span class="topic-count">{group.stats.correct}/{group.stats.total}</span>
+							<button
+								class="topic-flag"
+								class:topic-flagged={isTopicDifficult(sectionId, group.topic.id)}
+								aria-label={lang === 'sr' ? 'Означи као тешку тему' : 'Отметить как сложную тему'}
+								aria-pressed={isTopicDifficult(sectionId, group.topic.id)}
+								onclick={(event) => { event.stopPropagation(); toggleDifficultTopic(sectionId, group.topic.id); }}
+							>
+								<Icon name="flag" size={14} color={isTopicDifficult(sectionId, group.topic.id) ? 'var(--accent)' : 'var(--ink3)'} stroke={2} />
+							</button>
 							<div class="topic-chevron" style:transform={expandedHints.has(group.topic.id) ? 'rotate(180deg)' : 'rotate(0deg)'}>
 								<Icon name="chev-down" size={14} color="var(--ink3)" stroke={2} />
 							</div>
@@ -326,7 +335,7 @@
 				<!-- Existing flat topic layout for sections without modules -->
 				{#each topicGroups as group, gi}
 					<div class="topic-section">
-						<div class="topic-header"><div class="topic-name">{topicName(group.topic, lang)}</div><div class="topic-right"><span class="topic-count">{group.stats.correct}/{group.stats.total}</span><button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} onclick={() => toggleHint(group.topic.id)}><Icon name="info" size={14} color="var(--accent)" stroke={1.8} /></button></div></div>
+						<div class="topic-header"><div class="topic-name">{topicName(group.topic, lang)}</div><div class="topic-right"><span class="topic-count">{group.stats.correct}/{group.stats.total}</span><button class="topic-flag" class:topic-flagged={isTopicDifficult(sectionId, group.topic.id)} aria-label={lang === 'sr' ? 'Означи као тешку тему' : 'Отметить как сложную тему'} aria-pressed={isTopicDifficult(sectionId, group.topic.id)} onclick={() => toggleDifficultTopic(sectionId, group.topic.id)}><Icon name="flag" size={14} color={isTopicDifficult(sectionId, group.topic.id) ? 'var(--accent)' : 'var(--ink3)'} stroke={2} /></button><button class="topic-hint-btn" aria-label={lang === 'sr' ? 'Прикажи савет' : 'Показать подсказку'} onclick={() => toggleHint(group.topic.id)}><Icon name="info" size={14} color="var(--accent)" stroke={1.8} /></button></div></div>
 						{#if expandedHints.has(group.topic.id)}<div class="topic-hint"><TopicHint blocks={group.topic.hintBlocks} legacyHint={topicHint(group.topic, getSettings().hintLang || "sr")} lang={getSettings().hintLang || "sr"} /></div>{/if}
 						{#each group.chunks as chunk, ci}
 							{@const globalChunkIdx = (topicChunkStartIndex[gi] || 0) + ci}
@@ -467,6 +476,14 @@
 		font-size: 11px;
 		color: var(--ink3);
 	}
+	.topic-flag {
+		width: 26px; height: 26px;
+		padding: 0; border: 0; border-radius: 7px;
+		background: transparent; display: flex; align-items: center; justify-content: center;
+		cursor: pointer; flex-shrink: 0;
+	}
+	.topic-flag:hover, .topic-flag:active { background: var(--surface2); }
+	.topic-flagged { background: var(--accent-wash); }
 	.topic-chevron {
 		display: flex; align-items: center; justify-content: center;
 		transition: transform 0.2s ease;
