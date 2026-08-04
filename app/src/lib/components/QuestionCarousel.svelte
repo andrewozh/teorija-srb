@@ -115,8 +115,12 @@
 			}, 1000);
 		}
 
+		const onKeyDown = (event: KeyboardEvent) => handleKeyDown(event);
+		window.addEventListener('keydown', onKeyDown);
+
 		return () => {
 			unsub();
+			window.removeEventListener('keydown', onKeyDown);
 			if (timerInterval) clearInterval(timerInterval);
 		};
 	});
@@ -185,11 +189,47 @@
 		setTimeout(() => { programmaticScroll = false; }, 400);
 	}
 
+	function previousQuestion() {
+		if (currentIndex > 0) scrollToSlide(currentIndex - 1);
+	}
+
 	function nextQuestion() {
 		if (currentIndex < questions.length - 1) {
 			scrollToSlide(currentIndex + 1);
 		} else {
 			onComplete?.();
+		}
+	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.metaKey || event.ctrlKey || event.altKey || event.isComposing) return;
+		const target = event.target as HTMLElement | null;
+		if (target?.matches('input, textarea, select, [contenteditable="true"]')) return;
+
+		if (event.key >= '1' && event.key <= '5') {
+			const option = currentQuestion?.options[Number(event.key) - 1];
+			if (!option) return;
+			event.preventDefault();
+			selectAnswer(currentIndex, option.letter);
+			return;
+		}
+
+		if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'j') {
+			event.preventDefault();
+			previousQuestion();
+			return;
+		}
+
+		if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'l') {
+			event.preventDefault();
+			nextQuestion();
+			return;
+		}
+
+		if (event.key === 'Enter' || event.key === ' ') {
+			if (!currentQuestion || currentQuestion.correct_answers_count <= 1 || currentQState.answered || currentQState.selected.size === 0) return;
+			event.preventDefault();
+			confirmMultiAnswer(currentIndex);
 		}
 	}
 
